@@ -1,12 +1,12 @@
-// Catch all errors immediately
+// Catch all errors
 process.on('uncaughtException', (err) => {
-  console.error('[STARTUP ERROR] uncaughtException:', err.message);
+  console.error('[ERROR] uncaughtException:', err.message);
   console.error(err.stack);
-  process.exit(1);
+  // Don't exit - keep server running
 });
 process.on('unhandledRejection', (reason) => {
-  console.error('[STARTUP ERROR] unhandledRejection:', reason);
-  process.exit(1);
+  console.error('[ERROR] unhandledRejection:', reason);
+  // Don't exit - keep server running
 });
 
 import express, { type Request, Response, NextFunction } from "express";

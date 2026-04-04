@@ -8,4 +8,4 @@ cmds = ["npm install --include=dev"]
 cmds = ["npm run build"]
 
 [start]
-cmd = "npm start"
+cmd = "npm run db:push && npm start"

@@ -60,12 +60,17 @@ export async function registerRoutes(
 
   app.get("/api/debug-seed", async (_req, res) => {
     try {
+      const dbUrl = process.env.DATABASE_URL || "NOT SET";
+      // Mask password but show host
+      const masked = dbUrl.replace(/:\/\/([^:]+):([^@]+)@/, '://***:***@');
       await ensureTablesExist();
       await storage.seedServices();
       const services = await storage.getServices();
-      res.json({ success: true, count: services.length, message: "Seeded OK" });
+      res.json({ success: true, count: services.length, dbUrl: masked });
     } catch (err: any) {
-      res.json({ success: false, error: err?.message, stack: err?.stack?.slice(0, 500) });
+      const dbUrl = process.env.DATABASE_URL || "NOT SET";
+      const masked = dbUrl.replace(/:\/\/([^:]+):([^@]+)@/, '://***:***@');
+      res.json({ success: false, error: err?.message, dbUrl: masked });
     }
   });
 

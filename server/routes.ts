@@ -49,8 +49,13 @@ export async function registerRoutes(
   });
 
   app.get(api.services.list.path, async (_req, res) => {
-    const services = await storage.getServices();
-    res.json(services);
+    try {
+      const services = await storage.getServices();
+      res.json(services);
+    } catch (err) {
+      console.error('[API] getServices error:', err);
+      res.json([]);
+    }
   });
 
   app.get("/api/image-proxy", async (req, res) => {

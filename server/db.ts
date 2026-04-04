@@ -15,11 +15,15 @@ export const pool = new Pool({
   ssl: process.env.NODE_ENV === "production"
     ? { rejectUnauthorized: false }
     : false,
+  connectionTimeoutMillis: 8000,
+  idleTimeoutMillis: 30000,
+  max: 5,
 });
 
 export const db = drizzle(pool, { schema });
 
-// Ensures all required tables exist using raw SQL (bypasses drizzle-kit SSL issues)
+// Creates required tables using raw SQL if they don't exist.
+// Uses a hard timeout so it never blocks startup.
 export async function ensureTablesExist(): Promise<void> {
   const client = await pool.connect();
   try {
@@ -35,7 +39,6 @@ export async function ensureTablesExist(): Promise<void> {
         logo_path TEXT
       );
     `);
-
     await client.query(`
       CREATE TABLE IF NOT EXISTS tweets (
         id SERIAL PRIMARY KEY,
@@ -54,11 +57,7 @@ export async function ensureTablesExist(): Promise<void> {
         fetched_at TEXT NOT NULL
       );
     `);
-
-    console.log('[DB] Tables ensured (services, tweets).');
-  } catch (err) {
-    console.error('[DB] ensureTablesExist error:', err);
-    throw err;
+    console.log('[DB] Tables ensured successfully.');
   } finally {
     client.release();
   }

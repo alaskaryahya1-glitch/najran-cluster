@@ -58,6 +58,17 @@ export async function registerRoutes(
     }
   });
 
+  app.get("/api/debug-seed", async (_req, res) => {
+    try {
+      await ensureTablesExist();
+      await storage.seedServices();
+      const services = await storage.getServices();
+      res.json({ success: true, count: services.length, message: "Seeded OK" });
+    } catch (err: any) {
+      res.json({ success: false, error: err?.message, stack: err?.stack?.slice(0, 500) });
+    }
+  });
+
   app.get("/api/image-proxy", async (req, res) => {
     const mediaUrl = req.query.url as string;
     

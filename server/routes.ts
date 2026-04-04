@@ -1,6 +1,7 @@
 import type { Express } from "express";
 import type { Server } from "http";
 import { storage } from "./storage";
+import { ensureTablesExist } from "./db";
 import { api } from "@shared/routes";
 import path from "path";
 import fs from "fs";
@@ -144,6 +145,12 @@ export async function registerRoutes(
       res.status(500).json({ success: false, message: 'Failed to refresh tweets' });
     }
   });
+
+  try {
+    await ensureTablesExist();
+  } catch (err) {
+    console.error('[STARTUP] ensureTablesExist failed:', err);
+  }
 
   try {
     await storage.seedServices();

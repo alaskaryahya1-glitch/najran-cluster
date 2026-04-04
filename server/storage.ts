@@ -32,6 +32,14 @@ export class DatabaseStorage implements IStorage {
         logoPath: "png-clipart-gmail-logo-illustration-email-computer-icons-messa_1767519110048.png",
       },
       {
+        titleAr: "ارقام التواصل بالتجمع",
+        titleEn: "NHC Contact Numbers",
+        url: "#",
+        iconType: "phone",
+        category: "info",
+        logoPath: "pngtree-black-call-icon-png-image_2413693_1767519362030.png",
+      },
+      {
         titleAr: "استعادة كلمة المرور",
         titleEn: "Reset Password",
         url: "https://hsp.moh.gov.sa/ResetPassword.aspx",

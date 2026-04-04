@@ -7,7 +7,10 @@ import path from "path";
 import fs from "fs";
 import { getNews, seedInitialTweets, forceRefreshTweets } from "./twitter-service";
 import https from "https";
-import http from "http";
+
+// In-memory cache for services (5 minute TTL)
+let servicesCache: { data: any[]; ts: number } | null = null;
+const SERVICES_CACHE_TTL = 5 * 60 * 1000;
 
 export async function registerRoutes(
   httpServer: Server,
@@ -18,6 +21,11 @@ export async function registerRoutes(
     ? path.resolve(__dirname, "public")
     : path.resolve(process.cwd(), "client", "public");
   
+  // Health check - keeps container warm and used by Railway
+  app.get("/api/health", (_req, res) => {
+    res.json({ status: "ok", ts: Date.now() });
+  });
+
   app.get("/sitemap.xml", (_req, res) => {
     const filePath = path.join(publicPath, "sitemap.xml");
     if (fs.existsSync(filePath)) {
@@ -48,29 +56,21 @@ export async function registerRoutes(
     }
   });
 
+  // Services endpoint with in-memory cache
   app.get(api.services.list.path, async (_req, res) => {
     try {
+      const now = Date.now();
+      if (servicesCache && now - servicesCache.ts < SERVICES_CACHE_TTL) {
+        res.setHeader('Cache-Control', 'public, max-age=60');
+        return res.json(servicesCache.data);
+      }
       const services = await storage.getServices();
+      servicesCache = { data: services, ts: now };
+      res.setHeader('Cache-Control', 'public, max-age=60');
       res.json(services);
     } catch (err) {
       console.error('[API] getServices error:', err);
       res.json([]);
-    }
-  });
-
-  app.get("/api/debug-seed", async (_req, res) => {
-    try {
-      const dbUrl = process.env.DATABASE_URL || "NOT SET";
-      // Mask password but show host
-      const masked = dbUrl.replace(/:\/\/([^:]+):([^@]+)@/, '://***:***@');
-      await ensureTablesExist();
-      await storage.seedServices();
-      const services = await storage.getServices();
-      res.json({ success: true, count: services.length, dbUrl: masked });
-    } catch (err: any) {
-      const dbUrl = process.env.DATABASE_URL || "NOT SET";
-      const masked = dbUrl.replace(/:\/\/([^:]+):([^@]+)@/, '://***:***@');
-      res.json({ success: false, error: err?.message, dbUrl: masked });
     }
   });
 
@@ -175,7 +175,10 @@ export async function registerRoutes(
 
   try {
     await storage.seedServices();
-    console.log('[STARTUP] Services seeded successfully.');
+    // Pre-warm the services cache on startup
+    const services = await storage.getServices();
+    servicesCache = { data: services, ts: Date.now() };
+    console.log(`[STARTUP] Services seeded and cached (${services.length} services).`);
   } catch (err) {
     console.error('[STARTUP] seedServices failed (non-fatal):', err);
   }

@@ -145,8 +145,19 @@ export async function registerRoutes(
     }
   });
 
-  await storage.seedServices();
-  await seedInitialTweets();
+  try {
+    await storage.seedServices();
+    console.log('[STARTUP] Services seeded successfully.');
+  } catch (err) {
+    console.error('[STARTUP] seedServices failed (non-fatal):', err);
+  }
+
+  try {
+    await seedInitialTweets();
+    console.log('[STARTUP] Tweets seeded successfully.');
+  } catch (err) {
+    console.error('[STARTUP] seedInitialTweets failed (non-fatal):', err);
+  }
 
   return httpServer;
 }

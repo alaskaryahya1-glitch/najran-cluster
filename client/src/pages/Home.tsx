@@ -347,7 +347,7 @@ export default function Home() {
                 alt={language === 'ar' ? 'تجمع نجران الصحي' : 'Najran Health Cluster'}
                 className="h-32 xs:h-36 sm:h-44 md:h-44 lg:h-52 w-auto object-contain"
               />
-              <p className={`text-white/90 text-[10px] md:text-xs ${fontClass} -mr-[85px] md:-mr-32`} style={{ marginTop: '-2px' }}>
+              <p className={`text-white/90 text-[10px] md:text-xs ${fontClass} -mr-[85px] md:-mr-[160px]`} style={{ marginTop: '-2px' }}>
                 {language === 'ar' ? 'شركة الصحة القابضة' : 'Health Holding Co'}
               </p>
             </div>

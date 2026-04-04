@@ -355,7 +355,7 @@ export default function Home() {
 
           {/* Hero Content */}
           <motion.div 
-            className="container-custom relative h-full flex flex-col justify-center items-center text-center px-4 pt-52 md:pt-48 pb-8 md:pb-32 z-10"
+            className="container-custom relative h-full flex flex-col justify-center items-center text-center px-4 pt-52 md:pt-60 lg:pt-72 pb-8 md:pb-32 z-10"
             style={{ y: heroContentY, opacity: heroOpacity }}
           >
 

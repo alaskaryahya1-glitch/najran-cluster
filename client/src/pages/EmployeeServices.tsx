@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
-import { Loader2, AlertCircle, ExternalLink, Mail, Building2, Search, Link, Phone } from "lucide-react";
+import { Loader2, AlertCircle, Mail, Building2, Search, Link, Phone } from "lucide-react";
 import * as LucideIcons from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -418,7 +418,7 @@ export default function EmployeeServices() {
     queryKey: ['/api/services'],
   });
 
-  const infoServices = services?.filter(s => s.category === 'info' && s.iconType !== 'mail') || [];
+  const infoServices = services?.filter(s => s.category === 'info') || [];
   const systemServices = services?.filter(s => s.category === 'system') || [];
 
   const filteredEmails = emailDirectory.filter(entry => 
@@ -459,8 +459,9 @@ export default function EmployeeServices() {
           <section className="relative py-16 pt-24">
             <div className="container-custom">
               <motion.div
-                
-                
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
                 className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-2xl border border-white/20 text-center relative overflow-hidden"
               >
                 <div className="h-1.5 bg-[#2FAAE0]"></div>
@@ -507,8 +508,9 @@ export default function EmployeeServices() {
           <section className="relative py-12 overflow-hidden">
             <div className="container-custom relative">
               <motion.div
-                
-                
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                 className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-2xl border border-white/20 relative overflow-hidden"
               >
                 <div className="h-1.5 bg-[#2FAAE0]"></div>
@@ -539,9 +541,9 @@ export default function EmployeeServices() {
           <section className="relative py-12 overflow-hidden">
             <div className="container-custom relative">
               <motion.div
-                
-                
-                
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
                 className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-2xl border border-white/20 relative overflow-hidden"
               >
                 <div className="h-1.5 bg-[#2FAAE0]"></div>

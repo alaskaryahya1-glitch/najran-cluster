@@ -37,25 +37,28 @@ export async function ensureTablesExist(): Promise<void> {
       logo_path TEXT
     )
   `);
-
   await db.execute(sql`
-    CREATE TABLE IF NOT EXISTS tweets (
+    CREATE TABLE IF NOT EXISTS cached_tweets (
       id SERIAL PRIMARY KEY,
       tweet_id TEXT NOT NULL UNIQUE,
       text TEXT NOT NULL,
-      created_at TEXT NOT NULL,
-      author_id TEXT,
-      author_name TEXT,
-      author_username TEXT,
-      author_profile_image TEXT,
-      like_count INTEGER DEFAULT 0,
-      retweet_count INTEGER DEFAULT 0,
-      reply_count INTEGER DEFAULT 0,
-      media_urls TEXT[] DEFAULT '{}',
-      media_types TEXT[] DEFAULT '{}',
-      fetched_at TEXT NOT NULL
+      created_at TIMESTAMP NOT NULL,
+      author_name TEXT NOT NULL,
+      author_username TEXT NOT NULL,
+      image_url TEXT,
+      image_urls TEXT[],
+      video_url TEXT,
+      cached_at TIMESTAMP DEFAULT NOW() NOT NULL
     )
   `);
-
+  await db.execute(sql`
+    CREATE TABLE IF NOT EXISTS api_usage (
+      id SERIAL PRIMARY KEY,
+      month TEXT NOT NULL UNIQUE,
+      call_count INTEGER DEFAULT 0 NOT NULL,
+      last_call_at TIMESTAMP,
+      last_success_at TIMESTAMP
+    )
+  `);
   console.log('[DB] Tables ensured via drizzle.execute.');
 }

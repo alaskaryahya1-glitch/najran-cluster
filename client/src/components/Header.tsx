@@ -133,6 +133,7 @@ export function Header() {
     { label: t("nav.careModel"), href: "/care-model", icon: Heart },
     { label: t("nav.employeeServices"), href: "/employee-services", icon: Users },
     { label: t("nav.eServices"), href: "/e-services", icon: Globe },
+    { label: t("nav.maternityHospital"), href: "https://mch.nhc.moh.gov.sa/services", icon: null, external: true },
     { label: t("nav.news"), href: "/news", icon: Newspaper },
     { label: t("nav.contact"), href: "#contact", icon: Phone, isContactDialog: true },
   ];
@@ -181,9 +182,7 @@ export function Header() {
     <header className="absolute top-0 left-0 right-0 z-[9999]">
       <div className="container-custom relative">
         <div className="flex items-center justify-between h-16 text-white">
-          {/* Left side - Menu button */}
           <div className="flex items-center gap-2">
-            {/* Sidebar Menu Trigger */}
             <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
               <SheetTrigger asChild>
                 <button 
@@ -238,7 +237,7 @@ export function Header() {
                         className={`flex items-center gap-4 px-4 py-3 rounded-xl text-white/90 bg-black/20 hover:bg-black/30 dark:bg-black/55 backdrop-blur-md border border-white/10 transition-colors ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}
                         data-testid={`link-sidebar-nav-${index}`}
                       >
-                        <Icon className="w-5 h-5 text-[#2FAAE0] brand-icon" />
+                        {Icon && <Icon className="w-5 h-5 text-[#2FAAE0] brand-icon" />}
                         <span className="font-medium">{item.label}</span>
                       </a>
                     );
@@ -261,7 +260,6 @@ export function Header() {
             </Sheet>
           </div>
           
-          {/* Right side - Search, Theme and Language */}
           <div className="flex items-center gap-2">
             <button 
               onClick={() => setIsSearchOpen(true)}
@@ -270,7 +268,6 @@ export function Header() {
             >
               <Search className="w-5 h-5 brand-icon" />
             </button>
-            
             <button 
               onClick={toggleTheme}
               className="p-2.5 bg-black/20 hover:bg-black/30 dark:bg-black/55 backdrop-blur-md rounded-lg transition-colors"
@@ -282,7 +279,6 @@ export function Header() {
                 <Moon className="w-5 h-5 brand-icon" />
               )}
             </button>
-            
             <button 
               onClick={toggleLanguage}
               className="flex items-center gap-2 px-3 py-2 bg-black/20 hover:bg-black/30 dark:bg-black/55 backdrop-blur-md rounded-lg transition-colors"
@@ -295,10 +291,6 @@ export function Header() {
           </div>
         </div>
       </div>
-
-      
-      
-      {/* Search Modal */}
       <AnimatePresence>
         {isSearchOpen && (
           <>
@@ -307,10 +299,7 @@ export function Header() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[10000]"
-              onClick={() => {
-                setIsSearchOpen(false);
-                setSearchQuery("");
-              }}
+              onClick={() => { setIsSearchOpen(false); setSearchQuery(""); }}
             />
             <motion.div
               initial={{ opacity: 0, y: -20 }}
@@ -332,7 +321,6 @@ export function Header() {
                   />
                 </div>
               </div>
-              
               {searchQuery.length > 0 && (
                 <div className="border-t border-border max-h-80 overflow-y-auto">
                   {filteredResults.length > 0 ? (
@@ -358,7 +346,6 @@ export function Header() {
                   )}
                 </div>
               )}
-              
               <div className={`border-t border-border px-4 py-2 text-xs text-muted-foreground ${language === 'ar' ? 'font-arabic text-right' : 'font-sans text-left'}`}>
                 {language === "ar" ? "اضغط ESC للإغلاق" : "Press ESC to close"}
               </div>
@@ -366,8 +353,6 @@ export function Header() {
           </>
         )}
       </AnimatePresence>
-      
-      {/* Phone Number Dialog */}
       <Dialog open={isPhoneDialogOpen} onOpenChange={setIsPhoneDialogOpen}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>

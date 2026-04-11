@@ -19,6 +19,7 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.careModel": "نموذج الرعاية الصحية السعودي",
     "nav.employeeServices": "خدمات الموظفين",
     "nav.eServices": "الخدمات الإلكترونية",
+    "nav.maternityHospital": "بوابة مستشفى الولادة والأطفال",
     "nav.news": "الأخبار",
     "nav.contact": "تواصل معنا",
     "nav.mainPortal": "البوابة الرئيسية",

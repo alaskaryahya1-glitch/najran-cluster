@@ -133,7 +133,7 @@ export function Header() {
     { label: t("nav.careModel"), href: "/care-model", icon: Heart },
     { label: t("nav.employeeServices"), href: "/employee-services", icon: Users },
     { label: t("nav.eServices"), href: "/e-services", icon: Globe },
-    { label: t("nav.maternityHospital"), href: "https://mch.nhc.moh.gov.sa/services", icon: Gate, external: true },
+    { label: t("nav.maternityHospital"), href: "https://mch.nhc.moh.gov.sa/services", icon: ExternalLink, external: true },
     { label: t("nav.news"), href: "/news", icon: Newspaper },
     { label: t("nav.contact"), href: "#contact", icon: Phone, isContactDialog: true },
   ];

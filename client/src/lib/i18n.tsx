@@ -20,6 +20,7 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.employeeServices": "خدمات الموظفين",
     "nav.eServices": "الخدمات الإلكترونية",
     "nav.maternityHospital": "بوابة مستشفى الولادة والأطفال",
+    "nav.MaternityHospital": "بوابة مستشفى الولادة والأطفال",
     "nav.news": "الأخبار",
     "nav.contact": "تواصل معنا",
     "nav.mainPortal": "البوابة الرئيسية",

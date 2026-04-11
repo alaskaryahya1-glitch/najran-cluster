@@ -584,7 +584,7 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.careModel": "Saudi Healthcare Model",
     "nav.employeeServices": "Employee Services",
     "nav.eServices": "E-Services",
-    "nav.maternity Hospital": "MCH Portal",
+    "nav.maternityHospital": "MCH Portal",
     "nav.news": "News",
     "nav.contact": "Contact Us",
     "nav.mainPortal": "Main Portal",

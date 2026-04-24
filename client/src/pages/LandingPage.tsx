@@ -100,15 +100,22 @@ export default function LandingPage() {
           <div className="w-16 h-1.5 bg-[#2FAAE0] mx-auto mb-8 rounded-full" />
 
           <AnimatePresence mode="wait">
-            <motion.p
+            <motion.div
               key="message"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-white text-2xl sm:text-3xl md:text-4xl font-bold font-janna leading-relaxed"
-              style={{ direction: "rtl" }}
+              className="flex flex-col items-center gap-3"
             >
-              مغلق حتى إشعار أخر
-            </motion.p>
+              <p
+                className="text-white text-2xl sm:text-3xl md:text-4xl font-bold font-janna leading-relaxed"
+                style={{ direction: "rtl" }}
+              >
+                مغلق حتى إشعار آخر
+              </p>
+              <p className="text-white/70 text-base sm:text-lg md:text-xl font-semibold tracking-wide">
+                Closed Until Further Notice
+              </p>
+            </motion.div>
           </AnimatePresence>
 
           <div className="w-16 h-1.5 bg-[#2FAAE0] mx-auto mt-8 rounded-full" />

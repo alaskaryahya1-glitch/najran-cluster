@@ -11,7 +11,6 @@ import heroImage8 from "@assets/Najran,_Saudi_Arabia_(1)_(1)_1768894401231.jpeg"
 import heroImage9 from "@assets/493A91A0-64CA-44FC-873C-FF8E3057DFE7_1767273959627.png";
 import heroImage10 from "@assets/__The_Megalithic_Portal_and_Megalith_Map__1768893256731.jpeg";
 import heroImage11 from "@assets/385783211_781aa10eed_b_1768893295395.jpg";
-import whiteLogo from "@assets/logo4_1767233326721.PNG";
 
 const heroImages = [
   heroImage1, heroImage2, heroImage3, heroImage4,
@@ -73,23 +72,6 @@ export default function LandingPage() {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 text-center">
-        {/* Logo */}
-        <motion.div
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-10"
-        >
-          <img
-            src={whiteLogo}
-            alt="تجمع نجران الصحي"
-            className="h-36 sm:h-44 md:h-52 w-auto object-contain mx-auto"
-          />
-          <p className="text-white/80 text-xs md:text-sm font-janna mt-1">
-            شركة الصحة القابضة
-          </p>
-        </motion.div>
-
         {/* Main message */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}

@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, Redirect } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -10,15 +10,7 @@ import { initGA } from "./lib/analytics";
 import { useAnalytics } from "./hooks/use-analytics";
 import { SEOManager } from "@/components/SEOManager";
 
-const Home = lazy(() => import("@/pages/Home"));
 const LandingPage = lazy(() => import("@/pages/LandingPage"));
-const About = lazy(() => import("@/pages/About"));
-const EmployeeServices = lazy(() => import("@/pages/EmployeeServices"));
-const EServices = lazy(() => import("@/pages/EServices"));
-const News = lazy(() => import("@/pages/News"));
-const Transformation = lazy(() => import("@/pages/Transformation"));
-const CareModel = lazy(() => import("@/pages/CareModel"));
-const NotFound = lazy(() => import("@/pages/not-found"));
 
 function PageLoader() {
   return (
@@ -30,23 +22,18 @@ function PageLoader() {
 
 function Router() {
   useAnalytics();
-  
+
   return (
     <>
       <SEOManager />
       <Suspense fallback={<PageLoader />}>
         <Switch>
-        <Route path="/" component={LandingPage} />
-        <Route path="/home" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/employee-services" component={EmployeeServices} />
-        <Route path="/e-services" component={EServices} />
-        <Route path="/news" component={News} />
-        <Route path="/transformation" component={Transformation} />
-        <Route path="/care-model" component={CareModel} />
-        <Route component={NotFound} />
-      </Switch>
-    </Suspense>
+          <Route path="/" component={LandingPage} />
+          <Route>
+            <Redirect to="/" />
+          </Route>
+        </Switch>
+      </Suspense>
     </>
   );
 }

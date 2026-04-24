@@ -11,6 +11,7 @@ import { useAnalytics } from "./hooks/use-analytics";
 import { SEOManager } from "@/components/SEOManager";
 
 const Home = lazy(() => import("@/pages/Home"));
+const LandingPage = lazy(() => import("@/pages/LandingPage"));
 const About = lazy(() => import("@/pages/About"));
 const EmployeeServices = lazy(() => import("@/pages/EmployeeServices"));
 const EServices = lazy(() => import("@/pages/EServices"));
@@ -35,7 +36,8 @@ function Router() {
       <SEOManager />
       <Suspense fallback={<PageLoader />}>
         <Switch>
-        <Route path="/" component={Home} />
+        <Route path="/" component={LandingPage} />
+        <Route path="/home" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/employee-services" component={EmployeeServices} />
         <Route path="/e-services" component={EServices} />

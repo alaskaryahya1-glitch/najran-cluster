@@ -69,6 +69,16 @@ function injectSEO(html: string, requestPath: string): string {
   return result;
 }
 
+const BLOCKED_PATHS = [
+  '/about',
+  '/news',
+  '/transformation',
+  '/care-model',
+  '/employee-services',
+  '/e-services',
+  '/home',
+];
+
 export function serveStatic(app: Express) {
   const distPath = path.resolve(__dirname, "public");
   if (!fs.existsSync(distPath)) {
@@ -76,6 +86,15 @@ export function serveStatic(app: Express) {
       `Could not find the build directory: ${distPath}, make sure to build the client first`,
     );
   }
+
+  // Block all internal pages — redirect to landing page
+  app.use((req, res, next) => {
+    const pathname = req.path.split('?')[0].replace(/\/$/, '') || '/';
+    if (BLOCKED_PATHS.includes(pathname)) {
+      return res.redirect(301, '/');
+    }
+    next();
+  });
 
   app.use(express.static(distPath));
 

@@ -107,7 +107,7 @@ export default function LandingPage() {
               className="text-white text-2xl sm:text-3xl md:text-4xl font-bold font-janna leading-relaxed"
               style={{ direction: "rtl" }}
             >
-              وماعاد احد يدخل الموقع ولا يسوي شيء
+              مغلق حتى إشعار أخر
             </motion.p>
           </AnimatePresence>
 

@@ -365,12 +365,12 @@ export function Header() {
               <Phone className="w-8 h-8 text-[#2FAAE0]" />
             </div>
             <a 
-              href="tel:0175406000" 
+              href="tel:920011140"
               className={`text-3xl font-bold text-[#2FAAE0] hover:text-[#1691D0] transition-colors ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}
               dir="ltr"
               data-testid="link-phone-number"
             >
-              017 540 6000
+              920011140
             </a>
             <p className={`text-muted-foreground text-center ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}>
               {language === 'ar' ? 'اضغط على الرقم للاتصال' : 'Click to call'}

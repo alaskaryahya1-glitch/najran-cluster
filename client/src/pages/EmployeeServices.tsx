@@ -668,7 +668,7 @@ export default function EmployeeServices() {
                 dir="ltr"
                 data-testid="link-phone-number"
               >
-                017 540 6000
+                920011140
               </a>
             </div>
           </div>

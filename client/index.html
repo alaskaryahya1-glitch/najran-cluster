@@ -4,20 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <meta name="google-site-verification" content="kqlcGD4peodyjhzDA39mM3GWe32m8GWN5ByKhSji-Qw" />
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-378972239"></script>
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#2FAAE0" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <!-- Google Analytics — deferred so it never blocks rendering -->
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-378972239"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-378972239');
     </script>
-    
+
     <title>تجمع نجران الصحي | Najran Health Cluster</title>
     <meta name="description" content="يقدم تجمع نجران الصحي خدمات الرعاية الصحية لأكثر من 495 ألف مستفيد، من خلال 69 مركزًا للرعاية الأولية، و 12 مستشفى عام ومتخصص بسعة سريرية إجمالية تصل إلى 1300 سريرًا." />
     <link rel="canonical" href="https://najrancluster.com/" />
-    
+
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://najrancluster.com/" />
     <meta property="og:title" content="تجمع نجران الصحي | Najran Health Cluster" />
@@ -28,15 +35,15 @@
     <meta property="og:image:alt" content="تجمع نجران الصحي - Najran Health Cluster" />
     <meta property="og:locale" content="ar_SA" />
     <meta name="robots" content="max-image-preview:large" />
-    
+
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="تجمع نجران الصحي | Najran Health Cluster" />
     <meta name="twitter:description" content="يقدم تجمع نجران الصحي خدمات الرعاية الصحية لأكثر من 495 ألف مستفيد، من خلال 69 مركزًا للرعاية الأولية، و 12 مستشفى عام ومتخصص." />
     <meta name="twitter:image" content="https://najrancluster.com/og-image.png" />
-    
+
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
-    
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -84,38 +91,45 @@
       ]
     }
     </script>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://db.onlinewebfonts.com" crossorigin>
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+
+    <!-- Preconnect to font origins to shave RTT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+
+    <!-- Fonts — display=swap so text shows immediately in fallback font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
     <style>
+      /* Prevent layout shift before JS loads */
       #root { min-height: 100vh; }
-      .initial-loader { 
-        display: flex; 
-        align-items: center; 
-        justify-content: center; 
-        min-height: 100vh; 
-        background: #f8fafc; 
-      }
-      .initial-loader .spinner {
-        width: 32px;
-        height: 32px;
-        border: 2px solid #0891b2;
-        border-top-color: transparent;
-        border-radius: 50%;
-        animation: spin 0.8s linear infinite;
-      }
-      @keyframes spin { to { transform: rotate(360deg); } }
+      body { margin: 0; background: #0f172a; }
+      /* System font stack as fallback while Cairo loads */
+      body { font-family: 'Cairo', 'Segoe UI', Tahoma, Arial, sans-serif; }
     </style>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <!-- Register service worker for offline/slow-network caching -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js');
+        });
+      }
+    </script>
   </body>
 </html>

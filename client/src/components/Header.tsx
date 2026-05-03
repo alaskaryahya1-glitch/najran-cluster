@@ -151,11 +151,10 @@ export function Header() {
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
     if (href.includes('#')) {
-      e.preventDefault();
       const [path, hash] = href.split('#');
       const targetPath = path || '/';
-      
       if (window.location.pathname === targetPath || targetPath === '/') {
         const element = document.getElementById(hash);
         if (element) {
@@ -174,8 +173,10 @@ export function Header() {
           if (element) element.scrollIntoView({ behavior: 'smooth' });
         }, 100);
       }
-      setIsMenuOpen(false);
+    } else {
+      setLocation(href);
     }
+    setIsMenuOpen(false);
   };
 
   return (

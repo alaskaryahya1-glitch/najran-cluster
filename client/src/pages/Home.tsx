@@ -289,19 +289,19 @@ export default function Home() {
       {/* Fixed Background Image Slideshow for Entire Site */}
       <div className="fixed inset-0 z-0">
         {heroImages.map((img, idx) => (
-          <motion.img 
+          <motion.img
             key={idx}
             src={img}
             alt=""
             data-nosnippet="true"
             className="absolute inset-0 w-full h-full object-cover dark-bg-image"
-            style={{ 
-              objectPosition: 'center center', 
+            style={{
+              objectPosition: 'center center',
               willChange: 'opacity, transform',
               backfaceVisibility: 'hidden',
             }}
-            initial={false}
-            animate={{ 
+            initial={{ opacity: idx === 0 ? 1 : 0, scale: idx === 0 ? 1 : 1.02 }}
+            animate={{
               opacity: currentSlide === idx ? 1 : 0,
               scale: currentSlide === idx ? 1 : 1.02,
             }}

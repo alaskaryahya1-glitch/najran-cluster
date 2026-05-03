@@ -151,10 +151,11 @@ export function Header() {
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
     if (href.includes('#')) {
+      e.preventDefault();
       const [path, hash] = href.split('#');
       const targetPath = path || '/';
+      
       if (window.location.pathname === targetPath || targetPath === '/') {
         const element = document.getElementById(hash);
         if (element) {
@@ -173,10 +174,8 @@ export function Header() {
           if (element) element.scrollIntoView({ behavior: 'smooth' });
         }, 100);
       }
-    } else {
-      setLocation(href);
+      setIsMenuOpen(false);
     }
-    setIsMenuOpen(false);
   };
 
   return (
@@ -366,12 +365,12 @@ export function Header() {
               <Phone className="w-8 h-8 text-[#2FAAE0]" />
             </div>
             <a 
-              href="tel:920011140"
+              href="tel:0175406000" 
               className={`text-3xl font-bold text-[#2FAAE0] hover:text-[#1691D0] transition-colors ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}
               dir="ltr"
               data-testid="link-phone-number"
             >
-              920011140
+              017 540 6000
             </a>
             <p className={`text-muted-foreground text-center ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}>
               {language === 'ar' ? 'اضغط على الرقم للاتصال' : 'Click to call'}

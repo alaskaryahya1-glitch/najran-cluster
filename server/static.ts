@@ -39,7 +39,7 @@ function injectSEO(html: string, requestPath: string): string {
   const normalizedPath = requestPath === '' ? '/' : requestPath.split('?')[0];
   const seo = routeSEO[normalizedPath] || routeSEO['/'];
   const canonicalUrl = normalizedPath === '/' ? `${BASE_URL}/` : `${BASE_URL}${normalizedPath}`;
-
+  
   let result = html;
   result = result.replace(
     /<link rel="canonical" href="[^"]*" \/>/,
@@ -65,9 +65,19 @@ function injectSEO(html: string, requestPath: string): string {
     /<meta property="og:description" content="[^"]*" \/>/,
     `<meta property="og:description" content="${seo.description}" />`
   );
-
+  
   return result;
 }
+
+const BLOCKED_PATHS = [
+  '/about',
+  '/news',
+  '/transformation',
+  '/care-model',
+  '/employee-services',
+  '/e-services',
+  '/home',
+];
 
 export function serveStatic(app: Express) {
   const distPath = path.resolve(__dirname, "public");
@@ -77,32 +87,21 @@ export function serveStatic(app: Express) {
     );
   }
 
-  // Cache static assets aggressively (JS/CSS/images have hashed filenames)
-  app.use('/assets', express.static(distPath + '/assets', {
-    maxAge: '1y',
-    immutable: true,
-    etag: false,
-  }));
+  // Block all internal pages — redirect to landing page
+  app.use((req, res, next) => {
+    const pathname = req.path.split('?')[0].replace(/\/$/, '') || '/';
+    if (BLOCKED_PATHS.includes(pathname)) {
+      return res.redirect(301, '/');
+    }
+    next();
+  });
 
-  // Cache other static files (favicon, manifest, sw) for a short time
-  app.use(express.static(distPath, {
-    maxAge: '1h',
-    etag: true,
-    lastModified: true,
-  }));
+  app.use(express.static(distPath));
 
-  // SPA fallback — serve index.html for all routes so client-side routing works
   app.use("*", (req, res) => {
     const indexPath = path.resolve(distPath, "index.html");
     const html = fs.readFileSync(indexPath, 'utf-8');
     const modifiedHtml = injectSEO(html, req.originalUrl);
-    res
-      .status(200)
-      .set({
-        "Content-Type": "text/html",
-        "Cache-Control": "no-cache, no-store, must-revalidate",
-        "X-Content-Type-Options": "nosniff",
-      })
-      .send(modifiedHtml);
+    res.status(200).set({ "Content-Type": "text/html" }).send(modifiedHtml);
   });
 }

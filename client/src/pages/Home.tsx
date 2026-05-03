@@ -288,35 +288,28 @@ export default function Home() {
       </h1>
       {/* Fixed Background Image Slideshow for Entire Site */}
       <div className="fixed inset-0 z-0">
-        {heroImages.map((img, idx) => {
-          const isCurrent = currentSlide === idx;
-          const isNext = (currentSlide + 1) % heroImages.length === idx;
-          // Only render current + next slide to avoid loading all images at once
-          if (!isCurrent && !isNext) return null;
-          return (
-            <motion.img
-              key={idx}
-              src={img}
-              alt=""
-              data-nosnippet="true"
-              className="absolute inset-0 w-full h-full object-cover dark-bg-image"
-              style={{
-                objectPosition: 'center center',
-                willChange: 'opacity, transform',
-                backfaceVisibility: 'hidden',
-              }}
-              initial={false}
-              animate={{
-                opacity: isCurrent ? 1 : 0,
-                scale: isCurrent ? 1 : 1.02,
-              }}
-              transition={{ duration: 1.5, ease: "easeInOut" }}
-              loading={idx === 0 ? "eager" : "lazy"}
-              fetchPriority={idx === 0 ? "high" : "low"}
-              decoding="async"
-            />
-          );
-        })}
+        {heroImages.map((img, idx) => (
+          <motion.img 
+            key={idx}
+            src={img}
+            alt=""
+            data-nosnippet="true"
+            className="absolute inset-0 w-full h-full object-cover dark-bg-image"
+            style={{ 
+              objectPosition: 'center center', 
+              willChange: 'opacity, transform',
+              backfaceVisibility: 'hidden',
+            }}
+            initial={false}
+            animate={{ 
+              opacity: currentSlide === idx ? 1 : 0,
+              scale: currentSlide === idx ? 1 : 1.02,
+            }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+            loading="eager"
+            decoding="async"
+          />
+        ))}
         {/* Permanent Dark Overlay for readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/35 to-black/45" />
       </div>

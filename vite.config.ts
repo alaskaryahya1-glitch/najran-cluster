@@ -19,19 +19,15 @@ export default defineConfig({
     emptyOutDir: true,
     reportCompressedSize: false,
     cssCodeSplit: true,
-    assetsInlineLimit: 4096,
-    target: "es2020",
     rollupOptions: {
       output: {
         manualChunks: {
           'vendor': ['react', 'react-dom', 'wouter', '@tanstack/react-query'],
-          'motion': ['framer-motion'],
-          'icons': ['lucide-react', 'react-icons'],
-          'ui': ['@radix-ui/react-accordion', '@radix-ui/react-dialog', '@radix-ui/react-slot'],
-          'utils': ['clsx', 'tailwind-merge', 'date-fns'],
-        },
-      },
-    },
+          'ui': ['@radix-ui/react-accordion', '@radix-ui/react-dialog', '@radix-ui/react-slot', 'lucide-react'],
+          'utils': ['clsx', 'tailwind-merge', 'date-fns']
+        }
+      }
+    }
   },
   server: {
     fs: {

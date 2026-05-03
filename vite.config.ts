@@ -19,15 +19,44 @@ export default defineConfig({
     emptyOutDir: true,
     reportCompressedSize: false,
     cssCodeSplit: true,
+    // Inline small assets as base64 to save HTTP requests
+    assetsInlineLimit: 4096,
+    // Target modern browsers for smaller output
+    target: "es2020",
     rollupOptions: {
       output: {
-        manualChunks: {
-          'vendor': ['react', 'react-dom', 'wouter', '@tanstack/react-query'],
-          'ui': ['@radix-ui/react-accordion', '@radix-ui/react-dialog', '@radix-ui/react-slot', 'lucide-react'],
-          'utils': ['clsx', 'tailwind-merge', 'date-fns']
-        }
-      }
-    }
+        manualChunks(id) {
+          // Core React runtime — always needed
+          if (id.includes('react-dom') || id.includes('react/') || id.includes('scheduler')) {
+            return 'react';
+          }
+          // Routing + data fetching — loaded on every page
+          if (id.includes('wouter') || id.includes('@tanstack/react-query')) {
+            return 'vendor';
+          }
+          // Animation library — lazy-split from initial bundle
+          if (id.includes('framer-motion')) {
+            return 'motion';
+          }
+          // Icons — tree-shaken but still large
+          if (id.includes('react-icons') || id.includes('lucide-react')) {
+            return 'icons';
+          }
+          // Radix UI — UI primitives used across many pages
+          if (id.includes('@radix-ui')) {
+            return 'ui';
+          }
+          // Utility libraries
+          if (id.includes('clsx') || id.includes('tailwind-merge') || id.includes('date-fns') || id.includes('class-variance-authority')) {
+            return 'utils';
+          }
+        },
+        // Predictable file names for caching
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js',
+        assetFileNames: 'assets/[ext]/[name]-[hash].[ext]',
+      },
+    },
   },
   server: {
     fs: {

@@ -379,7 +379,7 @@ function GlassStarService({ service, index, language, fontClass, size = "md", on
                     }}
                   />
                 ) : (
-                  <IconComponent className={`${sizes[size].icon} text-[#2FAAE0] drop-shadow-lg transition-all duration-300 group-hover:text-white`} />
+                  <IconComponent className={`${sizes[size].icon} text-[#2BAAE2] drop-shadow-lg transition-all duration-300 group-hover:text-white`} />
                 )}
               </motion.div>
               <span className={`text-white font-medium ${sizes[size].text} ${fontClass} leading-tight max-w-[90%] drop-shadow-lg line-clamp-2 break-words`}>
@@ -464,7 +464,7 @@ export default function EmployeeServices() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-2xl border border-white/20 text-center relative overflow-hidden"
               >
-                <div className="h-1.5 bg-[#2FAAE0]"></div>
+                <div className="h-1.5 bg-[#2BAAE2]"></div>
                 <CardStar size="lg" />
                 <div className="p-6 md:p-8">
                   <h1 className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-white ${fontClass} mb-4 relative z-10`}>
@@ -482,7 +482,7 @@ export default function EmployeeServices() {
         {isLoading && (
           <section className="relative py-20">
             <div className="flex flex-col items-center justify-center">
-              <Loader2 className="w-12 h-12 text-[#2FAAE0] animate-spin mb-4" />
+              <Loader2 className="w-12 h-12 text-[#2BAAE2] animate-spin mb-4" />
               <p className={`text-white ${fontClass}`}>{t("employeeServices.loading")}</p>
             </div>
           </section>
@@ -493,7 +493,7 @@ export default function EmployeeServices() {
           <section className="relative py-20">
             <div className="flex justify-center">
               <div className="bg-black/20 dark:bg-black/50 backdrop-blur-md text-white p-8 rounded-2xl flex items-center gap-4 border border-white/20 max-w-lg">
-                <AlertCircle className="w-10 h-10 flex-shrink-0 text-[#2FAAE0]" />
+                <AlertCircle className="w-10 h-10 flex-shrink-0 text-[#2BAAE2]" />
                 <div className={fontClass}>
                   <h3 className="font-bold text-lg mb-1">{t("employeeServices.error")}</h3>
                   <p className="text-sm text-white/90">{t("employeeServices.errorRetry")}</p>
@@ -513,7 +513,7 @@ export default function EmployeeServices() {
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                 className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-2xl border border-white/20 relative overflow-hidden"
               >
-                <div className="h-1.5 bg-[#2FAAE0]"></div>
+                <div className="h-1.5 bg-[#2BAAE2]"></div>
                 <CardStar size="lg" />
                 <div className="p-6 md:p-8">
                   <div className="flex flex-wrap justify-center gap-2 xs:gap-3 sm:gap-4 md:gap-6 lg:gap-8 relative z-10">
@@ -546,7 +546,7 @@ export default function EmployeeServices() {
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
                 className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-2xl border border-white/20 relative overflow-hidden"
               >
-                <div className="h-1.5 bg-[#2FAAE0]"></div>
+                <div className="h-1.5 bg-[#2BAAE2]"></div>
                 <CardStar size="lg" />
                 <div className="p-6 md:p-8">
                   <div className="text-center mb-10 relative z-10">
@@ -599,7 +599,7 @@ export default function EmployeeServices() {
                 className={`bg-white/20 border-white/30 text-white placeholder:text-white/50 rounded-full pr-4 pl-10 h-11 ${fontClass}`}
                 data-testid="input-email-search"
               />
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#2FAAE0]/60" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#2BAAE2]/60" />
             </div>
           </div>
           
@@ -607,7 +607,7 @@ export default function EmployeeServices() {
             {Object.entries(groupedEmails).map(([dept, emails]) => (
               <div key={dept}>
                 <div className="px-4 py-3 flex items-center gap-2 bg-black/20 dark:bg-black/50 backdrop-blur-md border-b border-white/10">
-                  <Building2 className="w-4 h-4 text-[#2FAAE0]" />
+                  <Building2 className="w-4 h-4 text-[#2BAAE2]" />
                   <span className={`font-semibold text-sm ${fontClass} text-white`}>{dept}</span>
                   <div className="w-1.5 h-1.5 rounded-full bg-white/60 mr-auto"></div>
                 </div>
@@ -658,13 +658,13 @@ export default function EmployeeServices() {
           
           <div className="p-6 text-center">
             <div className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-xl px-6 py-8 border border-white/10">
-              <Phone className="w-12 h-12 mx-auto mb-4 text-[#2FAAE0]" />
+              <Phone className="w-12 h-12 mx-auto mb-4 text-[#2BAAE2]" />
               <p className={`text-white ${fontClass} mb-3`}>
                 {language === 'ar' ? 'للتواصل مع تجمع نجران الصحي' : 'To contact Najran Health Cluster'}
               </p>
               <a 
                 href="tel:0175406000" 
-                className="text-3xl font-bold text-white hover:text-[#2FAAE0] transition-colors block"
+                className="text-3xl font-bold text-white hover:text-[#2BAAE2] transition-colors block"
                 dir="ltr"
                 data-testid="link-phone-number"
               >

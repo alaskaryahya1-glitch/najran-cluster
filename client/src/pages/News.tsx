@@ -213,7 +213,7 @@ function TweetsGrid({ tweets, language }: { tweets: Tweet[], language: string })
       <div
         key={tweet.id}
         onClick={tweet.video_url ? undefined : openTweet}
-        className={`group rounded-2xl overflow-hidden bg-black/20 dark:bg-black/50 backdrop-blur-md border border-white/20 hover:border-[#2FAAE0]/50 transition-all duration-300 flex flex-col h-[380px] ${tweet.video_url ? '' : 'cursor-pointer'}`}
+        className={`group rounded-2xl overflow-hidden bg-black/20 dark:bg-black/50 backdrop-blur-md border border-white/20 hover:border-[#2BAAE2]/50 transition-all duration-300 flex flex-col h-[380px] ${tweet.video_url ? '' : 'cursor-pointer'}`}
         data-testid={`tweet-card-${tweet.id}-${index}`}
       >
         {tweet.video_url ? (
@@ -335,7 +335,7 @@ export default function News() {
               className="text-center"
             >
               <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white/20 mb-6">
-                <Newspaper className="w-10 h-10 text-[#2FAAE0] brand-icon" />
+                <Newspaper className="w-10 h-10 text-[#2BAAE2] brand-icon" />
               </div>
               <h1 className={`text-4xl md:text-5xl font-bold text-white mb-4 ${fontClass}`}>
                 {language === 'ar' ? 'أخبار التجمع' : 'Cluster News'}
@@ -359,7 +359,7 @@ export default function News() {
             >
               {isLoading ? (
                 <div className="flex justify-center py-12">
-                  <div className="w-12 h-12 border-4 border-white/30 border-t-[#2FAAE0] rounded-full animate-spin"></div>
+                  <div className="w-12 h-12 border-4 border-white/30 border-t-[#2BAAE2] rounded-full animate-spin"></div>
                 </div>
               ) : tweets.length > 0 ? (
                 <TweetsGrid tweets={tweets} language={language} />

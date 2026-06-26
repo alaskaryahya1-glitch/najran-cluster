@@ -81,7 +81,7 @@ export default function EServices() {
       <Header />
 
       <main className="flex-1">
-        <section className="relative py-16 text-white overflow-hidden">
+        <section className="relative pt-24 pb-16 text-white overflow-hidden">
           <div className="absolute inset-0 bg-black/25 dark:bg-black/60 backdrop-blur-[2px]"></div>
           <div className="absolute inset-0 najran-geometric-bg opacity-20"></div>
           
@@ -112,7 +112,7 @@ export default function EServices() {
                   data-testid={`eservice-card-${idx}`}
                 >
                   <CardStar size="md" />
-                  <div className="h-1.5 bg-[#2FAAE0]"></div>
+                  <div className="h-1.5 bg-[#2BAAE2]"></div>
                   <div className="p-6 relative z-10">
                   <div className="w-24 h-24 mx-auto mb-4 flex items-center justify-center bg-white/20 rounded-xl p-3">
                     <img 
@@ -136,7 +136,7 @@ export default function EServices() {
                         className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center hover:bg-white/30 transition-all"
                         data-testid={`link-website-${idx}`}
                       >
-                        <ExternalLink className="w-5 h-5 text-[#2FAAE0]" />
+                        <ExternalLink className="w-5 h-5 text-[#2BAAE2]" />
                       </a>
                     )}
                     {platform.hasApp && (
@@ -148,7 +148,7 @@ export default function EServices() {
                           className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center hover:bg-white/30 transition-all"
                           data-testid={`link-appstore-${idx}`}
                         >
-                          <SiApple className="w-5 h-5 text-[#2FAAE0]" />
+                          <SiApple className="w-5 h-5 text-[#2BAAE2]" />
                         </a>
                         <a 
                           href={platform.playStoreUrl} 
@@ -157,7 +157,7 @@ export default function EServices() {
                           className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center hover:bg-white/30 transition-all"
                           data-testid={`link-playstore-${idx}`}
                         >
-                          <SiGoogleplay className="w-5 h-5 text-[#2FAAE0]" />
+                          <SiGoogleplay className="w-5 h-5 text-[#2BAAE2]" />
                         </a>
                       </>
                     )}

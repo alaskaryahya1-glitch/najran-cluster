@@ -48,7 +48,7 @@ const orgStructureData = [
     titleKey: "about.deputy.mohammed.title",
     icon: Cog,
     image: mohammedImage,
-    color: "from-[#2FAAE0] to-[#1691D0]",
+    color: "from-[#2BAAE2] to-[#1691D0]",
     departments: [
       "about.dept.facilities",
       "about.dept.procurement",
@@ -80,7 +80,7 @@ const orgStructureData = [
     titleKey: "about.deputy.mohammadMutlaq.title",
     icon: Stethoscope,
     image: mohammadMutlaqImage,
-    color: "from-[#15508A] to-[#2FAAE0]",
+    color: "from-[#15508A] to-[#2BAAE2]",
     departments: [
       "about.dept.specializedCenters",
       "about.dept.generalHospitals",
@@ -110,7 +110,7 @@ const orgStructureData = [
     titleKey: "about.deputy.ismail.title",
     icon: Laptop,
     image: ismailImage,
-    color: "from-[#1691D0] to-[#2FAAE0]",
+    color: "from-[#1691D0] to-[#2BAAE2]",
     departments: [
       "about.dept.digitalStrategy",
       "about.dept.dataOffice",
@@ -141,7 +141,7 @@ const orgStructureData = [
     titleKey: "about.deputy.ali.title",
     icon: Users,
     image: aliImage,
-    color: "from-[#1691D0] to-[#2FAAE0]",
+    color: "from-[#1691D0] to-[#2BAAE2]",
     departments: [
       "about.dept.payroll",
       "about.dept.hrPlanning",
@@ -549,7 +549,7 @@ export default function About() {
               className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-2xl border border-white/20 p-8 md:p-12 max-w-4xl mx-auto relative overflow-hidden"
             >
               <CardStar size="lg" />
-              <div className="h-1.5 bg-[#2FAAE0] absolute top-0 left-0 right-0"></div>
+              <div className="h-1.5 bg-[#2BAAE2] absolute top-0 left-0 right-0"></div>
               <h1 className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-white ${fontClass} mb-4 relative z-10`}>
                 {t("about.title")}
               </h1>
@@ -573,7 +573,7 @@ export default function About() {
               className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-2xl border border-white/20 p-6 md:p-8 text-center mb-6 sm:mb-8 md:mb-10 relative overflow-hidden"
             >
               <CardStar size="lg" />
-              <div className="h-1.5 bg-[#2FAAE0] absolute top-0 left-0 right-0"></div>
+              <div className="h-1.5 bg-[#2BAAE2] absolute top-0 left-0 right-0"></div>
               <h2 className={`text-xl sm:text-2xl md:text-3xl font-bold ${fontClass} text-white mb-3 relative z-10`}>
                 {t("home.clusterServices.title")}
               </h2>
@@ -598,10 +598,10 @@ export default function About() {
                   className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-2xl overflow-hidden border border-white/20 text-center relative"
                 >
                   <CardStar size="md" />
-                  <div className="h-1.5 bg-[#2FAAE0]"></div>
+                  <div className="h-1.5 bg-[#2BAAE2]"></div>
                   <div className="p-6 relative z-10">
                   <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <service.icon className="w-8 h-8 text-[#2FAAE0]" />
+                    <service.icon className="w-8 h-8 text-[#2BAAE2]" />
                   </div>
                   <h3 className={`text-lg font-bold text-white ${fontClass} mb-3`}>
                     {t(`home.clusterServices.${service.id}.title`)}
@@ -634,7 +634,7 @@ export default function About() {
 
             <div className="bg-black/20 dark:bg-black/50 backdrop-blur-md text-white rounded-2xl overflow-hidden border border-white/20 relative">
               <CardStar size="lg" />
-              <div className="h-1.5 bg-[#2FAAE0]"></div>
+              <div className="h-1.5 bg-[#2BAAE2]"></div>
               <div className="py-4 px-4 sm:px-6 relative z-10">
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
                 <button 
@@ -642,38 +642,38 @@ export default function About() {
                   className={`text-center cursor-pointer rounded-lg py-2 transition-all ${showHospitals ? 'bg-white/20' : 'hover:bg-white/10'}`}
                   data-testid="button-hospitals"
                 >
-                  <Building2 className="w-5 h-5 mx-auto mb-1 opacity-80 text-[#2FAAE0] brand-icon" />
+                  <Building2 className="w-5 h-5 mx-auto mb-1 opacity-80 text-[#2BAAE2] brand-icon" />
                   <p className="text-xl font-bold">11</p>
                   <p className={`text-white/90 ${fontClass} text-xs`}>{t("about.hospitals")}</p>
-                  <ChevronDown className={`w-4 h-4 mx-auto mt-1 opacity-60 transition-transform text-[#2FAAE0] ${showHospitals ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`w-4 h-4 mx-auto mt-1 opacity-60 transition-transform text-[#2BAAE2] ${showHospitals ? 'rotate-180' : ''}`} />
                 </button>
                 <button 
                   onClick={() => { setShowSpecializedCenters(!showSpecializedCenters); setShowHospitals(false); setShowHealthCenters(false); }}
                   className={`text-center cursor-pointer rounded-lg py-2 transition-all ${showSpecializedCenters ? 'bg-white/20' : 'hover:bg-white/10'}`}
                   data-testid="button-specialized-centers"
                 >
-                  <Hospital className="w-5 h-5 mx-auto mb-1 opacity-80 text-[#2FAAE0] brand-icon" />
+                  <Hospital className="w-5 h-5 mx-auto mb-1 opacity-80 text-[#2BAAE2] brand-icon" />
                   <p className="text-xl font-bold">1</p>
                   <p className={`text-white/90 ${fontClass} text-xs`}>{t("about.specializedCenters")}</p>
-                  <ChevronDown className={`w-4 h-4 mx-auto mt-1 opacity-60 transition-transform text-[#2FAAE0] ${showSpecializedCenters ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`w-4 h-4 mx-auto mt-1 opacity-60 transition-transform text-[#2BAAE2] ${showSpecializedCenters ? 'rotate-180' : ''}`} />
                 </button>
                 <button 
                   onClick={() => { setShowHealthCenters(!showHealthCenters); setShowHospitals(false); setShowSpecializedCenters(false); }}
                   className={`text-center cursor-pointer rounded-lg py-2 transition-all ${showHealthCenters ? 'bg-white/20' : 'hover:bg-white/10'}`}
                   data-testid="button-health-centers"
                 >
-                  <Stethoscope className="w-5 h-5 mx-auto mb-1 opacity-80 text-[#2FAAE0] brand-icon" />
+                  <Stethoscope className="w-5 h-5 mx-auto mb-1 opacity-80 text-[#2BAAE2] brand-icon" />
                   <p className="text-xl font-bold">69</p>
                   <p className={`text-white/90 ${fontClass} text-xs`}>{t("about.healthCenters")}</p>
-                  <ChevronDown className={`w-4 h-4 mx-auto mt-1 opacity-60 transition-transform text-[#2FAAE0] ${showHealthCenters ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`w-4 h-4 mx-auto mt-1 opacity-60 transition-transform text-[#2BAAE2] ${showHealthCenters ? 'rotate-180' : ''}`} />
                 </button>
                 <div className="text-center py-2">
-                  <Users className="w-5 h-5 mx-auto mb-1 opacity-80 text-[#2FAAE0] brand-icon" />
+                  <Users className="w-5 h-5 mx-auto mb-1 opacity-80 text-[#2BAAE2] brand-icon" />
                   <p className="text-xl font-bold">495K+</p>
                   <p className={`text-white/90 ${fontClass} text-xs`}>{t("about.beneficiaries")}</p>
                 </div>
                 <div className="text-center py-2">
-                  <BedDouble className="w-5 h-5 mx-auto mb-1 opacity-80 text-[#2FAAE0] brand-icon" />
+                  <BedDouble className="w-5 h-5 mx-auto mb-1 opacity-80 text-[#2BAAE2] brand-icon" />
                   <p className="text-xl font-bold">1,300</p>
                   <p className={`text-white/90 ${fontClass} text-xs`}>{t("about.beds")}</p>
                 </div>
@@ -706,7 +706,7 @@ export default function About() {
                                 data-testid={`link-hospital-${idx}`}
                               >
                                 <div className="flex items-center justify-center gap-1 mb-1">
-                                  <MapPin className="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity text-[#2FAAE0] brand-icon" />
+                                  <MapPin className="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity text-[#2BAAE2] brand-icon" />
                                 </div>
                                 <p className={`${fontClass} text-sm`}>{t(hospital.nameKey)}</p>
                               </motion.a>
@@ -779,7 +779,7 @@ export default function About() {
                                 data-testid={`link-specialized-center-${idx}`}
                               >
                                 <div className="flex items-center justify-center gap-1 mb-1">
-                                  <MapPin className="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity text-[#2FAAE0] brand-icon" />
+                                  <MapPin className="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity text-[#2BAAE2] brand-icon" />
                                 </div>
                                 <p className={`${fontClass} text-sm`}>{t(center.nameKey)}</p>
                               </motion.a>
@@ -837,7 +837,7 @@ export default function About() {
                             data-testid={`link-health-center-${idx}`}
                           >
                             <div className="flex items-center justify-center gap-1 mb-1">
-                              <MapPin className="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity text-[#2FAAE0] brand-icon" />
+                              <MapPin className="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity text-[#2BAAE2] brand-icon" />
                             </div>
                             <p className={`${fontClass} text-xs`}>
                               {language === 'ar' ? center.ar : center.en}
@@ -877,7 +877,7 @@ export default function About() {
               className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-2xl overflow-hidden text-white text-center mb-6 max-w-md mx-auto border border-white/20 relative"
             >
               <CardStar size="md" />
-              <div className="h-1.5 bg-[#2FAAE0]"></div>
+              <div className="h-1.5 bg-[#2BAAE2]"></div>
               <div className="p-6 relative z-10">
               <div className="w-28 h-28 rounded-full mx-auto mb-3 overflow-hidden border-4 border-white/30">
                 <img 
@@ -893,7 +893,7 @@ export default function About() {
 
             {/* Connecting Line to Deputies */}
             <div className="flex justify-center mb-6">
-              <div className="w-0.5 h-8 bg-[#2FAAE0]"></div>
+              <div className="w-0.5 h-8 bg-[#2BAAE2]"></div>
             </div>
 
             {/* Deputies Title */}
@@ -924,7 +924,7 @@ export default function About() {
                     data-testid={`card-deputy-${idx}`}
                   >
                     <CardStar size="sm" />
-                    <div className="h-1.5 bg-[#2FAAE0]"></div>
+                    <div className="h-1.5 bg-[#2BAAE2]"></div>
                     <button
                       onClick={() => setExpandedDeputy(isExpanded ? null : deputy.id)}
                       className="w-full p-4 flex items-center gap-4 text-right"
@@ -934,7 +934,7 @@ export default function About() {
                         {deputy.image ? (
                           <img src={deputy.image} alt={t(deputy.nameKey)} className="w-full h-full object-cover dark-bg-image" />
                         ) : (
-                          <Icon className="w-8 h-8 text-[#2FAAE0] brand-icon" />
+                          <Icon className="w-8 h-8 text-[#2BAAE2] brand-icon" />
                         )}
                       </div>
                       <div className="flex-1 min-w-0">
@@ -942,7 +942,7 @@ export default function About() {
                         <p className={`text-white/90 ${fontClass} text-xs leading-tight`}>{t(deputy.titleKey)}</p>
                       </div>
                       <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
-                        <ChevronDown className={`w-4 h-4 text-[#2FAAE0] transition-transform ${isExpanded ? 'rotate-180' : ''}`} />
+                        <ChevronDown className={`w-4 h-4 text-[#2BAAE2] transition-transform ${isExpanded ? 'rotate-180' : ''}`} />
                       </div>
                     </button>
                     
@@ -980,7 +980,7 @@ export default function About() {
 
             {/* Connecting Line to Hospitals */}
             <div className="flex justify-center my-8">
-              <div className="w-0.5 h-8 bg-[#2FAAE0]"></div>
+              <div className="w-0.5 h-8 bg-[#2BAAE2]"></div>
             </div>
 
             {/* Hospitals Title */}
@@ -1020,7 +1020,7 @@ export default function About() {
                   data-testid={`card-hospital-${idx}`}
                 >
                   <CardStar size="sm" />
-                  <div className="h-1.5 bg-[#2FAAE0]"></div>
+                  <div className="h-1.5 bg-[#2BAAE2]"></div>
                   <div className="p-4 relative z-10">
                   <div className="flex items-center gap-3">
                     <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0 p-1.5">
@@ -1051,8 +1051,8 @@ export default function About() {
               
               className="text-center mb-10"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#2FAAE0]/20 mb-4">
-                <HelpCircle className="w-8 h-8 text-[#2FAAE0]" />
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#2BAAE2]/20 mb-4">
+                <HelpCircle className="w-8 h-8 text-[#2BAAE2]" />
               </div>
               <h2 className={`text-2xl md:text-3xl font-bold text-white ${fontClass} mb-3`}>
                 {t("about.faq.title")}
@@ -1080,11 +1080,11 @@ export default function About() {
                       className={`w-full p-5 flex items-center gap-4 ${textAlign}`}
                       data-testid={`button-faq-${idx}`}
                     >
-                      <div className="w-10 h-10 rounded-full bg-[#2FAAE0]/20 flex items-center justify-center flex-shrink-0">
+                      <div className="w-10 h-10 rounded-full bg-[#2BAAE2]/20 flex items-center justify-center flex-shrink-0">
                         {isExpanded ? (
-                          <Minus className="w-5 h-5 text-[#2FAAE0]" />
+                          <Minus className="w-5 h-5 text-[#2BAAE2]" />
                         ) : (
-                          <Plus className="w-5 h-5 text-[#2FAAE0]" />
+                          <Plus className="w-5 h-5 text-[#2BAAE2]" />
                         )}
                       </div>
                       <h3 className={`flex-1 font-semibold text-white ${fontClass} text-base md:text-lg`}>

@@ -20,6 +20,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { prefetchPage } from "@/hooks/use-prefetch";
+import whiteLogo from "@assets/logo4_1767233326721.PNG";
 
 const NavItem = memo(({ href, icon: Icon, children, active, onClick }: any) => {
   useEffect(() => {
@@ -31,8 +32,8 @@ const NavItem = memo(({ href, icon: Icon, children, active, onClick }: any) => {
       <a
         onClick={onClick}
         className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
-          active 
-            ? "bg-primary text-primary-foreground" 
+          active
+            ? "bg-primary text-primary-foreground"
             : "hover:bg-muted text-foreground"
         }`}
       >
@@ -50,10 +51,17 @@ export function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [isPhoneDialogOpen, setIsPhoneDialogOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const searchInputRef = useRef<HTMLInputElement>(null);
   const { language, setLanguage, t } = useI18n();
   const { theme, toggleTheme } = useTheme();
-  const [, setLocation] = useLocation();
+  const [location, setLocation] = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 30);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     if (isSearchOpen && searchInputRef.current) {
@@ -87,8 +95,8 @@ export function Header() {
   ];
 
   const filteredResults = searchQuery.length > 0
-    ? searchableItems.filter(item => 
-        item.titleAr.includes(searchQuery) || 
+    ? searchableItems.filter(item =>
+        item.titleAr.includes(searchQuery) ||
         item.titleEn.toLowerCase().includes(searchQuery.toLowerCase())
       )
     : [];
@@ -116,7 +124,7 @@ export function Header() {
     }
   };
 
-  const navItems = [
+  const desktopNavItems = [
     { label: t("nav.home"), href: "/" },
     { label: t("nav.about"), href: "/about" },
     { label: t("nav.employeeServices"), href: "/employee-services" },
@@ -143,12 +151,6 @@ export function Header() {
   };
 
   const ChevronIcon = language === "ar" ? ChevronLeft : ChevronRight;
-
-  const englishNewsItems = [
-    { id: "en1", text: "Thar General Hospital receives Saudi Central Board for Accreditation of Healthcare Institutions accreditation" },
-    { id: "en2", text: "Aba Al-Saud Health Center achieves national accreditation standards for primary healthcare centers" },
-    { id: "en3", text: "Najran Health Cluster continues to elevate healthcare services for all beneficiaries in the region" },
-  ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -179,32 +181,109 @@ export function Header() {
     setIsMenuOpen(false);
   };
 
+  const isActive = (href: string) => {
+    if (href === '/') return location === '/';
+    return location.startsWith(href);
+  };
+
   return (
-    <header className="absolute top-0 left-0 right-0 z-[9999]">
-      <div className="container-custom relative">
-        <div className="flex items-center justify-between h-16 text-white">
+    <header className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-300 ${scrolled ? 'bg-[#000e22]/95 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
+      {/* Top accent bar - matches health.sa */}
+      <div className="h-1 bg-gradient-to-l from-[#2BAAE2] via-[#1B4784] to-[#2BAAE2]" />
+
+      <div className="container-custom">
+        <div className="flex items-center justify-between h-16 lg:h-[70px] text-white gap-4">
+          {/* Logo - Right side (RTL start) */}
+          <div className="flex items-center gap-3 flex-shrink-0">
+            <a
+              href="/"
+              onClick={(e) => { e.preventDefault(); setLocation('/'); }}
+              className="flex items-center gap-2"
+            >
+              <img
+                src={whiteLogo}
+                alt={language === 'ar' ? 'تجمع نجران الصحي' : 'Najran Health Cluster'}
+                className="h-10 lg:h-12 w-auto object-contain"
+              />
+            </a>
+          </div>
+
+          {/* Desktop Nav Links - Center */}
+          <nav className={`hidden lg:flex items-center gap-1 flex-1 justify-center ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}>
+            {desktopNavItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
+                onMouseEnter={() => !item.href.includes('#') && prefetchPage(item.href)}
+                className={`px-3 xl:px-4 py-2 text-sm font-semibold rounded-lg transition-all duration-200 whitespace-nowrap
+                  ${isActive(item.href) && !item.href.includes('#')
+                    ? 'text-[#2BAAE2] bg-white/10'
+                    : 'text-white/85 hover:text-white hover:bg-white/10'
+                  }`}
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+
+          {/* Utility buttons - Left side (RTL end) */}
           <div className="flex items-center gap-2">
+            <button
+              onClick={() => setIsSearchOpen(true)}
+              className="p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+              data-testid="button-search"
+              aria-label="Search"
+            >
+              <Search className="w-5 h-5" />
+            </button>
+            <button
+              onClick={toggleTheme}
+              className="p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+              data-testid="button-theme-toggle"
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? (
+                <Sun className="w-5 h-5" />
+              ) : (
+                <Moon className="w-5 h-5" />
+              )}
+            </button>
+            <button
+              onClick={toggleLanguage}
+              className="px-3 py-1.5 text-sm font-semibold text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors border border-white/20"
+              data-testid="button-language-toggle"
+            >
+              {language === "ar" ? "EN" : "ع"}
+            </button>
+
+            {/* Mobile hamburger */}
             <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
               <SheetTrigger asChild>
-                <button 
-                  className="p-2.5 bg-[#2FAAE0] hover:bg-[#1691D0] rounded-lg transition-colors"
+                <button
+                  className="lg:hidden p-2 bg-[#2BAAE2] hover:bg-[#1691D0] rounded-lg transition-colors"
                   data-testid="button-menu-open"
+                  aria-label="Open menu"
                 >
-                  <Menu className="w-5 h-5 brand-icon" />
+                  <Menu className="w-5 h-5" />
                 </button>
               </SheetTrigger>
-              <SheetContent side="right" className="bg-black/60 dark:bg-black/80 backdrop-blur-xl border-l border-white/20 w-80 z-[12000]">
-                <SheetHeader className="mb-8">
+              <SheetContent side="right" className="bg-[#000e22]/95 backdrop-blur-xl border-l border-white/10 w-80 z-[12000]">
+                <SheetHeader className="mb-6">
                   <SheetTitle className="text-white text-xl font-bold">
-                    {language === 'ar' ? 'القائمة' : 'Menu'}
+                    <img
+                      src={whiteLogo}
+                      alt={language === 'ar' ? 'تجمع نجران الصحي' : 'Najran Health Cluster'}
+                      className="h-12 w-auto object-contain"
+                    />
                   </SheetTitle>
                 </SheetHeader>
-                <nav className="flex flex-col gap-2">
+                <nav className="flex flex-col gap-1.5">
                   {sidebarNavItems.map((item, index) => {
                     const Icon = item.icon;
                     const isExternal = 'external' in item && item.external;
                     const isContactDialog = 'isContactDialog' in item && item.isContactDialog;
-                    
+
                     if (isContactDialog) {
                       return (
                         <button
@@ -213,15 +292,15 @@ export function Header() {
                             setIsPhoneDialogOpen(true);
                             setIsMenuOpen(false);
                           }}
-                          className={`flex items-center gap-4 px-4 py-3 rounded-xl text-white/90 bg-black/20 hover:bg-black/30 dark:bg-black/55 backdrop-blur-md border border-white/10 transition-colors ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}
+                          className={`flex items-center gap-3 px-4 py-3 rounded-xl text-white/80 hover:text-white hover:bg-white/10 border border-transparent hover:border-white/10 transition-all ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}
                           data-testid={`link-sidebar-nav-${index}`}
                         >
-                          <Icon className="w-5 h-5 text-[#2FAAE0] brand-icon" />
-                          <span className="font-medium">{item.label}</span>
+                          <Icon className="w-5 h-5 text-[#2BAAE2] flex-shrink-0" />
+                          <span className="font-medium text-sm">{item.label}</span>
                         </button>
                       );
                     }
-                    
+
                     return (
                       <a
                         key={item.label}
@@ -235,63 +314,35 @@ export function Header() {
                           }
                           setIsMenuOpen(false);
                         }}
-                        className={`flex items-center gap-4 px-4 py-3 rounded-xl text-white/90 bg-black/20 hover:bg-black/30 dark:bg-black/55 backdrop-blur-md border border-white/10 transition-colors ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}
+                        className={`flex items-center gap-3 px-4 py-3 rounded-xl text-white/80 hover:text-white hover:bg-white/10 border border-transparent hover:border-white/10 transition-all ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}
                         data-testid={`link-sidebar-nav-${index}`}
                       >
-                        {Icon && <Icon className="w-5 h-5 text-[#2FAAE0] brand-icon" />}
-                        <span className="font-medium">{item.label}</span>
+                        {Icon && <Icon className="w-5 h-5 text-[#2BAAE2] flex-shrink-0" />}
+                        <span className="font-medium text-sm">{item.label}</span>
                       </a>
                     );
                   })}
                 </nav>
-                
-                <div className="mt-8 pt-6 border-t border-white/20">
-                  <a 
-                    href="https://njhc.moh.gov.sa" 
-                    target="_blank" 
+
+                <div className="mt-6 pt-5 border-t border-white/10">
+                  <a
+                    href="https://njhc.moh.gov.sa"
+                    target="_blank"
                     rel="noopener noreferrer"
-                    className={`flex items-center justify-center gap-2 bg-black/20 hover:bg-black/30 dark:bg-black/55 backdrop-blur-md border border-white/30 text-white px-5 py-3 rounded-xl ${language === 'ar' ? 'font-arabic' : 'font-sans'} font-bold transition-colors`}
+                    className={`flex items-center justify-center gap-2 bg-[#2BAAE2] hover:bg-[#1691D0] text-white px-5 py-3 rounded-xl ${language === 'ar' ? 'font-arabic' : 'font-sans'} font-bold transition-colors`}
                     data-testid="link-main-portal-sidebar"
                   >
                     {t("nav.mainPortal")}
-                    <ChevronIcon className="w-4 h-4 brand-icon" />
+                    <ChevronIcon className="w-4 h-4" />
                   </a>
                 </div>
               </SheetContent>
             </Sheet>
           </div>
-          
-          <div className="flex items-center gap-2">
-            <button 
-              onClick={() => setIsSearchOpen(true)}
-              className="p-2.5 bg-black/20 hover:bg-black/30 dark:bg-black/55 backdrop-blur-md rounded-lg transition-colors" 
-              data-testid="button-search"
-            >
-              <Search className="w-5 h-5 brand-icon" />
-            </button>
-            <button 
-              onClick={toggleTheme}
-              className="p-2.5 bg-black/20 hover:bg-black/30 dark:bg-black/55 backdrop-blur-md rounded-lg transition-colors"
-              data-testid="button-theme-toggle"
-            >
-              {theme === "dark" ? (
-                <Sun className="w-5 h-5 brand-icon" />
-              ) : (
-                <Moon className="w-5 h-5 brand-icon" />
-              )}
-            </button>
-            <button 
-              onClick={toggleLanguage}
-              className="flex items-center gap-2 px-3 py-2 bg-black/20 hover:bg-black/30 dark:bg-black/55 backdrop-blur-md rounded-lg transition-colors"
-              data-testid="button-language-toggle"
-            >
-              <span className={`text-sm font-medium ${language === "ar" ? "font-sans" : "font-arabic"}`}>
-                {language === "ar" ? "EN" : "ع"}
-              </span>
-            </button>
-          </div>
         </div>
       </div>
+
+      {/* Search overlay */}
       <AnimatePresence>
         {isSearchOpen && (
           <>
@@ -299,7 +350,7 @@ export function Header() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[10000]"
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[10000]"
               onClick={() => { setIsSearchOpen(false); setSearchQuery(""); }}
             />
             <motion.div
@@ -330,7 +381,7 @@ export function Header() {
                         <button
                           key={index}
                           onClick={() => handleSearchResultClick(item.href)}
-                          className={`w-full text-right px-4 py-3 rounded-lg hover-elevate active-elevate-2 transition-colors ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}
+                          className={`w-full text-right px-4 py-3 rounded-lg hover:bg-muted transition-colors ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}
                           data-testid={`search-result-${index}`}
                         >
                           <div className="flex items-center gap-3">
@@ -354,6 +405,8 @@ export function Header() {
           </>
         )}
       </AnimatePresence>
+
+      {/* Phone dialog */}
       <Dialog open={isPhoneDialogOpen} onOpenChange={setIsPhoneDialogOpen}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
@@ -362,12 +415,12 @@ export function Header() {
             </DialogTitle>
           </DialogHeader>
           <div className="flex flex-col items-center gap-4 py-6">
-            <div className="w-16 h-16 rounded-full bg-[#2FAAE0]/10 flex items-center justify-center">
-              <Phone className="w-8 h-8 text-[#2FAAE0]" />
+            <div className="w-16 h-16 rounded-full bg-[#2BAAE2]/10 flex items-center justify-center">
+              <Phone className="w-8 h-8 text-[#2BAAE2]" />
             </div>
-            <a 
+            <a
               href="tel:920011140"
-              className={`text-3xl font-bold text-[#2FAAE0] hover:text-[#1691D0] transition-colors ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}
+              className={`text-3xl font-bold text-[#2BAAE2] hover:text-[#1691D0] transition-colors ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}
               dir="ltr"
               data-testid="link-phone-number"
             >

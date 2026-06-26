@@ -56,7 +56,7 @@ export default function CareModel() {
               className="text-center mb-8"
             >
               <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Heart className="w-10 h-10 text-[#2FAAE0]" />
+                <Heart className="w-10 h-10 text-[#2BAAE2]" />
               </div>
               <h1 className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-white ${fontClass} mb-4`}>
                 {language === 'ar' ? 'نموذج الرعاية الصحية السعودي' : 'Saudi Healthcare Model'}
@@ -90,7 +90,7 @@ export default function CareModel() {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-10 sm:mb-12 md:mb-16">
               {[
                 { id: 'mental', icon: Brain, color: 'from-purple-500 to-purple-700' },
-                { id: 'social', icon: UsersRound, color: 'from-[#2FAAE0] to-[#1691D0]' },
+                { id: 'social', icon: UsersRound, color: 'from-[#2BAAE2] to-[#1691D0]' },
                 { id: 'physical', icon: Dumbbell, color: 'from-[#1691D0] to-[#15508A]' },
               ].map((pillar, idx) => (
                 <motion.div
@@ -102,10 +102,10 @@ export default function CareModel() {
                   className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-2xl overflow-hidden border border-white/20 relative"
                 >
                   <CardStar size="md" />
-                  <div className="h-1.5 bg-[#2FAAE0]"></div>
+                  <div className="h-1.5 bg-[#2BAAE2]"></div>
                   <div className="p-6 relative z-10">
                   <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <pillar.icon className="w-8 h-8 text-[#2FAAE0]" />
+                    <pillar.icon className="w-8 h-8 text-[#2BAAE2]" />
                   </div>
                   <h3 className={`text-xl font-bold text-center text-white mb-4 ${fontClass}`}>
                     {t(`home.healthModel.${pillar.id}.title`)}
@@ -113,7 +113,7 @@ export default function CareModel() {
                   <ul className={`space-y-2 ${fontClass}`}>
                     {[1, 2, 3].map((num) => (
                       <li key={num} className="flex items-start gap-2">
-                        <div className="w-2 h-2 bg-[#2FAAE0] rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-[#2BAAE2] rounded-full mt-2 flex-shrink-0"></div>
                         <span className="text-white text-sm">
                           {t(`home.healthModel.${pillar.id}.item${num}`)}
                         </span>
@@ -155,14 +155,14 @@ export default function CareModel() {
                   }`}
                   data-testid={`button-care-system-${system.id}`}
                 >
-                  <div className="h-1.5 w-full bg-[#2FAAE0]"></div>
+                  <div className="h-1.5 w-full bg-[#2BAAE2]"></div>
                   <div className="flex flex-col items-center gap-2 px-6 py-4">
-                  <system.icon className="w-8 h-8 text-[#2FAAE0]" />
+                  <system.icon className="w-8 h-8 text-[#2BAAE2]" />
                   <span className={`text-sm font-medium text-center ${fontClass}`}>
                     {t(`home.careSystems.${system.id}.title`)}
                   </span>
                   <ChevronDown 
-                    className={`w-4 h-4 text-[#2FAAE0] transition-transform duration-300 ${
+                    className={`w-4 h-4 text-[#2BAAE2] transition-transform duration-300 ${
                       selectedCareSystem === system.id ? 'rotate-180' : ''
                     }`} 
                   />
@@ -182,7 +182,7 @@ export default function CareModel() {
                   className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-2xl overflow-hidden border border-white/20 relative"
                 >
                   <CardStar size="lg" />
-                  <div className="h-1.5 bg-[#2FAAE0]"></div>
+                  <div className="h-1.5 bg-[#2BAAE2]"></div>
                   <div className="p-8 relative z-10">
                   <div className="flex justify-between items-start mb-6">
                     <div>

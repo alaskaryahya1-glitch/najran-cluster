@@ -62,25 +62,25 @@ StrategicGoalCard.displayName = "StrategicGoalCard";
 const strategicGoalsData = [
   { icon: Users, titleKey: "home.goal1.title", descKey: "home.goal1.desc", color: "from-[#1691D0] to-[#1691D0]" },
   { icon: TrendingUp, titleKey: "home.goal2.title", descKey: "home.goal2.desc", color: "from-[#1691D0] to-[#15508A]" },
-  { icon: Shield, titleKey: "home.goal3.title", descKey: "home.goal3.desc", color: "from-[#2FAAE0] to-[#1691D0]" },
-  { icon: Heart, titleKey: "home.goal4.title", descKey: "home.goal4.desc", color: "from-[#1691D0] to-[#2FAAE0]" },
+  { icon: Shield, titleKey: "home.goal3.title", descKey: "home.goal3.desc", color: "from-[#2BAAE2] to-[#1691D0]" },
+  { icon: Heart, titleKey: "home.goal4.title", descKey: "home.goal4.desc", color: "from-[#1691D0] to-[#2BAAE2]" },
   { icon: Monitor, titleKey: "home.goal5.title", descKey: "home.goal5.desc", color: "from-[#15508A] to-[#1691D0]" },
-  { icon: Settings, titleKey: "home.goal6.title", descKey: "home.goal6.desc", color: "from-[#1691D0] to-[#2FAAE0]" },
+  { icon: Settings, titleKey: "home.goal6.title", descKey: "home.goal6.desc", color: "from-[#1691D0] to-[#2BAAE2]" },
 ];
 
 const valuesData = [
   { icon: Heart, labelKey: "home.value.first.label", subtitleKey: "home.value.first", color: "from-[#1691D0] to-[#1691D0]" },
   { icon: Star, labelKey: "home.value.wellness.label", subtitleKey: "home.value.wellness", color: "from-[#1691D0] to-[#15508A]" },
-  { icon: Lightbulb, labelKey: "home.value.commitment.label", subtitleKey: "home.value.commitment", color: "from-[#2FAAE0] to-[#1691D0]" },
-  { icon: Users, labelKey: "home.value.respect.label", subtitleKey: "home.value.respect", color: "from-[#1691D0] to-[#2FAAE0]" },
+  { icon: Lightbulb, labelKey: "home.value.commitment.label", subtitleKey: "home.value.commitment", color: "from-[#2BAAE2] to-[#1691D0]" },
+  { icon: Users, labelKey: "home.value.respect.label", subtitleKey: "home.value.respect", color: "from-[#1691D0] to-[#2BAAE2]" },
   { icon: Target, labelKey: "home.value.collaboration.label", subtitleKey: "home.value.collaboration", color: "from-[#15508A] to-[#1691D0]" },
 ];
 
 const promisesData = [
   { icon: Heart, titleKey: "home.promise.accessible.title", subtitleKey: "home.promise.accessible.subtitle", descKey: "home.promise.accessible.desc", color: "from-[#1691D0] to-[#1691D0]" },
   { icon: Building2, titleKey: "home.promise.quality.title", subtitleKey: "home.promise.quality.subtitle", descKey: "home.promise.quality.desc", color: "from-[#1691D0] to-[#15508A]" },
-  { icon: Users, titleKey: "home.promise.personalized.title", subtitleKey: "home.promise.personalized.subtitle", descKey: "home.promise.personalized.desc", color: "from-[#2FAAE0] to-[#1691D0]" },
-  { icon: Star, titleKey: "home.promise.empowering.title", subtitleKey: "home.promise.empowering.subtitle", descKey: "home.promise.empowering.desc", color: "from-[#1691D0] to-[#2FAAE0]" },
+  { icon: Users, titleKey: "home.promise.personalized.title", subtitleKey: "home.promise.personalized.subtitle", descKey: "home.promise.personalized.desc", color: "from-[#2BAAE2] to-[#1691D0]" },
+  { icon: Star, titleKey: "home.promise.empowering.title", subtitleKey: "home.promise.empowering.subtitle", descKey: "home.promise.empowering.desc", color: "from-[#1691D0] to-[#2BAAE2]" },
 ];
 
 type ActiveSection = 'goals' | 'values' | 'promises' | null;
@@ -410,7 +410,7 @@ export default function Home() {
                             className="block bg-black/20 dark:bg-black/50 backdrop-blur-md border border-white/20 rounded-lg md:rounded-xl px-2 md:px-4 py-2 md:py-3 min-w-[70px] md:min-w-[100px] hover:bg-white/20 transition-all cursor-pointer hover:scale-105"
                             data-testid={`stat-card-${idx}`}
                           >
-                            <StatIcon className="w-4 h-4 md:w-5 md:h-5 text-[#2FAAE0] mx-auto mb-1" />
+                            <StatIcon className="w-4 h-4 md:w-5 md:h-5 text-[#2BAAE2] mx-auto mb-1" />
                             <div className={`text-base md:text-2xl font-bold text-white ${fontClass}`}>
                               {language === 'ar' ? stat.valueAr : stat.valueEn}
                             </div>
@@ -438,7 +438,7 @@ export default function Home() {
                           className="block bg-black/20 dark:bg-black/50 backdrop-blur-md border border-white/20 rounded-lg md:rounded-xl px-2 md:px-4 py-2 md:py-3 min-w-[70px] md:min-w-[100px] hover:bg-white/20 transition-all cursor-pointer hover:scale-105"
                           data-testid={`stat-card-${idx}`}
                         >
-                          <StatIcon className="w-4 h-4 md:w-5 md:h-5 text-[#2FAAE0] mx-auto mb-1" />
+                          <StatIcon className="w-4 h-4 md:w-5 md:h-5 text-[#2BAAE2] mx-auto mb-1" />
                           <div className={`text-base md:text-2xl font-bold text-white ${fontClass}`}>
                             {language === 'ar' ? stat.valueAr : stat.valueEn}
                           </div>
@@ -469,7 +469,7 @@ export default function Home() {
                 onClick={() => window.location.href = '/e-services'}
               >
                 <span className={fontClass}>{language === 'ar' ? 'استكشف خدماتنا' : 'Explore Our Services'}</span>
-                <ExternalLink className="w-5 h-5 mr-2 rtl:mr-0 rtl:ml-2 text-[#2FAAE0] brand-icon" />
+                <ExternalLink className="w-5 h-5 mr-2 rtl:mr-0 rtl:ml-2 text-[#2BAAE2] brand-icon" />
               </Button>
             </motion.div>
 
@@ -496,7 +496,7 @@ export default function Home() {
                         className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-xl overflow-hidden flex flex-col items-center border border-white/30 hover:bg-white/30 transition-all hover:scale-110"
                         data-testid={`hero-platform-${idx}`}
                       >
-                        <div className="h-1 w-full bg-[#2FAAE0]"></div>
+                        <div className="h-1 w-full bg-[#2BAAE2]"></div>
                         <div className="w-12 h-11 flex items-center justify-center">
                         <img 
                           src={platform.src} 
@@ -531,7 +531,7 @@ export default function Home() {
                       className="block bg-black/20 dark:bg-black/50 backdrop-blur-md border border-white/20 rounded-xl overflow-hidden hover:bg-white/20 transition-all hover:-translate-y-1 group"
                       data-testid={`nav-card-${idx}`}
                     >
-                      <div className="h-1.5 bg-[#2FAAE0]"></div>
+                      <div className="h-1.5 bg-[#2BAAE2]"></div>
                       <div className="p-5">
                       <div className="flex items-center justify-between gap-4">
                         <div className={`flex-1 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
@@ -543,7 +543,7 @@ export default function Home() {
                           </p>
                         </div>
                         <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
-                          <ArrowLeft className={`w-5 h-5 text-[#2FAAE0] transition-colors brand-icon ${language === 'ar' ? '' : 'rotate-180'}`} />
+                          <ArrowLeft className={`w-5 h-5 text-[#2BAAE2] transition-colors brand-icon ${language === 'ar' ? '' : 'rotate-180'}`} />
                         </div>
                       </div>
                       </div>
@@ -573,11 +573,11 @@ export default function Home() {
                 className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-2xl overflow-hidden border border-white/20 flex flex-col relative"
               >
                 <CardStar size="md" />
-                <div className="h-1.5 bg-[#2FAAE0]"></div>
+                <div className="h-1.5 bg-[#2BAAE2]"></div>
                 <div className="p-6 md:p-8 flex flex-col flex-1">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center">
-                    <Eye className="w-7 h-7 text-[#2FAAE0] brand-icon" />
+                    <Eye className="w-7 h-7 text-[#2BAAE2] brand-icon" />
                   </div>
                   <h3 className={`text-2xl font-bold text-white ${fontClass}`}>{t("home.vision")}</h3>
                 </div>
@@ -596,11 +596,11 @@ export default function Home() {
                 className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-2xl overflow-hidden border border-white/20 flex flex-col relative"
               >
                 <CardStar size="md" />
-                <div className="h-1.5 bg-[#2FAAE0]"></div>
+                <div className="h-1.5 bg-[#2BAAE2]"></div>
                 <div className="p-6 md:p-8 flex flex-col flex-1">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center">
-                    <Target className="w-7 h-7 text-[#2FAAE0] brand-icon" />
+                    <Target className="w-7 h-7 text-[#2BAAE2] brand-icon" />
                   </div>
                   <h3 className={`text-2xl font-bold text-white ${fontClass}`}>{t("home.mission")}</h3>
                 </div>
@@ -643,10 +643,10 @@ export default function Home() {
                   data-testid={`goal-card-${idx}`}
                 >
                   <CardStar size="sm" />
-                  <div className="h-1.5 bg-[#2FAAE0]"></div>
+                  <div className="h-1.5 bg-[#2BAAE2]"></div>
                   <div className="p-6">
                   <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-4">
-                    <goal.icon className="w-7 h-7 text-[#2FAAE0] brand-icon" />
+                    <goal.icon className="w-7 h-7 text-[#2BAAE2] brand-icon" />
                   </div>
                   <h3 className={`text-lg font-bold text-white ${fontClass} mb-2`}>{t(goal.titleKey)}</h3>
                   <p className={`text-white/90 ${fontClass} text-sm`}>{t(goal.descKey)}</p>
@@ -687,10 +687,10 @@ export default function Home() {
                   data-testid={`value-card-${idx}`}
                 >
                   <CardStar size="sm" />
-                  <div className="h-1.5 bg-[#2FAAE0]"></div>
+                  <div className="h-1.5 bg-[#2BAAE2]"></div>
                   <div className="p-6">
                   <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <value.icon className="w-8 h-8 text-[#2FAAE0] brand-icon" />
+                    <value.icon className="w-8 h-8 text-[#2BAAE2] brand-icon" />
                   </div>
                   <p className={`text-white/60 ${fontClass} text-xs mb-1`}>{t(value.subtitleKey)}</p>
                   <p className={`${fontClass} font-bold text-white`}>{t(value.labelKey)}</p>
@@ -731,10 +731,10 @@ export default function Home() {
                   data-testid={`promise-card-${idx}`}
                 >
                   <CardStar size="sm" />
-                  <div className="h-1.5 bg-[#2FAAE0]"></div>
+                  <div className="h-1.5 bg-[#2BAAE2]"></div>
                   <div className="p-6">
                   <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <promise.icon className="w-8 h-8 text-[#2FAAE0] brand-icon" />
+                    <promise.icon className="w-8 h-8 text-[#2BAAE2] brand-icon" />
                   </div>
                   <h3 className={`text-lg font-bold text-white ${fontClass} mb-2`}>{t(promise.titleKey)}</h3>
                   <p className={`text-white/60 ${fontClass} text-xs mb-2`}>{t(promise.subtitleKey)}</p>

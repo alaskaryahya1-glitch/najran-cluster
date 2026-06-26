@@ -53,7 +53,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="text-slate-300 relative" style={{ backgroundColor: '#283B8A' }}>
+    <footer className="text-slate-300 relative" style={{ backgroundColor: '#1A2C6E' }}>
       {/* Partners Logos Row */}
       <div className="border-b border-white/10">
         <div className="container-custom py-5">

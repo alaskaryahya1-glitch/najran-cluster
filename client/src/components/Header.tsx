@@ -127,13 +127,9 @@ export function Header() {
   const desktopNavItems = [
     { label: t("nav.home"), href: "/", external: false },
     { label: t("nav.about"), href: "/about", external: false },
-    { label: t("nav.transformation"), href: "/transformation", external: false },
-    { label: t("nav.careModel"), href: "/care-model", external: false },
     { label: t("nav.employeeServices"), href: "/employee-services", external: false },
     { label: t("nav.eServices"), href: "/e-services", external: false },
     { label: t("nav.news"), href: "/news", external: false },
-    { label: t("nav.gatesJourney"), href: "https://nhcgate3.info/", external: true },
-    { label: t("nav.MaternityHospital"), href: "https://mch.nhc.moh.gov.sa/services", external: true },
     { label: t("nav.contact"), href: "#contact", external: false },
   ];
 
@@ -263,11 +259,11 @@ export function Header() {
               {language === "ar" ? "EN" : "ع"}
             </button>
 
-            {/* Mobile hamburger */}
+            {/* Hamburger - always visible for full menu */}
             <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
               <SheetTrigger asChild>
                 <button
-                  className="lg:hidden p-2 bg-[#2BAAE2] hover:bg-[#1691D0] rounded-lg transition-colors"
+                  className="p-2 bg-[#2BAAE2] hover:bg-[#1691D0] rounded-lg transition-colors"
                   data-testid="button-menu-open"
                   aria-label="Open menu"
                 >

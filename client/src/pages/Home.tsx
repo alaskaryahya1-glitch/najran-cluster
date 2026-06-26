@@ -318,7 +318,7 @@ export default function Home() {
       
       <main className="flex-1 relative z-10">
         {/* Full-Screen Hero Section - Health Holding Style */}
-        <section ref={heroRef} className="relative h-[100svh] min-h-[500px] sm:min-h-[600px] overflow-hidden">
+        <section ref={heroRef} className="relative h-[100svh] min-h-[500px] sm:min-h-[600px]">
           {/* Additional Hero Overlay for better contrast */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/25" />
           
@@ -516,7 +516,7 @@ export default function Home() {
           </motion.div>
 
           {/* Navigation Cards at Bottom */}
-          <div className="absolute bottom-0 left-0 right-0 z-20 hidden md:block translate-y-8">
+          <div className="absolute bottom-0 left-0 right-0 z-[100] hidden md:block translate-y-8">
             <div className="container-custom pb-4">
               <div className="grid grid-cols-3 gap-4">
                 {navigationCards.map((card, idx) => (

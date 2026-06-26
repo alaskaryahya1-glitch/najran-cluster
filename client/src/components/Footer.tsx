@@ -90,7 +90,7 @@ export function Footer() {
                 alt={t("header.clusterName")}
                 className="h-16 sm:h-20 w-auto object-contain mb-1"
               />
-              <p className={`text-[#2BAAE2] text-[10px] ${fontClass} translate-x-5 sm:translate-x-8`} style={{ marginTop: '-2px' }}>
+              <p className={`text-[#2BAAE2] text-[10px] ${fontClass} -translate-x-4 sm:-translate-x-6`} style={{ marginTop: '-2px' }}>
                 {language === 'ar' ? 'شركة الصحة القابضة' : 'Health Holding Co.'}
               </p>
             </div>

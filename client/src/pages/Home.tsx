@@ -163,6 +163,8 @@ export default function Home() {
     const [beforeAfterActive, setBeforeAfterActive] = useState<'before' | 'after' | null>(null);
   const [selectedCareSystem, setSelectedCareSystem] = useState<string | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [videoFailed, setVideoFailed] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const { t, language } = useI18n();
   
   const careSystemsData = [
@@ -260,6 +262,16 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = true;
+    const promise = video.play();
+    if (promise !== undefined) {
+      promise.catch(() => setVideoFailed(true));
+    }
+  }, []);
+
   useSEO({
     path: '/',
     titleAr: 'تجمع نجران الصحي | Najran Health Cluster',
@@ -288,32 +300,34 @@ export default function Home() {
       </h1>
       {/* Fixed Background */}
       <div className="fixed inset-0 z-0">
-        {/* Mobile: Image Slideshow */}
-        <div className="md:hidden absolute inset-0">
-          {heroImages.slice(0, 3).map((img, idx) => (
-            <motion.img
-              key={idx}
-              src={img}
-              alt=""
-              aria-hidden="true"
-              className="absolute inset-0 w-full h-full object-cover"
-              initial={{ opacity: idx === 0 ? 1 : 0 }}
-              animate={{ opacity: currentSlide % 3 === idx ? 1 : 0 }}
-              transition={{ duration: 1.5, ease: "easeInOut" }}
-            />
-          ))}
-        </div>
-        {/* Desktop: Video */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="hidden md:block absolute inset-0 w-full h-full object-cover"
-          poster={heroImages[0]}
-        >
-          <source src="https://cmsapi.health.sa/HHC1-7tba9j.mp4" type="video/mp4" />
-        </video>
+        {/* Fallback: Image Slideshow (shown if video fails) */}
+        {heroImages.slice(0, 3).map((img, idx) => (
+          <motion.img
+            key={idx}
+            src={img}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover"
+            initial={{ opacity: idx === 0 ? 1 : 0 }}
+            animate={{ opacity: currentSlide % 3 === idx ? 1 : 0 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+          />
+        ))}
+        {/* Video: all devices - JS play() forces autoplay on mobile */}
+        {!videoFailed && (
+          <video
+            ref={videoRef}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+            poster={heroImages[0]}
+            onError={() => setVideoFailed(true)}
+          >
+            <source src="https://cmsapi.health.sa/HHC1-7tba9j.mp4" type="video/mp4" />
+          </video>
+        )}
         {/* Permanent Dark Overlay for readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/35 to-black/45" />
       </div>

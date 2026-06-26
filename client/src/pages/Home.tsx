@@ -357,7 +357,7 @@ export default function Home() {
             
             
             transition={{ delay: 0.2 }}
-            className="absolute top-[48px] lg:top-[56px] left-0 right-0 z-30 flex justify-center"
+            className="absolute top-[40px] lg:top-[46px] left-0 right-0 z-30 flex justify-center"
           >
             <div className="flex flex-col items-center">
               <img 

@@ -84,7 +84,7 @@ export function Footer() {
 
           {/* Brand Column */}
           <div className="md:col-span-4">
-            <div className="flex flex-col mb-6">
+            <div className="inline-flex flex-col items-center mb-6">
               <img
                 src={whiteLogo}
                 alt={t("header.clusterName")}

@@ -278,9 +278,9 @@ export function Header() {
             </Sheet>
           </div>
 
-          {/* Desktop Nav Links - CENTER — hidden until scrolled */}
-          <nav className={`hidden lg:flex items-center gap-0.5 xl:gap-1 flex-1 justify-center transition-all duration-500 ${scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'} ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}>
-            {desktopNavItems.filter(item => !(item.href === '/' && location === '/')).map((item) => (
+          {/* Desktop Nav Links - CENTER — hidden on home page, hidden until scrolled on other pages */}
+          <nav className={`hidden lg:flex items-center gap-0.5 xl:gap-1 flex-1 justify-center transition-all duration-500 ${location === '/' ? 'opacity-0 pointer-events-none' : scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'} ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}>
+            {desktopNavItems.filter(item => !isActive(item.href) || item.href.includes('#')).map((item) => (
               <a
                 key={item.href}
                 href={item.href}

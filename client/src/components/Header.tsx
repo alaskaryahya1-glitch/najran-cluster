@@ -207,12 +207,12 @@ export function Header() {
                 </button>
               </SheetTrigger>
               <SheetContent side="right" className="bg-[#000e22]/95 backdrop-blur-xl border-l border-white/10 w-80 z-[12000]">
-                <SheetHeader className="mb-6">
-                  <SheetTitle className="text-white text-xl font-bold">
+                <SheetHeader className="mb-6 flex justify-center">
+                  <SheetTitle className="text-white text-xl font-bold flex justify-center">
                     <img
                       src={whiteLogo}
                       alt={language === 'ar' ? 'تجمع نجران الصحي' : 'Najran Health Cluster'}
-                      className="h-12 w-auto object-contain"
+                      className="h-20 w-auto object-contain"
                     />
                   </SheetTitle>
                 </SheetHeader>

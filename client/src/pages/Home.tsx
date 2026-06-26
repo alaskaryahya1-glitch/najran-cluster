@@ -286,19 +286,33 @@ export default function Home() {
       <h1 className="sr-only">
         {language === 'ar' ? 'تجمع نجران الصحي' : 'Najran Health Cluster'}
       </h1>
-      {/* Fixed Background Video */}
+      {/* Fixed Background */}
       <div className="fixed inset-0 z-0">
+        {/* Mobile: Image Slideshow */}
+        <div className="md:hidden absolute inset-0">
+          {heroImages.slice(0, 3).map((img, idx) => (
+            <motion.img
+              key={idx}
+              src={img}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 w-full h-full object-cover"
+              initial={{ opacity: idx === 0 ? 1 : 0 }}
+              animate={{ opacity: currentSlide % 3 === idx ? 1 : 0 }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+            />
+          ))}
+        </div>
+        {/* Desktop: Video */}
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="hidden md:block absolute inset-0 w-full h-full object-cover"
           poster={heroImages[0]}
         >
           <source src="https://cmsapi.health.sa/HHC1-7tba9j.mp4" type="video/mp4" />
-          {/* Fallback: show first hero image if video fails */}
-          <img src={heroImages[0]} alt="" className="absolute inset-0 w-full h-full object-cover" />
         </video>
         {/* Permanent Dark Overlay for readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/35 to-black/45" />

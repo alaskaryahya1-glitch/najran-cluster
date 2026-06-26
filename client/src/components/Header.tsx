@@ -194,37 +194,8 @@ export function Header() {
       <div className="container-custom">
         <div className="flex items-center justify-between h-[58px] lg:h-[66px] text-white gap-4">
 
-          {/* Utility buttons - RIGHT side (RTL start) — hidden until scrolled */}
-          <div className={`flex items-center gap-2 transition-all duration-500 ${scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
-            <button
-              onClick={() => setIsSearchOpen(true)}
-              className="p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
-              data-testid="button-search"
-              aria-label="Search"
-            >
-              <Search className="w-5 h-5" />
-            </button>
-            <button
-              onClick={toggleTheme}
-              className="p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
-              data-testid="button-theme-toggle"
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? (
-                <Sun className="w-5 h-5" />
-              ) : (
-                <Moon className="w-5 h-5" />
-              )}
-            </button>
-            <button
-              onClick={toggleLanguage}
-              className="px-3 py-1.5 text-sm font-semibold text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors border border-white/20"
-              data-testid="button-language-toggle"
-            >
-              {language === "ar" ? "EN" : "ع"}
-            </button>
-
-            {/* Hamburger - always visible for full menu */}
+          {/* Hamburger - RIGHT side (RTL start) */}
+          <div className={`flex items-center transition-all duration-500 ${scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
             <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
               <SheetTrigger asChild>
                 <button
@@ -328,25 +299,35 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Logo - LEFT side (RTL end) — hidden until scrolled */}
-          <div className={`flex-shrink-0 transition-all duration-500 ${scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
-            <a
-              href="/"
-              onClick={(e) => { e.preventDefault(); setLocation('/'); }}
-              className="flex flex-col items-center"
+          {/* Search + Dark mode + Language - LEFT side (RTL end) — hidden until scrolled */}
+          <div className={`flex items-center gap-2 transition-all duration-500 ${scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
+            <button
+              onClick={() => setIsSearchOpen(true)}
+              className="p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+              data-testid="button-search"
+              aria-label="Search"
             >
-              <img
-                src={whiteLogo}
-                alt={language === 'ar' ? 'تجمع نجران الصحي' : 'Najran Health Cluster'}
-                className="h-10 lg:h-12 w-auto object-contain"
-              />
-              <p
-                className={`text-white/70 text-[6px] lg:text-[7px] ${language === 'ar' ? 'font-arabic' : 'font-sans'} -mr-5 lg:-mr-7 tracking-wide`}
-                style={{ marginTop: '-1px' }}
-              >
-                {language === 'ar' ? 'شركة الصحة القابضة' : 'Health Holding Co'}
-              </p>
-            </a>
+              <Search className="w-5 h-5" />
+            </button>
+            <button
+              onClick={toggleTheme}
+              className="p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+              data-testid="button-theme-toggle"
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? (
+                <Sun className="w-5 h-5" />
+              ) : (
+                <Moon className="w-5 h-5" />
+              )}
+            </button>
+            <button
+              onClick={toggleLanguage}
+              className="px-3 py-1.5 text-sm font-semibold text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors border border-white/20"
+              data-testid="button-language-toggle"
+            >
+              {language === "ar" ? "EN" : "ع"}
+            </button>
           </div>
 
         </div>

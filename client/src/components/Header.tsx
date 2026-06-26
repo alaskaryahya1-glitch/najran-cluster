@@ -187,7 +187,7 @@ export function Header() {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-500 ${scrolled ? 'bg-[#1B3784]/95 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-500 ${scrolled ? 'bg-[#283B8A]/95 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
       {/* Top accent bar */}
       <div className={`h-1 bg-gradient-to-l from-[#2BAAE2] via-[#1B4784] to-[#2BAAE2] transition-opacity duration-500 ${scrolled ? 'opacity-100' : 'opacity-0'}`} />
 

@@ -49,18 +49,15 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Smooth scrolling for mobile devices */
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-}
-
-* {
-  -webkit-overflow-scrolling: touch;
+  height: 100%;
 }
 
 body {
-  overscroll-behavior-y: contain;
+  height: 100%;
+  overscroll-behavior: none;
 }
 
 /* Custom scrollbar styling for smoother appearance */

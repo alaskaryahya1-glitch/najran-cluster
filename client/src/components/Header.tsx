@@ -194,19 +194,22 @@ export function Header() {
       <div className="container-custom">
         <div className="flex items-center justify-between h-[72px] lg:h-[82px] text-white gap-4">
           {/* Logo - Right side (RTL start) — hidden until scrolled */}
-          <div className={`flex items-center gap-3 flex-shrink-0 transition-all duration-500 ${scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
+          <div className={`flex-shrink-0 transition-all duration-500 ${scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
             <a
               href="/"
               onClick={(e) => { e.preventDefault(); setLocation('/'); }}
-              className="flex flex-col items-center gap-0"
+              className="flex flex-col items-center"
             >
               <img
                 src={whiteLogo}
                 alt={language === 'ar' ? 'تجمع نجران الصحي' : 'Najran Health Cluster'}
                 className="h-12 lg:h-14 w-auto object-contain"
               />
-              <p className={`text-[#2BAAE2] text-[9px] lg:text-[10px] ${language === 'ar' ? 'font-arabic' : 'font-sans'} leading-none -mt-0.5`}>
-                {language === 'ar' ? 'شركة الصحة القابضة' : 'Health Holding Co.'}
+              <p
+                className={`text-white/90 text-[8px] lg:text-[9px] ${language === 'ar' ? 'font-arabic' : 'font-sans'} -mr-7 lg:-mr-9`}
+                style={{ marginTop: '-2px' }}
+              >
+                {language === 'ar' ? 'شركة الصحة القابضة' : 'Health Holding Co'}
               </p>
             </a>
           </div>

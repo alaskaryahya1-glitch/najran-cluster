@@ -288,17 +288,23 @@ export default function Home() {
       </h1>
       {/* Fixed Background Video */}
       <div className="fixed inset-0 z-0">
+        <img
+          src={heroImages[0]}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
+          aria-hidden="true"
+        />
         <video
           autoPlay
           loop
           muted
           playsInline
+          {...({ 'webkit-playsinline': 'true' } as any)}
           className="absolute inset-0 w-full h-full object-cover"
           poster={heroImages[0]}
+          style={{ objectFit: 'cover' }}
         >
           <source src="https://cmsapi.health.sa/HHC1-7tba9j.mp4" type="video/mp4" />
-          {/* Fallback: show first hero image if video fails */}
-          <img src={heroImages[0]} alt="" className="absolute inset-0 w-full h-full object-cover" />
         </video>
         {/* Permanent Dark Overlay for readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/35 to-black/45" />

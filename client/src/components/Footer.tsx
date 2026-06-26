@@ -84,14 +84,16 @@ export function Footer() {
 
           {/* Brand Column */}
           <div className="md:col-span-4">
-            <img
-              src={whiteLogo}
-              alt={t("header.clusterName")}
-              className="h-16 sm:h-20 w-auto object-contain mb-2"
-            />
-            <p className={`text-[#2BAAE2] text-xs ${fontClass} mb-6`}>
-              {language === 'ar' ? 'شركة الصحة القابضة' : 'Health Holding Co.'}
-            </p>
+            <div className="inline-flex flex-col items-end mb-6">
+              <img
+                src={whiteLogo}
+                alt={t("header.clusterName")}
+                className="h-16 sm:h-20 w-auto object-contain mb-1"
+              />
+              <p className={`text-[#2BAAE2] text-[10px] ${fontClass}`}>
+                {language === 'ar' ? 'شركة الصحة القابضة' : 'Health Holding Co.'}
+              </p>
+            </div>
 
             <p className={`text-slate-400 text-sm leading-relaxed mb-6 ${fontClass}`}>
               {language === 'ar'

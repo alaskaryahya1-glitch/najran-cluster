@@ -125,12 +125,16 @@ export function Header() {
   };
 
   const desktopNavItems = [
-    { label: t("nav.home"), href: "/" },
-    { label: t("nav.about"), href: "/about" },
-    { label: t("nav.employeeServices"), href: "/employee-services" },
-    { label: t("nav.eServices"), href: "/e-services" },
-    { label: t("nav.news"), href: "/news" },
-    { label: t("nav.contact"), href: "#contact" },
+    { label: t("nav.home"), href: "/", external: false },
+    { label: t("nav.about"), href: "/about", external: false },
+    { label: t("nav.transformation"), href: "/transformation", external: false },
+    { label: t("nav.careModel"), href: "/care-model", external: false },
+    { label: t("nav.employeeServices"), href: "/employee-services", external: false },
+    { label: t("nav.eServices"), href: "/e-services", external: false },
+    { label: t("nav.news"), href: "/news", external: false },
+    { label: t("nav.gatesJourney"), href: "https://nhcgate3.info/", external: true },
+    { label: t("nav.MaternityHospital"), href: "https://mch.nhc.moh.gov.sa/services", external: true },
+    { label: t("nav.contact"), href: "#contact", external: false },
   ];
 
   const sidebarNavItems = [
@@ -209,15 +213,17 @@ export function Header() {
           </div>
 
           {/* Desktop Nav Links - Center */}
-          <nav className={`hidden lg:flex items-center gap-1 flex-1 justify-center ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}>
+          <nav className={`hidden lg:flex items-center gap-0.5 xl:gap-1 flex-1 justify-center ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}>
             {desktopNavItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
-                onMouseEnter={() => !item.href.includes('#') && prefetchPage(item.href)}
-                className={`px-3 xl:px-4 py-2 text-sm font-semibold rounded-lg transition-all duration-200 whitespace-nowrap
-                  ${isActive(item.href) && !item.href.includes('#')
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
+                onClick={item.external ? undefined : (e) => handleNavClick(e, item.href)}
+                onMouseEnter={() => !item.external && !item.href.includes('#') && prefetchPage(item.href)}
+                className={`px-2 xl:px-3 py-2 text-[13px] xl:text-sm font-semibold rounded-lg transition-all duration-200 whitespace-nowrap
+                  ${isActive(item.href) && !item.href.includes('#') && !item.external
                     ? 'text-[#2BAAE2] bg-white/10'
                     : 'text-white/85 hover:text-white hover:bg-white/10'
                   }`}

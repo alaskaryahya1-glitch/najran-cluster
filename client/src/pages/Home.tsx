@@ -339,7 +339,7 @@ export default function Home() {
             
             
             transition={{ delay: 0.2 }}
-            className="absolute top-16 md:top-6 left-0 right-0 z-30 flex justify-center"
+            className="absolute top-[68px] lg:top-[74px] left-0 right-0 z-30 flex justify-center"
           >
             <div className="flex flex-col items-center">
               <img 
@@ -355,7 +355,7 @@ export default function Home() {
 
           {/* Hero Content */}
           <motion.div 
-            className="container-custom relative h-full flex flex-col justify-center items-center text-center px-4 pt-52 md:pt-60 lg:pt-72 pb-8 md:pb-32 z-10"
+            className="container-custom relative h-full flex flex-col justify-center items-center text-center px-4 pt-64 sm:pt-72 md:pt-72 lg:pt-80 pb-8 md:pb-32 z-10"
             style={{ y: heroContentY, opacity: heroOpacity }}
           >
 

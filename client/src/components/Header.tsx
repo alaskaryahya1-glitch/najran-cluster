@@ -192,50 +192,9 @@ export function Header() {
       <div className={`h-1 bg-gradient-to-l from-[#2BAAE2] via-[#1B4784] to-[#2BAAE2] transition-opacity duration-500 ${scrolled ? 'opacity-100' : 'opacity-0'}`} />
 
       <div className="container-custom">
-        <div className="flex items-center justify-between h-[72px] lg:h-[82px] text-white gap-4">
-          {/* Logo - Right side (RTL start) — hidden until scrolled */}
-          <div className={`flex-shrink-0 transition-all duration-500 ${scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
-            <a
-              href="/"
-              onClick={(e) => { e.preventDefault(); setLocation('/'); }}
-              className="flex flex-col items-center"
-            >
-              <img
-                src={whiteLogo}
-                alt={language === 'ar' ? 'تجمع نجران الصحي' : 'Najran Health Cluster'}
-                className="h-12 lg:h-14 w-auto object-contain"
-              />
-              <p
-                className={`text-white/70 text-[6px] lg:text-[7px] ${language === 'ar' ? 'font-arabic' : 'font-sans'} -mr-5 lg:-mr-7 tracking-wide`}
-                style={{ marginTop: '-1px' }}
-              >
-                {language === 'ar' ? 'شركة الصحة القابضة' : 'Health Holding Co'}
-              </p>
-            </a>
-          </div>
+        <div className="flex items-center justify-between h-[58px] lg:h-[66px] text-white gap-4">
 
-          {/* Desktop Nav Links - hidden until scrolled */}
-          <nav className={`hidden lg:flex items-center gap-0.5 xl:gap-1 flex-1 justify-center transition-all duration-500 ${scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'} ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}>
-            {desktopNavItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                target={item.external ? "_blank" : undefined}
-                rel={item.external ? "noopener noreferrer" : undefined}
-                onClick={item.external ? undefined : (e) => handleNavClick(e, item.href)}
-                onMouseEnter={() => !item.external && !item.href.includes('#') && prefetchPage(item.href)}
-                className={`px-2 xl:px-3 py-2 text-[13px] xl:text-sm font-semibold rounded-lg transition-all duration-200 whitespace-nowrap
-                  ${isActive(item.href) && !item.href.includes('#') && !item.external
-                    ? 'text-[#2BAAE2] bg-white/10'
-                    : 'text-white/85 hover:text-white hover:bg-white/10'
-                  }`}
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-
-          {/* Utility buttons - hidden until scrolled */}
+          {/* Utility buttons - RIGHT side (RTL start) — hidden until scrolled */}
           <div className={`flex items-center gap-2 transition-all duration-500 ${scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
             <button
               onClick={() => setIsSearchOpen(true)}
@@ -347,6 +306,49 @@ export function Header() {
               </SheetContent>
             </Sheet>
           </div>
+
+          {/* Desktop Nav Links - CENTER — hidden until scrolled */}
+          <nav className={`hidden lg:flex items-center gap-0.5 xl:gap-1 flex-1 justify-center transition-all duration-500 ${scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'} ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}>
+            {desktopNavItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
+                onClick={item.external ? undefined : (e) => handleNavClick(e, item.href)}
+                onMouseEnter={() => !item.external && !item.href.includes('#') && prefetchPage(item.href)}
+                className={`px-2 xl:px-3 py-2 text-[13px] xl:text-sm font-semibold rounded-lg transition-all duration-200 whitespace-nowrap
+                  ${isActive(item.href) && !item.href.includes('#') && !item.external
+                    ? 'text-[#2BAAE2] bg-white/10'
+                    : 'text-white/85 hover:text-white hover:bg-white/10'
+                  }`}
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+
+          {/* Logo - LEFT side (RTL end) — hidden until scrolled */}
+          <div className={`flex-shrink-0 transition-all duration-500 ${scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
+            <a
+              href="/"
+              onClick={(e) => { e.preventDefault(); setLocation('/'); }}
+              className="flex flex-col items-center"
+            >
+              <img
+                src={whiteLogo}
+                alt={language === 'ar' ? 'تجمع نجران الصحي' : 'Najran Health Cluster'}
+                className="h-10 lg:h-12 w-auto object-contain"
+              />
+              <p
+                className={`text-white/70 text-[6px] lg:text-[7px] ${language === 'ar' ? 'font-arabic' : 'font-sans'} -mr-5 lg:-mr-7 tracking-wide`}
+                style={{ marginTop: '-1px' }}
+              >
+                {language === 'ar' ? 'شركة الصحة القابضة' : 'Health Holding Co'}
+              </p>
+            </a>
+          </div>
+
         </div>
       </div>
 

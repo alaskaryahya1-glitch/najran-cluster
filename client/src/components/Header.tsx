@@ -186,20 +186,78 @@ export function Header() {
     return location.startsWith(href);
   };
 
+  const fontClass = language === 'ar' ? 'font-arabic' : 'font-sans';
+
   return (
-    <header className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-500 ${location !== '/' && scrolled ? 'bg-[#000e22]/95 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
-      {/* Top accent bar */}
-      <div className={`h-1 bg-gradient-to-l from-[#2BAAE2] via-[#1B4784] to-[#2BAAE2] transition-opacity duration-500 ${location !== '/' && scrolled ? 'opacity-100' : 'opacity-0'}`} />
+    <header className="fixed top-0 left-0 right-0 z-[9999] transition-all duration-300 backdrop-blur-md bg-white/10 border-b border-white/10">
 
       <div className="container-custom">
-        <div className="flex items-center justify-between h-[48px] lg:h-[56px] text-white gap-4">
+        <div className="flex items-center justify-between h-[56px] lg:h-[64px] text-white gap-4">
 
-          {/* Hamburger - RIGHT side (RTL start) */}
-          <div className={`flex items-center transition-all duration-500 ${scrolled || location === '/' ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
+          {/* Logo - RIGHT side (RTL start) */}
+          <a href="/" onClick={(e) => { e.preventDefault(); setLocation('/'); }} className="flex items-center gap-2.5 flex-shrink-0">
+            <div className="h-10 w-10 rounded-full overflow-hidden flex items-center justify-center flex-shrink-0 bg-white/10 border border-white/20">
+              <img src={whiteLogo} alt={language === 'ar' ? 'تجمع نجران الصحي' : 'Najran Health Cluster'} className="h-8 w-auto object-contain" />
+            </div>
+            <span className={`hidden md:block font-bold text-sm leading-tight text-white ${fontClass}`}>
+              {language === 'ar' ? 'تجمع نجران الصحي' : 'Najran Health Cluster'}
+            </span>
+          </a>
+
+          {/* Desktop Nav Links - CENTER */}
+          <nav className={`hidden lg:flex items-center gap-0.5 xl:gap-1 flex-1 justify-center ${fontClass}`}>
+            {desktopNavItems.filter(item => !isActive(item.href) || item.href.includes('#')).map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
+                onClick={item.external ? undefined : (e) => handleNavClick(e, item.href)}
+                onMouseEnter={() => !item.external && !item.href.includes('#') && prefetchPage(item.href)}
+                className={`px-2 xl:px-3 py-2 text-[13px] xl:text-sm font-semibold rounded-lg transition-all duration-200 whitespace-nowrap
+                  ${isActive(item.href) && !item.href.includes('#') && !item.external
+                    ? 'text-[#2BAAE2] bg-white/10'
+                    : 'text-white/85 hover:text-white hover:bg-white/10'
+                  }`}
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+
+          {/* Actions - LEFT side (RTL end) */}
+          <div className="flex items-center gap-1.5">
+            {/* Search */}
+            <button
+              onClick={() => setIsSearchOpen(true)}
+              className="p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+              data-testid="button-search"
+              aria-label="Search"
+            >
+              <Search className="w-5 h-5" />
+            </button>
+            {/* Dark mode */}
+            <button
+              onClick={toggleTheme}
+              className="p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+              data-testid="button-theme-toggle"
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
+            {/* Language */}
+            <button
+              onClick={toggleLanguage}
+              className="px-3 py-1.5 text-sm font-semibold text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors border border-white/30"
+              data-testid="button-language-toggle"
+            >
+              {language === "ar" ? "EN" : "ع"}
+            </button>
+            {/* Hamburger - mobile only */}
             <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
               <SheetTrigger asChild>
                 <button
-                  className="p-2 bg-[#2BAAE2] hover:bg-[#1691D0] rounded-lg transition-colors"
+                  className="lg:hidden p-2 bg-[#2BAAE2] hover:bg-[#1691D0] rounded-lg transition-colors"
                   data-testid="button-menu-open"
                   aria-label="Open menu"
                 >
@@ -276,58 +334,6 @@ export function Header() {
                 </div>
               </SheetContent>
             </Sheet>
-          </div>
-
-          {/* Desktop Nav Links - CENTER — hidden on home page, hidden until scrolled on other pages */}
-          <nav className={`hidden lg:flex items-center gap-0.5 xl:gap-1 flex-1 justify-center transition-all duration-500 ${location === '/' ? 'opacity-0 pointer-events-none' : scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'} ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}>
-            {desktopNavItems.filter(item => !isActive(item.href) || item.href.includes('#')).map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                target={item.external ? "_blank" : undefined}
-                rel={item.external ? "noopener noreferrer" : undefined}
-                onClick={item.external ? undefined : (e) => handleNavClick(e, item.href)}
-                onMouseEnter={() => !item.external && !item.href.includes('#') && prefetchPage(item.href)}
-                className={`px-2 xl:px-3 py-2 text-[13px] xl:text-sm font-semibold rounded-lg transition-all duration-200 whitespace-nowrap
-                  ${isActive(item.href) && !item.href.includes('#') && !item.external
-                    ? 'text-[#2BAAE2] bg-white/10'
-                    : 'text-white/85 hover:text-white hover:bg-white/10'
-                  }`}
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-
-          {/* Search + Dark mode + Language - LEFT side (RTL end) */}
-          <div className={`flex items-center gap-2 transition-all duration-500 ${scrolled || location === '/' ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
-            <button
-              onClick={() => setIsSearchOpen(true)}
-              className="p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
-              data-testid="button-search"
-              aria-label="Search"
-            >
-              <Search className="w-5 h-5" />
-            </button>
-            <button
-              onClick={toggleTheme}
-              className="p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
-              data-testid="button-theme-toggle"
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? (
-                <Sun className="w-5 h-5" />
-              ) : (
-                <Moon className="w-5 h-5" />
-              )}
-            </button>
-            <button
-              onClick={toggleLanguage}
-              className="px-3 py-1.5 text-sm font-semibold text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors border border-white/20"
-              data-testid="button-language-toggle"
-            >
-              {language === "ar" ? "EN" : "ع"}
-            </button>
           </div>
 
         </div>

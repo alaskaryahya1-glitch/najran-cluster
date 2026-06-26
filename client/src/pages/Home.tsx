@@ -516,8 +516,8 @@ export default function Home() {
           </motion.div>
 
           {/* Navigation Cards at Bottom */}
-          <div className="absolute bottom-0 left-0 right-0 z-20 hidden md:block">
-            <div className="container-custom pb-8">
+          <div className="absolute bottom-0 left-0 right-0 z-20 hidden md:block translate-y-8">
+            <div className="container-custom pb-4">
               <div className="grid grid-cols-3 gap-4">
                 {navigationCards.map((card, idx) => (
                   <motion.div

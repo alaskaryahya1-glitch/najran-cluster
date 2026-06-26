@@ -198,11 +198,11 @@ export function ServiceCard({ service, variant = 'system' }: ServiceCardProps) {
 
   const cardContent = (
     <>
-      <div className="h-1.5 bg-[#2FAAE0]"></div>
+      <div className="h-1.5 bg-[#2BAAE2]"></div>
       
       <div className="p-6 flex flex-col items-center text-center gap-4">
         <div className="w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-all">
-          <Icon className="w-8 h-8 text-[#2FAAE0] brand-icon" />
+          <Icon className="w-8 h-8 text-[#2BAAE2] brand-icon" />
         </div>
         
         <div className="space-y-1">
@@ -252,7 +252,7 @@ export function ServiceCard({ service, variant = 'system' }: ServiceCardProps) {
                   className={`bg-white/20 border-white/30 text-white placeholder:text-white/50 rounded-full pr-4 pl-10 h-11 ${fontClass}`}
                   data-testid="input-email-search"
                 />
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#2FAAE0]/60 brand-icon" />
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#2BAAE2]/60 brand-icon" />
               </div>
             </div>
             
@@ -260,7 +260,7 @@ export function ServiceCard({ service, variant = 'system' }: ServiceCardProps) {
               {Object.entries(groupedEmails).map(([dept, emails]) => (
                 <div key={dept}>
                   <div className="px-4 py-3 flex items-center gap-2 bg-black/20 dark:bg-black/50 backdrop-blur-md border-b border-white/10">
-                    <Building2 className="w-4 h-4 text-[#2FAAE0] brand-icon" />
+                    <Building2 className="w-4 h-4 text-[#2BAAE2] brand-icon" />
                     <span className={`font-semibold text-sm ${fontClass} text-white`}>{dept}</span>
                     <div className="w-1.5 h-1.5 rounded-full bg-white/60 mr-auto"></div>
                   </div>
@@ -324,12 +324,12 @@ export function ServiceCard({ service, variant = 'system' }: ServiceCardProps) {
       whileTap={{ scale: 0.97 }}
       data-testid={`card-service-${service.id}`}
     >
-      <div className="h-1.5 bg-[#2FAAE0]"></div>
+      <div className="h-1.5 bg-[#2BAAE2]"></div>
       <div className="absolute inset-0 top-1.5 bg-gradient-to-br from-white/0 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       
       <div className="relative h-full flex flex-col items-center justify-center text-center p-5 gap-3">
         <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors duration-300">
-          <Icon className="w-6 h-6 text-[#2FAAE0] brand-icon" />
+          <Icon className="w-6 h-6 text-[#2BAAE2] brand-icon" />
         </div>
         
         <div className="space-y-1">
@@ -342,7 +342,7 @@ export function ServiceCard({ service, variant = 'system' }: ServiceCardProps) {
         </div>
         
         <div className="absolute top-3 left-3 opacity-0 group-hover:opacity-100 transition-opacity">
-          <ExternalLink className="w-4 h-4 text-[#2FAAE0]/50 brand-icon" />
+          <ExternalLink className="w-4 h-4 text-[#2BAAE2]/50 brand-icon" />
         </div>
       </div>
     </motion.a>

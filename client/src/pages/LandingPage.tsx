@@ -79,7 +79,7 @@ export default function LandingPage() {
           transition={{ duration: 0.9, delay: 0.3 }}
           className="bg-black/30 backdrop-blur-md border border-white/20 rounded-3xl px-8 py-10 md:px-16 md:py-14 max-w-2xl"
         >
-          <div className="w-16 h-1.5 bg-[#2FAAE0] mx-auto mb-8 rounded-full" />
+          <div className="w-16 h-1.5 bg-[#2BAAE2] mx-auto mb-8 rounded-full" />
 
           <AnimatePresence mode="wait">
             <motion.div
@@ -100,7 +100,7 @@ export default function LandingPage() {
             </motion.div>
           </AnimatePresence>
 
-          <div className="w-16 h-1.5 bg-[#2FAAE0] mx-auto mt-8 rounded-full" />
+          <div className="w-16 h-1.5 bg-[#2BAAE2] mx-auto mt-8 rounded-full" />
         </motion.div>
       </div>
     </div>

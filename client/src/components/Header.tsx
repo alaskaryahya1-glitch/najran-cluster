@@ -194,78 +194,17 @@ export function Header() {
       <div className="container-custom">
         <div className={`flex items-center justify-between h-[56px] lg:h-[64px] gap-4 ${scrolled ? 'text-gray-800' : 'text-white'}`}>
 
-          {/* Logo - RIGHT side (RTL start) */}
-          <a href="/" onClick={(e) => { e.preventDefault(); setLocation('/'); }} className="flex items-center gap-2.5 flex-shrink-0">
-            <div className={`h-10 w-10 rounded-full overflow-hidden flex items-center justify-center flex-shrink-0 border ${scrolled ? 'bg-gray-100 border-gray-200' : 'bg-white/10 border-white/20'}`}>
-              <img src={whiteLogo} alt={language === 'ar' ? 'تجمع نجران الصحي' : 'Najran Health Cluster'} className={`h-8 w-auto object-contain ${scrolled ? 'brightness-0' : ''}`} />
-            </div>
-            <span className={`hidden md:block font-bold text-sm leading-tight ${scrolled ? 'text-gray-800' : 'text-white'} ${fontClass}`}>
-              {language === 'ar' ? 'تجمع نجران الصحي' : 'Najran Health Cluster'}
-            </span>
-          </a>
-
-          {/* Desktop Nav Links - CENTER */}
-          <nav className={`hidden lg:flex items-center gap-0.5 xl:gap-1 flex-1 justify-center ${fontClass}`}>
-            {desktopNavItems.filter(item => !isActive(item.href) || item.href.includes('#')).map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                target={item.external ? "_blank" : undefined}
-                rel={item.external ? "noopener noreferrer" : undefined}
-                onClick={item.external ? undefined : (e) => handleNavClick(e, item.href)}
-                onMouseEnter={() => !item.external && !item.href.includes('#') && prefetchPage(item.href)}
-                className={`px-2 xl:px-3 py-2 text-[13px] xl:text-sm font-semibold rounded-lg transition-all duration-200 whitespace-nowrap
-                  ${isActive(item.href) && !item.href.includes('#') && !item.external
-                    ? 'text-[#2BAAE2] bg-[#2BAAE2]/10'
-                    : scrolled
-                      ? 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
-                      : 'text-white/85 hover:text-white hover:bg-white/10'
-                  }`}
+          {/* Hamburger - RIGHT (RTL start) - all devices */}
+          <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+            <SheetTrigger asChild>
+              <button
+                className="p-2 bg-[#2BAAE2] hover:bg-[#1691D0] rounded-lg transition-colors text-white"
+                data-testid="button-menu-open"
+                aria-label="Open menu"
               >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-
-          {/* Actions - LEFT side (RTL end) */}
-          <div className="flex items-center gap-1.5">
-            {/* Search */}
-            <button
-              onClick={() => setIsSearchOpen(true)}
-              className={`p-2 rounded-lg transition-colors ${scrolled ? 'text-gray-600 hover:text-gray-900 hover:bg-gray-100' : 'text-white/80 hover:text-white hover:bg-white/10'}`}
-              data-testid="button-search"
-              aria-label="Search"
-            >
-              <Search className="w-5 h-5" />
-            </button>
-            {/* Dark mode */}
-            <button
-              onClick={toggleTheme}
-              className={`p-2 rounded-lg transition-colors ${scrolled ? 'text-gray-600 hover:text-gray-900 hover:bg-gray-100' : 'text-white/80 hover:text-white hover:bg-white/10'}`}
-              data-testid="button-theme-toggle"
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-            </button>
-            {/* Language */}
-            <button
-              onClick={toggleLanguage}
-              className={`px-3 py-1.5 text-sm font-semibold rounded-lg transition-colors border ${scrolled ? 'text-gray-700 border-gray-300 hover:bg-gray-100' : 'text-white/80 border-white/30 hover:text-white hover:bg-white/10'}`}
-              data-testid="button-language-toggle"
-            >
-              {language === "ar" ? "EN" : "ع"}
-            </button>
-            {/* Hamburger - mobile only */}
-            <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-              <SheetTrigger asChild>
-                <button
-                  className="lg:hidden p-2 bg-[#2BAAE2] hover:bg-[#1691D0] rounded-lg transition-colors text-white"
-                  data-testid="button-menu-open"
-                  aria-label="Open menu"
-                >
-                  <Menu className="w-5 h-5" />
-                </button>
-              </SheetTrigger>
+                <Menu className="w-5 h-5" />
+              </button>
+            </SheetTrigger>
               <SheetContent side="right" className="bg-[#000e22]/95 backdrop-blur-xl border-l border-white/10 w-80 z-[12000]">
                 <SheetHeader className="mb-6 flex justify-center">
                   <SheetTitle className="text-white text-xl font-bold flex justify-center">
@@ -335,7 +274,13 @@ export function Header() {
                   </a>
                 </div>
               </SheetContent>
-            </Sheet>
+          </Sheet>
+
+          {/* Icons - LEFT (RTL end) */}
+          <div className="flex items-center gap-1.5">
+            <button onClick={() => setIsSearchOpen(true)} className={`p-2 rounded-lg transition-colors ${scrolled ? 'text-gray-600 hover:text-gray-900 hover:bg-gray-100' : 'text-white/80 hover:text-white hover:bg-white/10'}`} data-testid="button-search" aria-label="Search"><Search className="w-5 h-5" /></button>
+            <button onClick={toggleTheme} className={`p-2 rounded-lg transition-colors ${scrolled ? 'text-gray-600 hover:text-gray-900 hover:bg-gray-100' : 'text-white/80 hover:text-white hover:bg-white/10'}`} data-testid="button-theme-toggle" aria-label="Toggle theme">{theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}</button>
+            <button onClick={toggleLanguage} className={`px-3 py-1.5 text-sm font-semibold rounded-lg transition-colors border ${scrolled ? 'text-gray-700 border-gray-300 hover:bg-gray-100' : 'text-white/80 border-white/30 hover:text-white hover:bg-white/10'}`} data-testid="button-language-toggle">{language === "ar" ? "EN" : "ع"}</button>
           </div>
 
         </div>

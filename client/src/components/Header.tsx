@@ -195,7 +195,7 @@ export function Header() {
         <div className="flex items-center justify-between h-[48px] lg:h-[56px] text-white gap-4">
 
           {/* Hamburger - RIGHT side (RTL start) */}
-          <div className={`flex items-center transition-all duration-500 ${scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
+          <div className={`flex items-center transition-all duration-500 ${scrolled || location === '/' ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
             <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
               <SheetTrigger asChild>
                 <button
@@ -299,8 +299,8 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Search + Dark mode + Language - LEFT side (RTL end) — hidden until scrolled */}
-          <div className={`flex items-center gap-2 transition-all duration-500 ${scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
+          {/* Search + Dark mode + Language - LEFT side (RTL end) */}
+          <div className={`flex items-center gap-2 transition-all duration-500 ${scrolled || location === '/' ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
             <button
               onClick={() => setIsSearchOpen(true)}
               className="p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors"

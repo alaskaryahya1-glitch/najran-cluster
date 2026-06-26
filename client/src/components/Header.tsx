@@ -206,8 +206,8 @@ export function Header() {
                 className="h-12 lg:h-14 w-auto object-contain"
               />
               <p
-                className={`text-white/90 text-[8px] lg:text-[9px] ${language === 'ar' ? 'font-arabic' : 'font-sans'} -mr-7 lg:-mr-9`}
-                style={{ marginTop: '-2px' }}
+                className={`text-white/70 text-[6px] lg:text-[7px] ${language === 'ar' ? 'font-arabic' : 'font-sans'} -mr-5 lg:-mr-7 tracking-wide`}
+                style={{ marginTop: '-1px' }}
               >
                 {language === 'ar' ? 'شركة الصحة القابضة' : 'Health Holding Co'}
               </p>

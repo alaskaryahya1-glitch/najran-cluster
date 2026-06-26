@@ -58,7 +58,7 @@ export function Header() {
   const [location, setLocation] = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 30);
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -189,17 +189,17 @@ export function Header() {
   const fontClass = language === 'ar' ? 'font-arabic' : 'font-sans';
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-[9999] transition-all duration-300 backdrop-blur-md bg-white/10 border-b border-white/10">
+    <header className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-300 border-b ${scrolled ? 'bg-white shadow-md border-gray-100' : 'backdrop-blur-md bg-white/10 border-white/10'}`}>
 
       <div className="container-custom">
-        <div className="flex items-center justify-between h-[56px] lg:h-[64px] text-white gap-4">
+        <div className={`flex items-center justify-between h-[56px] lg:h-[64px] gap-4 ${scrolled ? 'text-gray-800' : 'text-white'}`}>
 
           {/* Logo - RIGHT side (RTL start) */}
           <a href="/" onClick={(e) => { e.preventDefault(); setLocation('/'); }} className="flex items-center gap-2.5 flex-shrink-0">
-            <div className="h-10 w-10 rounded-full overflow-hidden flex items-center justify-center flex-shrink-0 bg-white/10 border border-white/20">
-              <img src={whiteLogo} alt={language === 'ar' ? 'تجمع نجران الصحي' : 'Najran Health Cluster'} className="h-8 w-auto object-contain" />
+            <div className={`h-10 w-10 rounded-full overflow-hidden flex items-center justify-center flex-shrink-0 border ${scrolled ? 'bg-gray-100 border-gray-200' : 'bg-white/10 border-white/20'}`}>
+              <img src={whiteLogo} alt={language === 'ar' ? 'تجمع نجران الصحي' : 'Najran Health Cluster'} className={`h-8 w-auto object-contain ${scrolled ? 'brightness-0' : ''}`} />
             </div>
-            <span className={`hidden md:block font-bold text-sm leading-tight text-white ${fontClass}`}>
+            <span className={`hidden md:block font-bold text-sm leading-tight ${scrolled ? 'text-gray-800' : 'text-white'} ${fontClass}`}>
               {language === 'ar' ? 'تجمع نجران الصحي' : 'Najran Health Cluster'}
             </span>
           </a>
@@ -216,8 +216,10 @@ export function Header() {
                 onMouseEnter={() => !item.external && !item.href.includes('#') && prefetchPage(item.href)}
                 className={`px-2 xl:px-3 py-2 text-[13px] xl:text-sm font-semibold rounded-lg transition-all duration-200 whitespace-nowrap
                   ${isActive(item.href) && !item.href.includes('#') && !item.external
-                    ? 'text-[#2BAAE2] bg-white/10'
-                    : 'text-white/85 hover:text-white hover:bg-white/10'
+                    ? 'text-[#2BAAE2] bg-[#2BAAE2]/10'
+                    : scrolled
+                      ? 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                      : 'text-white/85 hover:text-white hover:bg-white/10'
                   }`}
               >
                 {item.label}
@@ -230,7 +232,7 @@ export function Header() {
             {/* Search */}
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+              className={`p-2 rounded-lg transition-colors ${scrolled ? 'text-gray-600 hover:text-gray-900 hover:bg-gray-100' : 'text-white/80 hover:text-white hover:bg-white/10'}`}
               data-testid="button-search"
               aria-label="Search"
             >
@@ -239,7 +241,7 @@ export function Header() {
             {/* Dark mode */}
             <button
               onClick={toggleTheme}
-              className="p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+              className={`p-2 rounded-lg transition-colors ${scrolled ? 'text-gray-600 hover:text-gray-900 hover:bg-gray-100' : 'text-white/80 hover:text-white hover:bg-white/10'}`}
               data-testid="button-theme-toggle"
               aria-label="Toggle theme"
             >
@@ -248,7 +250,7 @@ export function Header() {
             {/* Language */}
             <button
               onClick={toggleLanguage}
-              className="px-3 py-1.5 text-sm font-semibold text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors border border-white/30"
+              className={`px-3 py-1.5 text-sm font-semibold rounded-lg transition-colors border ${scrolled ? 'text-gray-700 border-gray-300 hover:bg-gray-100' : 'text-white/80 border-white/30 hover:text-white hover:bg-white/10'}`}
               data-testid="button-language-toggle"
             >
               {language === "ar" ? "EN" : "ع"}
@@ -257,7 +259,7 @@ export function Header() {
             <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
               <SheetTrigger asChild>
                 <button
-                  className="lg:hidden p-2 bg-[#2BAAE2] hover:bg-[#1691D0] rounded-lg transition-colors"
+                  className="lg:hidden p-2 bg-[#2BAAE2] hover:bg-[#1691D0] rounded-lg transition-colors text-white"
                   data-testid="button-menu-open"
                   aria-label="Open menu"
                 >

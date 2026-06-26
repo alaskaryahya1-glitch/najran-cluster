@@ -187,14 +187,14 @@ export function Header() {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-300 ${scrolled ? 'bg-[#000e22]/95 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
-      {/* Top accent bar - matches health.sa */}
-      <div className="h-1 bg-gradient-to-l from-[#2BAAE2] via-[#1B4784] to-[#2BAAE2]" />
+    <header className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-500 ${scrolled ? 'bg-[#000e22]/95 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
+      {/* Top accent bar */}
+      <div className={`h-1 bg-gradient-to-l from-[#2BAAE2] via-[#1B4784] to-[#2BAAE2] transition-opacity duration-500 ${scrolled ? 'opacity-100' : 'opacity-0'}`} />
 
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 lg:h-[70px] text-white gap-4">
-          {/* Logo - Right side (RTL start) */}
-          <div className="flex items-center gap-3 flex-shrink-0">
+          {/* Logo - Right side (RTL start) — hidden until scrolled */}
+          <div className={`flex items-center gap-3 flex-shrink-0 transition-all duration-500 ${scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
             <a
               href="/"
               onClick={(e) => { e.preventDefault(); setLocation('/'); }}
@@ -208,8 +208,8 @@ export function Header() {
             </a>
           </div>
 
-          {/* Desktop Nav Links - Center */}
-          <nav className={`hidden lg:flex items-center gap-0.5 xl:gap-1 flex-1 justify-center ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}>
+          {/* Desktop Nav Links - hidden until scrolled */}
+          <nav className={`hidden lg:flex items-center gap-0.5 xl:gap-1 flex-1 justify-center transition-all duration-500 ${scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'} ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}>
             {desktopNavItems.map((item) => (
               <a
                 key={item.href}
@@ -229,8 +229,8 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Utility buttons - Left side (RTL end) */}
-          <div className="flex items-center gap-2">
+          {/* Utility buttons - hidden until scrolled */}
+          <div className={`flex items-center gap-2 transition-all duration-500 ${scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
             <button
               onClick={() => setIsSearchOpen(true)}
               className="p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors"

@@ -47,7 +47,7 @@ import logoSeha from "@assets/SehaLogo_1767515239149.png";
 import logoMyDrive from "@assets/mydrive_1767516273165.png";
 import logoVolunteer from "@assets/التطووووع_1767516650602.png";
 import logoDhaman from "@assets/IMG_8797_1767048634247.png";
-import logoOutlook from "@assets/original-31293c6476ae8628875b4f422264e2c4_1767518560706.png";
+import logoOutlook from "@assets/pngtree-e-mail-icon-with-blue-background-image-information-computer-vector-picture-image_9947966.png";
 import logoEmailAddresses from "@assets/png-clipart-gmail-logo-illustration-email-computer-icons-messa_1767519110048.png";
 import logoPhone from "@assets/pngtree-black-call-icon-png-image_2413693_1767519362030.png";
 import logoWasfatyNew from "@assets/logo-rgb_1768467991326.png";

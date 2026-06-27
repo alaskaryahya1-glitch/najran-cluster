@@ -524,26 +524,20 @@ export default function About() {
 
   return (
     <div className="min-h-screen">
+      <div className="fixed inset-0 z-0">
+        <video src="https://cmsapi.health.sa/about-video.mp4-ri13td.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60" />
+      </div>
       <Header />
 
-      <main>
+      <main className="relative z-10">
         {/* ===== NEW: Hero Section ===== */}
         <section
           className="relative flex items-center justify-center overflow-hidden"
-          style={{ backgroundColor: '#005d47', minHeight: '50vh' }}
+          style={{ minHeight: '50vh' }}
         >
-          <div className="absolute inset-0 bg-black/30 pointer-events-none"></div>
-          <div className="absolute inset-0 najran-geometric-bg opacity-[0.05] pointer-events-none"></div>
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none"
-          >
-            <source src="https://cmsapi.health.sa/about-video.mp4-ri13td.mp4" type="video/mp4" />
-          </video>
+          <div className="absolute inset-0 bg-black/20 pointer-events-none"></div>
+          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
           <div className="relative z-10 text-center text-white px-4 py-24">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -563,12 +557,8 @@ export default function About() {
         </section>
 
         {/* ===== NEW: About Section ===== */}
-        <section className="relative py-10 md:py-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
-          <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
-          <video autoPlay loop muted playsInline aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
-            <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
-          </video>
+        <section className="relative py-10 md:py-16 overflow-hidden">
+          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
 
           <div className="container-custom relative z-10">
             <div className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-24 ${language === 'ar' ? '' : 'lg:flex-row-reverse'}`}>
@@ -583,8 +573,7 @@ export default function About() {
               >
                 <div className="flex flex-col items-start gap-4">
                   <span
-                    className={`font-bold text-sm tracking-[0.2em] uppercase pr-3 ${fontClass} ${language === 'ar' ? 'border-r-4' : 'border-l-4 pl-3 pr-0'}`}
-                    style={{ color: '#004d3a', borderColor: '#004d3a' }}
+                    className={`font-bold text-sm tracking-[0.2em] uppercase pr-3 text-[#2BAAE2] ${fontClass} ${language === 'ar' ? 'border-r-4 border-[#2BAAE2]' : 'border-l-4 border-[#2BAAE2] pl-3 pr-0'}`}
                   >
                     {language === 'ar' ? 'قصة التحول' : 'Our Story'}
                   </span>
@@ -593,7 +582,7 @@ export default function About() {
                   <img
                     src={clusterLogo}
                     alt={t("header.clusterName")}
-                    className="h-24 sm:h-32 w-auto object-contain mb-1"
+                    className="h-24 sm:h-32 w-auto object-contain mb-1 brightness-0 invert"
                   />
                   <p className={`text-[#2BAAE2] text-[10px] ${fontClass} translate-x-2 sm:translate-x-3`} style={{ marginTop: '-22px' }}>
                     {language === 'ar' ? 'شركة الصحة القابضة' : 'Health Holding Co.'}
@@ -601,29 +590,28 @@ export default function About() {
                   </div>
                 </div>
 
-                <p className={`text-lg text-gray-600 leading-relaxed ${fontClass}`}>
+                <p className={`text-lg text-white/70 leading-relaxed ${fontClass}`}>
                   {language === 'ar'
                     ? 'نحن لسنا مجرد شبكة مستشفيات، بل منظومة صحية متكاملة تهدف إلى إعادة صياغة مفهوم الرعاية الصحية في منطقة نجران، واضعين سلامة المستفيد وجودة الخدمة في قمة أولوياتنا.'
                     : 'We are not just a network of hospitals, but a comprehensive healthcare system aimed at redefining healthcare in the Najran region, placing beneficiary safety and service quality at the top of our priorities.'}
                 </p>
 
                 {/* الإحصائيات */}
-                <div className="grid grid-cols-2 gap-4 pt-6 border-t border-gray-100">
-                  <div className="p-4 bg-gray-50 rounded-2xl">
-                    <h4 className="text-3xl font-bold" style={{ color: '#004d3a' }}>12</h4>
-                    <p className={`text-sm text-gray-500 font-medium ${fontClass}`}>
+                <div className="grid grid-cols-2 gap-4 pt-6 border-t border-white/15">
+                  <div className="p-4 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/15">
+                    <h4 className="text-3xl font-bold text-[#2BAAE2]">12</h4>
+                    <p className={`text-sm text-white/70 font-medium ${fontClass}`}>
                       {language === 'ar' ? 'مستشفى متخصص' : 'Specialized Hospitals'}
                     </p>
                   </div>
-                  <div className="p-4 bg-gray-50 rounded-2xl">
-                    <h4 className="text-3xl font-bold" style={{ color: '#004d3a' }}>69</h4>
-                    <p className={`text-sm text-gray-500 font-medium ${fontClass}`}>
+                  <div className="p-4 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/15">
+                    <h4 className="text-3xl font-bold text-[#2BAAE2]">69</h4>
+                    <p className={`text-sm text-white/70 font-medium ${fontClass}`}>
                       {language === 'ar' ? 'مركز رعاية أولية' : 'Primary Care Centers'}
                     </p>
                   </div>
                   <div
-                    className={`col-span-2 p-4 rounded-2xl flex justify-between items-center ${language === 'ar' ? '' : 'flex-row-reverse'}`}
-                    style={{ backgroundColor: '#004d3a' }}
+                    className={`col-span-2 p-4 rounded-2xl flex justify-between items-center bg-[#2BAAE2]/20 backdrop-blur-sm border border-[#2BAAE2]/40 ${language === 'ar' ? '' : 'flex-row-reverse'}`}
                   >
                     <span className={`text-white text-lg font-medium ${fontClass}`}>
                       {language === 'ar' ? 'إجمالي المستفيدين في المنطقة' : 'Total Beneficiaries in the Region'}
@@ -642,10 +630,10 @@ export default function About() {
                 transition={{ duration: 0.6 }}
               >
                 <div
-                  className="overflow-hidden border-[6px] border-white"
+                  className="overflow-hidden border-[6px] border-white/20"
                   style={{
                     borderRadius: '50px 15px 50px 15px',
-                    boxShadow: '20px 20px 0px 0px rgba(0, 77, 58, 0.05)',
+                    boxShadow: '20px 20px 0px 0px rgba(43,170,226,0.1)',
                   }}
                 >
                   <img
@@ -662,8 +650,8 @@ export default function About() {
         </section>
 
         {/* ===== Leadership Section ===== */}
-        <section className="relative py-20 md:py-24 overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
-          <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+        <section className="relative py-20 md:py-24 overflow-hidden">
+          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
           <div className="container-custom text-center relative z-10">
 
             {/* العنوان */}
@@ -674,13 +662,13 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <span className={`font-bold text-sm tracking-widest uppercase ${fontClass}`} style={{ color: '#004d3a' }}>
+              <span className={`font-bold text-sm tracking-widest uppercase text-[#2BAAE2] ${fontClass}`}>
                 {language === 'ar' ? 'الفريق القيادي' : 'Leadership Team'}
               </span>
-              <h2 className={`text-4xl md:text-5xl font-bold text-gray-900 mt-4 ${fontClass}`}>
+              <h2 className={`text-4xl md:text-5xl font-bold text-white mt-4 ${fontClass}`}>
                 {language === 'ar' ? 'الإدارة التنفيذية' : 'Executive Management'}
               </h2>
-              <div className="w-24 h-1.5 mx-auto mt-6 rounded-full" style={{ backgroundColor: '#004d3a' }}></div>
+              <div className="w-24 h-1.5 mx-auto mt-6 rounded-full bg-[#2BAAE2]"></div>
             </motion.div>
 
             {/* الرئيس التنفيذي - فوق بنفس حجم البطاقات */}
@@ -693,16 +681,16 @@ export default function About() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
                 >
-                  <div className="bg-white rounded-[3.5rem] p-8 shadow-sm border border-gray-100 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-4">
-                    <div className="relative aspect-square overflow-hidden rounded-[2.5rem] mb-8 bg-gray-50">
+                  <div className="bg-black/25 backdrop-blur-md rounded-[3.5rem] p-8 border border-white/15 transition-all duration-[400ms] hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(43,170,226,0.2)] hover:border-[#2BAAE2]">
+                    <div className="relative aspect-square overflow-hidden rounded-[2.5rem] mb-8 bg-white/10">
                       <img
                         src={ceoImage}
                         alt={t("about.ceo.name")}
                         className="leadership-card-img w-full h-full object-cover object-top transition-all duration-700 ease-in-out group-hover:scale-110 will-change-transform"
                       />
                     </div>
-                    <h4 className={`text-xl font-bold text-gray-900 mb-2 ${fontClass}`}>{t("about.ceo.name")}</h4>
-                    <p className={`font-semibold tracking-wide text-sm ${fontClass}`} style={{ color: '#004d3a' }}>{t("about.ceo")}</p>
+                    <h4 className={`text-xl font-bold text-white mb-2 ${fontClass}`}>{t("about.ceo.name")}</h4>
+                    <p className={`font-semibold tracking-wide text-sm text-[#2BAAE2] ${fontClass}`}>{t("about.ceo")}</p>
                   </div>
                 </motion.div>
               </div>
@@ -727,8 +715,8 @@ export default function About() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.07 }}
                 >
-                  <div className="bg-white rounded-[3.5rem] p-8 shadow-sm border border-gray-100 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-4">
-                    <div className="relative aspect-square overflow-hidden rounded-[2.5rem] mb-8 bg-gray-50">
+                  <div className="bg-black/25 backdrop-blur-md rounded-[3.5rem] p-8 border border-white/15 transition-all duration-[400ms] hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(43,170,226,0.2)] hover:border-[#2BAAE2]">
+                    <div className="relative aspect-square overflow-hidden rounded-[2.5rem] mb-8 bg-white/10">
                       <img
                         src={leader.image}
                         alt={t(leader.nameKey)}
@@ -736,8 +724,8 @@ export default function About() {
                         style={{ bottom: leader.bottomOffset || '-5%', height: '240%', objectFit: 'cover', objectPosition: leader.objPos || 'center bottom' }}
                       />
                     </div>
-                    <h4 className={`text-xl font-bold text-gray-900 mb-2 ${fontClass}`}>{t(leader.nameKey)}</h4>
-                    <p className={`font-semibold tracking-wide text-sm ${fontClass}`} style={{ color: '#004d3a' }}>
+                    <h4 className={`text-xl font-bold text-white mb-2 ${fontClass}`}>{t(leader.nameKey)}</h4>
+                    <p className={`font-semibold tracking-wide text-sm text-[#2BAAE2] ${fontClass}`}>
                       {t(leader.titleKey)}
                     </p>
                   </div>
@@ -749,22 +737,22 @@ export default function About() {
         </section>
 
         {/* ===== Cluster Services Section ===== */}
-        <section className="relative py-10 sm:py-12 md:py-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
-          <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06]"></div>
+        <section className="relative py-10 sm:py-12 md:py-16 overflow-hidden">
+          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
 
           <div className="container-custom relative">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 md:p-8 text-center mb-6 sm:mb-8 md:mb-10 relative overflow-hidden"
+              className="bg-black/25 backdrop-blur-md rounded-2xl border border-white/15 shadow-sm p-6 md:p-8 text-center mb-6 sm:mb-8 md:mb-10 relative overflow-hidden"
             >
               <CardStar size="lg" />
               <div className="h-1.5 bg-[#2BAAE2] absolute top-0 left-0 right-0"></div>
-              <h2 className={`text-xl sm:text-2xl md:text-3xl font-bold ${fontClass} text-gray-900 mb-3 relative z-10`}>
+              <h2 className={`text-xl sm:text-2xl md:text-3xl font-bold ${fontClass} text-white mb-3 relative z-10`}>
                 {t("home.clusterServices.title")}
               </h2>
-              <p className={`text-gray-500 text-lg ${fontClass} relative z-10`}>
+              <p className={`text-white/70 text-lg ${fontClass} relative z-10`}>
                 {t("home.clusterServices.subtitle")}
               </p>
             </motion.div>
@@ -782,18 +770,18 @@ export default function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.05 }}
-                  className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center relative"
+                  className="group bg-black/25 backdrop-blur-md rounded-2xl overflow-hidden border border-white/15 shadow-sm text-center relative hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(43,170,226,0.2)] hover:border-[#2BAAE2] transition-all duration-[400ms]"
                 >
                   <CardStar size="md" />
                   <div className="h-1.5 bg-[#2BAAE2]"></div>
                   <div className="p-6 relative z-10">
-                    <div className="w-16 h-16 bg-[#2BAAE2]/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                      <service.icon className="w-8 h-8 text-[#2BAAE2]" />
+                    <div className="w-16 h-16 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl flex items-center justify-center mx-auto mb-4 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
+                      <service.icon className="w-8 h-8 text-[#2BAAE2] group-hover:text-white transition-colors" />
                     </div>
-                    <h3 className={`text-lg font-bold text-gray-900 ${fontClass} mb-3`}>
+                    <h3 className={`text-lg font-bold text-white ${fontClass} mb-3`}>
                       {t(`home.clusterServices.${service.id}.title`)}
                     </h3>
-                    <p className={`text-gray-500 text-sm ${fontClass}`}>
+                    <p className={`text-white/70 text-sm ${fontClass}`}>
                       {t(`home.clusterServices.${service.id}.desc`)}
                     </p>
                   </div>
@@ -804,8 +792,8 @@ export default function About() {
         </section>
 
         {/* ===== Healthcare Facilities Section ===== */}
-        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
-          <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06]"></div>
+        <section className="relative py-16 overflow-hidden">
+          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
 
           <div className="container-custom relative">
             <motion.div
@@ -814,54 +802,54 @@ export default function About() {
               viewport={{ once: true }}
               className="text-center mb-6"
             >
-              <h2 className={`text-2xl md:text-3xl font-bold text-gray-900 ${fontClass} mb-2`}>{t("about.facilities")}</h2>
-              <p className={`text-gray-500 ${fontClass}`}>{t("about.facilities.subtitle")}</p>
+              <h2 className={`text-2xl md:text-3xl font-bold text-white ${fontClass} mb-2`}>{t("about.facilities")}</h2>
+              <p className={`text-white/70 ${fontClass}`}>{t("about.facilities.subtitle")}</p>
             </motion.div>
 
-            <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md text-gray-900 relative">
+            <div className="bg-black/25 backdrop-blur-md rounded-2xl overflow-hidden border border-white/15 shadow-md relative">
               <CardStar size="lg" />
               <div className="h-1.5 bg-[#2BAAE2]"></div>
               <div className="py-4 px-4 sm:px-6 relative z-10">
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
                   <button
                     onClick={() => { setShowHospitals(!showHospitals); setShowSpecializedCenters(false); setShowHealthCenters(false); }}
-                    className={`text-center cursor-pointer rounded-lg py-2 transition-all ${showHospitals ? 'bg-[#004d3a]/10' : 'hover:bg-gray-50'}`}
+                    className={`text-center cursor-pointer rounded-lg py-2 transition-all ${showHospitals ? 'bg-[#2BAAE2]/20' : 'hover:bg-white/10'}`}
                     data-testid="button-hospitals"
                   >
-                    <Building2 className="w-5 h-5 mx-auto mb-1 text-[#004d3a] brand-icon" />
-                    <p className="text-xl font-bold text-gray-900">11</p>
-                    <p className={`text-gray-500 ${fontClass} text-xs`}>{t("about.hospitals")}</p>
-                    <ChevronDown className={`w-4 h-4 mx-auto mt-1 transition-transform text-[#004d3a] ${showHospitals ? 'rotate-180' : ''}`} />
+                    <Building2 className="w-5 h-5 mx-auto mb-1 text-[#2BAAE2] brand-icon" />
+                    <p className="text-xl font-bold text-white">11</p>
+                    <p className={`text-white/70 ${fontClass} text-xs`}>{t("about.hospitals")}</p>
+                    <ChevronDown className={`w-4 h-4 mx-auto mt-1 transition-transform text-[#2BAAE2] ${showHospitals ? 'rotate-180' : ''}`} />
                   </button>
                   <button
                     onClick={() => { setShowSpecializedCenters(!showSpecializedCenters); setShowHospitals(false); setShowHealthCenters(false); }}
-                    className={`text-center cursor-pointer rounded-lg py-2 transition-all ${showSpecializedCenters ? 'bg-[#004d3a]/10' : 'hover:bg-gray-50'}`}
+                    className={`text-center cursor-pointer rounded-lg py-2 transition-all ${showSpecializedCenters ? 'bg-[#2BAAE2]/20' : 'hover:bg-white/10'}`}
                     data-testid="button-specialized-centers"
                   >
-                    <Hospital className="w-5 h-5 mx-auto mb-1 text-[#004d3a] brand-icon" />
-                    <p className="text-xl font-bold text-gray-900">1</p>
-                    <p className={`text-gray-500 ${fontClass} text-xs`}>{t("about.specializedCenters")}</p>
-                    <ChevronDown className={`w-4 h-4 mx-auto mt-1 transition-transform text-[#004d3a] ${showSpecializedCenters ? 'rotate-180' : ''}`} />
+                    <Hospital className="w-5 h-5 mx-auto mb-1 text-[#2BAAE2] brand-icon" />
+                    <p className="text-xl font-bold text-white">1</p>
+                    <p className={`text-white/70 ${fontClass} text-xs`}>{t("about.specializedCenters")}</p>
+                    <ChevronDown className={`w-4 h-4 mx-auto mt-1 transition-transform text-[#2BAAE2] ${showSpecializedCenters ? 'rotate-180' : ''}`} />
                   </button>
                   <button
                     onClick={() => { setShowHealthCenters(!showHealthCenters); setShowHospitals(false); setShowSpecializedCenters(false); }}
-                    className={`text-center cursor-pointer rounded-lg py-2 transition-all ${showHealthCenters ? 'bg-[#004d3a]/10' : 'hover:bg-gray-50'}`}
+                    className={`text-center cursor-pointer rounded-lg py-2 transition-all ${showHealthCenters ? 'bg-[#2BAAE2]/20' : 'hover:bg-white/10'}`}
                     data-testid="button-health-centers"
                   >
-                    <Stethoscope className="w-5 h-5 mx-auto mb-1 text-[#004d3a] brand-icon" />
-                    <p className="text-xl font-bold text-gray-900">69</p>
-                    <p className={`text-gray-500 ${fontClass} text-xs`}>{t("about.healthCenters")}</p>
-                    <ChevronDown className={`w-4 h-4 mx-auto mt-1 transition-transform text-[#004d3a] ${showHealthCenters ? 'rotate-180' : ''}`} />
+                    <Stethoscope className="w-5 h-5 mx-auto mb-1 text-[#2BAAE2] brand-icon" />
+                    <p className="text-xl font-bold text-white">69</p>
+                    <p className={`text-white/70 ${fontClass} text-xs`}>{t("about.healthCenters")}</p>
+                    <ChevronDown className={`w-4 h-4 mx-auto mt-1 transition-transform text-[#2BAAE2] ${showHealthCenters ? 'rotate-180' : ''}`} />
                   </button>
                   <div className="text-center py-2">
-                    <Users className="w-5 h-5 mx-auto mb-1 text-[#004d3a] brand-icon" />
-                    <p className="text-xl font-bold text-gray-900">495K+</p>
-                    <p className={`text-gray-500 ${fontClass} text-xs`}>{t("about.beneficiaries")}</p>
+                    <Users className="w-5 h-5 mx-auto mb-1 text-[#2BAAE2] brand-icon" />
+                    <p className="text-xl font-bold text-white">495K+</p>
+                    <p className={`text-white/70 ${fontClass} text-xs`}>{t("about.beneficiaries")}</p>
                   </div>
                   <div className="text-center py-2">
-                    <BedDouble className="w-5 h-5 mx-auto mb-1 text-[#004d3a] brand-icon" />
-                    <p className="text-xl font-bold text-gray-900">1,300</p>
-                    <p className={`text-gray-500 ${fontClass} text-xs`}>{t("about.beds")}</p>
+                    <BedDouble className="w-5 h-5 mx-auto mb-1 text-[#2BAAE2] brand-icon" />
+                    <p className="text-xl font-bold text-white">1,300</p>
+                    <p className={`text-white/70 ${fontClass} text-xs`}>{t("about.beds")}</p>
                   </div>
                 </div>
 
@@ -875,8 +863,8 @@ export default function About() {
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <div className="mt-4 pt-4 border-t border-gray-100">
-                        <h4 className={`text-center ${fontClass} font-bold text-gray-800 mb-3`}>{t("about.hospitalsList")}</h4>
+                      <div className="mt-4 pt-4 border-t border-white/15">
+                        <h4 className={`text-center ${fontClass} font-bold text-white/80 mb-3`}>{t("about.hospitalsList")}</h4>
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
                           {hospitalsData.map((hospital, idx) => (
                             <Tooltip key={hospital.nameKey} delayDuration={200}>
@@ -885,13 +873,13 @@ export default function About() {
                                   href={hospital.website || `https://www.google.com/maps/search/${encodeURIComponent(hospital.searchQuery)}`}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="hospital-card bg-gray-50 rounded-lg px-3 py-2 text-center hover:bg-gray-100 transition-all cursor-pointer group"
+                                  className="hospital-card bg-white/10 rounded-lg px-3 py-2 text-center hover:bg-white/20 transition-all cursor-pointer group"
                                   data-testid={`link-hospital-${idx}`}
                                 >
                                   <div className="flex items-center justify-center gap-1 mb-1">
-                                    <MapPin className="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity text-[#004d3a] brand-icon" />
+                                    <MapPin className="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity text-[#2BAAE2] brand-icon" />
                                   </div>
-                                  <p className={`${fontClass} text-sm font-bold hospital-title`} style={{ color: '#004d3a' }}>{t(hospital.nameKey)}</p>
+                                  <p className={`${fontClass} text-sm font-bold hospital-title text-white`}>{t(hospital.nameKey)}</p>
                                 </motion.a>
                               </TooltipTrigger>
                               <TooltipContent side="top" className={`max-w-xs bg-white dark:bg-card text-foreground p-4 rounded-xl shadow-xl border border-border/50 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
@@ -945,8 +933,8 @@ export default function About() {
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <div className="mt-4 pt-4 border-t border-gray-100">
-                        <h4 className={`text-center ${fontClass} font-bold text-gray-800 mb-3`}>{t("about.specializedCentersList")}</h4>
+                      <div className="mt-4 pt-4 border-t border-white/15">
+                        <h4 className={`text-center ${fontClass} font-bold text-white/80 mb-3`}>{t("about.specializedCentersList")}</h4>
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
                           {specializedCentersData.map((center, idx) => (
                             <Tooltip key={center.nameKey} delayDuration={200}>
@@ -955,13 +943,13 @@ export default function About() {
                                   href={`https://www.google.com/maps/search/${encodeURIComponent(center.searchQuery)}`}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="hospital-card bg-gray-50 rounded-lg px-3 py-2 text-center hover:bg-gray-100 transition-all cursor-pointer group"
+                                  className="hospital-card bg-white/10 rounded-lg px-3 py-2 text-center hover:bg-white/20 transition-all cursor-pointer group"
                                   data-testid={`link-specialized-center-${idx}`}
                                 >
                                   <div className="flex items-center justify-center gap-1 mb-1">
-                                    <MapPin className="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity text-[#004d3a] brand-icon" />
+                                    <MapPin className="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity text-[#2BAAE2] brand-icon" />
                                   </div>
-                                  <p className={`${fontClass} text-sm font-bold hospital-title`} style={{ color: '#004d3a' }}>{t(center.nameKey)}</p>
+                                  <p className={`${fontClass} text-sm font-bold hospital-title text-white`}>{t(center.nameKey)}</p>
                                 </motion.a>
                               </TooltipTrigger>
                               <TooltipContent side="top" className={`max-w-xs bg-white dark:bg-card text-foreground p-4 rounded-xl shadow-xl border border-border/50 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
@@ -1001,8 +989,8 @@ export default function About() {
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <div className="mt-4 pt-4 border-t border-gray-100">
-                        <h4 className={`text-center ${fontClass} font-bold text-gray-800 mb-3`}>{t("about.healthCentersList")}</h4>
+                      <div className="mt-4 pt-4 border-t border-white/15">
+                        <h4 className={`text-center ${fontClass} font-bold text-white/80 mb-3`}>{t("about.healthCentersList")}</h4>
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 max-h-96 overflow-y-auto">
                           {healthCentersData.map((center, idx) => (
                             <motion.a
@@ -1010,13 +998,13 @@ export default function About() {
                               href={`https://www.google.com/maps/search/${encodeURIComponent(center.searchQuery)}`}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="hospital-card bg-gray-50 rounded-lg px-3 py-2 text-center hover:bg-gray-100 transition-all cursor-pointer group"
+                              className="hospital-card bg-white/10 rounded-lg px-3 py-2 text-center hover:bg-white/20 transition-all cursor-pointer group"
                               data-testid={`link-health-center-${idx}`}
                             >
                               <div className="flex items-center justify-center gap-1 mb-1">
                                 <MapPin className="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity text-[#2BAAE2] brand-icon" />
                               </div>
-                              <p className={`${fontClass} text-xs text-gray-900`}>
+                              <p className={`${fontClass} text-xs text-white/80`}>
                                 {language === 'ar' ? center.ar : center.en}
                               </p>
                             </motion.a>
@@ -1032,8 +1020,8 @@ export default function About() {
         </section>
 
         {/* ===== Hospital Directors Section ===== */}
-        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
-          <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+        <section className="relative py-16 overflow-hidden">
+          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
           <div className="container-custom relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -1041,10 +1029,10 @@ export default function About() {
               viewport={{ once: true }}
               className={`text-center mb-10 ${fontClass}`}
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#2BAAE2]/10 mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl mb-4">
                 <UserCog className="w-8 h-8 text-[#2BAAE2]" />
               </div>
-              <h2 className={`text-2xl md:text-3xl font-bold text-gray-900 ${fontClass}`}>
+              <h2 className={`text-2xl md:text-3xl font-bold text-white ${fontClass}`}>
                 {t("about.hospitalDirectors")}
               </h2>
             </motion.div>
@@ -1069,17 +1057,17 @@ export default function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.04 }}
-                  className="bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all p-4"
+                  className="group bg-black/25 backdrop-blur-md rounded-xl border border-white/15 shadow-sm hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(43,170,226,0.15)] hover:border-[#2BAAE2] transition-all duration-[400ms] p-4"
                   data-testid={`card-director-${idx}`}
                 >
                   <div className="h-1.5 bg-[#2BAAE2] rounded-full mb-4 -mx-4 -mt-4 rounded-t-xl"></div>
                   <div className={`flex items-center gap-3 ${language === 'ar' ? '' : 'flex-row-reverse text-right'}`}>
-                    <div className="w-12 h-12 rounded-xl bg-[#2BAAE2]/10 flex items-center justify-center flex-shrink-0">
-                      <Hospital className="w-6 h-6 text-[#2BAAE2]" />
+                    <div className="w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:scale-110">
+                      <Hospital className="w-6 h-6 text-[#2BAAE2] group-hover:text-white transition-colors" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h4 className={`font-bold text-gray-900 ${fontClass} text-sm leading-tight`}>{t(item.hospitalKey)}</h4>
-                      <p className={`text-gray-500 ${fontClass} text-xs mt-1`}>{t(item.directorKey)}</p>
+                      <h4 className={`font-bold text-white ${fontClass} text-sm leading-tight`}>{t(item.hospitalKey)}</h4>
+                      <p className={`text-white/70 ${fontClass} text-xs mt-1`}>{t(item.directorKey)}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -1089,8 +1077,8 @@ export default function About() {
         </section>
 
         {/* ===== FAQ Section ===== */}
-        <section className="relative py-16 overflow-hidden" id="faq" style={{ backgroundColor: '#f8fafc' }}>
-          <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06]"></div>
+        <section className="relative py-16 overflow-hidden" id="faq">
+          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
 
           <div className="container-custom relative">
             <motion.div
@@ -1099,13 +1087,13 @@ export default function About() {
               viewport={{ once: true }}
               className="text-center mb-10"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#004d3a]/10 mb-4">
-                <HelpCircle className="w-8 h-8 text-[#004d3a]" />
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl mb-4">
+                <HelpCircle className="w-8 h-8 text-[#2BAAE2]" />
               </div>
-              <h2 className={`text-2xl md:text-3xl font-bold text-gray-900 ${fontClass} mb-3`}>
+              <h2 className={`text-2xl md:text-3xl font-bold text-white ${fontClass} mb-3`}>
                 {t("about.faq.title")}
               </h2>
-              <p className={`text-gray-500 ${fontClass} max-w-2xl mx-auto`}>
+              <p className={`text-white/70 ${fontClass} max-w-2xl mx-auto`}>
                 {t("about.faq.subtitle")}
               </p>
             </motion.div>
@@ -1121,15 +1109,15 @@ export default function About() {
                   data-testid={`faq-item-${idx}`}
                 >
                   <summary className={`flex items-center gap-4 ${textAlign} ${fontClass}`}>
-                    <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm" style={{ backgroundColor: '#004d3a' }}>
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm bg-[#2BAAE2]">
                       {idx + 1}
                     </div>
-                    <span className={`flex-1 text-gray-900 font-bold text-base md:text-lg ${fontClass}`}>
+                    <span className={`flex-1 text-white font-bold text-base md:text-lg ${fontClass}`}>
                       {t(item.questionKey)}
                     </span>
                   </summary>
                   <div className={`px-5 pb-5 pt-2 ${language === 'ar' ? 'pr-16' : 'pl-16'}`}>
-                    <p className={`text-gray-600 ${fontClass} leading-relaxed text-sm md:text-base`}>
+                    <p className={`text-white/70 ${fontClass} leading-relaxed text-sm md:text-base`}>
                       {t(item.answerKey)}
                     </p>
                   </div>

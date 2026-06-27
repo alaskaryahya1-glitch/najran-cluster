@@ -1,7 +1,7 @@
 import { MapPin, Phone, ExternalLink } from "lucide-react";
 import { SiX, SiLinkedin, SiYoutube, SiInstagram, SiSnapchat, SiTiktok } from "react-icons/si";
 import { useI18n } from "@/lib/i18n";
-import whiteLogo from "@assets/logo2_1767055332336.png";
+import clusterLogo from "@assets/cluster-logo-colored.png";
 import nupcoLogo from "@assets/IMG_8790_1767048634247.png";
 import exproLogo from "@assets/IMG_8793_1767048634247.png";
 import nafisLogo from "@assets/nphies_logo.9ce3f8cc7a760666c970_1767220354051.png";
@@ -89,10 +89,9 @@ export function Footer() {
           <div className="col-span-2 lg:col-span-1">
             <div className="inline-flex flex-col items-center mb-6">
               <img
-                src={whiteLogo}
+                src={clusterLogo}
                 alt={t("header.clusterName")}
                 className="h-16 sm:h-20 w-auto object-contain mb-1"
-                style={{ filter: 'brightness(0) saturate(100%) invert(62%) sepia(46%) saturate(533%) hue-rotate(163deg) brightness(98%) contrast(91%)' }}
               />
               <p className={`text-[#2BAAE2] text-[10px] ${fontClass} translate-x-1 sm:-translate-x-2`} style={{ marginTop: '-16px' }}>
                 {language === 'ar' ? 'شركة الصحة القابضة' : 'Health Holding Co.'}
@@ -184,8 +183,8 @@ export function Footer() {
                   <MapPin className="w-4 h-4 text-[#2BAAE2]" />
                 </div>
                 <div>
-                  <p className="text-[#1278B5] text-sm font-medium">{t("footer.region")}</p>
-                  <p className="text-[#1278B5]/70 text-xs mt-0.5">{t("footer.country")}</p>
+                  <p className="text-gray-500 text-sm font-medium">{t("footer.region")}</p>
+                  <p className="text-gray-400 text-xs mt-0.5">{t("footer.country")}</p>
                 </div>
               </a>
 
@@ -197,7 +196,7 @@ export function Footer() {
                 <div className="w-8 h-8 bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-[#005d47]/10 transition-colors">
                   <Phone className="w-4 h-4 text-[#2BAAE2]" />
                 </div>
-                <span className="font-sans text-sm text-[#1278B5]" dir="ltr">920011140</span>
+                <span className="font-sans text-sm text-gray-500" dir="ltr">920011140</span>
               </a>
             </div>
           </div>

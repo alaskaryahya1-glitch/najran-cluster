@@ -271,7 +271,7 @@ interface GlassStarServiceProps {
 function GlassStarService({ service, index, language, fontClass, size = "md", onOpenEmailDialog, onOpenPhoneDialog }: GlassStarServiceProps) {
   const IconComponent = getIconComponent(service.iconType);
   const [isHovered, setIsHovered] = useState(false);
-  
+
   const hasLogo = service.logoPath && logoMap[service.logoPath];
   const logoSrc = service.logoPath ? logoMap[service.logoPath] : null;
   const shouldInvertLogo = service.logoPath === 'png-clipart-gmail-logo-illustration-email-computer-icons-messa_1767519110048.png' ||
@@ -312,40 +312,30 @@ function GlassStarService({ service, index, language, fontClass, size = "md", on
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       onClick={handleClick}
-      className={`relative cursor-pointer group ${sizes[size].container}`}
+      className={`relative cursor-pointer group ${sizes[size].container} bg-white rounded-2xl overflow-hidden transition-all duration-300 ${isHovered ? 'border-2 border-[#004d3a]/50 shadow-lg' : 'border border-gray-200 shadow-sm'}`}
       data-testid={`service-star-${service.id}`}
     >
       {/* All services use star shape */}
       <>
           {/* Star-based service card (original design) */}
-          {/* Glow Effect - Soft White */}
+          {/* Glow Effect - hidden on light bg */}
           <motion.div
             className="absolute inset-0 z-0"
-            animate={{ opacity: isHovered ? 1 : 0 }}
+            animate={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <img 
-              src={starLogo}
-              alt=""
-              className="w-full h-full object-contain"
-              style={{
-                filter: "blur(25px) brightness(10) saturate(0)",
-                opacity: 0.5
-              }}
-            />
+            <img src={starLogo} alt="" className="w-full h-full object-contain" />
           </motion.div>
-          
-          {/* Star Logo - Very Blurred to Hide Chain (Silhouette Only) */}
+
+          {/* Star - dark watermark on light bg */}
           <div className="absolute inset-[5%] z-10">
-            <img 
+            <img
               src={starLogo}
               alt=""
               className="w-full h-full object-contain transition-all duration-300"
               style={{
-                filter: isHovered 
-                  ? "brightness(10) saturate(0) blur(3px) contrast(0.5) drop-shadow(0 0 15px rgba(255,255,255,0.5))" 
-                  : "brightness(8) saturate(0) blur(2px) contrast(0.4)",
-                opacity: isHovered ? 0.5 : 0.35
+                filter: "brightness(0)",
+                opacity: isHovered ? 0.1 : 0.05,
               }}
             />
           </div>
@@ -369,7 +359,7 @@ function GlassStarService({ service, index, language, fontClass, size = "md", on
                 className="mb-2"
               >
                 {hasLogo && logoSrc ? (
-                  <img 
+                  <img
                     src={logoSrc}
                     alt={language === 'ar' ? service.titleAr : service.titleEn}
                     className={`${sizes[size].logo} object-contain drop-shadow-lg transition-all duration-300`}
@@ -382,10 +372,10 @@ function GlassStarService({ service, index, language, fontClass, size = "md", on
                     }}
                   />
                 ) : (
-                  <IconComponent className={`${sizes[size].icon} text-[#2BAAE2] drop-shadow-lg transition-all duration-300 group-hover:text-white`} />
+                  <IconComponent className={`${sizes[size].icon} text-[#2BAAE2] drop-shadow-lg transition-all duration-300 group-hover:text-[#005d47]`} />
                 )}
               </motion.div>
-              <span className={`text-white font-medium ${sizes[size].text} ${fontClass} leading-tight max-w-[90%] drop-shadow-lg line-clamp-2 break-words`}>
+              <span className={`text-[#004d3a] font-semibold ${sizes[size].text} ${fontClass} leading-tight max-w-[90%] line-clamp-2 break-words`}>
                 {language === 'ar' ? service.titleAr : service.titleEn}
               </span>
             </motion.div>
@@ -439,99 +429,93 @@ export default function EmployeeServices() {
   }, {} as Record<string, EmailEntry[]>);
 
   return (
-    <div className="min-h-screen relative">
-      <div className="fixed inset-0 z-0">
-        <img
-          src={heroImage}
-          alt=""
-          data-nosnippet="true"
-          className="w-full h-full object-cover dark-bg-image"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/35 to-black/45" />
-      </div>
+    <div className="min-h-screen employee-services-page" style={{ backgroundColor: '#f8fafc' }}>
+      <Header />
 
-      {/* Unified Content Wrapper with Single Geometric Background */}
-      <div className="relative z-10">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="absolute inset-0 najran-geometric-bg opacity-20"></div>
-        
-        <Header />
-        
-        <main className="relative">
-          {/* Hero Section */}
-          <section className="relative py-16 pt-24">
-            <div className="container-custom">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-2xl border border-white/20 text-center relative overflow-hidden"
-              >
-                <div className="h-1.5 bg-[#2BAAE2]"></div>
-                <CardStar size="lg" />
-                <div className="p-6 md:p-8">
-                  <h1 className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-white ${fontClass} mb-4 relative z-10`}>
-                    {t("employeeServices.title")}
-                  </h1>
-                  <p className={`text-white ${fontClass} text-base sm:text-lg md:text-xl relative z-10`}>
-                    {t("employeeServices.subtitle")}
-                  </p>
-                </div>
-              </motion.div>
-            </div>
-          </section>
+      <main>
+        {/* Hero Section */}
+        <section className="relative py-24 overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <img
+              src={heroImage}
+              alt=""
+              data-nosnippet="true"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60" />
+          </div>
+          <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none z-10"></div>
+
+          <div className="container-custom relative z-20">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="text-center"
+            >
+              <h1 className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-white ${fontClass} mb-4`}>
+                {t("employeeServices.title")}
+              </h1>
+              <p className={`text-white/80 ${fontClass} text-base sm:text-lg md:text-xl`}>
+                {t("employeeServices.subtitle")}
+              </p>
+            </motion.div>
+          </div>
+        </section>
 
         {/* Loading State */}
         {isLoading && (
-          <section className="relative py-20">
+          <section className="relative py-20" style={{ backgroundColor: '#f8fafc' }}>
             <div className="flex flex-col items-center justify-center">
               <Loader2 className="w-12 h-12 text-[#2BAAE2] animate-spin mb-4" />
-              <p className={`text-white ${fontClass}`}>{t("employeeServices.loading")}</p>
+              <p className={`text-[#4a5568] ${fontClass}`}>{t("employeeServices.loading")}</p>
             </div>
           </section>
         )}
 
         {/* Error State */}
         {error && (
-          <section className="relative py-20">
+          <section className="relative py-20" style={{ backgroundColor: '#f8fafc' }}>
             <div className="flex justify-center">
-              <div className="bg-black/20 dark:bg-black/50 backdrop-blur-md text-white p-8 rounded-2xl flex items-center gap-4 border border-white/20 max-w-lg">
+              <div className="bg-white p-8 rounded-3xl flex items-center gap-4 border border-gray-100 shadow-sm max-w-lg">
                 <AlertCircle className="w-10 h-10 flex-shrink-0 text-[#2BAAE2]" />
                 <div className={fontClass}>
-                  <h3 className="font-bold text-lg mb-1">{t("employeeServices.error")}</h3>
-                  <p className="text-sm text-white/90">{t("employeeServices.errorRetry")}</p>
+                  <h3 className="font-bold text-lg mb-1 text-[#005d47]">{t("employeeServices.error")}</h3>
+                  <p className="text-sm text-[#4a5568]">{t("employeeServices.errorRetry")}</p>
                 </div>
               </div>
             </div>
           </section>
         )}
 
-        {/* Info Services - Glass Container */}
+        {/* Info Services */}
         {!isLoading && !error && infoServices.length > 0 && (
-          <section className="relative py-12 overflow-hidden">
+          <section className="relative py-12 overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
+            <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
             <div className="container-custom relative">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-2xl border border-white/20 relative overflow-hidden"
+                className="bg-white rounded-[40px] border border-[#edf2f7] shadow-sm relative overflow-hidden"
+                style={{ boxShadow: '0 10px 30px rgba(0,77,58,0.03)' }}
               >
-                <div className="h-1.5 bg-[#2BAAE2]"></div>
+                <div className="h-1.5 bg-[#2BAAE2] rounded-t-[40px]"></div>
                 <CardStar size="lg" />
                 <div className="p-6 md:p-8">
                   <div className="flex flex-wrap justify-center gap-2 xs:gap-3 sm:gap-4 md:gap-6 lg:gap-8 relative z-10">
-                  {infoServices.map((service, idx) => (
-                    <GlassStarService
-                      key={service.id}
-                      service={service}
-                      index={idx}
-                      language={language}
-                      fontClass={fontClass}
-                      size="md"
-                      onOpenEmailDialog={() => setIsEmailDialogOpen(true)}
-                      onOpenPhoneDialog={() => setIsPhoneDialogOpen(true)}
-                    />
-                  ))}
+                    {infoServices.map((service, idx) => (
+                      <GlassStarService
+                        key={service.id}
+                        service={service}
+                        index={idx}
+                        language={language}
+                        fontClass={fontClass}
+                        size="md"
+                        onOpenEmailDialog={() => setIsEmailDialogOpen(true)}
+                        onOpenPhoneDialog={() => setIsPhoneDialogOpen(true)}
+                      />
+                    ))}
                   </div>
                 </div>
               </motion.div>
@@ -539,24 +523,26 @@ export default function EmployeeServices() {
           </section>
         )}
 
-        {/* System Services - Glass Container */}
+        {/* System Services */}
         {!isLoading && !error && systemServices.length > 0 && (
-          <section className="relative py-12 overflow-hidden">
+          <section className="relative py-12 overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
+            <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
             <div className="container-custom relative">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-                className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-2xl border border-white/20 relative overflow-hidden"
+                className="bg-white rounded-[40px] border border-[#edf2f7] shadow-sm relative overflow-hidden"
+                style={{ boxShadow: '0 10px 30px rgba(0,77,58,0.03)' }}
               >
-                <div className="h-1.5 bg-[#2BAAE2]"></div>
+                <div className="h-1.5 bg-[#2BAAE2] rounded-t-[40px]"></div>
                 <CardStar size="lg" />
                 <div className="p-6 md:p-8">
                   <div className="text-center mb-10 relative z-10">
-                    <h2 className={`text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold ${fontClass} text-white mb-4`}>
+                    <h2 className={`text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold ${fontClass} text-[#005d47] mb-4`}>
                       {t("employeeServices.systems")}
                     </h2>
-                    <p className={`text-white ${fontClass}`}>
+                    <p className={`text-[#4a5568] ${fontClass}`}>
                       {t("employeeServices.systemsSubtitle")}
                     </p>
                   </div>
@@ -578,55 +564,54 @@ export default function EmployeeServices() {
             </div>
           </section>
         )}
-        </main>
-      </div>
+      </main>
 
       <Footer />
 
       {/* Email Directory Dialog */}
       <Dialog open={isEmailDialogOpen} onOpenChange={setIsEmailDialogOpen}>
-        <DialogContent className="max-w-lg max-h-[85vh] overflow-hidden flex flex-col p-0 gap-0 rounded-2xl bg-black/60 backdrop-blur-xl border border-white/20">
-          <div className="bg-black/20 dark:bg-black/50 backdrop-blur-md text-white px-5 py-6 rounded-b-3xl relative border-b border-white/20">
+        <DialogContent className="max-w-lg max-h-[85vh] overflow-hidden flex flex-col p-0 gap-0 rounded-3xl bg-white border border-gray-100 shadow-xl">
+          <div className="bg-[#f8fafc] px-5 py-6 rounded-t-3xl relative border-b border-gray-100">
             <DialogHeader className="pb-0">
-              <DialogTitle className={`text-lg ${fontClass} flex items-center justify-center gap-2 text-white`}>
-                <Mail className="w-5 h-5" />
+              <DialogTitle className={`text-lg ${fontClass} flex items-center justify-center gap-2 text-[#005d47]`}>
+                <Mail className="w-5 h-5 text-[#2BAAE2]" />
                 {language === 'ar' ? 'عناوين البريد الإلكتروني للإدارات' : 'Department Email Addresses'}
               </DialogTitle>
             </DialogHeader>
-            
+
             <div className="mt-4 relative">
               <Input
                 placeholder={language === 'ar' ? 'ابحث عن إدارة أو بريد إلكتروني...' : 'Search for department or email...'}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className={`bg-white/20 border-white/30 text-white placeholder:text-white/50 rounded-full pr-4 pl-10 h-11 ${fontClass}`}
+                className={`bg-white border-gray-200 text-[#4a5568] placeholder:text-gray-400 rounded-full pr-4 pl-10 h-11 ${fontClass}`}
                 data-testid="input-email-search"
               />
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#2BAAE2]/60" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#2BAAE2]" />
             </div>
           </div>
-          
-          <div className="flex-1 overflow-y-auto bg-black/20">
+
+          <div className="flex-1 overflow-y-auto bg-white">
             {Object.entries(groupedEmails).map(([dept, emails]) => (
               <div key={dept}>
-                <div className="px-4 py-3 flex items-center gap-2 bg-black/20 dark:bg-black/50 backdrop-blur-md border-b border-white/10">
+                <div className="px-4 py-3 flex items-center gap-2 bg-[#f8fafc] border-b border-gray-100">
                   <Building2 className="w-4 h-4 text-[#2BAAE2]" />
-                  <span className={`font-semibold text-sm ${fontClass} text-white`}>{dept}</span>
-                  <div className="w-1.5 h-1.5 rounded-full bg-white/60 mr-auto"></div>
+                  <span className={`font-semibold text-sm ${fontClass} text-[#005d47]`}>{dept}</span>
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#2BAAE2]/40 mr-auto"></div>
                 </div>
-                
+
                 <div className="px-3 py-2 space-y-1.5">
                   {emails.map((entry, idx) => (
                     <a
                       key={idx}
                       href={`mailto:${entry.email}`}
-                      className="block bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-xl px-4 py-3 hover:bg-white/20 transition-colors border border-white/10"
+                      className="block bg-[#f8fafc] rounded-xl px-4 py-3 hover:bg-[#e6f7f1] transition-colors border border-gray-100"
                       data-testid={`link-email-${dept}-${idx}`}
                     >
-                      <p className={`text-sm ${fontClass} text-white leading-relaxed`}>
+                      <p className={`text-sm ${fontClass} text-[#4a5568] leading-relaxed`}>
                         {entry.displayName}
                       </p>
-                      <p className="text-sm text-white/90 mt-0.5" dir="ltr">
+                      <p className="text-sm text-[#2BAAE2] mt-0.5" dir="ltr">
                         {entry.email}
                       </p>
                     </a>
@@ -636,7 +621,7 @@ export default function EmployeeServices() {
             ))}
 
             {Object.keys(groupedEmails).length === 0 && (
-              <div className="text-center py-12 text-white/60">
+              <div className="text-center py-12 text-gray-400">
                 <Mail className="w-12 h-12 mx-auto mb-3 opacity-50" />
                 <p className={fontClass}>
                   {language === 'ar' ? 'لم يتم العثور على نتائج' : 'No results found'}
@@ -649,25 +634,25 @@ export default function EmployeeServices() {
 
       {/* Phone Contact Dialog */}
       <Dialog open={isPhoneDialogOpen} onOpenChange={setIsPhoneDialogOpen}>
-        <DialogContent className="max-w-md overflow-hidden flex flex-col p-0 gap-0 rounded-2xl bg-black/60 backdrop-blur-xl border border-white/20">
-          <div className="bg-black/20 dark:bg-black/50 backdrop-blur-md text-white px-5 py-6 rounded-b-3xl relative border-b border-white/20">
+        <DialogContent className="max-w-md overflow-hidden flex flex-col p-0 gap-0 rounded-3xl bg-white border border-gray-100 shadow-xl">
+          <div className="bg-[#f8fafc] px-5 py-6 rounded-t-3xl relative border-b border-gray-100">
             <DialogHeader className="pb-0">
-              <DialogTitle className={`text-lg ${fontClass} flex items-center justify-center gap-2 text-white`}>
-                <Phone className="w-5 h-5" />
+              <DialogTitle className={`text-lg ${fontClass} flex items-center justify-center gap-2 text-[#005d47]`}>
+                <Phone className="w-5 h-5 text-[#2BAAE2]" />
                 {language === 'ar' ? 'أرقام التواصل بالتجمع' : 'NHC Contact Numbers'}
               </DialogTitle>
             </DialogHeader>
           </div>
-          
+
           <div className="p-6 text-center">
-            <div className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-xl px-6 py-8 border border-white/10">
+            <div className="bg-[#f8fafc] rounded-2xl px-6 py-8 border border-gray-100">
               <Phone className="w-12 h-12 mx-auto mb-4 text-[#2BAAE2]" />
-              <p className={`text-white ${fontClass} mb-3`}>
+              <p className={`text-[#4a5568] ${fontClass} mb-3`}>
                 {language === 'ar' ? 'للتواصل مع تجمع نجران الصحي' : 'To contact Najran Health Cluster'}
               </p>
-              <a 
-                href="tel:0175406000" 
-                className="text-3xl font-bold text-white hover:text-[#2BAAE2] transition-colors block"
+              <a
+                href="tel:0175406000"
+                className="text-3xl font-bold text-[#005d47] hover:text-[#2BAAE2] transition-colors block"
                 dir="ltr"
                 data-testid="link-phone-number"
               >

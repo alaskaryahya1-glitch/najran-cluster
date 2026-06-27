@@ -23,7 +23,8 @@ import cardIsmail from "@assets/IMG_7535 2.jpg";
 import cardYahya from "@assets/IMG_7536.jpg";
 import cardMutlaq from "@assets/IMG_7537.jpg";
 import cardRashid from "@assets/IMG_7538.jpg";
-import heroImage from "@assets/0B4A4B84-6228-4A64-9958-EB4C285CB04D_1767273959627.png";
+import heroImage from "@assets/غرب نجران (1).jpeg";
+import clusterLogo from "@assets/cluster-logo-colored.png";
 import { CardStar } from "@/components/BrandIcon";
 
 const DeputyCard = memo(({ deputy, t, fontClass }: any) => (
@@ -580,20 +581,25 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <span
-                  className={`font-bold text-sm tracking-[0.2em] uppercase pr-3 ${fontClass} ${language === 'ar' ? 'border-r-4' : 'border-l-4 pl-3 pr-0'}`}
-                  style={{ color: '#004d3a', borderColor: '#004d3a' }}
-                >
-                  {language === 'ar' ? 'قصة التحول' : 'Our Story'}
-                </span>
+                <div className="flex flex-col items-start gap-4">
+                  <span
+                    className={`font-bold text-sm tracking-[0.2em] uppercase pr-3 ${fontClass} ${language === 'ar' ? 'border-r-4' : 'border-l-4 pl-3 pr-0'}`}
+                    style={{ color: '#004d3a', borderColor: '#004d3a' }}
+                  >
+                    {language === 'ar' ? 'قصة التحول' : 'Our Story'}
+                  </span>
 
-                <h2 className={`text-4xl lg:text-5xl font-bold text-gray-900 leading-[1.2] ${fontClass}`}>
-                  {language === 'ar' ? (
-                    <>تجمع نجران الصحي.. <br /> <span style={{ color: '#004d3a' }}>التزام بالتميز الطبي</span></>
-                  ) : (
-                    <>Najran Health Cluster.. <br /> <span style={{ color: '#004d3a' }}>Commitment to Medical Excellence</span></>
-                  )}
-                </h2>
+                  <div className="inline-flex flex-col items-center">
+                  <img
+                    src={clusterLogo}
+                    alt={t("header.clusterName")}
+                    className="h-24 sm:h-32 w-auto object-contain mb-1"
+                  />
+                  <p className={`text-[#2BAAE2] text-[10px] ${fontClass} translate-x-2 sm:translate-x-3`} style={{ marginTop: '-22px' }}>
+                    {language === 'ar' ? 'شركة الصحة القابضة' : 'Health Holding Co.'}
+                  </p>
+                  </div>
+                </div>
 
                 <p className={`text-lg text-gray-600 leading-relaxed ${fontClass}`}>
                   {language === 'ar'
@@ -1021,6 +1027,63 @@ export default function About() {
                   )}
                 </AnimatePresence>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ===== Hospital Directors Section ===== */}
+        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
+          <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+          <div className="container-custom relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className={`text-center mb-10 ${fontClass}`}
+            >
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#2BAAE2]/10 mb-4">
+                <UserCog className="w-8 h-8 text-[#2BAAE2]" />
+              </div>
+              <h2 className={`text-2xl md:text-3xl font-bold text-gray-900 ${fontClass}`}>
+                {t("about.hospitalDirectors")}
+              </h2>
+            </motion.div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+              {[
+                { hospitalKey: "about.hospital.westNajran", directorKey: "about.hospital.westNajran.director" },
+                { hospitalKey: "about.hospital.kingKhaled", directorKey: "about.hospital.kingKhaled.director" },
+                { hospitalKey: "about.hospital.maternity", directorKey: "about.hospital.maternity.director" },
+                { hospitalKey: "about.hospital.najranGeneral", directorKey: "about.hospital.najranGeneral.director" },
+                { hospitalKey: "about.hospital.badrSouth", directorKey: "about.hospital.badrSouth.director" },
+                { hospitalKey: "about.hospital.habuna", directorKey: "about.hospital.habuna.director" },
+                { hospitalKey: "about.hospital.thar", directorKey: "about.hospital.thar.director" },
+                { hospitalKey: "about.hospital.sharurah", directorKey: "about.hospital.sharurah.director" },
+                { hospitalKey: "about.hospital.khubash", directorKey: "about.hospital.khubash.director" },
+                { hospitalKey: "about.hospital.yadamah", directorKey: "about.hospital.yadamah.director" },
+                { hospitalKey: "about.hospital.eradah", directorKey: "about.hospital.eradah.director" },
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.04 }}
+                  className="bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all p-4"
+                  data-testid={`card-director-${idx}`}
+                >
+                  <div className="h-1.5 bg-[#2BAAE2] rounded-full mb-4 -mx-4 -mt-4 rounded-t-xl"></div>
+                  <div className={`flex items-center gap-3 ${language === 'ar' ? '' : 'flex-row-reverse text-right'}`}>
+                    <div className="w-12 h-12 rounded-xl bg-[#2BAAE2]/10 flex items-center justify-center flex-shrink-0">
+                      <Hospital className="w-6 h-6 text-[#2BAAE2]" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className={`font-bold text-gray-900 ${fontClass} text-sm leading-tight`}>{t(item.hospitalKey)}</h4>
+                      <p className={`text-gray-500 ${fontClass} text-xs mt-1`}>{t(item.directorKey)}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>

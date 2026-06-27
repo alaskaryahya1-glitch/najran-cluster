@@ -356,12 +356,7 @@ function GlassStarService({ service, index, language, fontClass, size = "md", on
                 transition={{ duration: 0.3 }}
                 className="mb-2"
               >
-                {isEmailLogo ? (
-                  <div className={`${sizes[size].logo} rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300`}
-                    style={{ backgroundColor: isHovered ? '#1a9dd1' : '#2BAAE2' }}>
-                    <Mail className="w-1/2 h-1/2 text-white" />
-                  </div>
-                ) : hasLogo && logoSrc ? (
+                {hasLogo && logoSrc ? (
                   <img
                     src={logoSrc}
                     alt={language === 'ar' ? service.titleAr : service.titleEn}

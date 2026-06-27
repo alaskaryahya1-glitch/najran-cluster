@@ -9,7 +9,6 @@ import { SiApple, SiGoogleplay } from "react-icons/si";
 import sehaLogo from "@assets/IMG_8800_1767052201461.png";
 import sehhatyLogo from "@assets/IMG_8801_1767052201461.png";
 import anatLogo from "@assets/IMG_8802_1767052201461.png";
-import heroImage from "@assets/E1CAF13F-A529-4321-90B2-EDEA91B5D2D9_1767273959627.png";
 
 
 export default function EServices() {
@@ -66,22 +65,23 @@ export default function EServices() {
 
   return (
     <div className="min-h-screen flex flex-col relative">
-      <div className="fixed inset-0 w-full h-full -z-10">
-        <img
-          src={heroImage}
-          alt=""
-          data-nosnippet="true"
-          className="w-full h-full object-cover dark-bg-image"
+      <div className="fixed inset-0 z-0">
+        <video
+          src="https://cmsapi.health.sa/HHC1-7tba9j.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60" />
       </div>
 
       <Header />
 
-      <main className="flex-1">
+      <main className="flex-1 relative z-10">
         <section className="relative pt-24 pb-16 text-white overflow-hidden">
-          <div className="absolute inset-0 bg-black/25 dark:bg-black/60 backdrop-blur-[2px]"></div>
-          <div className="absolute inset-0 najran-geometric-bg opacity-20"></div>
+          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
           
           <div className="container-custom relative">
             <motion.div
@@ -99,66 +99,66 @@ export default function EServices() {
               </p>
             </motion.div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {platforms.map((platform, idx) => (
                 <motion.div
                   key={platform.titleKey}
-                  className="bg-white rounded-[40px] overflow-hidden border border-gray-100 shadow-sm hover:-translate-y-2 hover:border-[#004d3a] hover:shadow-xl transition-all relative text-center"
+                  className="group bg-white rounded-[40px] border border-[rgba(0,93,71,0.05)] p-10 transition-all duration-[400ms] hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(0,77,58,0.08)] hover:border-[#005d47] flex flex-col items-center text-center"
                   data-testid={`eservice-card-${idx}`}
                 >
-                  <div className="h-1.5 bg-[#004d3a]" style={{ borderRadius: '40px 40px 0 0' }}></div>
-                  <div className="p-8">
-                    <div className="w-24 h-24 mx-auto mb-5 flex items-center justify-center bg-[#004d3a]/10 rounded-2xl p-3">
-                      <img
-                        src={platform.src}
-                        alt={t(platform.titleKey)}
-                        className="max-w-full max-h-full object-contain"
-                      />
-                    </div>
-                    <h4 className={`text-xl font-extrabold text-[#004d3a] ${fontClass} mb-3`}>
-                      {t(platform.titleKey)}
-                    </h4>
-                    <p className={`text-gray-500 ${fontClass} text-sm leading-relaxed mb-6`}>
-                      {t(platform.descKey)}
-                    </p>
-                    <div className="flex flex-col items-center gap-3">
-                      {platform.websiteUrl && (
+                  <div
+                    className="w-20 h-20 bg-[#f0fdf4] rounded-3xl flex items-center justify-center mb-6 flex-shrink-0 transition-all duration-[400ms] group-hover:bg-[#005d47] group-hover:-rotate-[5deg] group-hover:scale-110"
+                    style={{ boxShadow: 'inset 0 2px 4px rgba(0, 93, 71, 0.05)' }}
+                  >
+                    <img
+                      src={platform.src}
+                      alt={t(platform.titleKey)}
+                      className="w-12 h-12 object-contain transition-all duration-[400ms] group-hover:brightness-0 group-hover:invert"
+                    />
+                  </div>
+                  <h4 className={`text-xl font-extrabold text-[#004d3a] ${fontClass} mb-3`}>
+                    {t(platform.titleKey)}
+                  </h4>
+                  <p className={`text-gray-500 ${fontClass} text-sm leading-relaxed mb-6 flex-1`}>
+                    {t(platform.descKey)}
+                  </p>
+                  <div className="flex flex-col items-center gap-3 mt-auto w-full">
+                    {platform.websiteUrl && (
+                      <a
+                        href={platform.websiteUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full bg-[#004d3a] text-white rounded-full px-6 py-2.5 font-bold flex items-center justify-center gap-2 hover:bg-[#005d47] transition-colors"
+                        data-testid={`link-website-${idx}`}
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        <span>{language === 'ar' ? 'زيارة الموقع' : 'Visit Website'}</span>
+                      </a>
+                    )}
+                    {platform.hasApp && (
+                      <div className="flex items-center gap-2 w-full">
                         <a
-                          href={platform.websiteUrl}
+                          href={platform.appStoreUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="bg-[#004d3a] text-white rounded-full px-8 py-3 font-bold flex items-center gap-2 hover:bg-[#003d2e] transition-colors"
-                          data-testid={`link-website-${idx}`}
+                          className="flex-1 flex items-center justify-center gap-1.5 bg-gray-100 text-gray-700 rounded-full px-3 py-2 text-xs font-medium hover:bg-[#004d3a] hover:text-white transition-colors"
+                          data-testid={`link-appstore-${idx}`}
                         >
-                          <ExternalLink className="w-4 h-4" />
-                          <span>{language === 'ar' ? 'زيارة الموقع' : 'Visit Website'}</span>
+                          <SiApple className="w-3.5 h-3.5" />
+                          <span>App Store</span>
                         </a>
-                      )}
-                      {platform.hasApp && (
-                        <div className="flex items-center gap-3">
-                          <a
-                            href={platform.appStoreUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-2 bg-gray-100 text-gray-700 rounded-full px-4 py-2 text-sm font-medium hover:bg-[#004d3a] hover:text-white transition-colors"
-                            data-testid={`link-appstore-${idx}`}
-                          >
-                            <SiApple className="w-4 h-4" />
-                            <span>App Store</span>
-                          </a>
-                          <a
-                            href={platform.playStoreUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-2 bg-gray-100 text-gray-700 rounded-full px-4 py-2 text-sm font-medium hover:bg-[#004d3a] hover:text-white transition-colors"
-                            data-testid={`link-playstore-${idx}`}
-                          >
-                            <SiGoogleplay className="w-4 h-4" />
-                            <span>Google Play</span>
-                          </a>
-                        </div>
-                      )}
-                    </div>
+                        <a
+                          href={platform.playStoreUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 flex items-center justify-center gap-1.5 bg-gray-100 text-gray-700 rounded-full px-3 py-2 text-xs font-medium hover:bg-[#004d3a] hover:text-white transition-colors"
+                          data-testid={`link-playstore-${idx}`}
+                        >
+                          <SiGoogleplay className="w-3.5 h-3.5" />
+                          <span>Google Play</span>
+                        </a>
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               ))}

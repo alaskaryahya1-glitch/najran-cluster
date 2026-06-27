@@ -152,8 +152,8 @@ const orgStructureData = [
 ];
 
 const hospitalsData = [
-  { 
-    nameKey: "about.hospital.westNajranShort", 
+  {
+    nameKey: "about.hospital.westNajranShort",
     descKey: "about.hospital.westNajranShort.desc",
     searchQuery: "مستشفى غرب نجران للولادة والأطفال",
     beds: 50,
@@ -162,8 +162,8 @@ const hospitalsData = [
     website: null,
     serviceKeys: ["about.service.obgyn", "about.service.pediatrics", "about.service.outpatient"]
   },
-  { 
-    nameKey: "about.hospital.kingKhaledShort", 
+  {
+    nameKey: "about.hospital.kingKhaledShort",
     descKey: "about.hospital.kingKhaledShort.desc",
     searchQuery: "مستشفى الملك خالد نجران",
     beds: 300,
@@ -172,8 +172,8 @@ const hospitalsData = [
     website: null,
     serviceKeys: ["about.service.emergency24", "about.service.icu", "about.service.cardiacCath", "about.service.outpatient"]
   },
-  { 
-    nameKey: "about.hospital.eradahShort", 
+  {
+    nameKey: "about.hospital.eradahShort",
     descKey: "about.hospital.eradahShort.desc",
     searchQuery: "مجمع إرادة والصحة النفسية نجران",
     beds: null,
@@ -182,8 +182,8 @@ const hospitalsData = [
     website: null,
     serviceKeys: ["about.service.mentalHealth", "about.service.addictionTreatment", "about.service.psychRehab", "about.service.halfwayHouse"]
   },
-  { 
-    nameKey: "about.hospital.maternityShort", 
+  {
+    nameKey: "about.hospital.maternityShort",
     descKey: "about.hospital.maternityShort.desc",
     searchQuery: "مستشفى الولادة والأطفال نجران",
     beds: 200,
@@ -192,8 +192,8 @@ const hospitalsData = [
     website: null,
     serviceKeys: ["about.service.obgyn", "about.service.pediatrics", "about.service.surgery", "about.service.outpatient"]
   },
-  { 
-    nameKey: "about.hospital.sharurahShort", 
+  {
+    nameKey: "about.hospital.sharurahShort",
     descKey: "about.hospital.sharurahShort.desc",
     searchQuery: "مستشفى شرورة العام",
     beds: null,
@@ -202,8 +202,8 @@ const hospitalsData = [
     website: null,
     serviceKeys: ["about.service.emergency", "about.service.internal", "about.service.generalSurgery", "about.service.obgyn", "about.service.pediatrics"]
   },
-  { 
-    nameKey: "about.hospital.habunaShort", 
+  {
+    nameKey: "about.hospital.habunaShort",
     descKey: "about.hospital.habunaShort.desc",
     searchQuery: "مستشفى حبونا العام نجران",
     beds: null,
@@ -212,8 +212,8 @@ const hospitalsData = [
     website: "https://habuna-gh.org/",
     serviceKeys: ["about.service.emergency", "about.service.generalSurgery", "about.service.obgyn", "about.service.dialysis"]
   },
-  { 
-    nameKey: "about.hospital.tharShort", 
+  {
+    nameKey: "about.hospital.tharShort",
     descKey: "about.hospital.tharShort.desc",
     searchQuery: "مستشفى ثار العام نجران",
     beds: 50,
@@ -222,8 +222,8 @@ const hospitalsData = [
     website: null,
     serviceKeys: ["about.service.emergency", "about.service.operations", "about.service.icu", "about.service.outpatient"]
   },
-  { 
-    nameKey: "about.hospital.yadamahShort", 
+  {
+    nameKey: "about.hospital.yadamahShort",
     descKey: "about.hospital.yadamahShort.desc",
     searchQuery: "مستشفى يدمة العام نجران",
     beds: null,
@@ -232,8 +232,8 @@ const hospitalsData = [
     website: null,
     serviceKeys: ["about.service.emergency", "about.service.operations", "about.service.delivery", "about.service.physicalTherapy"]
   },
-  { 
-    nameKey: "about.hospital.badrSouthShort", 
+  {
+    nameKey: "about.hospital.badrSouthShort",
     descKey: "about.hospital.badrSouthShort.desc",
     searchQuery: "مستشفى بدر الجنوب نجران",
     beds: 50,
@@ -242,8 +242,8 @@ const hospitalsData = [
     website: null,
     serviceKeys: ["about.service.generalSurgery", "about.service.internal", "about.service.obgyn", "about.service.dialysis"]
   },
-  { 
-    nameKey: "about.hospital.khubashShort", 
+  {
+    nameKey: "about.hospital.khubashShort",
     descKey: "about.hospital.khubashShort.desc",
     searchQuery: "مستشفى خباش العام نجران",
     beds: 50,
@@ -252,8 +252,8 @@ const hospitalsData = [
     website: null,
     serviceKeys: ["about.service.emergency", "about.service.outpatient", "about.service.generalSurgery", "about.service.lab"]
   },
-  { 
-    nameKey: "about.hospital.najranGeneralNew", 
+  {
+    nameKey: "about.hospital.najranGeneralNew",
     descKey: "about.hospital.najranGeneralNew.desc",
     searchQuery: "مستشفي نجران العام (الشرفة)",
     beds: 200,
@@ -265,8 +265,8 @@ const hospitalsData = [
 ];
 
 const specializedCentersData = [
-  { 
-    nameKey: "about.specializedCenter.dental", 
+  {
+    nameKey: "about.specializedCenter.dental",
     descKey: "about.specializedCenter.dental.desc",
     searchQuery: "مركز طب الأسنان التخصصي نجران",
     serviceKeys: ["about.service.dentalTreatment", "about.service.orthodontics", "about.service.oralSurgery", "about.service.cosmeticDentistry"],
@@ -353,7 +353,7 @@ export default function About() {
   const [expandedDeputy, setExpandedDeputy] = useState<string | null>(null);
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const { t, language } = useI18n();
-  
+
   useSEO({
     path: '/about',
     titleAr: 'من نحن | تجمع نجران الصحي - الخدمات والمستشفيات والقيادة',
@@ -361,7 +361,7 @@ export default function About() {
     descriptionAr: 'تجمع نجران الصحي - تعرف على خدماتنا الصحية، مستشفياتنا الـ12، مراكز الرعاية الصحية الأولية الـ69، والقيادة التنفيذية. نخدم أكثر من 495 ألف مستفيد في منطقة نجران.',
     descriptionEn: 'Najran Health Cluster - Learn about our healthcare services, 12 hospitals, 69 primary healthcare centers, and executive leadership. Serving 495,000+ beneficiaries in Najran Region.',
   }, language);
-  
+
   const faqItems = [
     { questionKey: "about.faq.q1", answerKey: "about.faq.a1" },
     { questionKey: "about.faq.q2", answerKey: "about.faq.a2" },
@@ -369,9 +369,8 @@ export default function About() {
     { questionKey: "about.faq.q4", answerKey: "about.faq.a4" },
     { questionKey: "about.faq.q5", answerKey: "about.faq.a5" },
   ];
-  
+
   useEffect(() => {
-    // Organization Schema
     const organizationSchema = {
       "@context": "https://schema.org",
       "@type": "MedicalOrganization",
@@ -385,7 +384,7 @@ export default function About() {
         "width": 512,
         "height": 512
       },
-      "description": language === 'ar' 
+      "description": language === 'ar'
         ? "تجمع نجران الصحي هو أحد التجمعات الصحية التابعة لشركة الصحة القابضة في المملكة العربية السعودية، يقدم خدماته لأكثر من 495 ألف مستفيد عبر 12 مستشفى و69 مركز رعاية صحية أولية"
         : "Najran Health Cluster is one of the health clusters under the Health Holding Company in Saudi Arabia, serving over 495,000 beneficiaries through 12 hospitals and 69 primary healthcare centers",
       "foundingDate": "2021",
@@ -427,7 +426,6 @@ export default function About() {
       ]
     };
 
-    // Person Schema for Leadership
     const leadershipSchema = [
       {
         "@context": "https://schema.org",
@@ -483,7 +481,6 @@ export default function About() {
       }
     ];
 
-    // FAQ Schema
     const faqSchema = {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -497,80 +494,238 @@ export default function About() {
       }))
     };
 
-    // Combined schema array
     const combinedSchema = [organizationSchema, ...leadershipSchema, faqSchema];
-    
+
     const existingScript = document.getElementById('about-structured-data');
-    if (existingScript) {
-      existingScript.remove();
-    }
-    
+    if (existingScript) existingScript.remove();
+
     const script = document.createElement('script');
     script.id = 'about-structured-data';
     script.type = 'application/ld+json';
     script.textContent = JSON.stringify(combinedSchema);
     document.head.appendChild(script);
-    
+
     return () => {
       const scriptToRemove = document.getElementById('about-structured-data');
-      if (scriptToRemove) {
-        scriptToRemove.remove();
-      }
+      if (scriptToRemove) scriptToRemove.remove();
     };
   }, [language, t]);
-    
+
   const fontClass = language === 'ar' ? 'font-arabic' : 'font-sans';
   const textAlign = language === 'ar' ? 'text-right' : 'text-left';
 
   return (
-    <div className="min-h-screen relative">
-      <div className="fixed inset-0 z-0">
-        <img
-          src={heroImage}
-          alt=""
-          data-nosnippet="true"
-          className="w-full h-full object-cover dark-bg-image"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/35 to-black/45" />
-      </div>
-
+    <div className="min-h-screen">
       <Header />
-      
-      <main className="relative z-10">
-        {/* Hero Section */}
-        <section className="relative py-24 overflow-hidden">
-          <div className="absolute inset-0 bg-black/15 backdrop-blur-[2px]"></div>
-          <div className="absolute inset-0 najran-geometric-bg opacity-20"></div>
-          
-          <div className="container-custom relative text-center">
+
+      <main>
+        {/* ===== NEW: Hero Section ===== */}
+        <section
+          className="relative flex items-center justify-center overflow-hidden"
+          style={{ backgroundColor: '#005d47', minHeight: '50vh' }}
+        >
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none"
+          >
+            <source src="https://cmsapi.health.sa/about-video.mp4-ri13td.mp4" type="video/mp4" />
+          </video>
+          <div className="relative z-10 text-center text-white px-4 py-24">
             <motion.div
-              
-              
-              className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-2xl border border-white/20 p-8 md:p-12 max-w-4xl mx-auto relative overflow-hidden"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
             >
-              <CardStar size="lg" />
-              <div className="h-1.5 bg-[#2BAAE2] absolute top-0 left-0 right-0"></div>
-              <h1 className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-white ${fontClass} mb-4 relative z-10`}>
-                {t("about.title")}
+              <h1 className={`text-4xl md:text-5xl font-bold mb-4 ${fontClass}`}>
+                {language === 'ar' ? 'قصة التحول الصحي في نجران' : 'Najran Health Transformation Story'}
               </h1>
-              <p className={`text-white ${fontClass} text-xl relative z-10`}>
-                {t("about.subtitle")}
+              <p className={`text-white/70 text-lg ${fontClass}`}>
+                {language === 'ar'
+                  ? 'نحن نبني مستقبلاً صحياً واعداً لأكثر من نصف مليون إنسان'
+                  : 'Building a healthy future for over half a million people'}
               </p>
             </motion.div>
           </div>
         </section>
 
-        {/* Cluster Services Section */}
-        <section className="relative py-10 sm:py-12 md:py-16 overflow-hidden">
-          <div className="absolute inset-0 bg-black/35 dark:bg-black/65 backdrop-blur-[2px]"></div>
+        {/* ===== NEW: About Section ===== */}
+        <section className="relative py-20 md:py-28 overflow-hidden bg-white">
+          <div className="container-custom">
+            <div className={`flex flex-col lg:flex-row gap-16 xl:gap-24 items-center ${language === 'ar' ? '' : 'lg:flex-row-reverse'}`}>
+              {/* Text + Stats */}
+              <motion.div
+                className="lg:w-1/2"
+                initial={{ opacity: 0, x: language === 'ar' ? 40 : -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <span
+                  className={`font-bold text-sm uppercase tracking-widest ${fontClass}`}
+                  style={{ color: '#005d47' }}
+                >
+                  {language === 'ar' ? 'من نحن' : 'About Us'}
+                </span>
+                <h2
+                  className={`text-3xl lg:text-4xl xl:text-5xl font-bold mt-4 leading-tight ${fontClass}`}
+                  style={{ color: '#0a1916' }}
+                >
+                  {language === 'ar' ? (
+                    <>رعاية صحية شاملة <br /> تضع <span style={{ color: '#005d47' }}>الإنسان أولاً</span></>
+                  ) : (
+                    <>Comprehensive Health Care <br /> Putting <span style={{ color: '#005d47' }}>People First</span></>
+                  )}
+                </h2>
+                <p className={`mt-6 text-lg text-gray-600 leading-relaxed ${fontClass}`}>
+                  {language === 'ar'
+                    ? 'يعتبر تجمع نجران الصحي حجر الزاوية في تقديم الرعاية الصحية بمنطقة نجران، حيث نعمل كمنظومة مترابطة تهدف إلى تسهيل رحلة المستفيد ورفع جودة الحياة من خلال تطبيق أفضل المعايير العالمية في نموذج الرعاية الحديث.'
+                    : 'Najran Health Cluster is the cornerstone of healthcare in the Najran region, operating as an integrated system aimed at facilitating the beneficiary journey and improving quality of life through the application of the best global standards in modern care models.'}
+                </p>
+
+                <div className="mt-10 grid grid-cols-2 gap-8 border-t border-gray-100 pt-10">
+                  <div>
+                    <span className="text-4xl font-bold block" style={{ color: '#005d47' }}>12</span>
+                    <span className={`text-gray-500 font-medium text-sm ${fontClass}`}>
+                      {language === 'ar' ? 'مستشفى عام ومتخصص' : 'General & Specialized Hospitals'}
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-4xl font-bold block" style={{ color: '#005d47' }}>69</span>
+                    <span className={`text-gray-500 font-medium text-sm ${fontClass}`}>
+                      {language === 'ar' ? 'مركز رعاية أولية' : 'Primary Care Centers'}
+                    </span>
+                  </div>
+                  <div className="col-span-2">
+                    <span className="text-4xl font-bold block" style={{ color: '#005d47' }}>+495,000</span>
+                    <span className={`text-gray-500 font-medium text-sm ${fontClass}`}>
+                      {language === 'ar' ? 'مستفيد من خدماتنا في المنطقة' : 'Beneficiaries in the Region'}
+                    </span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Layered Image */}
+              <motion.div
+                className="lg:w-1/2 w-full"
+                initial={{ opacity: 0, scale: 0.92 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className="relative">
+                  <div
+                    className="relative z-20 overflow-hidden border-[10px] border-white"
+                    style={{
+                      borderRadius: '3rem',
+                      boxShadow: '30px 30px 0px 0px rgba(0, 93, 71, 0.12)',
+                    }}
+                  >
+                    <img
+                      src={heroImage}
+                      alt={t("about.title")}
+                      className="w-full object-cover"
+                      style={{ height: '480px' }}
+                    />
+                  </div>
+                  <div
+                    className="absolute w-full h-full opacity-10"
+                    style={{
+                      backgroundColor: '#005d47',
+                      borderRadius: '3rem',
+                      bottom: '-2.5rem',
+                      right: language === 'ar' ? '-2.5rem' : 'auto',
+                      left: language === 'ar' ? 'auto' : '-2.5rem',
+                      zIndex: 0,
+                    }}
+                  />
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* ===== NEW: Vision & Mission Section ===== */}
+        <section className="py-20 md:py-28 px-6 text-white overflow-hidden" style={{ backgroundColor: '#0a1916' }}>
+          <div className="container-custom">
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <h2 className={`text-3xl md:text-4xl font-bold ${fontClass}`}>
+                {language === 'ar' ? 'رؤيتنا ورسالتنا' : 'Our Vision & Mission'}
+              </h2>
+            </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+              {/* Vision */}
+              <motion.div
+                className="group p-10 md:p-12 border border-white/10 transition-all duration-500 hover:bg-white/10"
+                style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '3rem' }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <div
+                  className="w-16 h-16 rounded-2xl flex items-center justify-center text-2xl mb-8 group-hover:scale-110 transition-transform"
+                  style={{ backgroundColor: '#005d47' }}
+                >
+                  👁️
+                </div>
+                <h3 className={`text-2xl md:text-3xl font-bold mb-5 ${fontClass}`}>
+                  {language === 'ar' ? 'الرؤية' : 'Vision'}
+                </h3>
+                <p className={`text-lg md:text-xl text-white/70 leading-relaxed ${fontClass}`}>
+                  {language === 'ar'
+                    ? 'الريادة في تقديم رعاية صحية محورها الفرد والمجتمع، بجودة وكفاءة مستدامة في منطقة نجران.'
+                    : 'Leadership in providing healthcare centered on the individual and community, with sustainable quality and efficiency in the Najran region.'}
+                </p>
+              </motion.div>
+
+              {/* Mission */}
+              <motion.div
+                className="group p-10 md:p-12 border border-white/10 transition-all duration-500 hover:bg-white/10"
+                style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '3rem' }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.15 }}
+              >
+                <div
+                  className="w-16 h-16 rounded-2xl flex items-center justify-center text-2xl mb-8 group-hover:scale-110 transition-transform"
+                  style={{ backgroundColor: '#005d47' }}
+                >
+                  🎯
+                </div>
+                <h3 className={`text-2xl md:text-3xl font-bold mb-5 ${fontClass}`}>
+                  {language === 'ar' ? 'الرسالة' : 'Mission'}
+                </h3>
+                <p className={`text-lg md:text-xl text-white/70 leading-relaxed ${fontClass}`}>
+                  {language === 'ar'
+                    ? 'تقديم خدمات صحية متكاملة وآمنة عبر تمكين الكفاءات الوطنية وتطبيق نموذج الرعاية الحديث والتحول الرقمي الشامل.'
+                    : 'Providing integrated and safe healthcare services by empowering national capabilities and implementing modern care models and comprehensive digital transformation.'}
+                </p>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* ===== Cluster Services Section ===== */}
+        <section className="relative py-10 sm:py-12 md:py-16 overflow-hidden" style={{ backgroundColor: '#000e22' }}>
           <div className="absolute inset-0 najran-geometric-bg opacity-20"></div>
-          
+
           <div className="container-custom relative">
             <motion.div
-              
-              
-              
-              className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-2xl border border-white/20 p-6 md:p-8 text-center mb-6 sm:mb-8 md:mb-10 relative overflow-hidden"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 p-6 md:p-8 text-center mb-6 sm:mb-8 md:mb-10 relative overflow-hidden"
             >
               <CardStar size="lg" />
               <div className="h-1.5 bg-[#2BAAE2] absolute top-0 left-0 right-0"></div>
@@ -581,7 +736,7 @@ export default function About() {
                 {t("home.clusterServices.subtitle")}
               </p>
             </motion.div>
-            
+
             <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-3 xs:gap-4 sm:gap-6">
               {[
                 { id: 'homecare', icon: HomeIcon },
@@ -591,24 +746,24 @@ export default function About() {
               ].map((service, idx) => (
                 <motion.div
                   key={service.id}
-                  
-                  
-                  
-                  
-                  className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-2xl overflow-hidden border border-white/20 text-center relative"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.05 }}
+                  className="bg-white/5 backdrop-blur-md rounded-2xl overflow-hidden border border-white/10 text-center relative"
                 >
                   <CardStar size="md" />
                   <div className="h-1.5 bg-[#2BAAE2]"></div>
                   <div className="p-6 relative z-10">
-                  <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <service.icon className="w-8 h-8 text-[#2BAAE2]" />
-                  </div>
-                  <h3 className={`text-lg font-bold text-white ${fontClass} mb-3`}>
-                    {t(`home.clusterServices.${service.id}.title`)}
-                  </h3>
-                  <p className={`text-white/90 text-sm ${fontClass}`}>
-                    {t(`home.clusterServices.${service.id}.desc`)}
-                  </p>
+                    <div className="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                      <service.icon className="w-8 h-8 text-[#2BAAE2]" />
+                    </div>
+                    <h3 className={`text-lg font-bold text-white ${fontClass} mb-3`}>
+                      {t(`home.clusterServices.${service.id}.title`)}
+                    </h3>
+                    <p className={`text-white/80 text-sm ${fontClass}`}>
+                      {t(`home.clusterServices.${service.id}.desc`)}
+                    </p>
                   </div>
                 </motion.div>
               ))}
@@ -616,254 +771,243 @@ export default function About() {
           </div>
         </section>
 
-        {/* Healthcare Facilities Section */}
-        <section className="relative py-16 overflow-hidden">
-          <div className="absolute inset-0 bg-black/20 dark:bg-black/50 backdrop-blur-[2px]"></div>
+        {/* ===== Healthcare Facilities Section ===== */}
+        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#001228' }}>
           <div className="absolute inset-0 najran-geometric-bg opacity-20"></div>
-          
+
           <div className="container-custom relative">
             <motion.div
-              
-              
-              
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               className="text-center mb-6"
             >
               <h2 className={`text-2xl md:text-3xl font-bold text-white ${fontClass} mb-2`}>{t("about.facilities")}</h2>
-              <p className={`text-white ${fontClass}`}>{t("about.facilities.subtitle")}</p>
+              <p className={`text-white/80 ${fontClass}`}>{t("about.facilities.subtitle")}</p>
             </motion.div>
 
-            <div className="bg-black/20 dark:bg-black/50 backdrop-blur-md text-white rounded-2xl overflow-hidden border border-white/20 relative">
+            <div className="bg-white/5 backdrop-blur-md text-white rounded-2xl overflow-hidden border border-white/10 relative">
               <CardStar size="lg" />
               <div className="h-1.5 bg-[#2BAAE2]"></div>
               <div className="py-4 px-4 sm:px-6 relative z-10">
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
-                <button 
-                  onClick={() => { setShowHospitals(!showHospitals); setShowSpecializedCenters(false); setShowHealthCenters(false); }}
-                  className={`text-center cursor-pointer rounded-lg py-2 transition-all ${showHospitals ? 'bg-white/20' : 'hover:bg-white/10'}`}
-                  data-testid="button-hospitals"
-                >
-                  <Building2 className="w-5 h-5 mx-auto mb-1 opacity-80 text-[#2BAAE2] brand-icon" />
-                  <p className="text-xl font-bold">11</p>
-                  <p className={`text-white/90 ${fontClass} text-xs`}>{t("about.hospitals")}</p>
-                  <ChevronDown className={`w-4 h-4 mx-auto mt-1 opacity-60 transition-transform text-[#2BAAE2] ${showHospitals ? 'rotate-180' : ''}`} />
-                </button>
-                <button 
-                  onClick={() => { setShowSpecializedCenters(!showSpecializedCenters); setShowHospitals(false); setShowHealthCenters(false); }}
-                  className={`text-center cursor-pointer rounded-lg py-2 transition-all ${showSpecializedCenters ? 'bg-white/20' : 'hover:bg-white/10'}`}
-                  data-testid="button-specialized-centers"
-                >
-                  <Hospital className="w-5 h-5 mx-auto mb-1 opacity-80 text-[#2BAAE2] brand-icon" />
-                  <p className="text-xl font-bold">1</p>
-                  <p className={`text-white/90 ${fontClass} text-xs`}>{t("about.specializedCenters")}</p>
-                  <ChevronDown className={`w-4 h-4 mx-auto mt-1 opacity-60 transition-transform text-[#2BAAE2] ${showSpecializedCenters ? 'rotate-180' : ''}`} />
-                </button>
-                <button 
-                  onClick={() => { setShowHealthCenters(!showHealthCenters); setShowHospitals(false); setShowSpecializedCenters(false); }}
-                  className={`text-center cursor-pointer rounded-lg py-2 transition-all ${showHealthCenters ? 'bg-white/20' : 'hover:bg-white/10'}`}
-                  data-testid="button-health-centers"
-                >
-                  <Stethoscope className="w-5 h-5 mx-auto mb-1 opacity-80 text-[#2BAAE2] brand-icon" />
-                  <p className="text-xl font-bold">69</p>
-                  <p className={`text-white/90 ${fontClass} text-xs`}>{t("about.healthCenters")}</p>
-                  <ChevronDown className={`w-4 h-4 mx-auto mt-1 opacity-60 transition-transform text-[#2BAAE2] ${showHealthCenters ? 'rotate-180' : ''}`} />
-                </button>
-                <div className="text-center py-2">
-                  <Users className="w-5 h-5 mx-auto mb-1 opacity-80 text-[#2BAAE2] brand-icon" />
-                  <p className="text-xl font-bold">495K+</p>
-                  <p className={`text-white/90 ${fontClass} text-xs`}>{t("about.beneficiaries")}</p>
-                </div>
-                <div className="text-center py-2">
-                  <BedDouble className="w-5 h-5 mx-auto mb-1 opacity-80 text-[#2BAAE2] brand-icon" />
-                  <p className="text-xl font-bold">1,300</p>
-                  <p className={`text-white/90 ${fontClass} text-xs`}>{t("about.beds")}</p>
-                </div>
-              </div>
-              
-              {/* Hospitals List */}
-              <AnimatePresence>
-                {showHospitals && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden"
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
+                  <button
+                    onClick={() => { setShowHospitals(!showHospitals); setShowSpecializedCenters(false); setShowHealthCenters(false); }}
+                    className={`text-center cursor-pointer rounded-lg py-2 transition-all ${showHospitals ? 'bg-white/20' : 'hover:bg-white/10'}`}
+                    data-testid="button-hospitals"
                   >
-                    <div className="mt-4 pt-4 border-t border-white/20">
-                      <h4 className={`text-center ${fontClass} font-bold mb-3`}>{t("about.hospitalsList")}</h4>
-                      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
-                        {hospitalsData.map((hospital, idx) => (
-                          <Tooltip key={hospital.nameKey} delayDuration={200}>
-                            <TooltipTrigger asChild>
-                              <motion.a
-                                href={hospital.website || `https://www.google.com/maps/search/${encodeURIComponent(hospital.searchQuery)}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                
-                                
-                                
-                                className="bg-white/10 rounded-lg px-3 py-2 text-center hover:bg-white/20 transition-all cursor-pointer group"
-                                data-testid={`link-hospital-${idx}`}
-                              >
-                                <div className="flex items-center justify-center gap-1 mb-1">
-                                  <MapPin className="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity text-[#2BAAE2] brand-icon" />
+                    <Building2 className="w-5 h-5 mx-auto mb-1 opacity-80 text-[#2BAAE2] brand-icon" />
+                    <p className="text-xl font-bold">11</p>
+                    <p className={`text-white/90 ${fontClass} text-xs`}>{t("about.hospitals")}</p>
+                    <ChevronDown className={`w-4 h-4 mx-auto mt-1 opacity-60 transition-transform text-[#2BAAE2] ${showHospitals ? 'rotate-180' : ''}`} />
+                  </button>
+                  <button
+                    onClick={() => { setShowSpecializedCenters(!showSpecializedCenters); setShowHospitals(false); setShowHealthCenters(false); }}
+                    className={`text-center cursor-pointer rounded-lg py-2 transition-all ${showSpecializedCenters ? 'bg-white/20' : 'hover:bg-white/10'}`}
+                    data-testid="button-specialized-centers"
+                  >
+                    <Hospital className="w-5 h-5 mx-auto mb-1 opacity-80 text-[#2BAAE2] brand-icon" />
+                    <p className="text-xl font-bold">1</p>
+                    <p className={`text-white/90 ${fontClass} text-xs`}>{t("about.specializedCenters")}</p>
+                    <ChevronDown className={`w-4 h-4 mx-auto mt-1 opacity-60 transition-transform text-[#2BAAE2] ${showSpecializedCenters ? 'rotate-180' : ''}`} />
+                  </button>
+                  <button
+                    onClick={() => { setShowHealthCenters(!showHealthCenters); setShowHospitals(false); setShowSpecializedCenters(false); }}
+                    className={`text-center cursor-pointer rounded-lg py-2 transition-all ${showHealthCenters ? 'bg-white/20' : 'hover:bg-white/10'}`}
+                    data-testid="button-health-centers"
+                  >
+                    <Stethoscope className="w-5 h-5 mx-auto mb-1 opacity-80 text-[#2BAAE2] brand-icon" />
+                    <p className="text-xl font-bold">69</p>
+                    <p className={`text-white/90 ${fontClass} text-xs`}>{t("about.healthCenters")}</p>
+                    <ChevronDown className={`w-4 h-4 mx-auto mt-1 opacity-60 transition-transform text-[#2BAAE2] ${showHealthCenters ? 'rotate-180' : ''}`} />
+                  </button>
+                  <div className="text-center py-2">
+                    <Users className="w-5 h-5 mx-auto mb-1 opacity-80 text-[#2BAAE2] brand-icon" />
+                    <p className="text-xl font-bold">495K+</p>
+                    <p className={`text-white/90 ${fontClass} text-xs`}>{t("about.beneficiaries")}</p>
+                  </div>
+                  <div className="text-center py-2">
+                    <BedDouble className="w-5 h-5 mx-auto mb-1 opacity-80 text-[#2BAAE2] brand-icon" />
+                    <p className="text-xl font-bold">1,300</p>
+                    <p className={`text-white/90 ${fontClass} text-xs`}>{t("about.beds")}</p>
+                  </div>
+                </div>
+
+                {/* Hospitals List */}
+                <AnimatePresence>
+                  {showHospitals && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="mt-4 pt-4 border-t border-white/20">
+                        <h4 className={`text-center ${fontClass} font-bold mb-3`}>{t("about.hospitalsList")}</h4>
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+                          {hospitalsData.map((hospital, idx) => (
+                            <Tooltip key={hospital.nameKey} delayDuration={200}>
+                              <TooltipTrigger asChild>
+                                <motion.a
+                                  href={hospital.website || `https://www.google.com/maps/search/${encodeURIComponent(hospital.searchQuery)}`}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="bg-white/10 rounded-lg px-3 py-2 text-center hover:bg-white/20 transition-all cursor-pointer group"
+                                  data-testid={`link-hospital-${idx}`}
+                                >
+                                  <div className="flex items-center justify-center gap-1 mb-1">
+                                    <MapPin className="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity text-[#2BAAE2] brand-icon" />
+                                  </div>
+                                  <p className={`${fontClass} text-sm`}>{t(hospital.nameKey)}</p>
+                                </motion.a>
+                              </TooltipTrigger>
+                              <TooltipContent side="top" className={`max-w-xs bg-white dark:bg-card text-foreground p-4 rounded-xl shadow-xl border border-border/50 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+                                <div className={fontClass}>
+                                  <h5 className="font-bold text-[#1691D0] mb-2">{t(hospital.nameKey)}</h5>
+                                  <p className="text-sm text-muted-foreground mb-3">{t(hospital.descKey)}</p>
+                                  <div className="space-y-1.5 text-xs">
+                                    {hospital.beds && (
+                                      <div className={`flex items-center gap-2 ${language === 'ar' ? 'justify-end' : 'justify-start'}`}>
+                                        <span>{hospital.beds} {t("about.hospital.beds")}</span>
+                                        <Bed className="w-3.5 h-3.5 text-[#1691D0]" />
+                                      </div>
+                                    )}
+                                    {hospital.established && (
+                                      <div className={`flex items-center gap-2 ${language === 'ar' ? 'justify-end' : 'justify-start'}`}>
+                                        <span>{t("about.hospital.established")}: {hospital.established}</span>
+                                        <Calendar className="w-3.5 h-3.5 text-[#1691D0]" />
+                                      </div>
+                                    )}
+                                    {hospital.phone && (
+                                      <div className={`flex items-center gap-2 ${language === 'ar' ? 'justify-end' : 'justify-start'}`}>
+                                        <span dir="ltr">{hospital.phone}</span>
+                                        <Phone className="w-3.5 h-3.5 text-[#1691D0]" />
+                                      </div>
+                                    )}
+                                  </div>
+                                  <div className={`flex flex-wrap gap-1 mt-3 ${language === 'ar' ? 'justify-end' : 'justify-start'}`}>
+                                    {hospital.serviceKeys.slice(0, 4).map((serviceKey, i) => (
+                                      <span key={i} className="bg-[#1691D0]/10 text-[#1691D0] px-2 py-0.5 rounded-full text-xs">
+                                        {t(serviceKey)}
+                                      </span>
+                                    ))}
+                                  </div>
                                 </div>
-                                <p className={`${fontClass} text-sm`}>{t(hospital.nameKey)}</p>
-                              </motion.a>
-                            </TooltipTrigger>
-                            <TooltipContent side="top" className={`max-w-xs bg-white dark:bg-card text-foreground p-4 rounded-xl shadow-xl border border-border/50 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                              <div className={fontClass}>
-                                <h5 className="font-bold text-[#1691D0] mb-2">{t(hospital.nameKey)}</h5>
-                                <p className="text-sm text-muted-foreground mb-3">{t(hospital.descKey)}</p>
-                                <div className="space-y-1.5 text-xs">
-                                  {hospital.beds && (
-                                    <div className={`flex items-center gap-2 ${language === 'ar' ? 'justify-end' : 'justify-start'}`}>
-                                      <span>{hospital.beds} {t("about.hospital.beds")}</span>
-                                      <Bed className="w-3.5 h-3.5 text-[#1691D0]" />
-                                    </div>
-                                  )}
-                                  {hospital.established && (
-                                    <div className={`flex items-center gap-2 ${language === 'ar' ? 'justify-end' : 'justify-start'}`}>
-                                      <span>{t("about.hospital.established")}: {hospital.established}</span>
-                                      <Calendar className="w-3.5 h-3.5 text-[#1691D0]" />
-                                    </div>
-                                  )}
-                                  {hospital.phone && (
-                                    <div className={`flex items-center gap-2 ${language === 'ar' ? 'justify-end' : 'justify-start'}`}>
-                                      <span dir="ltr">{hospital.phone}</span>
+                              </TooltipContent>
+                            </Tooltip>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
+                {/* Specialized Centers List */}
+                <AnimatePresence>
+                  {showSpecializedCenters && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="mt-4 pt-4 border-t border-white/20">
+                        <h4 className={`text-center ${fontClass} font-bold mb-3`}>{t("about.specializedCentersList")}</h4>
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+                          {specializedCentersData.map((center, idx) => (
+                            <Tooltip key={center.nameKey} delayDuration={200}>
+                              <TooltipTrigger asChild>
+                                <motion.a
+                                  href={`https://www.google.com/maps/search/${encodeURIComponent(center.searchQuery)}`}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="bg-white/10 rounded-lg px-3 py-2 text-center hover:bg-white/20 transition-all cursor-pointer group"
+                                  data-testid={`link-specialized-center-${idx}`}
+                                >
+                                  <div className="flex items-center justify-center gap-1 mb-1">
+                                    <MapPin className="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity text-[#2BAAE2] brand-icon" />
+                                  </div>
+                                  <p className={`${fontClass} text-sm`}>{t(center.nameKey)}</p>
+                                </motion.a>
+                              </TooltipTrigger>
+                              <TooltipContent side="top" className={`max-w-xs bg-white dark:bg-card text-foreground p-4 rounded-xl shadow-xl border border-border/50 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+                                <div className={fontClass}>
+                                  <h5 className="font-bold text-[#1691D0] mb-2">{t(center.nameKey)}</h5>
+                                  <p className="text-sm text-muted-foreground mb-3">{t(center.descKey)}</p>
+                                  {center.phone && (
+                                    <div className={`flex items-center gap-2 ${language === 'ar' ? 'justify-end' : 'justify-start'} text-xs mb-2`}>
+                                      <span dir="ltr">{center.phone}</span>
                                       <Phone className="w-3.5 h-3.5 text-[#1691D0]" />
                                     </div>
                                   )}
-                                </div>
-                                <div className={`flex flex-wrap gap-1 mt-3 ${language === 'ar' ? 'justify-end' : 'justify-start'}`}>
-                                  {hospital.serviceKeys.slice(0, 4).map((serviceKey, i) => (
-                                    <span key={i} className="bg-[#1691D0]/10 text-[#1691D0] px-2 py-0.5 rounded-full text-xs">
-                                      {t(serviceKey)}
-                                    </span>
-                                  ))}
-                                </div>
-                              </div>
-                            </TooltipContent>
-                          </Tooltip>
-                        ))}
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-              
-              {/* Specialized Centers List */}
-              <AnimatePresence>
-                {showSpecializedCenters && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden"
-                  >
-                    <div className="mt-4 pt-4 border-t border-white/20">
-                      <h4 className={`text-center ${fontClass} font-bold mb-3`}>{t("about.specializedCentersList")}</h4>
-                      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
-                        {specializedCentersData.map((center, idx) => (
-                          <Tooltip key={center.nameKey} delayDuration={200}>
-                            <TooltipTrigger asChild>
-                              <motion.a
-                                href={`https://www.google.com/maps/search/${encodeURIComponent(center.searchQuery)}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                
-                                
-                                
-                                className="bg-white/10 rounded-lg px-3 py-2 text-center hover:bg-white/20 transition-all cursor-pointer group"
-                                data-testid={`link-specialized-center-${idx}`}
-                              >
-                                <div className="flex items-center justify-center gap-1 mb-1">
-                                  <MapPin className="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity text-[#2BAAE2] brand-icon" />
-                                </div>
-                                <p className={`${fontClass} text-sm`}>{t(center.nameKey)}</p>
-                              </motion.a>
-                            </TooltipTrigger>
-                            <TooltipContent side="top" className={`max-w-xs bg-white dark:bg-card text-foreground p-4 rounded-xl shadow-xl border border-border/50 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                              <div className={fontClass}>
-                                <h5 className="font-bold text-[#1691D0] mb-2">{t(center.nameKey)}</h5>
-                                <p className="text-sm text-muted-foreground mb-3">{t(center.descKey)}</p>
-                                {center.phone && (
-                                  <div className={`flex items-center gap-2 ${language === 'ar' ? 'justify-end' : 'justify-start'} text-xs mb-2`}>
-                                    <span dir="ltr">{center.phone}</span>
-                                    <Phone className="w-3.5 h-3.5 text-[#1691D0]" />
+                                  <div className={`flex flex-wrap gap-1 ${language === 'ar' ? 'justify-end' : 'justify-start'}`}>
+                                    {center.serviceKeys.map((serviceKey, i) => (
+                                      <span key={i} className="bg-[#1691D0]/10 text-[#1691D0] px-2 py-0.5 rounded-full text-xs">
+                                        {t(serviceKey)}
+                                      </span>
+                                    ))}
                                   </div>
-                                )}
-                                <div className={`flex flex-wrap gap-1 ${language === 'ar' ? 'justify-end' : 'justify-start'}`}>
-                                  {center.serviceKeys.map((serviceKey, i) => (
-                                    <span key={i} className="bg-[#1691D0]/10 text-[#1691D0] px-2 py-0.5 rounded-full text-xs">
-                                      {t(serviceKey)}
-                                    </span>
-                                  ))}
                                 </div>
+                              </TooltipContent>
+                            </Tooltip>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
+                {/* Health Centers List */}
+                <AnimatePresence>
+                  {showHealthCenters && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="mt-4 pt-4 border-t border-white/20">
+                        <h4 className={`text-center ${fontClass} font-bold mb-3`}>{t("about.healthCentersList")}</h4>
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 max-h-96 overflow-y-auto">
+                          {healthCentersData.map((center, idx) => (
+                            <motion.a
+                              key={center.searchQuery}
+                              href={`https://www.google.com/maps/search/${encodeURIComponent(center.searchQuery)}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="bg-white/10 rounded-lg px-3 py-2 text-center hover:bg-white/20 transition-all cursor-pointer group"
+                              data-testid={`link-health-center-${idx}`}
+                            >
+                              <div className="flex items-center justify-center gap-1 mb-1">
+                                <MapPin className="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity text-[#2BAAE2] brand-icon" />
                               </div>
-                            </TooltipContent>
-                          </Tooltip>
-                        ))}
+                              <p className={`${fontClass} text-xs`}>
+                                {language === 'ar' ? center.ar : center.en}
+                              </p>
+                            </motion.a>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-              
-              {/* Health Centers List */}
-              <AnimatePresence>
-                {showHealthCenters && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden"
-                  >
-                    <div className="mt-4 pt-4 border-t border-white/20">
-                      <h4 className={`text-center ${fontClass} font-bold mb-3`}>{t("about.healthCentersList")}</h4>
-                      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 max-h-96 overflow-y-auto">
-                        {healthCentersData.map((center, idx) => (
-                          <motion.a
-                            key={center.searchQuery}
-                            href={`https://www.google.com/maps/search/${encodeURIComponent(center.searchQuery)}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            
-                            
-                            
-                            className="bg-white/10 rounded-lg px-3 py-2 text-center hover:bg-white/20 transition-all cursor-pointer group"
-                            data-testid={`link-health-center-${idx}`}
-                          >
-                            <div className="flex items-center justify-center gap-1 mb-1">
-                              <MapPin className="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity text-[#2BAAE2] brand-icon" />
-                            </div>
-                            <p className={`${fontClass} text-xs`}>
-                              {language === 'ar' ? center.ar : center.en}
-                            </p>
-                          </motion.a>
-                        ))}
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Organizational Structure Section */}
-        <section className="relative py-16 overflow-hidden">
-          <div className="absolute inset-0 bg-black/35 dark:bg-black/65 backdrop-blur-[2px]"></div>
+        {/* ===== Organizational Structure Section ===== */}
+        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#000e22' }}>
           <div className="absolute inset-0 najran-geometric-bg opacity-20"></div>
-          
+
           <div className="container-custom relative">
             <motion.div
-              
-              
-              
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               className="text-center mb-8"
             >
               <h2 className={`text-2xl md:text-3xl font-bold text-white ${fontClass}`}>{t("about.orgStructure.title")}</h2>
@@ -871,36 +1015,34 @@ export default function About() {
 
             {/* CEO */}
             <motion.div
-              
-              
-              
-              className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-2xl overflow-hidden text-white text-center mb-6 max-w-md mx-auto border border-white/20 relative"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white/5 backdrop-blur-md rounded-2xl overflow-hidden text-white text-center mb-6 max-w-md mx-auto border border-white/10 relative"
             >
               <CardStar size="md" />
               <div className="h-1.5 bg-[#2BAAE2]"></div>
               <div className="p-6 relative z-10">
-              <div className="w-28 h-28 rounded-full mx-auto mb-3 overflow-hidden border-4 border-white/30">
-                <img 
-                  src={ceoImage} 
-                  alt={t("about.ceo.name")}
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
-              <h3 className={`text-xl font-bold ${fontClass} mb-1`}>{t("about.ceo.name")}</h3>
-              <p className={`text-white ${fontClass}`}>{t("about.ceo")}</p>
+                <div className="w-28 h-28 rounded-full mx-auto mb-3 overflow-hidden border-4 border-white/30">
+                  <img
+                    src={ceoImage}
+                    alt={t("about.ceo.name")}
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <h3 className={`text-xl font-bold ${fontClass} mb-1`}>{t("about.ceo.name")}</h3>
+                <p className={`text-white/80 ${fontClass}`}>{t("about.ceo")}</p>
               </div>
             </motion.div>
 
-            {/* Connecting Line to Deputies */}
             <div className="flex justify-center mb-6">
               <div className="w-0.5 h-8 bg-[#2BAAE2]"></div>
             </div>
 
-            {/* Deputies Title */}
             <motion.div
-              
-              
-              
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               className="text-center mb-6"
             >
               <h3 className={`text-xl font-bold text-white ${fontClass}`}>
@@ -908,7 +1050,7 @@ export default function About() {
               </h3>
             </motion.div>
 
-            {/* Deputies with Departments */}
+            {/* Deputies */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {orgStructureData.map((deputy, idx) => {
                 const Icon = deputy.icon;
@@ -916,11 +1058,11 @@ export default function About() {
                 return (
                   <motion.div
                     key={deputy.id}
-                    
-                    
-                    
-                    
-                    className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-xl border border-white/20 overflow-hidden relative"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.04 }}
+                    className="bg-white/5 backdrop-blur-md rounded-xl border border-white/10 overflow-hidden relative"
                     data-testid={`card-deputy-${idx}`}
                   >
                     <CardStar size="sm" />
@@ -930,22 +1072,22 @@ export default function About() {
                       className="w-full p-4 flex items-center gap-4 text-right"
                       data-testid={`button-expand-deputy-${idx}`}
                     >
-                      <div className="w-16 h-16 rounded-full flex-shrink-0 bg-white/20 flex items-center justify-center overflow-hidden">
+                      <div className="w-16 h-16 rounded-full flex-shrink-0 bg-white/10 flex items-center justify-center overflow-hidden">
                         {deputy.image ? (
-                          <img src={deputy.image} alt={t(deputy.nameKey)} className="w-full h-full object-cover dark-bg-image" />
+                          <img src={deputy.image} alt={t(deputy.nameKey)} className="w-full h-full object-cover" />
                         ) : (
                           <Icon className="w-8 h-8 text-[#2BAAE2] brand-icon" />
                         )}
                       </div>
                       <div className="flex-1 min-w-0">
                         <h4 className={`font-bold text-white ${fontClass} text-sm`}>{t(deputy.nameKey)}</h4>
-                        <p className={`text-white/90 ${fontClass} text-xs leading-tight`}>{t(deputy.titleKey)}</p>
+                        <p className={`text-white/70 ${fontClass} text-xs leading-tight`}>{t(deputy.titleKey)}</p>
                       </div>
-                      <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
                         <ChevronDown className={`w-4 h-4 text-[#2BAAE2] transition-transform ${isExpanded ? 'rotate-180' : ''}`} />
                       </div>
                     </button>
-                    
+
                     <AnimatePresence>
                       {isExpanded && (
                         <motion.div
@@ -955,15 +1097,15 @@ export default function About() {
                           transition={{ duration: 0.2 }}
                           className="overflow-hidden"
                         >
-                          <div className="px-4 pb-4 pt-2 border-t border-white/20">
+                          <div className="px-4 pb-4 pt-2 border-t border-white/10">
                             <div className="grid grid-cols-2 gap-2">
                               {deputy.departments.map((dept, deptIdx) => (
                                 <motion.div
                                   key={dept}
-                                  
-                                  
+                                  initial={{ opacity: 0 }}
+                                  animate={{ opacity: 1 }}
                                   transition={{ delay: deptIdx * 0.03 }}
-                                  className="bg-white/20 px-2 py-1.5 rounded-lg"
+                                  className="bg-white/10 px-2 py-1.5 rounded-lg"
                                 >
                                   <p className={`text-white ${fontClass} text-xs text-center`}>{t(dept)}</p>
                                 </motion.div>
@@ -978,16 +1120,14 @@ export default function About() {
               })}
             </div>
 
-            {/* Connecting Line to Hospitals */}
             <div className="flex justify-center my-8">
               <div className="w-0.5 h-8 bg-[#2BAAE2]"></div>
             </div>
 
-            {/* Hospitals Title */}
             <motion.div
-              
-              
-              
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               className="text-center mb-6"
             >
               <h3 className={`text-xl font-bold text-white ${fontClass}`}>
@@ -1012,43 +1152,41 @@ export default function About() {
               ].map((item, idx) => (
                 <motion.div
                   key={idx}
-                  
-                  
-                  
-                  
-                  className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-xl border border-white/20 overflow-hidden relative"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.04 }}
+                  className="bg-white/5 backdrop-blur-md rounded-xl border border-white/10 overflow-hidden relative"
                   data-testid={`card-hospital-${idx}`}
                 >
                   <CardStar size="sm" />
                   <div className="h-1.5 bg-[#2BAAE2]"></div>
                   <div className="p-4 relative z-10">
-                  <div className="flex items-center gap-3">
-                    <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0 p-1.5">
-                      <img src={clusterStar} alt="" className="w-full h-full object-contain" />
+                    <div className="flex items-center gap-3">
+                      <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 p-1.5">
+                        <img src={clusterStar} alt="" className="w-full h-full object-contain" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h4 className={`font-bold text-white ${fontClass} text-sm`}>{t(item.hospitalKey)}</h4>
+                        <p className={`text-white/70 ${fontClass} text-xs`}>{t(item.directorKey)}</p>
+                      </div>
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <h4 className={`font-bold text-white ${fontClass} text-sm`}>{t(item.hospitalKey)}</h4>
-                      <p className={`text-white/90 ${fontClass} text-xs`}>{t(item.directorKey)}</p>
-                    </div>
-                  </div>
                   </div>
                 </motion.div>
               ))}
             </div>
-
           </div>
         </section>
 
-        {/* FAQ Section */}
-        <section className="relative py-16 overflow-hidden" id="faq">
-          <div className="absolute inset-0 bg-black/20 dark:bg-black/50 backdrop-blur-[2px]"></div>
+        {/* ===== FAQ Section ===== */}
+        <section className="relative py-16 overflow-hidden" id="faq" style={{ backgroundColor: '#001228' }}>
           <div className="absolute inset-0 najran-geometric-bg opacity-20"></div>
-          
+
           <div className="container-custom relative">
             <motion.div
-              
-              
-              
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               className="text-center mb-10"
             >
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#2BAAE2]/20 mb-4">
@@ -1057,7 +1195,7 @@ export default function About() {
               <h2 className={`text-2xl md:text-3xl font-bold text-white ${fontClass} mb-3`}>
                 {t("about.faq.title")}
               </h2>
-              <p className={`text-white/90 ${fontClass} max-w-2xl mx-auto`}>
+              <p className={`text-white/70 ${fontClass} max-w-2xl mx-auto`}>
                 {t("about.faq.subtitle")}
               </p>
             </motion.div>
@@ -1068,11 +1206,11 @@ export default function About() {
                 return (
                   <motion.div
                     key={idx}
-                    
-                    
-                    
-                    
-                    className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-xl border border-white/20 overflow-hidden"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.05 }}
+                    className="bg-white/5 backdrop-blur-md rounded-xl border border-white/10 overflow-hidden"
                     data-testid={`faq-item-${idx}`}
                   >
                     <button
@@ -1091,7 +1229,7 @@ export default function About() {
                         {t(item.questionKey)}
                       </h3>
                     </button>
-                    
+
                     <AnimatePresence>
                       {isExpanded && (
                         <motion.div
@@ -1103,7 +1241,7 @@ export default function About() {
                         >
                           <div className="px-5 pb-5 pt-0">
                             <div className={`${language === 'ar' ? 'pr-14' : 'pl-14'}`}>
-                              <p className={`text-white ${fontClass} leading-relaxed text-sm md:text-base`}>
+                              <p className={`text-white/80 ${fontClass} leading-relaxed text-sm md:text-base`}>
                                 {t(item.answerKey)}
                               </p>
                             </div>

@@ -699,32 +699,37 @@ export default function About() {
               </div>
             </motion.div>
 
-            {/* النواب - صور البطاقات */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            {/* النواب - شبكة الصور */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               {[
-                { src: cardRashid, nameKey: "about.deputy.rashid" },
-                { src: cardMutlaq, nameKey: "about.deputy.mohammadMutlaq" },
-                { src: cardYahya, nameKey: "about.deputy.yahya" },
-                { src: cardIsmail, nameKey: "about.deputy.ismail" },
-                { src: cardMusabi, nameKey: "about.deputy.musabi" },
-                { src: cardHarith, nameKey: "about.deputy.mohammed" },
-                { src: cardAli, nameKey: "about.deputy.ali" },
-              ].map((card, idx) => (
+                { image: rashidImage, nameKey: "about.deputy.rashid", titleKey: "about.deputy.rashid.title" },
+                { image: mohammedImage, nameKey: "about.deputy.mohammed", titleKey: "about.deputy.mohammed.title" },
+                { image: mohammadMutlaqImage, nameKey: "about.deputy.mohammadMutlaq", titleKey: "about.deputy.mohammadMutlaq.title" },
+                { image: musabiImage, nameKey: "about.deputy.musabi", titleKey: "about.deputy.musabi.title" },
+                { image: ismailImage, nameKey: "about.deputy.ismail", titleKey: "about.deputy.ismail.title" },
+                { image: yahyaImage, nameKey: "about.deputy.yahya", titleKey: "about.deputy.yahya.title" },
+                { image: aliImage, nameKey: "about.deputy.ali", titleKey: "about.deputy.ali.title" },
+              ].map((leader, idx) => (
                 <motion.div
                   key={idx}
-                  className="group"
+                  className="group relative"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.07 }}
                 >
-                  <div className="rounded-2xl overflow-hidden shadow-sm transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-3">
-                    <img
-                      src={card.src}
-                      alt={t(card.nameKey)}
-                      className="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.02]"
-                      loading="lazy"
-                    />
+                  <div className="bg-white rounded-[3.5rem] p-8 shadow-sm border border-gray-100 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-4">
+                    <div className="aspect-square overflow-hidden rounded-[2.5rem] mb-8 bg-gray-50">
+                      <img
+                        src={leader.image}
+                        alt={t(leader.nameKey)}
+                        className="w-full h-full object-cover object-top transition-all duration-700 ease-in-out grayscale group-hover:grayscale-0 scale-100 group-hover:scale-110"
+                      />
+                    </div>
+                    <h4 className={`text-xl font-bold text-gray-900 mb-2 ${fontClass}`}>{t(leader.nameKey)}</h4>
+                    <p className={`font-semibold tracking-wide text-sm ${fontClass}`} style={{ color: '#004d3a' }}>
+                      {t(leader.titleKey)}
+                    </p>
                   </div>
                 </motion.div>
               ))}

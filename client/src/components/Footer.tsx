@@ -53,7 +53,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="text-white relative overflow-hidden" style={{ backgroundColor: '#0c1c28', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+    <footer className="text-white relative overflow-hidden" style={{ backgroundColor: '#091520', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
       {/* Geometric Pattern Overlay */}
       <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
 
@@ -93,8 +93,9 @@ export function Footer() {
                 src={clusterLogo}
                 alt={t("header.clusterName")}
                 className="h-16 sm:h-20 w-auto object-contain mb-1"
+                style={{ filter: 'brightness(0) invert(1)' }}
               />
-              <p className={`text-[#2BAAE2] text-[10px] ${fontClass} translate-x-1 sm:-translate-x-2`} style={{ marginTop: '-16px' }}>
+              <p className={`text-white text-[10px] ${fontClass} translate-x-1 sm:-translate-x-2`} style={{ marginTop: '-16px' }}>
                 {language === 'ar' ? 'شركة الصحة القابضة' : 'Health Holding Co.'}
               </p>
             </div>

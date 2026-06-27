@@ -35,7 +35,7 @@ import afterTransformImg from "@assets/IMG_8811_1767053697941.png";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
 import { Eye, Target, Heart, Star, Users, Lightbulb, Building2, Stethoscope, Shield, TrendingUp, Monitor, Settings, CheckCircle2, ChevronDown, ChevronLeft, Compass, Award, X, Landmark, HeartHandshake, Network, RefreshCw, Route, Layers, ShieldCheck, Globe2, Scan, UserSearch, BadgeCheck, ClipboardList, FileSignature, Pill, ExternalLink, HeartPulse, ArrowLeft, Info, Activity, Calendar, Baby, Ambulance, Brain, UsersRound, Dumbbell, Home as HomeIcon, ShieldCheck as ShieldCheckIcon, HeartHandshake as HeartHandshakeIcon } from "lucide-react";
-import { SiApple, SiGoogleplay, SiX } from "react-icons/si";
+import { SiApple, SiGoogleplay } from "react-icons/si";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
@@ -158,139 +158,6 @@ const navigationCards = [
     icon: HeartPulse
   },
 ];
-
-function NewsSection({ language, fontClass, t }: { language: string; fontClass: string; t: any }) {
-  const { data, isLoading } = useQuery<{ tweets: any[] }>({
-    queryKey: ['/api/news'],
-    staleTime: 6 * 60 * 60 * 1000,
-  });
-
-  const tweets = data?.tweets ?? [];
-
-  const cleanText = (text: string) =>
-    text
-      .replace(/^RT @\w+:\s*/, '')
-      .replace(/https?:\/\/\S+/g, '')
-      .replace(/@\S+/g, '')
-      .replace(/#\S+/g, '')
-      .replace(/[|:]+/g, '')
-      .replace(/\s+/g, ' ')
-      .trim();
-
-  const formatDate = (dateStr: string) =>
-    new Intl.DateTimeFormat(language === 'ar' ? 'ar-SA' : 'en-US', { year: 'numeric', month: 'short', day: 'numeric' }).format(new Date(dateStr));
-
-  const getImage = (tweet: any): string | null => {
-    const url = tweet.image_url || tweet.image_urls?.[0] || null;
-    if (!url) return null;
-    if (url.startsWith('https://pbs.twimg.com/')) return `/api/image-proxy?url=${encodeURIComponent(url)}`;
-    return url;
-  };
-
-  const getVideo = (tweet: any): string | null => {
-    const url = tweet.video_url || null;
-    if (!url) return null;
-    if (url.startsWith('https://video.twimg.com/')) return `/api/image-proxy?url=${encodeURIComponent(url)}`;
-    return url;
-  };
-
-  const validTweets = tweets.filter(tw => cleanText(tw.text).length > 5);
-
-  return (
-    <section className="bg-[#f9fafb] py-20 dark:bg-[#0a1916]">
-      <div className="container-custom">
-        <div className="flex items-end justify-between mb-12">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className={`text-3xl font-bold text-[#1B4784] dark:text-white ${fontClass}`}>
-              {language === 'ar' ? 'المركز الإعلامي' : 'Media Center'}
-            </h2>
-            <p className={`mt-2 text-gray-600 dark:text-gray-400 ${fontClass}`}>
-              {language === 'ar' ? 'تابع آخر أخبار ومستجدات تجمع نجران الصحي' : 'Follow the latest news from Najran Health Cluster'}
-            </p>
-          </motion.div>
-          <a href="/news" className={`hidden md:flex items-center gap-2 text-[#2BAAE2] font-bold hover:underline ${fontClass}`}>
-            {language === 'ar' ? 'كل الأخبار' : 'All News'}
-            <ChevronLeft className="w-5 h-5" />
-          </a>
-        </div>
-
-        {isLoading ? (
-          <div className="flex justify-center py-16">
-            <div className="w-12 h-12 border-4 border-gray-200 border-t-[#2BAAE2] rounded-full animate-spin" />
-          </div>
-        ) : validTweets.length === 0 ? (
-          <p className={`text-center text-gray-500 dark:text-gray-400 py-12 ${fontClass}`}>
-            {language === 'ar' ? 'لا توجد أخبار حالياً' : 'No news available'}
-          </p>
-        ) : (
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {validTweets.map((tw, i) => {
-              const img = getImage(tw);
-              const vid = getVideo(tw);
-              const poster = img;
-              const text = cleanText(tw.text);
-              const date = formatDate(tw.created_at);
-              return (
-                <motion.div
-                  key={tw.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: Math.min(i, 5) * 0.1 }}
-                  className="group overflow-hidden rounded-3xl bg-white shadow-md transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 dark:bg-[#122622]"
-                >
-                  <div className="relative overflow-hidden" style={{ height: '250px' }}>
-                    {vid ? (
-                      <video
-                        src={vid}
-                        poster={poster || undefined}
-                        controls
-                        controlsList="nodownload"
-                        playsInline
-                        preload="none"
-                        className="h-full w-full object-cover"
-                      />
-                    ) : img ? (
-                      <img
-                        src={img}
-                        alt=""
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                        loading="lazy"
-                        onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-                      />
-                    ) : (
-                      <div className="h-full w-full bg-gradient-to-br from-[#1B4784] to-[#2BAAE2] flex items-center justify-center">
-                        <SiX className="w-12 h-12 text-white/40" />
-                      </div>
-                    )}
-                    <div className="absolute top-4 right-4 rounded-full bg-[#2BAAE2] px-4 py-1 text-sm text-white">
-                      {language === 'ar' ? 'خبر' : 'News'}
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <span className={`text-sm text-gray-500 dark:text-gray-400 ${fontClass}`}>{date}</span>
-                    <p className={`mt-3 text-base font-bold text-gray-900 group-hover:text-[#2BAAE2] transition-colors duration-300 dark:text-white line-clamp-2 ${fontClass}`}>
-                      {text}
-                    </p>
-                    <a
-                      href={`https://twitter.com/NajranCluster/status/${tw.id}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`mt-4 flex items-center gap-2 font-bold text-[#2BAAE2] hover:text-[#1691D0] transition-colors duration-300 dark:text-[#2BAAE2] ${fontClass}`}
-                    >
-                      {language === 'ar' ? 'اقرأ المزيد' : 'Read More'}
-                      <ChevronLeft className="w-4 h-4" />
-                    </a>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        )}
-      </div>
-    </section>
-  );
-}
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState<ActiveSection>(null);
@@ -898,9 +765,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-
-      {/* News & Media Section */}
-      <NewsSection language={language} fontClass={fontClass} t={t} />
 
       <Footer />
     </div>

@@ -97,10 +97,10 @@ export default function EServices() {
           </div>
 
           {/* White panel at bottom */}
-          <div className="absolute bottom-0 left-0 right-0 z-[100] hidden md:block -translate-y-4">
+          <div className="absolute bottom-0 left-0 right-0 z-[100] hidden md:block">
             <div className="bg-white rounded-t-[40px] shadow-[0_-12px_40px_rgba(0,0,0,0.18)] px-8 pt-8 pb-0">
               <div className="container-custom">
-                <div className="grid grid-cols-3 gap-6">
+                <div className="grid grid-cols-3 gap-6 -translate-y-6">
                   {[
                     { titleAr: 'عن التجمع', titleEn: 'About Us', subtitleAr: 'تعرف على تجمع نجران الصحي', subtitleEn: 'Learn about Najran Health Cluster', href: '/about' },
                     { titleAr: 'خدمات الموظفين', titleEn: 'Employee Services', subtitleAr: 'خدمات إدارية للموظفين', subtitleEn: 'Services for employees', href: '/employee-services' },

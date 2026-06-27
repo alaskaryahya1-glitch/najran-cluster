@@ -71,7 +71,7 @@ export default function Transformation() {
   }, language);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" style={{ backgroundColor: '#b8ccd8' }}>
       <Header />
 
       <main className="transformation-page-content">
@@ -115,7 +115,7 @@ export default function Transformation() {
         </section>
 
         {/* 1. محاور رؤية 2030 */}
-        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
+        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#b8ccd8' }}>
           <div className="absolute inset-0 pointer-events-none"></div>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
           
@@ -146,7 +146,7 @@ export default function Transformation() {
                   
                   
                   
-                  className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center hover:shadow-md transition-all relative"
+                  className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/60 shadow-sm text-center hover:shadow-md transition-all relative"
                   data-testid={`card-vision-axis-${idx}`}
                 >
                   <CardStar size="md" />
@@ -165,7 +165,7 @@ export default function Transformation() {
         </section>
 
         {/* 2. برنامج تحول القطاع الصحي */}
-        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
+        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#b8ccd8' }}>
           <div className="absolute inset-0 pointer-events-none"></div>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
           
@@ -197,7 +197,7 @@ export default function Transformation() {
                   
                   
                   
-                  className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center hover:shadow-md transition-all relative"
+                  className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/60 shadow-sm text-center hover:shadow-md transition-all relative"
                   data-testid={`card-goal-${idx}`}
                 >
                   <CardStar size="sm" />
@@ -215,7 +215,7 @@ export default function Transformation() {
         </section>
 
         {/* 3. ركائز برنامج التحول الصحي */}
-        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
+        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#b8ccd8' }}>
           <div className="absolute inset-0 pointer-events-none"></div>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
           
@@ -242,7 +242,7 @@ export default function Transformation() {
                   
                   
                   
-                  className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center hover:shadow-md transition-all relative"
+                  className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/60 shadow-sm text-center hover:shadow-md transition-all relative"
                   data-testid={`card-pillar-${idx}`}
                 >
                   <CardStar size="sm" />
@@ -260,7 +260,7 @@ export default function Transformation() {
         </section>
 
         {/* 4. كيف نحقق التحول الصحي */}
-        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
+        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#b8ccd8' }}>
           <div className="absolute inset-0 pointer-events-none"></div>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
           
@@ -287,7 +287,7 @@ export default function Transformation() {
                   
                   
                   
-                  className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all relative"
+                  className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/60 shadow-sm hover:shadow-md transition-all relative"
                   data-testid={`card-how-${idx}`}
                 >
                   <CardStar size="sm" />
@@ -305,7 +305,7 @@ export default function Transformation() {
         </section>
 
         {/* 5. الأبعاد الاستراتيجية للتحول الصحي */}
-        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
+        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#b8ccd8' }}>
           <div className="absolute inset-0 pointer-events-none"></div>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
           
@@ -337,7 +337,7 @@ export default function Transformation() {
                   
                   
                   
-                  className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center hover:shadow-md transition-all relative"
+                  className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/60 shadow-sm text-center hover:shadow-md transition-all relative"
                   data-testid={`card-dimension-${idx}`}
                 >
                   <CardStar size="md" />
@@ -356,7 +356,7 @@ export default function Transformation() {
         </section>
 
         {/* 6. وضع القطاع الصحي */}
-        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
+        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#b8ccd8' }}>
           <div className="absolute inset-0 pointer-events-none"></div>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
           
@@ -554,7 +554,7 @@ export default function Transformation() {
         </section>
 
         {/* 7. شركة الصحة القابضة */}
-        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
+        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#b8ccd8' }}>
           <div className="absolute inset-0 pointer-events-none"></div>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
           
@@ -563,7 +563,7 @@ export default function Transformation() {
               
               
               
-              className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm relative"
+              className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/60 shadow-sm relative"
               data-testid="card-holding-company"
             >
               <CardStar size="lg" />
@@ -586,7 +586,7 @@ export default function Transformation() {
         </section>
 
         {/* 8. التجمع الصحي */}
-        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
+        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#b8ccd8' }}>
           <div className="absolute inset-0 pointer-events-none"></div>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
           
@@ -595,7 +595,7 @@ export default function Transformation() {
               
               
               
-              className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm relative"
+              className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/60 shadow-sm relative"
               data-testid="card-cluster-definition"
             >
               <CardStar size="lg" />
@@ -618,7 +618,7 @@ export default function Transformation() {
         </section>
 
         {/* 9. منظومة الرعاية المسؤولة */}
-        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
+        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#b8ccd8' }}>
           <div className="absolute inset-0 pointer-events-none"></div>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
           
@@ -658,7 +658,7 @@ export default function Transformation() {
                 
                 
                 
-                className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center relative"
+                className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/60 shadow-sm text-center relative"
                 data-testid="card-aco-1"
               >
                 <CardStar size="md" />
@@ -681,7 +681,7 @@ export default function Transformation() {
                 
                 
                 transition={{ delay: 0.1 }}
-                className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center relative"
+                className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/60 shadow-sm text-center relative"
                 data-testid="card-aco-2"
               >
                 <CardStar size="md" />
@@ -704,7 +704,7 @@ export default function Transformation() {
                 
                 
                 transition={{ delay: 0.2 }}
-                className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center relative"
+                className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/60 shadow-sm text-center relative"
                 data-testid="card-aco-3"
               >
                 <CardStar size="md" />
@@ -727,7 +727,7 @@ export default function Transformation() {
                 
                 
                 transition={{ delay: 0.3 }}
-                className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center relative"
+                className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/60 shadow-sm text-center relative"
                 data-testid="card-aco-4"
               >
                 <CardStar size="md" />
@@ -749,7 +749,7 @@ export default function Transformation() {
         </section>
 
         {/* 10. إدارة التغيير والتواصل المؤسسي */}
-        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
+        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#b8ccd8' }}>
           <div className="absolute inset-0 pointer-events-none"></div>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
           
@@ -790,7 +790,7 @@ export default function Transformation() {
                   
                   
                   
-                  className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm relative"
+                  className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/60 shadow-sm relative"
                 >
                   <CardStar size="sm" />
                   <div className="h-1.5 bg-[#2BAAE2]"></div>
@@ -812,7 +812,7 @@ export default function Transformation() {
                   
                   
                   transition={{ delay: 0.1 }}
-                  className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm relative"
+                  className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/60 shadow-sm relative"
                 >
                   <CardStar size="sm" />
                   <div className="h-1.5 bg-[#2BAAE2]"></div>
@@ -836,7 +836,7 @@ export default function Transformation() {
                   
                   
                   transition={{ delay: 0.2 }}
-                  className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm relative"
+                  className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/60 shadow-sm relative"
                 >
                   <CardStar size="sm" />
                   <div className="h-1.5 bg-[#2BAAE2]"></div>
@@ -858,7 +858,7 @@ export default function Transformation() {
                   
                   
                   transition={{ delay: 0.3 }}
-                  className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm relative"
+                  className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/60 shadow-sm relative"
                 >
                   <CardStar size="sm" />
                   <div className="h-1.5 bg-[#2BAAE2]"></div>
@@ -882,7 +882,7 @@ export default function Transformation() {
                   
                   
                   transition={{ delay: 0.4 }}
-                  className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm w-full md:w-1/2 relative"
+                  className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/60 shadow-sm w-full md:w-1/2 relative"
                 >
                   <CardStar size="sm" />
                   <div className="h-1.5 bg-[#2BAAE2]"></div>
@@ -904,7 +904,7 @@ export default function Transformation() {
         </section>
 
         {/* 10. إدارة الصحة السكانية */}
-        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
+        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#b8ccd8' }}>
           <div className="absolute inset-0 pointer-events-none"></div>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
           
@@ -944,7 +944,7 @@ export default function Transformation() {
                 
                 
                 
-                className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center relative"
+                className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/60 shadow-sm text-center relative"
               >
                 <CardStar size="sm" />
                 <div className="h-1.5 bg-[#2BAAE2]"></div>
@@ -966,7 +966,7 @@ export default function Transformation() {
                 
                 
                 transition={{ delay: 0.1 }}
-                className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center relative"
+                className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/60 shadow-sm text-center relative"
               >
                 <CardStar size="sm" />
                 <div className="h-1.5 bg-[#2BAAE2]"></div>
@@ -988,7 +988,7 @@ export default function Transformation() {
                 
                 
                 transition={{ delay: 0.2 }}
-                className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center relative"
+                className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/60 shadow-sm text-center relative"
               >
                 <CardStar size="sm" />
                 <div className="h-1.5 bg-[#2BAAE2]"></div>
@@ -1010,7 +1010,7 @@ export default function Transformation() {
                 
                 
                 transition={{ delay: 0.3 }}
-                className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center relative"
+                className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/60 shadow-sm text-center relative"
               >
                 <CardStar size="sm" />
                 <div className="h-1.5 bg-[#2BAAE2]"></div>
@@ -1032,7 +1032,7 @@ export default function Transformation() {
                 
                 
                 transition={{ delay: 0.4 }}
-                className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center relative"
+                className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/60 shadow-sm text-center relative"
               >
                 <CardStar size="sm" />
                 <div className="h-1.5 bg-[#2BAAE2]"></div>
@@ -1053,7 +1053,7 @@ export default function Transformation() {
         </section>
 
         {/* 12. ما الذي تغير في رحلة المريض */}
-        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
+        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#b8ccd8' }}>
           <div className="absolute inset-0 pointer-events-none"></div>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
           
@@ -1082,7 +1082,7 @@ export default function Transformation() {
                   
                   className="grid grid-cols-1 md:grid-cols-2 gap-4"
                 >
-                  <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm relative">
+                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/60 shadow-sm relative">
                     <CardStar size="sm" />
                     <div className="h-1.5 bg-[#2BAAE2]"></div>
                     <div className="p-5 relative z-10">

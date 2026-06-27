@@ -114,7 +114,7 @@ export default function Transformation() {
             <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
           </video>
           
-          <div className="container-custom relative">
+          <div className="container-custom relative z-10">
             <motion.div
               
               
@@ -167,7 +167,7 @@ export default function Transformation() {
             <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
           </video>
           
-          <div className="container-custom relative">
+          <div className="container-custom relative z-10">
             <motion.div
               
               
@@ -220,7 +220,7 @@ export default function Transformation() {
             <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
           </video>
           
-          <div className="container-custom relative">
+          <div className="container-custom relative z-10">
             <motion.div
               
               
@@ -268,7 +268,7 @@ export default function Transformation() {
             <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
           </video>
           
-          <div className="container-custom relative">
+          <div className="container-custom relative z-10">
             <motion.div
               
               
@@ -297,7 +297,7 @@ export default function Transformation() {
                   <CardStar size="sm" />
                   <div className="h-1.5 bg-[#2BAAE2]"></div>
                   <div className="p-5 flex items-start gap-4 relative z-10">
-                  <div className="w-10 h-10 bg-white/15 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 bg-[#2BAAE2]/10 border border-[#2BAAE2]/20 rounded-full flex items-center justify-center flex-shrink-0">
                     <span className="text-[#2BAAE2] font-bold">{item.num}</span>
                   </div>
                   <p className={`text-sm ${fontClass} text-gray-600`}>{item.title}</p>
@@ -316,7 +316,7 @@ export default function Transformation() {
             <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
           </video>
           
-          <div className="container-custom relative">
+          <div className="container-custom relative z-10">
             <motion.div
               
               
@@ -370,7 +370,7 @@ export default function Transformation() {
             <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
           </video>
           
-          <div className="container-custom relative">
+          <div className="container-custom relative z-10">
             <motion.div
               
               
@@ -571,7 +571,7 @@ export default function Transformation() {
             <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
           </video>
           
-          <div className="container-custom relative">
+          <div className="container-custom relative z-10">
             <motion.div
               
               
@@ -606,7 +606,7 @@ export default function Transformation() {
             <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
           </video>
           
-          <div className="container-custom relative">
+          <div className="container-custom relative z-10">
             <motion.div
               
               
@@ -641,7 +641,7 @@ export default function Transformation() {
             <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
           </video>
           
-          <div className="container-custom relative">
+          <div className="container-custom relative z-10">
             <motion.div
               
               
@@ -775,7 +775,7 @@ export default function Transformation() {
             <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
           </video>
           
-          <div className="container-custom relative">
+          <div className="container-custom relative z-10">
             <motion.div
               
               
@@ -904,7 +904,7 @@ export default function Transformation() {
                   
                   
                   transition={{ delay: 0.4 }}
-                  className="bg-black/25 backdrop-blur-md rounded-2xl overflow-hidden border border-white/15 shadow-sm w-full md:w-1/2 relative"
+                  className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm w-full md:w-1/2 relative"
                 >
                   <CardStar size="sm" />
                   <div className="h-1.5 bg-[#2BAAE2]"></div>
@@ -933,7 +933,7 @@ export default function Transformation() {
             <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
           </video>
           
-          <div className="container-custom relative">
+          <div className="container-custom relative z-10">
             <motion.div
               
               
@@ -1085,7 +1085,7 @@ export default function Transformation() {
             <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
           </video>
           
-          <div className="container-custom relative">
+          <div className="container-custom relative z-10">
             <motion.div
               
               

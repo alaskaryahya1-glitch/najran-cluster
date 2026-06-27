@@ -609,20 +609,20 @@ export default function About() {
 
                 {/* الإحصائيات */}
                 <div className="grid grid-cols-2 gap-4 pt-6 border-t border-gray-100">
-                  <div className="p-4 bg-gray-50 rounded-2xl">
+                  <div className="p-4 bg-gray-50 rounded-2xl border border-transparent hover:-translate-y-2 hover:shadow-[0_12px_30px_rgba(43,170,226,0.15)] hover:border-[#2BAAE2] transition-all duration-[400ms] cursor-default">
                     <h4 className="text-3xl font-bold" style={{ color: '#004d3a' }}>12</h4>
                     <p className={`text-sm text-gray-500 font-medium ${fontClass}`}>
                       {language === 'ar' ? 'مستشفى متخصص' : 'Specialized Hospitals'}
                     </p>
                   </div>
-                  <div className="p-4 bg-gray-50 rounded-2xl">
+                  <div className="p-4 bg-gray-50 rounded-2xl border border-transparent hover:-translate-y-2 hover:shadow-[0_12px_30px_rgba(43,170,226,0.15)] hover:border-[#2BAAE2] transition-all duration-[400ms] cursor-default">
                     <h4 className="text-3xl font-bold" style={{ color: '#004d3a' }}>69</h4>
                     <p className={`text-sm text-gray-500 font-medium ${fontClass}`}>
                       {language === 'ar' ? 'مركز رعاية أولية' : 'Primary Care Centers'}
                     </p>
                   </div>
                   <div
-                    className={`col-span-2 p-4 rounded-2xl flex justify-between items-center ${language === 'ar' ? '' : 'flex-row-reverse'}`}
+                    className={`col-span-2 p-4 rounded-2xl flex justify-between items-center border border-transparent hover:-translate-y-2 hover:shadow-[0_12px_30px_rgba(0,77,58,0.25)] hover:border-[#004d3a]/30 transition-all duration-[400ms] cursor-default ${language === 'ar' ? '' : 'flex-row-reverse'}`}
                     style={{ backgroundColor: '#004d3a' }}
                   >
                     <span className={`text-white text-lg font-medium ${fontClass}`}>

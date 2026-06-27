@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&family=Cairo:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
 @import url('https://db.onlinewebfonts.com/c/dee436f274c410c23fc3de43367ef1ae?family=Janna+LT');
 
@@ -165,14 +164,10 @@ img, video {
 
   --radius: 0.75rem;
   
-  --primary-green: #005d47;
-  --dark-green: #003b2d;
-  --light-bg: #f9fafb;
-
-  --font-arabic: 'IBM Plex Sans Arabic', 'Janna LT', 'Cairo', sans-serif;
-  --font-arabic-heading: 'IBM Plex Sans Arabic', 'Janna LT', 'Cairo', sans-serif;
-  --font-english: 'IBM Plex Sans Arabic', 'Janna LT', 'Inter', sans-serif;
-  --font-sans: 'IBM Plex Sans Arabic', 'Janna LT', 'Inter', 'Cairo', sans-serif;
+  --font-arabic: 'Janna LT', 'Cairo', sans-serif;
+  --font-arabic-heading: 'Janna LT', 'Cairo', sans-serif;
+  --font-english: 'Janna LT', 'Inter', sans-serif;
+  --font-sans: 'Janna LT', 'Inter', 'Cairo', sans-serif;
   --font-serif: Georgia, serif;
   --font-mono: Menlo, monospace;
 
@@ -619,46 +614,16 @@ img, video {
   font-weight: 400;
 }
 
-/* توحيد الخط - IBM Plex Sans Arabic */
-body, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th, div, button {
-  font-family: 'IBM Plex Sans Arabic', 'Janna LT', 'Cairo', sans-serif !important;
+/* Apply Janna LT Bold to all headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Janna LT', 'Cairo', sans-serif;
+  font-weight: 700;
 }
 
-/* تحسين شكل الأزرار */
-button, .button, input[type="submit"] {
-  border-radius: 50px !important;
-  transition: transform 0.2s ease, background 0.2s ease !important;
-}
-
-button:hover, .button:hover {
-  transform: translateY(-2px);
-}
-
-/* تحسين البطاقات */
-.card, .post {
-  border-radius: 20px !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
-  border: 1px solid rgba(0, 0, 0, 0.03) !important;
-  transition: all 0.3s ease !important;
-  overflow: hidden;
-}
-
-.card:hover, .post:hover {
-  box-shadow: 0 20px 40px rgba(0, 93, 71, 0.1) !important;
-  transform: translateY(-5px);
-}
-
-/* الفيديو في الهيرو */
-.hero-video video {
-  width: 100% !important;
-  height: 100vh !important;
-  object-fit: cover !important;
-}
-
-/* العناوين الرئيسية */
-h1, h2 {
-  color: var(--primary-green) !important;
-  font-weight: 700 !important;
+/* Apply Janna LT Regular to body text */
+body, p, span, div, a, li, td, th {
+  font-family: 'Janna LT', 'Cairo', 'Inter', sans-serif;
+  font-weight: 400;
 }
 
 /* Dark mode - darken background images */

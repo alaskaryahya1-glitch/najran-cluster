@@ -30,7 +30,7 @@ export default function CareModel() {
   }, language);
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#b8ccd8' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#0c1c28' }}>
       <Header />
 
       <main className="care-model-content">
@@ -47,7 +47,7 @@ export default function CareModel() {
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60" />
           </div>
-          <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none z-10"></div>
+          <div className="absolute inset-0 najran-geometric-bg opacity-[0.06] pointer-events-none z-10"></div>
 
           <div className="container-custom relative z-20">
             <motion.div
@@ -69,8 +69,8 @@ export default function CareModel() {
         </section>
 
         {/* أبعاد الصحة */}
-        <section className="relative py-10 sm:py-12 md:py-16 overflow-hidden" style={{ backgroundColor: '#b8ccd8' }}>
-          <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+        <section className="relative py-10 sm:py-12 md:py-16 overflow-hidden" style={{ backgroundColor: '#0c1c28' }}>
+          <div className="absolute inset-0 najran-geometric-bg opacity-[0.06] pointer-events-none"></div>
 
           <div className="container-custom relative">
             <motion.div
@@ -79,10 +79,10 @@ export default function CareModel() {
 
               className="text-center mb-8 sm:mb-10 md:mb-12"
             >
-              <h2 className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold ${fontClass} text-[#005d47] mb-4`}>
+              <h2 className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold ${fontClass} text-white mb-4`}>
                 {t("home.healthModel.title")}
               </h2>
-              <p className={`text-[#4a5568] mx-auto ${fontClass} whitespace-nowrap`}>
+              <p className={`text-white/70 mx-auto ${fontClass} whitespace-nowrap`}>
                 {t("home.healthModel.subtitle")}
               </p>
             </motion.div>
@@ -99,23 +99,23 @@ export default function CareModel() {
 
 
 
-                  className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/60 shadow-sm hover:shadow-md transition-all relative"
+                  className="bg-black/25 backdrop-blur-md rounded-2xl overflow-hidden border border-white/15 shadow-sm hover:shadow-md transition-all relative"
                   style={{ borderRadius: '40px' }}
                 >
                   <CardStar size="md" />
                   <div className="h-1.5 bg-[#2BAAE2]" style={{ borderRadius: '40px 40px 0 0' }}></div>
                   <div className="p-6 relative z-10">
-                    <div className="w-16 h-16 bg-[#004d3a]/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <div className="w-16 h-16 bg-white/15 rounded-xl flex items-center justify-center mx-auto mb-4">
                       <pillar.icon className="w-8 h-8 text-[#2BAAE2]" />
                     </div>
-                    <h3 className={`text-xl font-bold text-center text-[#005d47] mb-4 ${fontClass}`}>
+                    <h3 className={`text-xl font-bold text-center text-white mb-4 ${fontClass}`}>
                       {t(`home.healthModel.${pillar.id}.title`)}
                     </h3>
                     <ul className={`space-y-2 ${fontClass}`}>
                       {[1, 2, 3].map((num) => (
                         <li key={num} className="flex items-start gap-2">
                           <div className="w-2 h-2 bg-[#2BAAE2] rounded-full mt-2 flex-shrink-0"></div>
-                          <span className="text-[#4a5568] text-sm">
+                          <span className="text-white/70 text-sm">
                             {t(`home.healthModel.${pillar.id}.item${num}`)}
                           </span>
                         </li>
@@ -132,10 +132,10 @@ export default function CareModel() {
 
               className="text-center mb-12"
             >
-              <h2 className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold ${fontClass} text-[#005d47] mb-4`}>
+              <h2 className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold ${fontClass} text-white mb-4`}>
                 {t("home.careSystems.title")}
               </h2>
-              <p className={`text-[#4a5568] max-w-2xl mx-auto ${fontClass}`}>
+              <p className={`text-white/70 max-w-2xl mx-auto ${fontClass}`}>
                 {t("home.careSystems.subtitle")}
               </p>
             </motion.div>
@@ -152,14 +152,14 @@ export default function CareModel() {
                   className={`flex flex-col items-center rounded-2xl overflow-hidden transition-all border ${
                     selectedCareSystem === system.id
                       ? 'bg-[#005d47] text-white shadow-lg scale-105 border-[#005d47]'
-                      : 'bg-white text-gray-700 hover:shadow-md border-gray-100 shadow-sm'
+                      : 'bg-white/10 text-white hover:shadow-md border-white/15 shadow-sm'
                   }`}
                   data-testid={`button-care-system-${system.id}`}
                 >
                   <div className="h-1.5 w-full bg-[#2BAAE2]"></div>
                   <div className="flex flex-col items-center gap-2 px-6 py-4">
                     <system.icon className={`w-8 h-8 ${selectedCareSystem === system.id ? 'text-white' : 'text-[#2BAAE2]'}`} />
-                    <span className={`text-sm font-medium text-center ${fontClass} ${selectedCareSystem === system.id ? 'text-white' : 'text-[#4a5568]'}`}>
+                    <span className={`text-sm font-medium text-center ${fontClass} ${selectedCareSystem === system.id ? 'text-white' : 'text-white/70'}`}>
                       {t(`home.careSystems.${system.id}.title`)}
                     </span>
                     <ChevronDown
@@ -179,7 +179,7 @@ export default function CareModel() {
 
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
-                  className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/60 shadow-sm relative"
+                  className="bg-black/25 backdrop-blur-md rounded-2xl overflow-hidden border border-white/15 shadow-sm relative"
                   style={{ borderRadius: '40px' }}
                 >
                   <CardStar size="lg" />
@@ -187,10 +187,10 @@ export default function CareModel() {
                   <div className="p-8 relative z-10">
                     <div className="flex justify-between items-start mb-6">
                       <div>
-                        <h3 className={`text-2xl font-bold text-[#005d47] ${fontClass} mb-2`}>
+                        <h3 className={`text-2xl font-bold text-white ${fontClass} mb-2`}>
                           {t(`home.careSystems.${selectedCareSystem}.title`)}
                         </h3>
-                        <p className={`text-[#4a5568] ${fontClass}`}>
+                        <p className={`text-white/70 ${fontClass}`}>
                           {t(`home.careSystems.${selectedCareSystem}.desc`)}
                         </p>
                       </div>
@@ -205,8 +205,8 @@ export default function CareModel() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                       {Array.from({ length: careSystemsData.find(s => s.id === selectedCareSystem)?.initCount || 3 }).map((_, idx) => (
-                        <div key={idx} className="bg-white/70 rounded-xl p-4 border border-gray-100">
-                          <p className={`text-[#4a5568] text-sm ${fontClass}`}>
+                        <div key={idx} className="bg-white/8 rounded-xl p-4 border border-gray-100">
+                          <p className={`text-white/70 text-sm ${fontClass}`}>
                             {t(`home.careSystems.${selectedCareSystem}.init${idx + 1}`)}
                           </p>
                         </div>

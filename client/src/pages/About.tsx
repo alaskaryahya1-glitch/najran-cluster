@@ -795,8 +795,7 @@ export default function About() {
         </section>
 
         {/* ===== Healthcare Facilities Section ===== */}
-        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#001228' }}>
-          <div className="absolute inset-0 najran-geometric-bg opacity-20"></div>
+        <section className="custom-pattern-section relative py-24 overflow-hidden">
 
           <div className="container-custom relative">
             <motion.div
@@ -805,54 +804,54 @@ export default function About() {
               viewport={{ once: true }}
               className="text-center mb-6"
             >
-              <h2 className={`text-2xl md:text-3xl font-bold text-white ${fontClass} mb-2`}>{t("about.facilities")}</h2>
-              <p className={`text-white/80 ${fontClass}`}>{t("about.facilities.subtitle")}</p>
+              <h2 className={`text-2xl md:text-3xl font-bold ${fontClass} mb-2`}>{t("about.facilities")}</h2>
+              <p className={`text-gray-600 ${fontClass}`}>{t("about.facilities.subtitle")}</p>
             </motion.div>
 
-            <div className="bg-white/5 backdrop-blur-md text-white rounded-2xl overflow-hidden border border-white/10 relative">
+            <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md text-gray-900 relative">
               <CardStar size="lg" />
               <div className="h-1.5 bg-[#2BAAE2]"></div>
               <div className="py-4 px-4 sm:px-6 relative z-10">
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
                   <button
                     onClick={() => { setShowHospitals(!showHospitals); setShowSpecializedCenters(false); setShowHealthCenters(false); }}
-                    className={`text-center cursor-pointer rounded-lg py-2 transition-all ${showHospitals ? 'bg-white/20' : 'hover:bg-white/10'}`}
+                    className={`text-center cursor-pointer rounded-lg py-2 transition-all ${showHospitals ? 'bg-[#004d3a]/10' : 'hover:bg-gray-50'}`}
                     data-testid="button-hospitals"
                   >
-                    <Building2 className="w-5 h-5 mx-auto mb-1 opacity-80 text-[#2BAAE2] brand-icon" />
-                    <p className="text-xl font-bold">11</p>
-                    <p className={`text-white/90 ${fontClass} text-xs`}>{t("about.hospitals")}</p>
-                    <ChevronDown className={`w-4 h-4 mx-auto mt-1 opacity-60 transition-transform text-[#2BAAE2] ${showHospitals ? 'rotate-180' : ''}`} />
+                    <Building2 className="w-5 h-5 mx-auto mb-1 text-[#004d3a] brand-icon" />
+                    <p className="text-xl font-bold text-gray-900">11</p>
+                    <p className={`text-gray-600 ${fontClass} text-xs`}>{t("about.hospitals")}</p>
+                    <ChevronDown className={`w-4 h-4 mx-auto mt-1 transition-transform text-[#004d3a] ${showHospitals ? 'rotate-180' : ''}`} />
                   </button>
                   <button
                     onClick={() => { setShowSpecializedCenters(!showSpecializedCenters); setShowHospitals(false); setShowHealthCenters(false); }}
-                    className={`text-center cursor-pointer rounded-lg py-2 transition-all ${showSpecializedCenters ? 'bg-white/20' : 'hover:bg-white/10'}`}
+                    className={`text-center cursor-pointer rounded-lg py-2 transition-all ${showSpecializedCenters ? 'bg-[#004d3a]/10' : 'hover:bg-gray-50'}`}
                     data-testid="button-specialized-centers"
                   >
-                    <Hospital className="w-5 h-5 mx-auto mb-1 opacity-80 text-[#2BAAE2] brand-icon" />
-                    <p className="text-xl font-bold">1</p>
-                    <p className={`text-white/90 ${fontClass} text-xs`}>{t("about.specializedCenters")}</p>
-                    <ChevronDown className={`w-4 h-4 mx-auto mt-1 opacity-60 transition-transform text-[#2BAAE2] ${showSpecializedCenters ? 'rotate-180' : ''}`} />
+                    <Hospital className="w-5 h-5 mx-auto mb-1 text-[#004d3a] brand-icon" />
+                    <p className="text-xl font-bold text-gray-900">1</p>
+                    <p className={`text-gray-600 ${fontClass} text-xs`}>{t("about.specializedCenters")}</p>
+                    <ChevronDown className={`w-4 h-4 mx-auto mt-1 transition-transform text-[#004d3a] ${showSpecializedCenters ? 'rotate-180' : ''}`} />
                   </button>
                   <button
                     onClick={() => { setShowHealthCenters(!showHealthCenters); setShowHospitals(false); setShowSpecializedCenters(false); }}
-                    className={`text-center cursor-pointer rounded-lg py-2 transition-all ${showHealthCenters ? 'bg-white/20' : 'hover:bg-white/10'}`}
+                    className={`text-center cursor-pointer rounded-lg py-2 transition-all ${showHealthCenters ? 'bg-[#004d3a]/10' : 'hover:bg-gray-50'}`}
                     data-testid="button-health-centers"
                   >
-                    <Stethoscope className="w-5 h-5 mx-auto mb-1 opacity-80 text-[#2BAAE2] brand-icon" />
-                    <p className="text-xl font-bold">69</p>
-                    <p className={`text-white/90 ${fontClass} text-xs`}>{t("about.healthCenters")}</p>
-                    <ChevronDown className={`w-4 h-4 mx-auto mt-1 opacity-60 transition-transform text-[#2BAAE2] ${showHealthCenters ? 'rotate-180' : ''}`} />
+                    <Stethoscope className="w-5 h-5 mx-auto mb-1 text-[#004d3a] brand-icon" />
+                    <p className="text-xl font-bold text-gray-900">69</p>
+                    <p className={`text-gray-600 ${fontClass} text-xs`}>{t("about.healthCenters")}</p>
+                    <ChevronDown className={`w-4 h-4 mx-auto mt-1 transition-transform text-[#004d3a] ${showHealthCenters ? 'rotate-180' : ''}`} />
                   </button>
                   <div className="text-center py-2">
-                    <Users className="w-5 h-5 mx-auto mb-1 opacity-80 text-[#2BAAE2] brand-icon" />
-                    <p className="text-xl font-bold">495K+</p>
-                    <p className={`text-white/90 ${fontClass} text-xs`}>{t("about.beneficiaries")}</p>
+                    <Users className="w-5 h-5 mx-auto mb-1 text-[#004d3a] brand-icon" />
+                    <p className="text-xl font-bold text-gray-900">495K+</p>
+                    <p className={`text-gray-600 ${fontClass} text-xs`}>{t("about.beneficiaries")}</p>
                   </div>
                   <div className="text-center py-2">
-                    <BedDouble className="w-5 h-5 mx-auto mb-1 opacity-80 text-[#2BAAE2] brand-icon" />
-                    <p className="text-xl font-bold">1,300</p>
-                    <p className={`text-white/90 ${fontClass} text-xs`}>{t("about.beds")}</p>
+                    <BedDouble className="w-5 h-5 mx-auto mb-1 text-[#004d3a] brand-icon" />
+                    <p className="text-xl font-bold text-gray-900">1,300</p>
+                    <p className={`text-gray-600 ${fontClass} text-xs`}>{t("about.beds")}</p>
                   </div>
                 </div>
 
@@ -866,8 +865,8 @@ export default function About() {
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <div className="mt-4 pt-4 border-t border-white/20">
-                        <h4 className={`text-center ${fontClass} font-bold mb-3`}>{t("about.hospitalsList")}</h4>
+                      <div className="mt-4 pt-4 border-t border-gray-200">
+                        <h4 className={`text-center ${fontClass} font-bold text-gray-800 mb-3`}>{t("about.hospitalsList")}</h4>
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
                           {hospitalsData.map((hospital, idx) => (
                             <Tooltip key={hospital.nameKey} delayDuration={200}>
@@ -876,11 +875,11 @@ export default function About() {
                                   href={hospital.website || `https://www.google.com/maps/search/${encodeURIComponent(hospital.searchQuery)}`}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="hospital-card bg-white/10 rounded-lg px-3 py-2 text-center hover:bg-white/20 transition-all cursor-pointer group"
+                                  className="hospital-card bg-gray-50 rounded-lg px-3 py-2 text-center hover:bg-gray-100 transition-all cursor-pointer group"
                                   data-testid={`link-hospital-${idx}`}
                                 >
                                   <div className="flex items-center justify-center gap-1 mb-1">
-                                    <MapPin className="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity text-[#2BAAE2] brand-icon" />
+                                    <MapPin className="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity text-[#004d3a] brand-icon" />
                                   </div>
                                   <p className={`${fontClass} text-sm font-bold hospital-title`} style={{ color: '#004d3a' }}>{t(hospital.nameKey)}</p>
                                 </motion.a>
@@ -936,8 +935,8 @@ export default function About() {
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <div className="mt-4 pt-4 border-t border-white/20">
-                        <h4 className={`text-center ${fontClass} font-bold mb-3`}>{t("about.specializedCentersList")}</h4>
+                      <div className="mt-4 pt-4 border-t border-gray-200">
+                        <h4 className={`text-center ${fontClass} font-bold text-gray-800 mb-3`}>{t("about.specializedCentersList")}</h4>
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
                           {specializedCentersData.map((center, idx) => (
                             <Tooltip key={center.nameKey} delayDuration={200}>
@@ -946,11 +945,11 @@ export default function About() {
                                   href={`https://www.google.com/maps/search/${encodeURIComponent(center.searchQuery)}`}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="hospital-card bg-white/10 rounded-lg px-3 py-2 text-center hover:bg-white/20 transition-all cursor-pointer group"
+                                  className="hospital-card bg-gray-50 rounded-lg px-3 py-2 text-center hover:bg-gray-100 transition-all cursor-pointer group"
                                   data-testid={`link-specialized-center-${idx}`}
                                 >
                                   <div className="flex items-center justify-center gap-1 mb-1">
-                                    <MapPin className="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity text-[#2BAAE2] brand-icon" />
+                                    <MapPin className="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity text-[#004d3a] brand-icon" />
                                   </div>
                                   <p className={`${fontClass} text-sm font-bold hospital-title`} style={{ color: '#004d3a' }}>{t(center.nameKey)}</p>
                                 </motion.a>
@@ -992,8 +991,8 @@ export default function About() {
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <div className="mt-4 pt-4 border-t border-white/20">
-                        <h4 className={`text-center ${fontClass} font-bold mb-3`}>{t("about.healthCentersList")}</h4>
+                      <div className="mt-4 pt-4 border-t border-gray-200">
+                        <h4 className={`text-center ${fontClass} font-bold text-gray-800 mb-3`}>{t("about.healthCentersList")}</h4>
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 max-h-96 overflow-y-auto">
                           {healthCentersData.map((center, idx) => (
                             <motion.a
@@ -1001,7 +1000,7 @@ export default function About() {
                               href={`https://www.google.com/maps/search/${encodeURIComponent(center.searchQuery)}`}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="hospital-card bg-white/10 rounded-lg px-3 py-2 text-center hover:bg-white/20 transition-all cursor-pointer group"
+                              className="hospital-card bg-gray-50 rounded-lg px-3 py-2 text-center hover:bg-gray-100 transition-all cursor-pointer group"
                               data-testid={`link-health-center-${idx}`}
                             >
                               <div className="flex items-center justify-center gap-1 mb-1">
@@ -1023,8 +1022,7 @@ export default function About() {
         </section>
 
         {/* ===== FAQ Section ===== */}
-        <section className="relative py-16 overflow-hidden" id="faq" style={{ backgroundColor: '#001228' }}>
-          <div className="absolute inset-0 najran-geometric-bg opacity-20"></div>
+        <section className="custom-pattern-section relative py-16 overflow-hidden" id="faq">
 
           <div className="container-custom relative">
             <motion.div
@@ -1033,13 +1031,13 @@ export default function About() {
               viewport={{ once: true }}
               className="text-center mb-10"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#2BAAE2]/20 mb-4">
-                <HelpCircle className="w-8 h-8 text-[#2BAAE2]" />
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#004d3a]/10 mb-4">
+                <HelpCircle className="w-8 h-8 text-[#004d3a]" />
               </div>
-              <h2 className={`text-2xl md:text-3xl font-bold text-white ${fontClass} mb-3`}>
+              <h2 className={`text-2xl md:text-3xl font-bold ${fontClass} mb-3`}>
                 {t("about.faq.title")}
               </h2>
-              <p className={`text-white/70 ${fontClass} max-w-2xl mx-auto`}>
+              <p className={`text-gray-600 ${fontClass} max-w-2xl mx-auto`}>
                 {t("about.faq.subtitle")}
               </p>
             </motion.div>

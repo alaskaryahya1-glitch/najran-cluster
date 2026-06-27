@@ -575,32 +575,30 @@ export default function Home() {
         </section>
 
         {/* Vision & Mission Section */}
-        <section className="relative text-white overflow-hidden">
-          {/* Semi-transparent overlay for readability */}
-          <div className="absolute inset-0 bg-black/15 backdrop-blur-[2px]"></div>
-          {/* Najran Geometric Background Pattern */}
-          <div className="absolute inset-0 najran-geometric-bg opacity-20"></div>
-          
-          <div className="container-custom relative py-16 md:py-20">
+        <section className="relative overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
+          <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+          <video autoPlay loop muted playsInline aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
+            <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
+          </video>
+
+          <div className="container-custom relative z-10 py-16 md:py-20">
             {/* Vision & Mission Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Vision */}
               <motion.div
-                
-                
-                
-                className="group bg-black/25 backdrop-blur-md rounded-2xl overflow-hidden border border-white/15 flex flex-col relative hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(43,170,226,0.2)] hover:border-[#2BAAE2] transition-all duration-[400ms]"
+                className="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm flex flex-col relative hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(43,170,226,0.2)] hover:border-[#2BAAE2] transition-all duration-[400ms]"
               >
                 <CardStar size="md" />
                 <div className="h-1.5 bg-[#2BAAE2]"></div>
                 <div className="p-6 md:p-8 flex flex-col flex-1">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-14 h-14 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl flex items-center justify-center transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
+                  <div className="w-14 h-14 bg-[#2BAAE2]/10 border border-[#2BAAE2]/20 rounded-3xl flex items-center justify-center transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
                     <Eye className="w-7 h-7 text-[#2BAAE2] brand-icon group-hover:text-white transition-colors" />
                   </div>
-                  <h3 className={`text-2xl font-bold text-white ${fontClass}`}>{t("home.vision")}</h3>
+                  <h3 className={`text-2xl font-bold text-gray-900 ${fontClass}`}>{t("home.vision")}</h3>
                 </div>
-                <p className={`text-white/90 ${fontClass} text-lg leading-relaxed flex-1`}>
+                <p className={`text-gray-600 ${fontClass} text-lg leading-relaxed flex-1`}>
                   {t("home.vision.text")}
                 </p>
                 </div>
@@ -608,22 +606,19 @@ export default function Home() {
 
               {/* Mission */}
               <motion.div
-                
-                
-                
                 transition={{ delay: 0.1 }}
-                className="group bg-black/25 backdrop-blur-md rounded-2xl overflow-hidden border border-white/15 flex flex-col relative hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(43,170,226,0.2)] hover:border-[#2BAAE2] transition-all duration-[400ms]"
+                className="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm flex flex-col relative hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(43,170,226,0.2)] hover:border-[#2BAAE2] transition-all duration-[400ms]"
               >
                 <CardStar size="md" />
                 <div className="h-1.5 bg-[#2BAAE2]"></div>
                 <div className="p-6 md:p-8 flex flex-col flex-1">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-14 h-14 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl flex items-center justify-center transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
+                  <div className="w-14 h-14 bg-[#2BAAE2]/10 border border-[#2BAAE2]/20 rounded-3xl flex items-center justify-center transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
                     <Target className="w-7 h-7 text-[#2BAAE2] brand-icon group-hover:text-white transition-colors" />
                   </div>
-                  <h3 className={`text-2xl font-bold text-white ${fontClass}`}>{t("home.mission")}</h3>
+                  <h3 className={`text-2xl font-bold text-gray-900 ${fontClass}`}>{t("home.mission")}</h3>
                 </div>
-                <p className={`text-white/90 ${fontClass} text-lg leading-relaxed flex-1`}>
+                <p className={`text-gray-600 ${fontClass} text-lg leading-relaxed flex-1`}>
                   {t("home.mission.text")}
                 </p>
                 </div>
@@ -633,42 +628,36 @@ export default function Home() {
         </section>
 
         {/* Strategic Goals Section - Full Width Boxes */}
-        <section className="relative py-12 z-10 overflow-hidden">
-          {/* Semi-transparent overlay for readability */}
-          <div className="absolute inset-0 bg-black/20 dark:bg-black/50 backdrop-blur-[2px]"></div>
-          {/* Najran Geometric Background Pattern */}
-          <div className="absolute inset-0 najran-geometric-bg opacity-20"></div>
-          
-          <div className="container-custom relative">
+        <section className="relative py-12 overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
+          <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+          <video autoPlay loop muted playsInline aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
+            <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
+          </video>
+
+          <div className="container-custom relative z-10">
             <motion.div
-              
-              
-              
               className="text-center mb-8"
             >
-              <h2 className={`text-xl sm:text-2xl md:text-3xl font-bold text-white ${fontClass} mb-2`}>{t("home.strategicGoals")}</h2>
-              <p className={`text-white/90 ${fontClass}`}>{t("home.strategicGoals.subtitle")}</p>
+              <h2 className={`text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 ${fontClass} mb-2`}>{t("home.strategicGoals")}</h2>
+              <p className={`text-gray-600 ${fontClass}`}>{t("home.strategicGoals.subtitle")}</p>
             </motion.div>
-            
+
             <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-3 xs:gap-4 sm:gap-6">
               {strategicGoalsData.map((goal, idx) => (
                 <motion.div
                   key={goal.titleKey}
-                  
-                  
-                  
-                  
-                  className="group bg-black/25 backdrop-blur-md rounded-xl overflow-hidden border border-white/15 relative hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(43,170,226,0.2)] hover:border-[#2BAAE2] transition-all duration-[400ms]"
+                  className="group bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm relative hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(43,170,226,0.2)] hover:border-[#2BAAE2] transition-all duration-[400ms]"
                   data-testid={`goal-card-${idx}`}
                 >
                   <CardStar size="sm" />
                   <div className="h-1.5 bg-[#2BAAE2]"></div>
                   <div className="p-6">
-                  <div className="w-14 h-14 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl flex items-center justify-center mb-4 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
+                  <div className="w-14 h-14 bg-[#2BAAE2]/10 border border-[#2BAAE2]/20 rounded-3xl flex items-center justify-center mb-4 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
                     <goal.icon className="w-7 h-7 text-[#2BAAE2] brand-icon group-hover:text-white transition-colors" />
                   </div>
-                  <h3 className={`text-lg font-bold text-white ${fontClass} mb-2`}>{t(goal.titleKey)}</h3>
-                  <p className={`text-white/90 ${fontClass} text-sm`}>{t(goal.descKey)}</p>
+                  <h3 className={`text-lg font-bold text-gray-900 ${fontClass} mb-2`}>{t(goal.titleKey)}</h3>
+                  <p className={`text-gray-600 ${fontClass} text-sm`}>{t(goal.descKey)}</p>
                   </div>
                 </motion.div>
               ))}
@@ -677,42 +666,36 @@ export default function Home() {
         </section>
 
         {/* Values Section - Full Width Boxes */}
-        <section className="relative py-12 z-10 overflow-hidden">
-          {/* Semi-transparent overlay for readability */}
-          <div className="absolute inset-0 bg-black/35 dark:bg-black/65 backdrop-blur-[2px]"></div>
-          {/* Najran Geometric Background Pattern */}
-          <div className="absolute inset-0 najran-geometric-bg opacity-20"></div>
-          
-          <div className="container-custom relative">
+        <section className="relative py-12 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
+          <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+          <video autoPlay loop muted playsInline aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
+            <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
+          </video>
+
+          <div className="container-custom relative z-10">
             <motion.div
-              
-              
-              
               className="text-center mb-8"
             >
-              <h2 className={`text-xl sm:text-2xl md:text-3xl font-bold text-white ${fontClass} mb-2`}>{t("home.values")}</h2>
-              <p className={`text-white/90 ${fontClass}`}>{t("home.values.subtitle")}</p>
+              <h2 className={`text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 ${fontClass} mb-2`}>{t("home.values")}</h2>
+              <p className={`text-gray-600 ${fontClass}`}>{t("home.values.subtitle")}</p>
             </motion.div>
-            
+
             <div className="grid grid-cols-2 xs:grid-cols-3 lg:grid-cols-5 gap-3 xs:gap-4 sm:gap-6">
               {valuesData.map((value, idx) => (
                 <motion.div
                   key={value.labelKey}
-                  
-                  
-                  
-                  
-                  className="group bg-black/25 backdrop-blur-md rounded-xl overflow-hidden border border-white/15 text-center relative hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(43,170,226,0.2)] hover:border-[#2BAAE2] transition-all duration-[400ms]"
+                  className="group bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm text-center relative hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(43,170,226,0.2)] hover:border-[#2BAAE2] transition-all duration-[400ms]"
                   data-testid={`value-card-${idx}`}
                 >
                   <CardStar size="sm" />
                   <div className="h-1.5 bg-[#2BAAE2]"></div>
                   <div className="p-6">
-                  <div className="w-16 h-16 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl flex items-center justify-center mx-auto mb-4 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
+                  <div className="w-16 h-16 bg-[#2BAAE2]/10 border border-[#2BAAE2]/20 rounded-3xl flex items-center justify-center mx-auto mb-4 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
                     <value.icon className="w-8 h-8 text-[#2BAAE2] brand-icon group-hover:text-white transition-colors" />
                   </div>
-                  <p className={`text-white/60 ${fontClass} text-xs mb-1`}>{t(value.subtitleKey)}</p>
-                  <p className={`${fontClass} font-bold text-white`}>{t(value.labelKey)}</p>
+                  <p className={`text-gray-500 ${fontClass} text-xs mb-1`}>{t(value.subtitleKey)}</p>
+                  <p className={`${fontClass} font-bold text-gray-900`}>{t(value.labelKey)}</p>
                   </div>
                 </motion.div>
               ))}
@@ -721,43 +704,37 @@ export default function Home() {
         </section>
 
         {/* Promises Section - Full Width Boxes */}
-        <section className="relative py-12 z-10 overflow-hidden">
-          {/* Semi-transparent overlay for readability */}
-          <div className="absolute inset-0 bg-black/20 dark:bg-black/50 backdrop-blur-[2px]"></div>
-          {/* Najran Geometric Background Pattern */}
-          <div className="absolute inset-0 najran-geometric-bg opacity-20"></div>
-          
-          <div className="container-custom relative">
+        <section className="relative py-12 overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
+          <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+          <video autoPlay loop muted playsInline aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
+            <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
+          </video>
+
+          <div className="container-custom relative z-10">
             <motion.div
-              
-              
-              
               className="text-center mb-8"
             >
-              <h2 className={`text-xl sm:text-2xl md:text-3xl font-bold text-white ${fontClass} mb-2`}>{t("home.promises")}</h2>
-              <p className={`text-white/90 ${fontClass}`}>{t("home.promises.subtitle")}</p>
+              <h2 className={`text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 ${fontClass} mb-2`}>{t("home.promises")}</h2>
+              <p className={`text-gray-600 ${fontClass}`}>{t("home.promises.subtitle")}</p>
             </motion.div>
-            
+
             <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-3 xs:gap-4 sm:gap-6">
               {promisesData.map((promise, idx) => (
                 <motion.div
                   key={promise.titleKey}
-                  
-                  
-                  
-                  
-                  className="group bg-black/25 backdrop-blur-md rounded-xl overflow-hidden border border-white/15 text-center relative hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(43,170,226,0.2)] hover:border-[#2BAAE2] transition-all duration-[400ms]"
+                  className="group bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm text-center relative hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(43,170,226,0.2)] hover:border-[#2BAAE2] transition-all duration-[400ms]"
                   data-testid={`promise-card-${idx}`}
                 >
                   <CardStar size="sm" />
                   <div className="h-1.5 bg-[#2BAAE2]"></div>
                   <div className="p-6">
-                  <div className="w-16 h-16 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl flex items-center justify-center mx-auto mb-4 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
+                  <div className="w-16 h-16 bg-[#2BAAE2]/10 border border-[#2BAAE2]/20 rounded-3xl flex items-center justify-center mx-auto mb-4 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
                     <promise.icon className="w-8 h-8 text-[#2BAAE2] brand-icon group-hover:text-white transition-colors" />
                   </div>
-                  <h3 className={`text-lg font-bold text-white ${fontClass} mb-2`}>{t(promise.titleKey)}</h3>
-                  <p className={`text-white/60 ${fontClass} text-xs mb-2`}>{t(promise.subtitleKey)}</p>
-                  <p className={`text-white ${fontClass} text-sm`}>{t(promise.descKey)}</p>
+                  <h3 className={`text-lg font-bold text-gray-900 ${fontClass} mb-2`}>{t(promise.titleKey)}</h3>
+                  <p className={`text-gray-500 ${fontClass} text-xs mb-2`}>{t(promise.subtitleKey)}</p>
+                  <p className={`text-gray-600 ${fontClass} text-sm`}>{t(promise.descKey)}</p>
                   </div>
                 </motion.div>
               ))}

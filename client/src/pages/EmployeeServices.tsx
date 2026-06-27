@@ -444,27 +444,24 @@ export default function EmployeeServices() {
 
   return (
     <div className="min-h-screen employee-services-page">
-      {/* Full-page fixed slideshow background */}
-      <div className="fixed inset-0 z-0">
-        {heroSlides.map((slide, idx) => (
-          <img
-            key={idx}
-            src={slide}
-            alt=""
-            data-nosnippet="true"
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-              idx === currentSlide ? 'opacity-100' : 'opacity-0'
-            }`}
-          />
-        ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/55 to-black/70" />
-      </div>
-
       <Header />
 
-      <main className="relative z-10">
+      <main>
         {/* Hero Section */}
-        <section className="relative py-24 overflow-hidden">
+        <section className="relative py-24 overflow-hidden" style={{ backgroundColor: '#1a3a5c', minHeight: '40vh' }}>
+          {/* Slideshow images inside hero section */}
+          {heroSlides.map((slide, idx) => (
+            <img
+              key={idx}
+              src={slide}
+              alt=""
+              data-nosnippet="true"
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                idx === currentSlide ? 'opacity-100' : 'opacity-0'
+              }`}
+            />
+          ))}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/55 to-black/70" />
           <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
           {/* Slide indicators */}
           <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
@@ -498,23 +495,23 @@ export default function EmployeeServices() {
 
         {/* Loading State */}
         {isLoading && (
-          <section className="relative py-20">
+          <section className="relative py-20" style={{ backgroundColor: '#f7f8f9' }}>
             <div className="flex flex-col items-center justify-center">
               <Loader2 className="w-12 h-12 text-[#2BAAE2] animate-spin mb-4" />
-              <p className={`text-white/70 ${fontClass}`}>{t("employeeServices.loading")}</p>
+              <p className={`text-gray-600 ${fontClass}`}>{t("employeeServices.loading")}</p>
             </div>
           </section>
         )}
 
         {/* Error State */}
         {error && (
-          <section className="relative py-20">
+          <section className="relative py-20" style={{ backgroundColor: '#f7f8f9' }}>
             <div className="flex justify-center">
               <div className="bg-white p-8 rounded-3xl flex items-center gap-4 border border-gray-100 shadow-sm max-w-lg">
                 <AlertCircle className="w-10 h-10 flex-shrink-0 text-[#2BAAE2]" />
                 <div className={fontClass}>
-                  <h3 className="font-bold text-lg mb-1 text-white">{t("employeeServices.error")}</h3>
-                  <p className="text-sm text-white/70">{t("employeeServices.errorRetry")}</p>
+                  <h3 className="font-bold text-lg mb-1 text-gray-900">{t("employeeServices.error")}</h3>
+                  <p className="text-sm text-gray-600">{t("employeeServices.errorRetry")}</p>
                 </div>
               </div>
             </div>
@@ -523,15 +520,18 @@ export default function EmployeeServices() {
 
         {/* Info Services */}
         {!isLoading && !error && infoServices.length > 0 && (
-          <section className="relative py-12 overflow-hidden">
-            <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
-            <div className="container-custom relative">
+          <section className="relative py-12 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
+            <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+            <video autoPlay loop muted playsInline aria-hidden="true"
+              className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
+              <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
+            </video>
+            <div className="container-custom relative z-10">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                className="bg-black/25 backdrop-blur-md rounded-[40px] border border-white/15 shadow-sm relative overflow-hidden hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(43,170,226,0.15)] hover:border-[#2BAAE2] transition-all duration-[400ms]"
-                style={{ boxShadow: '0 10px 30px rgba(0,77,58,0.03)' }}
+                className="bg-white rounded-[40px] border border-gray-100 shadow-sm relative overflow-hidden hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(43,170,226,0.15)] hover:border-[#2BAAE2] transition-all duration-[400ms]"
               >
                 <div className="h-1.5 bg-[#2BAAE2] rounded-t-[40px]"></div>
                 <CardStar size="lg" />
@@ -558,24 +558,27 @@ export default function EmployeeServices() {
 
         {/* System Services */}
         {!isLoading && !error && systemServices.length > 0 && (
-          <section className="relative py-12 overflow-hidden">
-            <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
-            <div className="container-custom relative">
+          <section className="relative py-12 overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
+            <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+            <video autoPlay loop muted playsInline aria-hidden="true"
+              className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
+              <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
+            </video>
+            <div className="container-custom relative z-10">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-                className="bg-black/25 backdrop-blur-md rounded-[40px] border border-white/15 shadow-sm relative overflow-hidden hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(43,170,226,0.15)] hover:border-[#2BAAE2] transition-all duration-[400ms]"
-                style={{ boxShadow: '0 10px 30px rgba(0,77,58,0.03)' }}
+                className="bg-white rounded-[40px] border border-gray-100 shadow-sm relative overflow-hidden hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(43,170,226,0.15)] hover:border-[#2BAAE2] transition-all duration-[400ms]"
               >
                 <div className="h-1.5 bg-[#2BAAE2] rounded-t-[40px]"></div>
                 <CardStar size="lg" />
                 <div className="p-6 md:p-8">
                   <div className="text-center mb-10 relative z-10">
-                    <h2 className={`text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold ${fontClass} text-white mb-4`}>
+                    <h2 className={`text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold ${fontClass} text-gray-900 mb-4`}>
                       {t("employeeServices.systems")}
                     </h2>
-                    <p className={`text-white/70 ${fontClass}`}>
+                    <p className={`text-gray-600 ${fontClass}`}>
                       {t("employeeServices.systemsSubtitle")}
                     </p>
                   </div>
@@ -603,10 +606,10 @@ export default function EmployeeServices() {
 
       {/* Email Directory Dialog */}
       <Dialog open={isEmailDialogOpen} onOpenChange={setIsEmailDialogOpen}>
-        <DialogContent className="max-w-lg max-h-[85vh] overflow-hidden flex flex-col p-0 gap-0 rounded-3xl bg-[#0c1c28]/95 backdrop-blur-md border border-white/15 shadow-xl">
-          <div className="bg-white/8 px-5 py-6 rounded-t-3xl relative border-b border-gray-100">
+        <DialogContent className="max-w-lg max-h-[85vh] overflow-hidden flex flex-col p-0 gap-0 rounded-3xl bg-white border border-gray-200 shadow-xl">
+          <div className="bg-gray-50 px-5 py-6 rounded-t-3xl relative border-b border-gray-100">
             <DialogHeader className="pb-0">
-              <DialogTitle className={`text-lg ${fontClass} flex items-center justify-center gap-2 text-white`}>
+              <DialogTitle className={`text-lg ${fontClass} flex items-center justify-center gap-2 text-gray-900`}>
                 <Mail className="w-5 h-5 text-[#2BAAE2]" />
                 {language === 'ar' ? 'عناوين البريد الإلكتروني للإدارات' : 'Department Email Addresses'}
               </DialogTitle>
@@ -617,7 +620,7 @@ export default function EmployeeServices() {
                 placeholder={language === 'ar' ? 'ابحث عن إدارة أو بريد إلكتروني...' : 'Search for department or email...'}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className={`bg-white/10 border-white/20 text-white/70 placeholder:text-white/40 rounded-full pr-4 pl-10 h-11 ${fontClass}`}
+                className={`bg-white border-gray-200 text-gray-700 placeholder:text-gray-400 rounded-full pr-4 pl-10 h-11 ${fontClass}`}
                 data-testid="input-email-search"
               />
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#2BAAE2]" />
@@ -627,9 +630,9 @@ export default function EmployeeServices() {
           <div className="flex-1 overflow-y-auto bg-white">
             {Object.entries(groupedEmails).map(([dept, emails]) => (
               <div key={dept}>
-                <div className="px-4 py-3 flex items-center gap-2 bg-white/8 border-b border-gray-100">
+                <div className="px-4 py-3 flex items-center gap-2 bg-gray-50 border-b border-gray-100">
                   <Building2 className="w-4 h-4 text-[#2BAAE2]" />
-                  <span className={`font-semibold text-sm ${fontClass} text-white`}>{dept}</span>
+                  <span className={`font-semibold text-sm ${fontClass} text-gray-800`}>{dept}</span>
                   <div className="w-1.5 h-1.5 rounded-full bg-[#2BAAE2]/40 mr-auto"></div>
                 </div>
 
@@ -638,10 +641,10 @@ export default function EmployeeServices() {
                     <a
                       key={idx}
                       href={`mailto:${entry.email}`}
-                      className="block bg-white/8 rounded-xl px-4 py-3 hover:bg-[#e6f7f1] transition-colors border border-gray-100"
+                      className="block bg-gray-50 rounded-xl px-4 py-3 hover:bg-[#e6f7ff] transition-colors border border-gray-100"
                       data-testid={`link-email-${dept}-${idx}`}
                     >
-                      <p className={`text-sm ${fontClass} text-white/70 leading-relaxed`}>
+                      <p className={`text-sm ${fontClass} text-gray-600 leading-relaxed`}>
                         {entry.displayName}
                       </p>
                       <p className="text-sm text-[#2BAAE2] mt-0.5" dir="ltr">
@@ -654,7 +657,7 @@ export default function EmployeeServices() {
             ))}
 
             {Object.keys(groupedEmails).length === 0 && (
-              <div className="text-center py-12 text-white/40">
+              <div className="text-center py-12 text-gray-400">
                 <Mail className="w-12 h-12 mx-auto mb-3 opacity-50" />
                 <p className={fontClass}>
                   {language === 'ar' ? 'لم يتم العثور على نتائج' : 'No results found'}
@@ -667,10 +670,10 @@ export default function EmployeeServices() {
 
       {/* Phone Contact Dialog */}
       <Dialog open={isPhoneDialogOpen} onOpenChange={setIsPhoneDialogOpen}>
-        <DialogContent className="max-w-md overflow-hidden flex flex-col p-0 gap-0 rounded-3xl bg-[#0c1c28]/95 backdrop-blur-md border border-white/15 shadow-xl">
-          <div className="bg-white/8 px-5 py-6 rounded-t-3xl relative border-b border-gray-100">
+        <DialogContent className="max-w-md overflow-hidden flex flex-col p-0 gap-0 rounded-3xl bg-white border border-gray-200 shadow-xl">
+          <div className="bg-gray-50 px-5 py-6 rounded-t-3xl relative border-b border-gray-100">
             <DialogHeader className="pb-0">
-              <DialogTitle className={`text-lg ${fontClass} flex items-center justify-center gap-2 text-white`}>
+              <DialogTitle className={`text-lg ${fontClass} flex items-center justify-center gap-2 text-gray-900`}>
                 <Phone className="w-5 h-5 text-[#2BAAE2]" />
                 {language === 'ar' ? 'أرقام التواصل بالتجمع' : 'NHC Contact Numbers'}
               </DialogTitle>
@@ -678,14 +681,14 @@ export default function EmployeeServices() {
           </div>
 
           <div className="p-6 text-center">
-            <div className="bg-white/8 rounded-2xl px-6 py-8 border border-gray-100">
+            <div className="bg-gray-50 rounded-2xl px-6 py-8 border border-gray-100">
               <Phone className="w-12 h-12 mx-auto mb-4 text-[#2BAAE2]" />
-              <p className={`text-white/70 ${fontClass} mb-3`}>
+              <p className={`text-gray-600 ${fontClass} mb-3`}>
                 {language === 'ar' ? 'للتواصل مع تجمع نجران الصحي' : 'To contact Najran Health Cluster'}
               </p>
               <a
                 href="tel:0175406000"
-                className="text-3xl font-bold text-white hover:text-[#2BAAE2] transition-colors block"
+                className="text-3xl font-bold text-gray-900 hover:text-[#2BAAE2] transition-colors block"
                 dir="ltr"
                 data-testid="link-phone-number"
               >

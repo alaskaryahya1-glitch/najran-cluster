@@ -702,13 +702,13 @@ export default function About() {
             {/* النواب - شبكة الصور */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               {[
-                { image: rashidImage, nameKey: "about.deputy.rashid", titleKey: "about.deputy.rashid.title" },
-                { image: mohammedImage, nameKey: "about.deputy.mohammed", titleKey: "about.deputy.mohammed.title" },
-                { image: mohammadMutlaqImage, nameKey: "about.deputy.mohammadMutlaq", titleKey: "about.deputy.mohammadMutlaq.title" },
-                { image: musabiImage, nameKey: "about.deputy.musabi", titleKey: "about.deputy.musabi.title" },
-                { image: ismailImage, nameKey: "about.deputy.ismail", titleKey: "about.deputy.ismail.title" },
-                { image: yahyaImage, nameKey: "about.deputy.yahya", titleKey: "about.deputy.yahya.title" },
-                { image: aliImage, nameKey: "about.deputy.ali", titleKey: "about.deputy.ali.title" },
+                { image: cardRashid, nameKey: "about.deputy.rashid", titleKey: "about.deputy.rashid.title" },
+                { image: cardHarith, nameKey: "about.deputy.mohammed", titleKey: "about.deputy.mohammed.title" },
+                { image: cardMutlaq, nameKey: "about.deputy.mohammadMutlaq", titleKey: "about.deputy.mohammadMutlaq.title" },
+                { image: cardMusabi, nameKey: "about.deputy.musabi", titleKey: "about.deputy.musabi.title" },
+                { image: cardIsmail, nameKey: "about.deputy.ismail", titleKey: "about.deputy.ismail.title" },
+                { image: cardYahya, nameKey: "about.deputy.yahya", titleKey: "about.deputy.yahya.title" },
+                { image: cardAli, nameKey: "about.deputy.ali", titleKey: "about.deputy.ali.title" },
               ].map((leader, idx) => (
                 <motion.div
                   key={idx}
@@ -723,7 +723,7 @@ export default function About() {
                       <img
                         src={leader.image}
                         alt={t(leader.nameKey)}
-                        className="w-full h-full object-cover object-top transition-all duration-700 ease-in-out grayscale group-hover:grayscale-0 scale-100 group-hover:scale-110"
+                        className="w-full h-full object-cover object-bottom transition-all duration-700 ease-in-out grayscale group-hover:grayscale-0 scale-100 group-hover:scale-110"
                       />
                     </div>
                     <h4 className={`text-xl font-bold text-gray-900 mb-2 ${fontClass}`}>{t(leader.nameKey)}</h4>

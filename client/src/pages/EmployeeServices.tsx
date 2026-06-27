@@ -442,7 +442,7 @@ export default function EmployeeServices() {
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60" />
           </div>
-          <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none z-10"></div>
+          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none z-10"></div>
 
           <div className="container-custom relative z-20">
             <motion.div
@@ -489,7 +489,7 @@ export default function EmployeeServices() {
         {/* Info Services */}
         {!isLoading && !error && infoServices.length > 0 && (
           <section className="relative py-12 overflow-hidden" style={{ backgroundColor: '#0c1c28' }}>
-            <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+            <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
             <div className="container-custom relative">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -524,7 +524,7 @@ export default function EmployeeServices() {
         {/* System Services */}
         {!isLoading && !error && systemServices.length > 0 && (
           <section className="relative py-12 overflow-hidden" style={{ backgroundColor: '#0c1c28' }}>
-            <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+            <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
             <div className="container-custom relative">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}

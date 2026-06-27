@@ -24,6 +24,7 @@ import cardYahya from "@assets/IMG_7536.jpg";
 import cardMutlaq from "@assets/IMG_7537.jpg";
 import cardRashid from "@assets/IMG_7538.jpg";
 import heroImage from "@assets/0B4A4B84-6228-4A64-9958-EB4C285CB04D_1767273959627.png";
+import whiteLogo from "@assets/logo2_1767055332336.png";
 import { CardStar } from "@/components/BrandIcon";
 
 const DeputyCard = memo(({ deputy, t, fontClass }: any) => (
@@ -587,13 +588,12 @@ export default function About() {
                   {language === 'ar' ? 'قصة التحول' : 'Our Story'}
                 </span>
 
-                <h2 className={`text-4xl lg:text-5xl font-bold text-gray-900 leading-[1.2] ${fontClass}`}>
-                  {language === 'ar' ? (
-                    <>تجمع نجران الصحي.. <br /> <span style={{ color: '#004d3a' }}>التزام بالتميز الطبي</span></>
-                  ) : (
-                    <>Najran Health Cluster.. <br /> <span style={{ color: '#004d3a' }}>Commitment to Medical Excellence</span></>
-                  )}
-                </h2>
+                <img
+                  src={whiteLogo}
+                  alt={t("header.clusterName")}
+                  className="h-16 sm:h-20 w-auto object-contain"
+                  style={{ filter: 'brightness(0) saturate(100%) invert(62%) sepia(46%) saturate(533%) hue-rotate(163deg) brightness(98%) contrast(91%)' }}
+                />
 
                 <p className={`text-lg text-gray-600 leading-relaxed ${fontClass}`}>
                   {language === 'ar'

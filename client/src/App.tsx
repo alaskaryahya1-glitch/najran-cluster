@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { I18nProvider } from "@/lib/i18n";
 import { ThemeProvider } from "@/lib/theme-provider";
 import { useEffect, lazy, Suspense } from "react";
+import { MotionConfig } from "framer-motion";
 import { initGA } from "./lib/analytics";
 import { useAnalytics } from "./hooks/use-analytics";
 import { SEOManager } from "@/components/SEOManager";
@@ -61,8 +62,10 @@ function App() {
       <ThemeProvider>
         <I18nProvider>
           <TooltipProvider>
-            <Toaster />
-            <Router />
+            <MotionConfig transition={{ duration: 0.25, ease: "easeOut" }}>
+              <Toaster />
+              <Router />
+            </MotionConfig>
           </TooltipProvider>
         </I18nProvider>
       </ThemeProvider>

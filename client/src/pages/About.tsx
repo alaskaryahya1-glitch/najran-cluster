@@ -622,7 +622,7 @@ export default function About() {
                     </p>
                   </div>
                   <div
-                    className={`col-span-2 p-4 rounded-2xl flex justify-between items-center border border-transparent hover:-translate-y-2 hover:shadow-[0_12px_30px_rgba(0,77,58,0.25)] hover:border-[#004d3a]/30 transition-all duration-[400ms] cursor-default ${language === 'ar' ? '' : 'flex-row-reverse'}`}
+                    className={`col-span-2 p-4 rounded-2xl flex justify-between items-center border border-transparent hover:-translate-y-2 hover:shadow-[0_12px_30px_rgba(43,170,226,0.25)] hover:border-[#2BAAE2] transition-all duration-[400ms] cursor-default ${language === 'ar' ? '' : 'flex-row-reverse'}`}
                     style={{ backgroundColor: '#004d3a' }}
                   >
                     <span className={`text-white text-lg font-medium ${fontClass}`}>

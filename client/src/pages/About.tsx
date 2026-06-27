@@ -689,7 +689,7 @@ export default function About() {
                       <img
                         src={ceoImage}
                         alt={t("about.ceo.name")}
-                        className="leadership-card-img w-full h-full object-cover object-top transition-all duration-700 ease-in-out grayscale group-hover:grayscale-0 group-hover:scale-110 will-change-transform"
+                        className="leadership-card-img w-full h-full object-cover object-top transition-all duration-700 ease-in-out group-hover:scale-110 will-change-transform"
                       />
                     </div>
                     <h4 className={`text-xl font-bold text-gray-900 mb-2 ${fontClass}`}>{t("about.ceo.name")}</h4>
@@ -723,7 +723,7 @@ export default function About() {
                       <img
                         src={leader.image}
                         alt={t(leader.nameKey)}
-                        className="leadership-card-img absolute left-0 w-full transition-all duration-700 ease-in-out grayscale group-hover:grayscale-0 group-hover:scale-[1.05] origin-bottom will-change-transform"
+                        className="leadership-card-img absolute left-0 w-full transition-all duration-700 ease-in-out group-hover:scale-[1.05] origin-bottom will-change-transform"
                         style={{ bottom: leader.bottomOffset || '-5%', height: '240%', objectFit: 'cover', objectPosition: leader.objPos || 'center bottom' }}
                       />
                     </div>

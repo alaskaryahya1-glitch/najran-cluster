@@ -274,8 +274,9 @@ function GlassStarService({ service, index, language, fontClass, size = "md", on
 
   const hasLogo = service.logoPath && logoMap[service.logoPath];
   const logoSrc = service.logoPath ? logoMap[service.logoPath] : null;
-  const shouldInvertLogo = false;
-  const isEmailLogo = service.logoPath === 'png-clipart-gmail-logo-illustration-email-computer-icons-messa_1767519110048.png';
+  const shouldInvertLogo = service.logoPath === 'png-clipart-gmail-logo-illustration-email-computer-icons-messa_1767519110048.png' ||
+    service.logoPath === 'pngtree-black-call-icon-png-image_2413693_1767519362030.png' ||
+    service.logoPath === 'logo-rgb_1768467991326.png';
   const isOutlookLogo = service.logoPath === 'original-31293c6476ae8628875b4f422264e2c4_1767518560706.png';
   
   const sizes = {
@@ -364,10 +365,10 @@ function GlassStarService({ service, index, language, fontClass, size = "md", on
                     className={`${sizes[size].logo} object-contain drop-shadow-lg transition-all duration-300`}
                     style={{
                       filter: isOutlookLogo
-                        ? isHovered ? "brightness(1.1) drop-shadow(0 2px 8px rgba(43,170,226,0.3))" : "brightness(1) drop-shadow(0 1px 4px rgba(43,170,226,0.2))"
+                        ? isHovered ? "brightness(1.1) drop-shadow(0 2px 8px rgba(41,181,232,0.3))" : "brightness(1) drop-shadow(0 1px 4px rgba(41,181,232,0.2))"
                         : isHovered
                           ? "brightness(0) saturate(100%) invert(15%) sepia(83%) saturate(690%) hue-rotate(143deg) brightness(92%) contrast(97%)"
-                          : "brightness(0) saturate(100%) invert(63%) sepia(38%) saturate(380%) hue-rotate(170deg) brightness(112%) contrast(80%)"
+                          : "brightness(0) saturate(100%) invert(65%) sepia(50%) saturate(550%) hue-rotate(168deg) brightness(105%) contrast(90%)"
                     }}
                   />
                 ) : (

@@ -53,15 +53,13 @@ export function Footer() {
   ];
 
   return (
-    <footer className="text-white relative overflow-hidden" style={{ backgroundColor: '#0c1c28', borderTop: '2px solid #2BAAE2' }}>
-      {/* Geometric Pattern Overlay */}
-      <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
-      {/* Glass top highlight — mimics light catching the top edge of glass */}
-      <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white/12 to-transparent pointer-events-none"></div>
-      {/* Glass body shimmer */}
-      <div className="absolute inset-0 bg-white/[0.04] pointer-events-none"></div>
-      {/* Glass bottom fade */}
-      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+    <footer className="text-white relative overflow-hidden" style={{ borderTop: '2px solid #2BAAE2' }}>
+      {/* Layer 0: Solid blocker — prevents video from bleeding through */}
+      <div className="absolute inset-0" style={{ backgroundColor: '#0c1c28', zIndex: 0 }}></div>
+      {/* Layer 1: Geometric pattern — gives blur something to work on */}
+      <div className="absolute inset-0 najran-geometric-bg opacity-25 pointer-events-none" style={{ zIndex: 1 }}></div>
+      {/* Layer 2: Glass card effect — same as page cards (blurs the geometric pattern beneath) */}
+      <div className="absolute inset-0 bg-black/25 backdrop-blur-md pointer-events-none" style={{ zIndex: 2 }}></div>
 
       {/* Partners Logos Row */}
       <div className="border-b border-white/10 relative z-10">

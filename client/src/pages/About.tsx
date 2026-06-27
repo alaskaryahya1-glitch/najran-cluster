@@ -584,7 +584,7 @@ export default function About() {
                 <div className="flex flex-col items-start gap-4">
                   <span
                     className={`font-bold text-sm tracking-[0.2em] uppercase pr-3 ${fontClass} ${language === 'ar' ? 'border-r-4' : 'border-l-4 pl-3 pr-0'}`}
-                    style={{ color: '#004d3a', borderColor: '#004d3a' }}
+                    style={{ color: '#2BAAE2', borderColor: '#2BAAE2' }}
                   >
                     {language === 'ar' ? 'قصة التحول' : 'Our Story'}
                   </span>
@@ -610,13 +610,13 @@ export default function About() {
                 {/* الإحصائيات */}
                 <div className="grid grid-cols-2 gap-4 pt-6 border-t border-gray-100">
                   <div className="p-4 bg-gray-50 rounded-2xl border border-transparent hover:-translate-y-2 hover:shadow-[0_12px_30px_rgba(43,170,226,0.15)] hover:border-[#2BAAE2] transition-all duration-[400ms] cursor-default">
-                    <h4 className="text-3xl font-bold" style={{ color: '#004d3a' }}>12</h4>
+                    <h4 className="text-3xl font-bold" style={{ color: '#2BAAE2' }}>12</h4>
                     <p className={`text-sm text-gray-500 font-medium ${fontClass}`}>
                       {language === 'ar' ? 'مستشفى متخصص' : 'Specialized Hospitals'}
                     </p>
                   </div>
                   <div className="p-4 bg-gray-50 rounded-2xl border border-transparent hover:-translate-y-2 hover:shadow-[0_12px_30px_rgba(43,170,226,0.15)] hover:border-[#2BAAE2] transition-all duration-[400ms] cursor-default">
-                    <h4 className="text-3xl font-bold" style={{ color: '#004d3a' }}>69</h4>
+                    <h4 className="text-3xl font-bold" style={{ color: '#2BAAE2' }}>69</h4>
                     <p className={`text-sm text-gray-500 font-medium ${fontClass}`}>
                       {language === 'ar' ? 'مركز رعاية أولية' : 'Primary Care Centers'}
                     </p>
@@ -645,7 +645,7 @@ export default function About() {
                   className="overflow-hidden border-[6px] border-white"
                   style={{
                     borderRadius: '50px 15px 50px 15px',
-                    boxShadow: '20px 20px 0px 0px rgba(0, 77, 58, 0.05)',
+                    boxShadow: '20px 20px 0px 0px rgba(43,170,226, 0.05)',
                   }}
                 >
                   <img
@@ -674,13 +674,13 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <span className={`font-bold text-sm tracking-widest uppercase ${fontClass}`} style={{ color: '#004d3a' }}>
+              <span className={`font-bold text-sm tracking-widest uppercase ${fontClass}`} style={{ color: '#2BAAE2' }}>
                 {language === 'ar' ? 'الفريق القيادي' : 'Leadership Team'}
               </span>
               <h2 className={`text-4xl md:text-5xl font-bold text-gray-900 mt-4 ${fontClass}`}>
                 {language === 'ar' ? 'الإدارة التنفيذية' : 'Executive Management'}
               </h2>
-              <div className="w-24 h-1.5 mx-auto mt-6 rounded-full" style={{ backgroundColor: '#004d3a' }}></div>
+              <div className="w-24 h-1.5 mx-auto mt-6 rounded-full" style={{ backgroundColor: '#2BAAE2' }}></div>
             </motion.div>
 
             {/* الرئيس التنفيذي - فوق بنفس حجم البطاقات */}
@@ -702,7 +702,7 @@ export default function About() {
                       />
                     </div>
                     <h4 className={`text-xl font-bold text-gray-900 mb-2 ${fontClass}`}>{t("about.ceo.name")}</h4>
-                    <p className={`font-semibold tracking-wide text-sm ${fontClass}`} style={{ color: '#004d3a' }}>{t("about.ceo")}</p>
+                    <p className={`font-semibold tracking-wide text-sm ${fontClass}`} style={{ color: '#2BAAE2' }}>{t("about.ceo")}</p>
                   </div>
                 </motion.div>
               </div>
@@ -737,7 +737,7 @@ export default function About() {
                       />
                     </div>
                     <h4 className={`text-xl font-bold text-gray-900 mb-2 ${fontClass}`}>{t(leader.nameKey)}</h4>
-                    <p className={`font-semibold tracking-wide text-sm ${fontClass}`} style={{ color: '#004d3a' }}>
+                    <p className={`font-semibold tracking-wide text-sm ${fontClass}`} style={{ color: '#2BAAE2' }}>
                       {t(leader.titleKey)}
                     </p>
                   </div>
@@ -825,41 +825,41 @@ export default function About() {
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
                   <button
                     onClick={() => { setShowHospitals(!showHospitals); setShowSpecializedCenters(false); setShowHealthCenters(false); }}
-                    className={`text-center cursor-pointer rounded-lg py-2 transition-all ${showHospitals ? 'bg-[#004d3a]/10' : 'hover:bg-gray-50'}`}
+                    className={`text-center cursor-pointer rounded-lg py-2 transition-all ${showHospitals ? 'bg-[#2BAAE2]/10' : 'hover:bg-gray-50'}`}
                     data-testid="button-hospitals"
                   >
-                    <Building2 className="w-5 h-5 mx-auto mb-1 text-[#004d3a] brand-icon" />
+                    <Building2 className="w-5 h-5 mx-auto mb-1 text-[#2BAAE2] brand-icon" />
                     <p className="text-xl font-bold text-gray-900">11</p>
                     <p className={`text-gray-500 ${fontClass} text-xs`}>{t("about.hospitals")}</p>
-                    <ChevronDown className={`w-4 h-4 mx-auto mt-1 transition-transform text-[#004d3a] ${showHospitals ? 'rotate-180' : ''}`} />
+                    <ChevronDown className={`w-4 h-4 mx-auto mt-1 transition-transform text-[#2BAAE2] ${showHospitals ? 'rotate-180' : ''}`} />
                   </button>
                   <button
                     onClick={() => { setShowSpecializedCenters(!showSpecializedCenters); setShowHospitals(false); setShowHealthCenters(false); }}
-                    className={`text-center cursor-pointer rounded-lg py-2 transition-all ${showSpecializedCenters ? 'bg-[#004d3a]/10' : 'hover:bg-gray-50'}`}
+                    className={`text-center cursor-pointer rounded-lg py-2 transition-all ${showSpecializedCenters ? 'bg-[#2BAAE2]/10' : 'hover:bg-gray-50'}`}
                     data-testid="button-specialized-centers"
                   >
-                    <Hospital className="w-5 h-5 mx-auto mb-1 text-[#004d3a] brand-icon" />
+                    <Hospital className="w-5 h-5 mx-auto mb-1 text-[#2BAAE2] brand-icon" />
                     <p className="text-xl font-bold text-gray-900">1</p>
                     <p className={`text-gray-500 ${fontClass} text-xs`}>{t("about.specializedCenters")}</p>
-                    <ChevronDown className={`w-4 h-4 mx-auto mt-1 transition-transform text-[#004d3a] ${showSpecializedCenters ? 'rotate-180' : ''}`} />
+                    <ChevronDown className={`w-4 h-4 mx-auto mt-1 transition-transform text-[#2BAAE2] ${showSpecializedCenters ? 'rotate-180' : ''}`} />
                   </button>
                   <button
                     onClick={() => { setShowHealthCenters(!showHealthCenters); setShowHospitals(false); setShowSpecializedCenters(false); }}
-                    className={`text-center cursor-pointer rounded-lg py-2 transition-all ${showHealthCenters ? 'bg-[#004d3a]/10' : 'hover:bg-gray-50'}`}
+                    className={`text-center cursor-pointer rounded-lg py-2 transition-all ${showHealthCenters ? 'bg-[#2BAAE2]/10' : 'hover:bg-gray-50'}`}
                     data-testid="button-health-centers"
                   >
-                    <Stethoscope className="w-5 h-5 mx-auto mb-1 text-[#004d3a] brand-icon" />
+                    <Stethoscope className="w-5 h-5 mx-auto mb-1 text-[#2BAAE2] brand-icon" />
                     <p className="text-xl font-bold text-gray-900">69</p>
                     <p className={`text-gray-500 ${fontClass} text-xs`}>{t("about.healthCenters")}</p>
-                    <ChevronDown className={`w-4 h-4 mx-auto mt-1 transition-transform text-[#004d3a] ${showHealthCenters ? 'rotate-180' : ''}`} />
+                    <ChevronDown className={`w-4 h-4 mx-auto mt-1 transition-transform text-[#2BAAE2] ${showHealthCenters ? 'rotate-180' : ''}`} />
                   </button>
                   <div className="text-center py-2">
-                    <Users className="w-5 h-5 mx-auto mb-1 text-[#004d3a] brand-icon" />
+                    <Users className="w-5 h-5 mx-auto mb-1 text-[#2BAAE2] brand-icon" />
                     <p className="text-xl font-bold text-gray-900">495K+</p>
                     <p className={`text-gray-500 ${fontClass} text-xs`}>{t("about.beneficiaries")}</p>
                   </div>
                   <div className="text-center py-2">
-                    <BedDouble className="w-5 h-5 mx-auto mb-1 text-[#004d3a] brand-icon" />
+                    <BedDouble className="w-5 h-5 mx-auto mb-1 text-[#2BAAE2] brand-icon" />
                     <p className="text-xl font-bold text-gray-900">1,300</p>
                     <p className={`text-gray-500 ${fontClass} text-xs`}>{t("about.beds")}</p>
                   </div>
@@ -889,9 +889,9 @@ export default function About() {
                                   data-testid={`link-hospital-${idx}`}
                                 >
                                   <div className="flex items-center justify-center gap-1 mb-1">
-                                    <MapPin className="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity text-[#004d3a] brand-icon" />
+                                    <MapPin className="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity text-[#2BAAE2] brand-icon" />
                                   </div>
-                                  <p className={`${fontClass} text-sm font-bold hospital-title`} style={{ color: '#004d3a' }}>{t(hospital.nameKey)}</p>
+                                  <p className={`${fontClass} text-sm font-bold hospital-title`} style={{ color: '#2BAAE2' }}>{t(hospital.nameKey)}</p>
                                 </motion.a>
                               </TooltipTrigger>
                               <TooltipContent side="top" className={`max-w-xs bg-white dark:bg-card text-foreground p-4 rounded-xl shadow-xl border border-border/50 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
@@ -959,9 +959,9 @@ export default function About() {
                                   data-testid={`link-specialized-center-${idx}`}
                                 >
                                   <div className="flex items-center justify-center gap-1 mb-1">
-                                    <MapPin className="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity text-[#004d3a] brand-icon" />
+                                    <MapPin className="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity text-[#2BAAE2] brand-icon" />
                                   </div>
-                                  <p className={`${fontClass} text-sm font-bold hospital-title`} style={{ color: '#004d3a' }}>{t(center.nameKey)}</p>
+                                  <p className={`${fontClass} text-sm font-bold hospital-title`} style={{ color: '#2BAAE2' }}>{t(center.nameKey)}</p>
                                 </motion.a>
                               </TooltipTrigger>
                               <TooltipContent side="top" className={`max-w-xs bg-white dark:bg-card text-foreground p-4 rounded-xl shadow-xl border border-border/50 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
@@ -1121,7 +1121,7 @@ export default function About() {
                   data-testid={`faq-item-${idx}`}
                 >
                   <summary className={`flex items-center gap-4 ${textAlign} ${fontClass}`}>
-                    <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm" style={{ backgroundColor: '#004d3a' }}>
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm" style={{ backgroundColor: '#2BAAE2' }}>
                       {idx + 1}
                     </div>
                     <span className={`flex-1 text-gray-900 font-bold text-base md:text-lg ${fontClass}`}>

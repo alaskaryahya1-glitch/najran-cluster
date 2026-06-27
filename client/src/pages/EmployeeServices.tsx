@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
 import { Loader2, AlertCircle, Mail, Building2, Search, Link, Phone } from "lucide-react";
@@ -17,6 +17,9 @@ import {
 } from "@/components/ui/dialog";
 import type { Service } from "@shared/schema";
 import heroImage from "@assets/2B883A14-BC32-41DF-906B-7A5ACD6EB41E_1767273959627.png";
+import heroPhoto1 from "@assets/preparation_of_guidelines_and_strategies.jpg-ftk2s.jpeg";
+import heroPhoto2 from "@assets/ensuring_the_development_of_cluster_capabilities.png-z4nw3y.png";
+import heroPhoto3 from "@assets/asset_management.jpg-t3fl6j.jpeg";
 import starLogo from "@assets/logo1_2_1767506250187.PNG";
 
 import logoBain from "@assets/bain_1767513734752.png";
@@ -400,6 +403,15 @@ export default function EmployeeServices() {
   const [isEmailDialogOpen, setIsEmailDialogOpen] = useState(false);
   const [isPhoneDialogOpen, setIsPhoneDialogOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const heroSlides = [heroPhoto1, heroPhoto2, heroPhoto3];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide(prev => (prev + 1) % heroSlides.length);
+    }, 4500);
+    return () => clearInterval(interval);
+  }, []);
   
   useSEO({
     path: '/employee-services',
@@ -438,13 +450,30 @@ export default function EmployeeServices() {
         {/* Hero Section */}
         <section className="relative py-24 overflow-hidden">
           <div className="absolute inset-0 z-0">
-            <img
-              src={heroImage}
-              alt=""
-              data-nosnippet="true"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60" />
+            {heroSlides.map((slide, idx) => (
+              <img
+                key={idx}
+                src={slide}
+                alt=""
+                data-nosnippet="true"
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                  idx === currentSlide ? 'opacity-100' : 'opacity-0'
+                }`}
+              />
+            ))}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/55 to-black/70" />
+          </div>
+          {/* Slide indicators */}
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+            {heroSlides.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentSlide(idx)}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  idx === currentSlide ? 'w-8 bg-[#2BAAE2]' : 'w-2 bg-white/40'
+                }`}
+              />
+            ))}
           </div>
           <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none z-10"></div>
 

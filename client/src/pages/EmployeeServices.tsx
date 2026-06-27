@@ -309,7 +309,7 @@ function GlassStarService({ service, index, language, fontClass, size = "md", on
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       onClick={handleClick}
-      className={`relative cursor-pointer group ${sizes[size].container}`}
+      className={`relative cursor-pointer group ${sizes[size].container} bg-white rounded-2xl border border-[#edf2f7] overflow-hidden transition-all duration-300 ${isHovered ? 'border-[#004d3a]/30 shadow-md' : 'shadow-sm'}`}
       data-testid={`service-star-${service.id}`}
     >
       {/* All services use star shape */}
@@ -361,7 +361,9 @@ function GlassStarService({ service, index, language, fontClass, size = "md", on
                     alt={language === 'ar' ? service.titleAr : service.titleEn}
                     className={`${sizes[size].logo} object-contain drop-shadow-lg transition-all duration-300`}
                     style={{
-                      filter: isHovered ? "brightness(1.15) saturate(1.1)" : "brightness(1)"
+                      filter: isHovered
+                        ? "brightness(1.1) saturate(1.1) drop-shadow(0 2px 6px rgba(0,0,0,0.18))"
+                        : "drop-shadow(0 1px 4px rgba(0,0,0,0.15))"
                     }}
                   />
                 ) : (

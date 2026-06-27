@@ -215,24 +215,30 @@ function NewsSection({ language, fontClass, t }: { language: string; fontClass: 
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="group overflow-hidden rounded-3xl bg-white shadow-lg transition-all hover:shadow-2xl dark:bg-[#122622]"
+              /* 1. Hover Elevation: مسطح → مرتفع مع ظل عميق */
+              className="group overflow-hidden rounded-3xl bg-white shadow-md transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 dark:bg-[#122622]"
             >
-              <div className="relative h-56 overflow-hidden">
+              {/* 2. حاوية صورة بارتفاع ثابت 250px */}
+              <div className="relative overflow-hidden" style={{ height: '250px' }}>
                 <img
                   src={card.img}
                   alt=""
+                  /* 2. object-cover لمنع التشوه + 4. lazy loading */
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
                 />
                 <div className="absolute top-4 right-4 rounded-full bg-[#2BAAE2] px-4 py-1 text-sm text-white">
                   {language === 'ar' ? 'خبر' : 'News'}
                 </div>
               </div>
               <div className="p-6">
-                {card.date && <span className={`text-sm text-gray-500 ${fontClass}`}>{card.date}</span>}
-                <p className={`mt-3 text-base font-bold text-gray-900 group-hover:text-[#2BAAE2] transition-colors dark:text-white line-clamp-2 ${fontClass}`}>
+                {card.date && <span className={`text-sm text-gray-500 dark:text-gray-400 ${fontClass}`}>{card.date}</span>}
+                {/* 3. line-clamp-2 لتوحيد ارتفاع العنوان */}
+                <p className={`mt-3 text-base font-bold text-gray-900 group-hover:text-[#2BAAE2] transition-colors duration-300 dark:text-white line-clamp-2 ${fontClass}`}>
                   {card.text || (language === 'ar' ? 'جارٍ تحميل الأخبار...' : 'Loading news...')}
                 </p>
-                <a href="/news" className={`mt-4 flex items-center gap-2 font-bold text-[#2BAAE2] ${fontClass}`}>
+                {/* 5. dark mode على الرابط */}
+                <a href="/news" className={`mt-4 flex items-center gap-2 font-bold text-[#2BAAE2] hover:text-[#1691D0] transition-colors duration-300 dark:text-[#2BAAE2] ${fontClass}`}>
                   {language === 'ar' ? 'اقرأ المزيد' : 'Read More'}
                   <ChevronLeft className="w-4 h-4" />
                 </a>

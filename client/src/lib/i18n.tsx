@@ -572,7 +572,7 @@ const translations: Record<Language, Record<string, string>> = {
     "about.faq.q3": "ما هي الخدمات التي يقدمها تجمع نجران الصحي؟",
     "about.faq.a3": "يقدم تجمع نجران الصحي باقة شاملة من الخدمات الصحية تشمل: الرعاية الصحية الأولية والوقائية، خدمات الطوارئ على مدار الساعة، الرعاية التخصصية والجراحية، رعاية الأم والطفل، خدمات الصحة النفسية وعلاج الإدمان، العناية المركزة، القسطرة القلبية، غسيل الكلى، العلاج الطبيعي، طب الأسنان التخصصي، والرعاية الصحية المنزلية والرعاية التلطيفية.",
     "about.faq.q4": "كيف يمكنني التواصل مع تجمع نجران الصحي؟",
-    "about.faq.a4": "يمكنك التواصل مع تجمع نجران الصحي عبر الموقع الرسمي najrancluster.com، أو من خلال حسابات التواصل الاجتماعي @NajranCluster، أو عبر الاتصال عبر الرقم \u202A017 540 6000\u202C. كما يمكنك زيارة أي من مرافقنا الصحية المنتشرة في منطقة نجران.",
+    "about.faq.a4": "يمكنك التواصل مع تجمع نجران الصحي عبر الموقع الرسمي najrancluster.com، أو من خلال حسابات التواصل الاجتماعي @NajranCluster، أو عبر الاتصال عبر الرقم \u202A920011140\u202C. كما يمكنك زيارة أي من مرافقنا الصحية المنتشرة في منطقة نجران.",
     "about.faq.q5": "ما هي رؤية تجمع نجران الصحي؟",
     "about.faq.a5": "رؤية تجمع نجران الصحي هي 'نرتقي معاً بالرعاية الصحية للجميع'. نسعى لتقديم نموذج مستدام ومبتكر للرعاية الصحية يعزز من جودة الحياة لجميع سكان منطقة نجران، مع الالتزام بأعلى معايير الجودة والسلامة وفقاً لبرنامج التحول الصحي ورؤية المملكة 2030.",
   },
@@ -1123,7 +1123,7 @@ const translations: Record<Language, Record<string, string>> = {
     "about.faq.q3": "What services does Najran Health Cluster provide?",
     "about.faq.a3": "Najran Health Cluster provides a comprehensive range of health services including: primary and preventive healthcare, 24-hour emergency services, specialized and surgical care, maternal and child care, mental health and addiction treatment services, intensive care, cardiac catheterization, dialysis, physical therapy, specialized dentistry, home healthcare, and palliative care.",
     "about.faq.q4": "How can I contact Najran Health Cluster?",
-    "about.faq.a4": "You can contact Najran Health Cluster through the official website najrancluster.com, via social media accounts @NajranCluster, or by calling 017 540 6000. You can also visit any of our healthcare facilities throughout the Najran region.",
+    "about.faq.a4": "You can contact Najran Health Cluster through the official website najrancluster.com, via social media accounts @NajranCluster, or by calling 920011140. You can also visit any of our healthcare facilities throughout the Najran region.",
     "about.faq.q5": "What is the vision of Najran Health Cluster?",
     "about.faq.a5": "Najran Health Cluster's vision is 'Together, we elevate healthcare for all.' We strive to deliver a sustainable and innovative healthcare model that enhances the quality of life for all residents of the Najran region, committed to the highest standards of quality and safety in accordance with the Health Transformation Program and Saudi Vision 2030.",
 

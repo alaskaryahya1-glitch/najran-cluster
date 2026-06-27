@@ -53,9 +53,12 @@ export function Footer() {
   ];
 
   return (
-    <footer className="text-slate-300 relative" style={{ backgroundColor: '#000e22' }}>
+    <footer className="text-slate-300 relative overflow-hidden" style={{ backgroundColor: '#000e22' }}>
+      {/* Geometric Pattern Overlay */}
+      <div className="absolute inset-0 najran-geometric-bg opacity-[0.07] pointer-events-none"></div>
+
       {/* Partners Logos Row */}
-      <div className="border-b border-white/10">
+      <div className="border-b border-white/10 relative z-10">
         <div className="container-custom py-5">
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 sm:flex-nowrap sm:justify-between">
             {partnerLogos.map((logo) => (
@@ -79,7 +82,7 @@ export function Footer() {
       </div>
 
       {/* Main Footer Content */}
-      <div className="container-custom py-12 md:py-16">
+      <div className="container-custom py-12 md:py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
 
           {/* Brand Column */}
@@ -207,7 +210,7 @@ export function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/10">
+      <div className="border-t border-white/10 relative z-10">
         <div className="container-custom py-4 flex flex-col md:flex-row justify-between items-center gap-3 text-center">
           <p className={`text-xs text-slate-500 ${fontClass}`}>
             © {new Date().getFullYear()} {t("header.clusterName")}. {t("footer.rights")}.

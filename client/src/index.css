@@ -100,6 +100,14 @@ body {
 
 img, video {
   content-visibility: auto;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.leadership-card-img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: auto;
+  transform: translateZ(0);
 }
 
 /* Reduce motion for accessibility and performance */

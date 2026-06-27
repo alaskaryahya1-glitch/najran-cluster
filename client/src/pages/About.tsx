@@ -700,13 +700,13 @@ export default function About() {
                         <img
                           src={leader.image}
                           alt={t(leader.nameKey)}
-                          className="w-full h-full object-cover object-top transition-all duration-700 ease-in-out grayscale group-hover:grayscale-0 scale-100 group-hover:scale-110"
+                          className="leadership-card-img w-full h-full object-cover object-top transition-all duration-700 ease-in-out grayscale group-hover:grayscale-0 group-hover:scale-110 will-change-transform"
                         />
                       ) : (
                         <img
                           src={leader.image}
                           alt={t(leader.nameKey)}
-                          className="absolute bottom-0 left-0 w-full transition-all duration-700 ease-in-out grayscale group-hover:grayscale-0 group-hover:scale-110 origin-bottom"
+                          className="leadership-card-img absolute bottom-0 left-0 w-full transition-all duration-700 ease-in-out grayscale group-hover:grayscale-0 group-hover:scale-110 origin-bottom will-change-transform"
                         />
                       )}
                     </div>

@@ -674,32 +674,10 @@ export default function About() {
               <div className="w-24 h-1.5 mx-auto mt-6 rounded-full" style={{ backgroundColor: '#004d3a' }}></div>
             </motion.div>
 
-            {/* الرئيس التنفيذي - مميز فوق */}
-            <motion.div
-              className="flex justify-center mb-12"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="group w-72">
-                <div className="bg-white rounded-[3.5rem] p-8 shadow-sm border border-gray-100 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-4">
-                  <div className="relative aspect-square overflow-hidden rounded-[2.5rem] mb-8 bg-gray-50">
-                    <img
-                      src={ceoImage}
-                      alt={t("about.ceo.name")}
-                      className="leadership-card-img w-full h-full object-cover object-top transition-all duration-700 ease-in-out grayscale group-hover:grayscale-0 group-hover:scale-110 will-change-transform"
-                    />
-                  </div>
-                  <h4 className={`text-xl font-bold text-gray-900 mb-2 ${fontClass}`}>{t("about.ceo.name")}</h4>
-                  <p className={`font-semibold tracking-wide text-sm ${fontClass}`} style={{ color: '#004d3a' }}>{t("about.ceo")}</p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* النواب */}
+            {/* شبكة القيادة */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               {[
+                { image: ceoImage, nameKey: "about.ceo.name", titleKey: "about.ceo", useObjectTop: true },
                 { image: cardHarith, nameKey: "about.deputy.mohammed", titleKey: "about.deputy.mohammed.title", objPos: 'center bottom', bottomOffset: '-22%' },
                 { image: cardRashid, nameKey: "about.deputy.rashid", titleKey: "about.deputy.rashid.title", objPos: 'center bottom' },
                 { image: cardMutlaq, nameKey: "about.deputy.mohammadMutlaq", titleKey: "about.deputy.mohammadMutlaq.title", objPos: 'center bottom' },
@@ -718,12 +696,20 @@ export default function About() {
                 >
                   <div className="bg-white rounded-[3.5rem] p-8 shadow-sm border border-gray-100 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-4">
                     <div className="relative aspect-square overflow-hidden rounded-[2.5rem] mb-8 bg-gray-50">
-                      <img
-                        src={leader.image}
-                        alt={t(leader.nameKey)}
-                        className="leadership-card-img absolute left-0 w-full transition-all duration-700 ease-in-out grayscale group-hover:grayscale-0 group-hover:scale-[1.05] origin-bottom will-change-transform"
-                        style={{ bottom: leader.bottomOffset || '-5%', height: '240%', objectFit: 'cover', objectPosition: leader.objPos || 'center bottom' }}
-                      />
+                      {leader.useObjectTop ? (
+                        <img
+                          src={leader.image}
+                          alt={t(leader.nameKey)}
+                          className="leadership-card-img w-full h-full object-cover object-top transition-all duration-700 ease-in-out grayscale group-hover:grayscale-0 group-hover:scale-110 will-change-transform"
+                        />
+                      ) : (
+                        <img
+                          src={leader.image}
+                          alt={t(leader.nameKey)}
+                          className="leadership-card-img absolute left-0 w-full transition-all duration-700 ease-in-out grayscale group-hover:grayscale-0 group-hover:scale-[1.05] origin-bottom will-change-transform"
+                          style={{ bottom: leader.bottomOffset || '-5%', height: '240%', objectFit: 'cover', objectPosition: leader.objPos || 'center bottom' }}
+                        />
+                      )}
                     </div>
                     <h4 className={`text-xl font-bold text-gray-900 mb-2 ${fontClass}`}>{t(leader.nameKey)}</h4>
                     <p className={`font-semibold tracking-wide text-sm ${fontClass}`} style={{ color: '#004d3a' }}>

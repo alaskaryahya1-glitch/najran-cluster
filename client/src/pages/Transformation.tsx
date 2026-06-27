@@ -71,23 +71,24 @@ export default function Transformation() {
   }, language);
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#0c1c28' }}>
+    <div className="min-h-screen">
+      {/* Full-page fixed video background */}
+      <div className="fixed inset-0 z-0">
+        <video
+          src="https://cmsapi.health.sa/HHC1-7tba9j.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60" />
+      </div>
       <Header />
 
-      <main className="transformation-page-content">
+      <main className="transformation-page-content relative z-10">
         <section className="relative py-24 overflow-hidden">
-          <div className="absolute inset-0 z-0">
-            <video
-              src="https://cmsapi.health.sa/video.mp4-jyzcdp.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60" />
-          </div>
-          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none z-10"></div>
+          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
           
           <div className="container-custom relative z-20">
             <motion.div
@@ -115,8 +116,7 @@ export default function Transformation() {
         </section>
 
         {/* 1. محاور رؤية 2030 */}
-        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#0c1c28' }}>
-          <div className="absolute inset-0 pointer-events-none"></div>
+        <section className="relative py-16 overflow-hidden">
           <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
           
           <div className="container-custom relative">
@@ -129,7 +129,7 @@ export default function Transformation() {
               <div className="w-16 h-16 bg-white/15 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <Target className="w-8 h-8 text-[#2BAAE2]" />
               </div>
-              <h2 className={`text-3xl md:text-4xl font-bold ${fontClass} text-[#004d3a] mb-2`}>
+              <h2 className={`text-3xl md:text-4xl font-bold ${fontClass} text-white mb-2`}>
                 {language === 'ar' ? <>محاور رؤية <span className="text-[#2BAAE2]">2030</span></> : <>Vision <span className="text-[#2BAAE2]">2030</span> Axes</>}
               </h2>
             </motion.div>
@@ -155,7 +155,7 @@ export default function Transformation() {
                   <div className="w-14 h-14 bg-white/15 rounded-full flex items-center justify-center mx-auto mb-4">
                     <pillar.icon className="w-7 h-7 text-[#2BAAE2]" />
                   </div>
-                  <h3 className={`text-xl font-bold text-[#004d3a] ${fontClass} mb-3`}>{pillar.title}</h3>
+                  <h3 className={`text-xl font-bold text-white ${fontClass} mb-3`}>{pillar.title}</h3>
                   <p className={`text-white/70 text-sm ${fontClass} leading-relaxed`}>{pillar.desc}</p>
                   </div>
                 </motion.div>
@@ -165,8 +165,7 @@ export default function Transformation() {
         </section>
 
         {/* 2. برنامج تحول القطاع الصحي */}
-        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#0c1c28' }}>
-          <div className="absolute inset-0 pointer-events-none"></div>
+        <section className="relative py-16 overflow-hidden">
           <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
           
           <div className="container-custom relative">
@@ -179,7 +178,7 @@ export default function Transformation() {
               <div className="w-16 h-16 bg-white/15 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <RefreshCw className="w-8 h-8 text-[#2BAAE2]" />
               </div>
-              <h2 className={`text-3xl md:text-4xl font-bold ${fontClass} text-[#004d3a] mb-4`}>
+              <h2 className={`text-3xl md:text-4xl font-bold ${fontClass} text-white mb-4`}>
                 {language === 'ar' ? 'ماهو برنامج تحول القطاع الصحي؟' : 'What is the Health Sector Transformation Program?'}
               </h2>
               <p className={`text-white/70 ${fontClass} max-w-3xl mx-auto`}>
@@ -215,8 +214,7 @@ export default function Transformation() {
         </section>
 
         {/* 3. ركائز برنامج التحول الصحي */}
-        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#0c1c28' }}>
-          <div className="absolute inset-0 pointer-events-none"></div>
+        <section className="relative py-16 overflow-hidden">
           <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
           
           <div className="container-custom relative">
@@ -229,7 +227,7 @@ export default function Transformation() {
               <div className="w-16 h-16 bg-white/15 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <Layers className="w-8 h-8 text-[#2BAAE2]" />
               </div>
-              <h2 className={`text-3xl md:text-4xl font-bold ${fontClass} text-[#004d3a] mb-2`}>
+              <h2 className={`text-3xl md:text-4xl font-bold ${fontClass} text-white mb-2`}>
                 {language === 'ar' ? 'ركائز برنامج التحول الصحي' : 'Health Transformation Pillars'}
               </h2>
             </motion.div>
@@ -260,8 +258,7 @@ export default function Transformation() {
         </section>
 
         {/* 4. كيف نحقق التحول الصحي */}
-        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#0c1c28' }}>
-          <div className="absolute inset-0 pointer-events-none"></div>
+        <section className="relative py-16 overflow-hidden">
           <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
           
           <div className="container-custom relative">
@@ -274,7 +271,7 @@ export default function Transformation() {
               <div className="w-16 h-16 bg-white/15 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <Route className="w-8 h-8 text-[#2BAAE2]" />
               </div>
-              <h2 className={`text-3xl md:text-4xl font-bold ${fontClass} text-[#004d3a] mb-2`}>
+              <h2 className={`text-3xl md:text-4xl font-bold ${fontClass} text-white mb-2`}>
                 {language === 'ar' ? 'كيف نحقق التحول الصحي؟' : 'How do we achieve health transformation?'}
               </h2>
             </motion.div>
@@ -305,8 +302,7 @@ export default function Transformation() {
         </section>
 
         {/* 5. الأبعاد الاستراتيجية للتحول الصحي */}
-        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#0c1c28' }}>
-          <div className="absolute inset-0 pointer-events-none"></div>
+        <section className="relative py-16 overflow-hidden">
           <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
           
           <div className="container-custom relative">
@@ -319,7 +315,7 @@ export default function Transformation() {
               <div className="w-16 h-16 bg-white/15 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <Compass className="w-8 h-8 text-[#2BAAE2]" />
               </div>
-              <h2 className={`text-3xl md:text-4xl font-bold ${fontClass} text-[#004d3a] mb-2`}>
+              <h2 className={`text-3xl md:text-4xl font-bold ${fontClass} text-white mb-2`}>
                 {language === 'ar' ? 'الأبعاد الاستراتيجية للتحول الصحي' : 'Strategic Dimensions for Health Transformation'}
               </h2>
             </motion.div>
@@ -346,7 +342,7 @@ export default function Transformation() {
                   <div className="w-14 h-14 bg-white/15 rounded-full flex items-center justify-center mx-auto mb-4">
                     <dimension.icon className="w-7 h-7 text-[#2BAAE2]" />
                   </div>
-                  <h3 className={`text-xl font-bold text-[#004d3a] ${fontClass} mb-2`}>{dimension.title}</h3>
+                  <h3 className={`text-xl font-bold text-white ${fontClass} mb-2`}>{dimension.title}</h3>
                   <p className={`text-white/70 text-sm ${fontClass}`}>{dimension.desc}</p>
                   </div>
                 </motion.div>
@@ -356,8 +352,7 @@ export default function Transformation() {
         </section>
 
         {/* 6. وضع القطاع الصحي */}
-        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#0c1c28' }}>
-          <div className="absolute inset-0 pointer-events-none"></div>
+        <section className="relative py-16 overflow-hidden">
           <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
           
           <div className="container-custom relative">
@@ -370,7 +365,7 @@ export default function Transformation() {
               <div className="w-16 h-16 bg-white/15 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <Activity className="w-8 h-8 text-[#2BAAE2]" />
               </div>
-              <h2 className={`text-3xl md:text-4xl font-bold ${fontClass} text-[#004d3a] mb-2`}>
+              <h2 className={`text-3xl md:text-4xl font-bold ${fontClass} text-white mb-2`}>
                 {language === 'ar' ? 'وضع القطاع الصحي' : 'Health Sector Status'}
               </h2>
             </motion.div>
@@ -384,15 +379,15 @@ export default function Transformation() {
               >
                 <button
                   onClick={() => setBeforeAfterActive(beforeAfterActive === 'before' ? null : 'before')}
-                  className={`bg-white rounded-2xl overflow-hidden border transition-all text-center ${
-                    beforeAfterActive === 'before' ? 'border-[#2BAAE2]/40 shadow-md' : 'border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-1'
+                  className={`bg-black/25 backdrop-blur-md rounded-2xl overflow-hidden border transition-all text-center ${
+                    beforeAfterActive === 'before' ? 'border-[#2BAAE2]/40 shadow-md' : 'border-white/15 shadow-sm hover:shadow-md hover:-translate-y-1'
                   }`}
                   data-testid="button-before-transform"
                 >
                   <div className="h-1.5 bg-[#2BAAE2]"></div>
                   <div className="p-6">
                   <img src={beforeTransformImg} alt="Before" className="w-full h-48 object-contain mb-4 rounded-lg" />
-                  <h3 className={`text-xl font-bold text-[#004d3a] ${fontClass} mb-2`}>
+                  <h3 className={`text-xl font-bold text-white ${fontClass} mb-2`}>
                     {t("home.healthStatus.before.title")}
                   </h3>
                   <p className={`text-white/70 font-semibold ${fontClass}`}>
@@ -411,14 +406,14 @@ export default function Transformation() {
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm mt-4">
+                      <div className="bg-black/25 backdrop-blur-md rounded-2xl p-6 border border-white/15 shadow-sm mt-4">
                         <div className="flex items-center justify-between mb-4">
                           <div className="flex items-center gap-3">
                             <div className="w-12 h-12 bg-white/15 rounded-xl flex items-center justify-center">
                               <Building2 className="w-6 h-6 text-[#2BAAE2]" />
                             </div>
                             <div>
-                              <h4 className={`text-lg font-bold text-[#004d3a] ${fontClass}`}>
+                              <h4 className={`text-lg font-bold text-white ${fontClass}`}>
                                 {t("home.healthStatus.before.title")}
                               </h4>
                               <p className={`text-white/70 text-sm ${fontClass}`}>
@@ -431,7 +426,7 @@ export default function Transformation() {
                             className="p-2 rounded-full hover:bg-white/10 transition-colors"
                             data-testid="button-close-before"
                           >
-                            <X className="w-5 h-5 text-gray-500" />
+                            <X className="w-5 h-5 text-white/60" />
                           </button>
                         </div>
 
@@ -463,15 +458,15 @@ export default function Transformation() {
               >
                 <button
                   onClick={() => setBeforeAfterActive(beforeAfterActive === 'after' ? null : 'after')}
-                  className={`bg-white rounded-2xl overflow-hidden border transition-all text-center ${
-                    beforeAfterActive === 'after' ? 'border-[#2BAAE2]/40 shadow-md' : 'border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-1'
+                  className={`bg-black/25 backdrop-blur-md rounded-2xl overflow-hidden border transition-all text-center ${
+                    beforeAfterActive === 'after' ? 'border-[#2BAAE2]/40 shadow-md' : 'border-white/15 shadow-sm hover:shadow-md hover:-translate-y-1'
                   }`}
                   data-testid="button-after-transform"
                 >
                   <div className="h-1.5 bg-[#2BAAE2]"></div>
                   <div className="p-6">
                   <img src={afterTransformImg} alt="After" className="w-full h-48 object-contain mb-4 rounded-lg" />
-                  <h3 className={`text-xl font-bold text-[#004d3a] ${fontClass} mb-2`}>
+                  <h3 className={`text-xl font-bold text-white ${fontClass} mb-2`}>
                     {t("home.healthStatus.after.title")}
                   </h3>
                   <p className={`text-white/70 font-semibold ${fontClass}`}>
@@ -490,22 +485,22 @@ export default function Transformation() {
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm mt-4">
+                      <div className="bg-black/25 backdrop-blur-md rounded-2xl p-6 border border-white/15 shadow-sm mt-4">
                         <div className="flex items-center justify-between mb-4">
                           <div className="flex items-center gap-3">
                             <div className="flex -space-x-2 rtl:space-x-reverse">
-                              <div className="w-10 h-10 bg-white/15 rounded-xl flex items-center justify-center border-2 border-gray-100">
+                              <div className="w-10 h-10 bg-white/15 rounded-xl flex items-center justify-center border-2 border-white/15">
                                 <Building2 className="w-5 h-5 text-[#2BAAE2]" />
                               </div>
-                              <div className="w-10 h-10 bg-white/15 rounded-xl flex items-center justify-center border-2 border-gray-100">
+                              <div className="w-10 h-10 bg-white/15 rounded-xl flex items-center justify-center border-2 border-white/15">
                                 <Shield className="w-5 h-5 text-[#2BAAE2]" />
                               </div>
-                              <div className="w-10 h-10 bg-white/15 rounded-xl flex items-center justify-center border-2 border-gray-100">
+                              <div className="w-10 h-10 bg-white/15 rounded-xl flex items-center justify-center border-2 border-white/15">
                                 <Heart className="w-5 h-5 text-[#2BAAE2]" />
                               </div>
                             </div>
                             <div>
-                              <h4 className={`text-lg font-bold text-[#004d3a] ${fontClass}`}>
+                              <h4 className={`text-lg font-bold text-white ${fontClass}`}>
                                 {t("home.healthStatus.after.title")}
                               </h4>
                               <p className={`text-white/70 text-sm ${fontClass}`}>
@@ -518,7 +513,7 @@ export default function Transformation() {
                             className="p-2 rounded-full hover:bg-white/10 transition-colors"
                             data-testid="button-close-after"
                           >
-                            <X className="w-5 h-5 text-gray-500" />
+                            <X className="w-5 h-5 text-white/60" />
                           </button>
                         </div>
 
@@ -554,8 +549,7 @@ export default function Transformation() {
         </section>
 
         {/* 7. شركة الصحة القابضة */}
-        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#0c1c28' }}>
-          <div className="absolute inset-0 pointer-events-none"></div>
+        <section className="relative py-16 overflow-hidden">
           <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
           
           <div className="container-custom relative">
@@ -572,7 +566,7 @@ export default function Transformation() {
               <div className="w-20 h-20 bg-white/15 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Building2 className="w-10 h-10 text-[#2BAAE2]" />
               </div>
-              <h2 className={`text-2xl md:text-3xl font-bold text-[#004d3a] ${fontClass} text-center mb-4`}>
+              <h2 className={`text-2xl md:text-3xl font-bold text-white ${fontClass} text-center mb-4`}>
                 {language === 'ar' ? 'ماهي شركة الصحة القابضة؟' : 'What is the Health Holding Company?'}
               </h2>
               <p className={`text-white/70 ${fontClass} text-center leading-relaxed max-w-4xl mx-auto`}>
@@ -586,8 +580,7 @@ export default function Transformation() {
         </section>
 
         {/* 8. التجمع الصحي */}
-        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#0c1c28' }}>
-          <div className="absolute inset-0 pointer-events-none"></div>
+        <section className="relative py-16 overflow-hidden">
           <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
           
           <div className="container-custom relative">
@@ -604,7 +597,7 @@ export default function Transformation() {
               <div className="w-20 h-20 bg-white/15 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Network className="w-10 h-10 text-[#2BAAE2]" />
               </div>
-              <h2 className={`text-2xl md:text-3xl font-bold text-[#004d3a] ${fontClass} text-center mb-4`}>
+              <h2 className={`text-2xl md:text-3xl font-bold text-white ${fontClass} text-center mb-4`}>
                 {language === 'ar' ? 'ماهو التجمع الصحي؟' : 'What is a Health Cluster?'}
               </h2>
               <p className={`text-white/70 ${fontClass} text-center leading-relaxed max-w-4xl mx-auto`}>
@@ -618,8 +611,7 @@ export default function Transformation() {
         </section>
 
         {/* 9. منظومة الرعاية المسؤولة */}
-        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#0c1c28' }}>
-          <div className="absolute inset-0 pointer-events-none"></div>
+        <section className="relative py-16 overflow-hidden">
           <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
           
           <div className="container-custom relative">
@@ -632,7 +624,7 @@ export default function Transformation() {
               <div className="w-16 h-16 bg-white/15 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <Network className="w-8 h-8 text-[#2BAAE2]" />
               </div>
-              <h2 className={`text-3xl md:text-4xl font-bold ${fontClass} text-[#004d3a] mb-2`}>
+              <h2 className={`text-3xl md:text-4xl font-bold ${fontClass} text-white mb-2`}>
                 {language === 'ar' ? 'ماهي منظومة الرعاية المسؤولة؟' : 'What is Accountable Care Organization?'}
               </h2>
               <p className={`text-white/70 ${fontClass} max-w-4xl mx-auto`}>
@@ -648,7 +640,7 @@ export default function Transformation() {
               
               className="text-center mb-6"
             >
-              <h3 className={`text-xl font-bold text-[#004d3a] ${fontClass}`}>
+              <h3 className={`text-xl font-bold text-white ${fontClass}`}>
                 {language === 'ar' ? 'أهدافها' : 'Objectives'}
               </h3>
             </motion.div>
@@ -667,7 +659,7 @@ export default function Transformation() {
                 <div className="w-14 h-14 bg-white/15 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Star className="w-7 h-7 text-[#2BAAE2]" />
                 </div>
-                <h3 className={`text-lg font-bold text-[#004d3a] ${fontClass} mb-2`}>
+                <h3 className={`text-lg font-bold text-white ${fontClass} mb-2`}>
                   {language === 'ar' ? 'تطوير تجربة المستفيد' : 'Enhance Patient Experience'}
                 </h3>
                 <p className={`text-white/70 text-sm ${fontClass}`}>
@@ -690,7 +682,7 @@ export default function Transformation() {
                 <div className="w-14 h-14 bg-white/15 rounded-full flex items-center justify-center mx-auto mb-4">
                   <HeartPulse className="w-7 h-7 text-[#2BAAE2]" />
                 </div>
-                <h3 className={`text-lg font-bold text-[#004d3a] ${fontClass} mb-2`}>
+                <h3 className={`text-lg font-bold text-white ${fontClass} mb-2`}>
                   {language === 'ar' ? 'تحسين صحة السكان' : 'Improve Population Health'}
                 </h3>
                 <p className={`text-white/70 text-sm ${fontClass}`}>
@@ -713,7 +705,7 @@ export default function Transformation() {
                 <div className="w-14 h-14 bg-white/15 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Users className="w-7 h-7 text-[#2BAAE2]" />
                 </div>
-                <h3 className={`text-lg font-bold text-[#004d3a] ${fontClass} mb-2`}>
+                <h3 className={`text-lg font-bold text-white ${fontClass} mb-2`}>
                   {language === 'ar' ? 'رفع الرضا الوظيفي' : 'Increase Job Satisfaction'}
                 </h3>
                 <p className={`text-white/70 text-sm ${fontClass}`}>
@@ -736,7 +728,7 @@ export default function Transformation() {
                 <div className="w-14 h-14 bg-white/15 rounded-full flex items-center justify-center mx-auto mb-4">
                   <TrendingUp className="w-7 h-7 text-[#2BAAE2]" />
                 </div>
-                <h3 className={`text-lg font-bold text-[#004d3a] ${fontClass} mb-2`}>
+                <h3 className={`text-lg font-bold text-white ${fontClass} mb-2`}>
                   {language === 'ar' ? 'تقليل التكاليف' : 'Reduce Costs'}
                 </h3>
                 <p className={`text-white/70 text-sm ${fontClass}`}>
@@ -749,8 +741,7 @@ export default function Transformation() {
         </section>
 
         {/* 10. إدارة التغيير والتواصل المؤسسي */}
-        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#0c1c28' }}>
-          <div className="absolute inset-0 pointer-events-none"></div>
+        <section className="relative py-16 overflow-hidden">
           <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
           
           <div className="container-custom relative">
@@ -763,7 +754,7 @@ export default function Transformation() {
               <div className="w-16 h-16 bg-white/15 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <RefreshCw className="w-8 h-8 text-[#2BAAE2]" />
               </div>
-              <h2 className={`text-3xl md:text-4xl font-bold ${fontClass} text-[#004d3a] mb-2`}>
+              <h2 className={`text-3xl md:text-4xl font-bold ${fontClass} text-white mb-2`}>
                 {language === 'ar' ? 'ماهي إدارة التغيير والتواصل المؤسسي؟' : 'What is Change Management & Institutional Communication?'}
               </h2>
               <p className={`text-white/70 ${fontClass} max-w-4xl mx-auto`}>
@@ -779,7 +770,7 @@ export default function Transformation() {
               
               className="text-center mb-6"
             >
-              <h3 className={`text-xl font-bold text-[#004d3a] ${fontClass}`}>
+              <h3 className={`text-xl font-bold text-white ${fontClass}`}>
                 {language === 'ar' ? 'مهام إدارة التغيير والتواصل في التجمع الصحي' : 'Change Management Tasks in Health Cluster'}
               </h3>
             </motion.div>
@@ -797,7 +788,7 @@ export default function Transformation() {
                   <div className="p-5 relative z-10">
                   <div className="flex items-center gap-3 mb-2">
                     <RefreshCw className="w-5 h-5 text-[#2BAAE2]" />
-                    <h4 className={`text-sm font-bold text-[#004d3a] ${fontClass}`}>
+                    <h4 className={`text-sm font-bold text-white ${fontClass}`}>
                       {language === 'ar' ? 'تحفيز التغيير' : 'Drive Change'}
                     </h4>
                   </div>
@@ -819,7 +810,7 @@ export default function Transformation() {
                   <div className="p-5 relative z-10">
                   <div className="flex items-center gap-3 mb-2">
                     <Users className="w-5 h-5 text-[#2BAAE2]" />
-                    <h4 className={`text-sm font-bold text-[#004d3a] ${fontClass}`}>
+                    <h4 className={`text-sm font-bold text-white ${fontClass}`}>
                       {language === 'ar' ? 'تعزيز التعاون' : 'Enhance Collaboration'}
                     </h4>
                   </div>
@@ -843,7 +834,7 @@ export default function Transformation() {
                   <div className="p-5 relative z-10">
                   <div className="flex items-center gap-3 mb-2">
                     <Monitor className="w-5 h-5 text-[#2BAAE2]" />
-                    <h4 className={`text-sm font-bold text-[#004d3a] ${fontClass}`}>
+                    <h4 className={`text-sm font-bold text-white ${fontClass}`}>
                       {language === 'ar' ? 'قنوات التواصل' : 'Communication Channels'}
                     </h4>
                   </div>
@@ -865,7 +856,7 @@ export default function Transformation() {
                   <div className="p-5 relative z-10">
                   <div className="flex items-center gap-3 mb-2">
                     <Info className="w-5 h-5 text-[#2BAAE2]" />
-                    <h4 className={`text-sm font-bold text-[#004d3a] ${fontClass}`}>
+                    <h4 className={`text-sm font-bold text-white ${fontClass}`}>
                       {language === 'ar' ? 'معلومات واضحة' : 'Clear Information'}
                     </h4>
                   </div>
@@ -889,7 +880,7 @@ export default function Transformation() {
                   <div className="p-5 relative z-10">
                   <div className="flex items-center gap-3 mb-2">
                     <HeartHandshake className="w-5 h-5 text-[#2BAAE2]" />
-                    <h4 className={`text-sm font-bold text-[#004d3a] ${fontClass}`}>
+                    <h4 className={`text-sm font-bold text-white ${fontClass}`}>
                       {language === 'ar' ? 'العلاقات المجتمعية' : 'Community Relations'}
                     </h4>
                   </div>
@@ -904,8 +895,7 @@ export default function Transformation() {
         </section>
 
         {/* 10. إدارة الصحة السكانية */}
-        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#0c1c28' }}>
-          <div className="absolute inset-0 pointer-events-none"></div>
+        <section className="relative py-16 overflow-hidden">
           <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
           
           <div className="container-custom relative">
@@ -918,7 +908,7 @@ export default function Transformation() {
               <div className="w-16 h-16 bg-white/15 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <HeartPulse className="w-8 h-8 text-[#2BAAE2]" />
               </div>
-              <h2 className={`text-3xl md:text-4xl font-bold ${fontClass} text-[#004d3a] mb-2`}>
+              <h2 className={`text-3xl md:text-4xl font-bold ${fontClass} text-white mb-2`}>
                 {language === 'ar' ? 'ماهي إدارة الصحة السكانية؟' : 'What is Population Health Management?'}
               </h2>
               <p className={`text-white/70 ${fontClass} max-w-4xl mx-auto`}>
@@ -934,7 +924,7 @@ export default function Transformation() {
               
               className="text-center mb-6"
             >
-              <h3 className={`text-xl font-bold text-[#004d3a] ${fontClass}`}>
+              <h3 className={`text-xl font-bold text-white ${fontClass}`}>
                 {language === 'ar' ? 'دورة إدارة الصحة السكانية' : 'Population Health Management Cycle'}
               </h3>
             </motion.div>
@@ -952,7 +942,7 @@ export default function Transformation() {
                 <div className="w-10 h-10 bg-white/15 rounded-full flex items-center justify-center mx-auto mb-3">
                   <span className="text-[#2BAAE2] font-bold">1</span>
                 </div>
-                <h4 className={`text-sm font-bold text-[#004d3a] ${fontClass} mb-2`}>
+                <h4 className={`text-sm font-bold text-white ${fontClass} mb-2`}>
                   {language === 'ar' ? 'إشراك السكان' : 'Engage Population'}
                 </h4>
                 <p className={`text-white/70 text-xs ${fontClass}`}>
@@ -974,7 +964,7 @@ export default function Transformation() {
                 <div className="w-10 h-10 bg-white/15 rounded-full flex items-center justify-center mx-auto mb-3">
                   <span className="text-[#2BAAE2] font-bold">2</span>
                 </div>
-                <h4 className={`text-sm font-bold text-[#004d3a] ${fontClass} mb-2`}>
+                <h4 className={`text-sm font-bold text-white ${fontClass} mb-2`}>
                   {language === 'ar' ? 'تحديد وفهم السكان' : 'Identify & Understand'}
                 </h4>
                 <p className={`text-white/70 text-xs ${fontClass}`}>
@@ -996,7 +986,7 @@ export default function Transformation() {
                 <div className="w-10 h-10 bg-white/15 rounded-full flex items-center justify-center mx-auto mb-3">
                   <span className="text-[#2BAAE2] font-bold">3</span>
                 </div>
-                <h4 className={`text-sm font-bold text-[#004d3a] ${fontClass} mb-2`}>
+                <h4 className={`text-sm font-bold text-white ${fontClass} mb-2`}>
                   {language === 'ar' ? 'تصميم التدخلات' : 'Design Interventions'}
                 </h4>
                 <p className={`text-white/70 text-xs ${fontClass}`}>
@@ -1018,7 +1008,7 @@ export default function Transformation() {
                 <div className="w-10 h-10 bg-white/15 rounded-full flex items-center justify-center mx-auto mb-3">
                   <span className="text-[#2BAAE2] font-bold">4</span>
                 </div>
-                <h4 className={`text-sm font-bold text-[#004d3a] ${fontClass} mb-2`}>
+                <h4 className={`text-sm font-bold text-white ${fontClass} mb-2`}>
                   {language === 'ar' ? 'تنفيذ التدخلات' : 'Execute Interventions'}
                 </h4>
                 <p className={`text-white/70 text-xs ${fontClass}`}>
@@ -1040,7 +1030,7 @@ export default function Transformation() {
                 <div className="w-10 h-10 bg-white/15 rounded-full flex items-center justify-center mx-auto mb-3">
                   <span className="text-[#2BAAE2] font-bold">5</span>
                 </div>
-                <h4 className={`text-sm font-bold text-[#004d3a] ${fontClass} mb-2`}>
+                <h4 className={`text-sm font-bold text-white ${fontClass} mb-2`}>
                   {language === 'ar' ? 'قياس وتقييم' : 'Measure & Evaluate'}
                 </h4>
                 <p className={`text-white/70 text-xs ${fontClass}`}>
@@ -1053,8 +1043,7 @@ export default function Transformation() {
         </section>
 
         {/* 12. ما الذي تغير في رحلة المريض */}
-        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#0c1c28' }}>
-          <div className="absolute inset-0 pointer-events-none"></div>
+        <section className="relative py-16 overflow-hidden">
           <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
           
           <div className="container-custom relative">
@@ -1067,7 +1056,7 @@ export default function Transformation() {
               <div className="w-16 h-16 bg-white/15 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <Users className="w-8 h-8 text-[#2BAAE2]" />
               </div>
-              <h2 className={`text-3xl md:text-4xl font-bold ${fontClass} text-[#004d3a] mb-2`}>
+              <h2 className={`text-3xl md:text-4xl font-bold ${fontClass} text-white mb-2`}>
                 {language === 'ar' ? 'ما الذي تغير في رحلة المريض؟' : 'What Changed in the Patient Journey?'}
               </h2>
             </motion.div>
@@ -1087,17 +1076,17 @@ export default function Transformation() {
                     <div className="h-1.5 bg-[#2BAAE2]"></div>
                     <div className="p-5 relative z-10">
                     <p className={`text-sm text-white/70 ${fontClass}`}>
-                      <span className="font-bold text-gray-400 block mb-1">{language === 'ar' ? 'قبل التحول' : 'Before Transformation'}</span>
+                      <span className="font-bold text-white/50 block mb-1">{language === 'ar' ? 'قبل التحول' : 'Before Transformation'}</span>
                       {change.before}
                     </p>
                     </div>
                   </div>
-                  <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm relative">
+                  <div className="bg-black/25 backdrop-blur-md rounded-2xl overflow-hidden border border-white/15 shadow-sm relative">
                     <CardStar size="sm" />
                     <div className="h-1.5 bg-[#2BAAE2]"></div>
                     <div className="p-5 relative z-10">
                     <p className={`text-sm text-white/70 ${fontClass}`}>
-                      <span className="font-bold text-[#004d3a] block mb-1">{language === 'ar' ? 'بعد التحول' : 'After Transformation'}</span>
+                      <span className="font-bold text-white block mb-1">{language === 'ar' ? 'بعد التحول' : 'After Transformation'}</span>
                       {change.after}
                     </p>
                     </div>

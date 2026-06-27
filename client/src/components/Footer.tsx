@@ -184,8 +184,8 @@ export function Footer() {
                   <MapPin className="w-4 h-4 text-[#2BAAE2]" />
                 </div>
                 <div>
-                  <p className="text-[#1278B5] text-sm font-medium">{t("footer.region")}</p>
-                  <p className="text-[#1278B5]/70 text-xs mt-0.5">{t("footer.country")}</p>
+                  <p className="text-gray-500 text-sm font-medium">{t("footer.region")}</p>
+                  <p className="text-gray-400 text-xs mt-0.5">{t("footer.country")}</p>
                 </div>
               </a>
 
@@ -197,7 +197,7 @@ export function Footer() {
                 <div className="w-8 h-8 bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-[#005d47]/10 transition-colors">
                   <Phone className="w-4 h-4 text-[#2BAAE2]" />
                 </div>
-                <span className="font-sans text-sm text-[#1278B5]" dir="ltr">920011140</span>
+                <span className="font-sans text-sm text-gray-500" dir="ltr">920011140</span>
               </a>
             </div>
           </div>

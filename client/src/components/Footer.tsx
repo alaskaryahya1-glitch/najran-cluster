@@ -56,6 +56,8 @@ export function Footer() {
     <footer className="text-white relative overflow-hidden" style={{ backgroundColor: '#0c1c28', borderTop: '2px solid #2BAAE2' }}>
       {/* Geometric Pattern Overlay */}
       <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
+      {/* Glass shimmer layer */}
+      <div className="absolute inset-0 bg-white/5 pointer-events-none"></div>
 
       {/* Partners Logos Row */}
       <div className="border-b border-white/10 relative z-10">

@@ -23,7 +23,7 @@ import cardIsmail from "@assets/IMG_7535 2.jpg";
 import cardYahya from "@assets/IMG_7536.jpg";
 import cardMutlaq from "@assets/IMG_7537.jpg";
 import cardRashid from "@assets/IMG_7538.jpg";
-import heroImage from "@assets/0B4A4B84-6228-4A64-9958-EB4C285CB04D_1767273959627.png";
+import heroImage from "@assets/غرب نجران (1).jpeg";
 import clusterLogo from "@assets/cluster-logo-colored.png";
 import { CardStar } from "@/components/BrandIcon";
 

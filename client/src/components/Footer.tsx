@@ -54,9 +54,13 @@ export function Footer() {
 
   return (
     <div style={{ backgroundColor: '#0c1c28' }}>
-    <footer className="text-white relative overflow-hidden bg-black/25 backdrop-blur-md" style={{ borderTop: '2px solid #2BAAE2' }}>
-      {/* Geometric pattern */}
-      <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
+    <footer className="text-white relative overflow-hidden" style={{ borderTop: '2px solid #2BAAE2' }}>
+      {/* Solid base — blocks fixed video from backdrop-filter */}
+      <div className="absolute inset-0" style={{ backgroundColor: '#0c1c28' }}></div>
+      {/* Geometric pattern — gives blur texture to work on */}
+      <div className="absolute inset-0 najran-geometric-bg opacity-25 pointer-events-none" style={{ zIndex: 1 }}></div>
+      {/* Glass layer inside footer — backdrop-filter scoped to overflow:hidden, not the page video */}
+      <div className="absolute inset-0 bg-black/25 backdrop-blur-md pointer-events-none" style={{ zIndex: 2 }}></div>
 
       {/* Partners Logos Row */}
       <div className="border-b border-white/10 relative z-10">

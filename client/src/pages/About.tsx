@@ -667,40 +667,110 @@ export default function About() {
               <div className="w-24 h-1.5 mx-auto mt-6 rounded-full" style={{ backgroundColor: '#004d3a' }}></div>
             </motion.div>
 
-            {/* شبكة القادة */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {/* CEO - بطاقة مميزة */}
+            <motion.div
+              className="mb-12 flex justify-center"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="group max-w-xs w-full">
+                <div className="rounded-[3rem] overflow-hidden shadow-sm border border-gray-100 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-3">
+                  <div className="h-72 overflow-hidden bg-gray-50">
+                    <img
+                      src={ceoImage}
+                      alt={t("about.ceo.name")}
+                      className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="p-6 text-center bg-white">
+                    <h4 className={`text-xl font-bold text-gray-900 mb-1 ${fontClass}`}>{t("about.ceo.name")}</h4>
+                    <p className={`font-semibold text-sm ${fontClass}`} style={{ color: '#004d3a' }}>{t("about.ceo")}</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* النواب - بطاقات الاقتباس */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
-                { image: ceoImage, nameKey: "about.ceo.name", titleKey: "about.ceo" },
-                { image: rashidImage, nameKey: "about.deputy.rashid", titleKey: "about.deputy.rashid.title" },
-                { image: mohammedImage, nameKey: "about.deputy.mohammed", titleKey: "about.deputy.mohammed.title" },
-                { image: mohammadMutlaqImage, nameKey: "about.deputy.mohammadMutlaq", titleKey: "about.deputy.mohammadMutlaq.title" },
-                { image: musabiImage, nameKey: "about.deputy.musabi", titleKey: "about.deputy.musabi.title" },
-                { image: ismailImage, nameKey: "about.deputy.ismail", titleKey: "about.deputy.ismail.title" },
-                { image: yahyaImage, nameKey: "about.deputy.yahya", titleKey: "about.deputy.yahya.title" },
-                { image: aliImage, nameKey: "about.deputy.ali", titleKey: "about.deputy.ali.title" },
+                {
+                  image: rashidImage,
+                  nameKey: "about.deputy.rashid",
+                  titleKey: "about.deputy.rashid.title",
+                  quote: language === 'ar' ? "اليوم ننتقل ضمن خدمات صحية تقود التحول نحو صناعة أثر." : "Today we transition within health services that lead transformation toward creating impact."
+                },
+                {
+                  image: mohammedImage,
+                  nameKey: "about.deputy.mohammed",
+                  titleKey: "about.deputy.mohammed.title",
+                  quote: language === 'ar' ? "رؤية تتجاوز التشغيل... نحو منظومة صحية أكثر تكاملاً واستدامة." : "A vision that goes beyond operations... toward a more integrated and sustainable health system."
+                },
+                {
+                  image: mohammadMutlaqImage,
+                  nameKey: "about.deputy.mohammadMutlaq",
+                  titleKey: "about.deputy.mohammadMutlaq.title",
+                  quote: language === 'ar' ? "من تجمع نجران الصحي .. مرحلة جديدة لتحول صحي يرتقي بجودة تقديم الرعاية وكفاءة الخدمات." : "From Najran Health Cluster .. a new phase for a health transformation that elevates care quality and service efficiency."
+                },
+                {
+                  image: musabiImage,
+                  nameKey: "about.deputy.musabi",
+                  titleKey: "about.deputy.musabi.title",
+                  quote: language === 'ar' ? "معًا نصنع التحول ونرتقي بجودة الأداء." : "Together we make the transformation and elevate performance quality."
+                },
+                {
+                  image: ismailImage,
+                  nameKey: "about.deputy.ismail",
+                  titleKey: "about.deputy.ismail.title",
+                  quote: language === 'ar' ? "نفخر بأننا المحرك التقني لرحلة التحول الصحي، لتقديم رعاية صحية متكاملة ومبتكرة." : "We are proud to be the technical driver of the healthcare transformation journey, delivering integrated and innovative healthcare."
+                },
+                {
+                  image: yahyaImage,
+                  nameKey: "about.deputy.yahya",
+                  titleKey: "about.deputy.yahya.title",
+                  quote: language === 'ar' ? "تتسع الآفاق لبناء مستقبل صحي مزدهر يواكب تطلعات الوطن." : "Horizons expand to build a prosperous health future that meets the nation's aspirations."
+                },
+                {
+                  image: aliImage,
+                  nameKey: "about.deputy.ali",
+                  titleKey: "about.deputy.ali.title",
+                  quote: language === 'ar' ? "نخطو اليوم نحو مرحلة جديدة من التكامل، حيث يجسد انتقال الموظفين استثمارًا في الكفاءات وبناءً لمستقبل صحي أكثر استدامة وتميزًا." : "Today we step into a new phase of integration, where employee transition embodies an investment in competencies and a foundation for a more sustainable and distinguished health future."
+                },
               ].map((leader, idx) => (
                 <motion.div
                   key={idx}
-                  className="group relative"
+                  className="group"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.07 }}
                 >
-                  <div
-                    className="bg-white rounded-[3.5rem] p-8 shadow-sm border border-gray-100 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-4"
-                  >
-                    <div className="aspect-square overflow-hidden rounded-[2.5rem] mb-8 bg-gray-50">
+                  <div className="rounded-[2.5rem] overflow-hidden shadow-sm border border-gray-100 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-3 flex flex-col h-full">
+                    {/* قسم الاقتباس */}
+                    <div className="p-8 relative flex-1" style={{ backgroundColor: '#004d3a' }}>
+                      <div
+                        className="absolute top-2 right-6 text-white/10 font-serif leading-none select-none pointer-events-none"
+                        style={{ fontSize: '120px' }}
+                      >
+                        "
+                      </div>
+                      <p className={`text-white text-base leading-loose relative z-10 ${fontClass}`}>
+                        {leader.quote}
+                      </p>
+                      <div className="mt-6 pt-5 border-t border-white/20">
+                        <h4 className={`text-white font-bold text-lg mb-1 ${fontClass}`}>{t(leader.nameKey)}</h4>
+                        <p className={`text-white/70 text-sm ${fontClass}`}>{t(leader.titleKey)}</p>
+                      </div>
+                    </div>
+                    {/* قسم الصورة */}
+                    <div className="h-60 overflow-hidden bg-gray-100 flex-shrink-0">
                       <img
                         src={leader.image}
                         alt={t(leader.nameKey)}
-                        className="w-full h-full object-cover object-top transition-all duration-700 ease-in-out grayscale group-hover:grayscale-0 scale-100 group-hover:scale-110"
+                        className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                       />
                     </div>
-                    <h4 className={`text-xl font-bold text-gray-900 mb-2 ${fontClass}`}>{t(leader.nameKey)}</h4>
-                    <p className={`font-semibold tracking-wide text-sm ${fontClass}`} style={{ color: '#004d3a' }}>
-                      {t(leader.titleKey)}
-                    </p>
                   </div>
                 </motion.div>
               ))}

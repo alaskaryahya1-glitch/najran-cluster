@@ -588,11 +588,16 @@ export default function About() {
                   {language === 'ar' ? 'قصة التحول' : 'Our Story'}
                 </span>
 
-                <img
-                  src={clusterLogo}
-                  alt={t("header.clusterName")}
-                  className="w-full max-w-sm h-auto object-contain"
-                />
+                <div className="inline-flex flex-col">
+                  <img
+                    src={clusterLogo}
+                    alt={t("header.clusterName")}
+                    className="w-full max-w-sm h-auto object-contain mb-1"
+                  />
+                  <p className={`text-[#2BAAE2] text-[11px] ${fontClass} ${language === 'ar' ? 'text-right' : 'text-left'}`} style={{ marginTop: '-6px' }}>
+                    {language === 'ar' ? 'شركة الصحة القابضة' : 'Health Holding Co.'}
+                  </p>
+                </div>
 
                 <p className={`text-lg text-gray-600 leading-relaxed ${fontClass}`}>
                   {language === 'ar'

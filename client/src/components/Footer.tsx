@@ -1,7 +1,7 @@
 import { MapPin, Phone, ExternalLink } from "lucide-react";
 import { SiX, SiLinkedin, SiYoutube, SiInstagram, SiSnapchat, SiTiktok } from "react-icons/si";
 import { useI18n } from "@/lib/i18n";
-import clusterLogo from "@assets/cluster-logo-colored.PNG";
+import clusterLogo from "@assets/cluster-logo-colored.png";
 import nupcoLogo from "@assets/IMG_8790_1767048634247.png";
 import exproLogo from "@assets/IMG_8793_1767048634247.png";
 import nafisLogo from "@assets/nphies_logo.9ce3f8cc7a760666c970_1767220354051.png";

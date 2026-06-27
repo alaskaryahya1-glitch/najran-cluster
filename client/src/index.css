@@ -702,29 +702,3 @@ summary {
 summary::-webkit-details-marker {
   display: none;
 }
-
-/* ===== Custom Pattern Section (White Background) ===== */
-.custom-pattern-section {
-  background-color: #ffffff !important;
-  background-image:
-    linear-gradient(30deg, #f8fafc 12%, transparent 12.5%, transparent 87%, #f8fafc 87.5%, #f8fafc),
-    linear-gradient(150deg, #f8fafc 12%, transparent 12.5%, transparent 87%, #f8fafc 87.5%, #f8fafc),
-    linear-gradient(30deg, #f8fafc 12%, transparent 12.5%, transparent 87%, #f8fafc 87.5%, #f8fafc),
-    linear-gradient(150deg, #f8fafc 12%, transparent 12.5%, transparent 87%, #f8fafc 87.5%, #f8fafc),
-    linear-gradient(60deg, #f1f5f9 25%, transparent 25.5%, transparent 75%, #f1f5f9 75%, #f1f5f9),
-    linear-gradient(60deg, #f1f5f9 25%, transparent 25.5%, transparent 75%, #f1f5f9 75%, #f1f5f9) !important;
-  background-size: 80px 140px !important;
-  background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px !important;
-  position: relative;
-  border-top: 1px solid #f1f5f9;
-}
-
-.custom-pattern-section h2,
-.custom-pattern-section h3 {
-  color: #004d3a !important;
-}
-
-.custom-pattern-section p,
-.custom-pattern-section li {
-  color: #4a5568 !important;
-}

@@ -53,6 +53,7 @@ export function Footer() {
   ];
 
   return (
+    <div style={{ backgroundColor: '#0c1c28' }}>
     <footer className="text-white relative overflow-hidden bg-black/25 backdrop-blur-md" style={{ borderTop: '2px solid #2BAAE2' }}>
       {/* Geometric pattern */}
       <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
@@ -223,5 +224,6 @@ export function Footer() {
         </div>
       </div>
     </footer>
+    </div>
   );
 }

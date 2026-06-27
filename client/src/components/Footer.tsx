@@ -53,7 +53,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="text-white relative overflow-hidden" style={{ backgroundColor: '#004d3a' }}>
+    <footer className="text-white relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #004d3a 0%, #003629 100%)' }}>
       {/* Geometric Pattern Overlay */}
       <div className="absolute inset-0 najran-geometric-bg opacity-[0.08] pointer-events-none"></div>
 
@@ -83,10 +83,10 @@ export function Footer() {
 
       {/* Main Footer Content */}
       <div className="container-custom py-12 md:py-16 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
 
           {/* Brand Column */}
-          <div className="md:col-span-4">
+          <div className="col-span-2 lg:col-span-1">
             <div className="inline-flex flex-col items-center mb-6">
               <img
                 src={whiteLogo}
@@ -126,7 +126,7 @@ export function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div className="md:col-span-3">
+          <div className="col-span-1">
             <h4 className={`text-white font-bold text-lg mb-6 border-r-4 border-white/20 pr-4 ${fontClass}`}>
               {t("footer.quickLinks")}
             </h4>
@@ -135,7 +135,7 @@ export function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className={`text-white/70 hover:text-white transition-all text-sm block mb-3 hover:pr-2`}
+                    className="footer-link text-white/70 hover:text-white transition-all text-sm block mb-3"
                     data-testid={`link-footer-${link.href.replace('/', '')}`}
                   >
                     {link.label}
@@ -146,7 +146,7 @@ export function Footer() {
           </div>
 
           {/* Other Links */}
-          <div className="md:col-span-2">
+          <div className="col-span-1">
             <h4 className={`text-white font-bold text-lg mb-6 border-r-4 border-white/20 pr-4 ${fontClass}`}>
               {language === 'ar' ? 'روابط أخرى' : 'Other Links'}
             </h4>
@@ -157,7 +157,7 @@ export function Footer() {
                     href={link.href}
                     target={link.external ? "_blank" : undefined}
                     rel={link.external ? "noopener noreferrer" : undefined}
-                    className="text-white/70 hover:text-white transition-all text-sm block mb-3 hover:pr-2"
+                    className="footer-link text-white/70 hover:text-white transition-all text-sm block mb-3"
                   >
                     {link.label}
                   </a>
@@ -167,7 +167,7 @@ export function Footer() {
           </div>
 
           {/* Contact */}
-          <div className="md:col-span-3">
+          <div className="col-span-2 lg:col-span-1">
             <h4 className={`text-white font-bold text-lg mb-6 border-r-4 border-white/20 pr-4 ${fontClass}`}>
               {t("footer.contactUs")}
             </h4>

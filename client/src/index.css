@@ -709,3 +709,11 @@ summary {
 summary::-webkit-details-marker {
   display: none;
 }
+
+/* Footer link hover animation */
+[dir="rtl"] footer a.footer-link:hover {
+  transform: translateX(5px);
+}
+[dir="ltr"] footer a.footer-link:hover {
+  transform: translateX(-5px);
+}

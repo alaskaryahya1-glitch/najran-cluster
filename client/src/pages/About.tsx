@@ -679,12 +679,12 @@ export default function About() {
               {[
                 { image: ceoImage, nameKey: "about.ceo.name", titleKey: "about.ceo", useObjectTop: true },
                 { image: cardRashid, nameKey: "about.deputy.rashid", titleKey: "about.deputy.rashid.title", objPos: 'center bottom' },
-                { image: cardHarith, nameKey: "about.deputy.mohammed", titleKey: "about.deputy.mohammed.title", objPos: 'center bottom' },
+                { image: cardHarith, nameKey: "about.deputy.mohammed", titleKey: "about.deputy.mohammed.title", objPos: 'center bottom', bottomOffset: '-22%' },
                 { image: cardMutlaq, nameKey: "about.deputy.mohammadMutlaq", titleKey: "about.deputy.mohammadMutlaq.title", objPos: 'center bottom' },
                 { image: cardMusabi, nameKey: "about.deputy.musabi", titleKey: "about.deputy.musabi.title", objPos: 'center bottom' },
                 { image: cardIsmail, nameKey: "about.deputy.ismail", titleKey: "about.deputy.ismail.title", objPos: 'center bottom' },
                 { image: cardYahya, nameKey: "about.deputy.yahya", titleKey: "about.deputy.yahya.title", objPos: 'center bottom' },
-                { image: cardAli, nameKey: "about.deputy.ali", titleKey: "about.deputy.ali.title", objPos: 'center bottom' },
+                { image: cardAli, nameKey: "about.deputy.ali", titleKey: "about.deputy.ali.title", objPos: 'center bottom', bottomOffset: '-22%' },
               ].map((leader, idx) => (
                 <motion.div
                   key={idx}
@@ -707,7 +707,7 @@ export default function About() {
                           src={leader.image}
                           alt={t(leader.nameKey)}
                           className="leadership-card-img absolute left-0 w-full transition-all duration-700 ease-in-out grayscale group-hover:grayscale-0 group-hover:scale-[1.05] origin-bottom will-change-transform"
-                          style={{ bottom: '-5%', height: '240%', objectFit: 'cover', objectPosition: leader.objPos || 'center bottom' }}
+                          style={{ bottom: leader.bottomOffset || '-5%', height: '240%', objectFit: 'cover', objectPosition: leader.objPos || 'center bottom' }}
                         />
                       )}
                     </div>

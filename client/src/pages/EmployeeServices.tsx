@@ -362,8 +362,8 @@ function GlassStarService({ service, index, language, fontClass, size = "md", on
                     className={`${sizes[size].logo} object-contain drop-shadow-lg transition-all duration-300`}
                     style={{
                       filter: isHovered
-                        ? "brightness(0.85) saturate(1.05) drop-shadow(0 2px 6px rgba(0,0,0,0.18))"
-                        : "brightness(0.75) saturate(0.95) drop-shadow(0 1px 4px rgba(0,0,0,0.12))"
+                        ? "brightness(0) saturate(100%) invert(15%) sepia(83%) saturate(690%) hue-rotate(143deg) brightness(85%) contrast(97%) drop-shadow(0 2px 6px rgba(0,77,58,0.3))"
+                        : "brightness(0) saturate(100%) invert(62%) sepia(46%) saturate(533%) hue-rotate(163deg) brightness(78%) contrast(91%) drop-shadow(0 1px 4px rgba(43,170,226,0.3))"
                     }}
                   />
                 ) : (

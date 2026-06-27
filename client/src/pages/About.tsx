@@ -646,6 +646,69 @@ export default function About() {
           </div>
         </section>
 
+        {/* ===== Leadership Section ===== */}
+        <section className="py-20 md:py-24" style={{ backgroundColor: '#f8fafc' }}>
+          <div className="container-custom text-center">
+
+            {/* العنوان */}
+            <motion.div
+              className="mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <span className={`font-bold text-sm tracking-widest uppercase ${fontClass}`} style={{ color: '#004d3a' }}>
+                {language === 'ar' ? 'الفريق القيادي' : 'Leadership Team'}
+              </span>
+              <h2 className={`text-4xl md:text-5xl font-bold text-gray-900 mt-4 ${fontClass}`}>
+                {language === 'ar' ? 'الإدارة التنفيذية' : 'Executive Management'}
+              </h2>
+              <div className="w-24 h-1.5 mx-auto mt-6 rounded-full" style={{ backgroundColor: '#004d3a' }}></div>
+            </motion.div>
+
+            {/* شبكة القادة */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+              {[
+                { image: ceoImage, nameKey: "about.ceo.name", titleKey: "about.ceo" },
+                { image: rashidImage, nameKey: "about.deputy.rashid", titleKey: "about.deputy.rashid.title" },
+                { image: mohammedImage, nameKey: "about.deputy.mohammed", titleKey: "about.deputy.mohammed.title" },
+                { image: mohammadMutlaqImage, nameKey: "about.deputy.mohammadMutlaq", titleKey: "about.deputy.mohammadMutlaq.title" },
+                { image: musabiImage, nameKey: "about.deputy.musabi", titleKey: "about.deputy.musabi.title" },
+                { image: ismailImage, nameKey: "about.deputy.ismail", titleKey: "about.deputy.ismail.title" },
+                { image: yahyaImage, nameKey: "about.deputy.yahya", titleKey: "about.deputy.yahya.title" },
+                { image: aliImage, nameKey: "about.deputy.ali", titleKey: "about.deputy.ali.title" },
+              ].map((leader, idx) => (
+                <motion.div
+                  key={idx}
+                  className="group relative"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.07 }}
+                >
+                  <div
+                    className="bg-white rounded-[3.5rem] p-8 shadow-sm border border-gray-100 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-4"
+                  >
+                    <div className="aspect-square overflow-hidden rounded-[2.5rem] mb-8 bg-gray-50">
+                      <img
+                        src={leader.image}
+                        alt={t(leader.nameKey)}
+                        className="w-full h-full object-cover object-top transition-all duration-700 ease-in-out grayscale group-hover:grayscale-0 scale-100 group-hover:scale-110"
+                      />
+                    </div>
+                    <h4 className={`text-xl font-bold text-gray-900 mb-2 ${fontClass}`}>{t(leader.nameKey)}</h4>
+                    <p className={`font-semibold tracking-wide text-sm ${fontClass}`} style={{ color: '#004d3a' }}>
+                      {t(leader.titleKey)}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+          </div>
+        </section>
+
         {/* ===== Cluster Services Section ===== */}
         <section className="relative py-10 sm:py-12 md:py-16 overflow-hidden" style={{ backgroundColor: '#000e22' }}>
           <div className="absolute inset-0 najran-geometric-bg opacity-20"></div>

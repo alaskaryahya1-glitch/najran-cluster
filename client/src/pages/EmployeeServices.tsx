@@ -443,26 +443,29 @@ export default function EmployeeServices() {
   }, {} as Record<string, EmailEntry[]>);
 
   return (
-    <div className="min-h-screen employee-services-page" style={{ backgroundColor: '#0c1c28' }}>
+    <div className="min-h-screen employee-services-page">
+      {/* Full-page fixed slideshow background */}
+      <div className="fixed inset-0 z-0">
+        {heroSlides.map((slide, idx) => (
+          <img
+            key={idx}
+            src={slide}
+            alt=""
+            data-nosnippet="true"
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+              idx === currentSlide ? 'opacity-100' : 'opacity-0'
+            }`}
+          />
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/55 to-black/70" />
+      </div>
+
       <Header />
 
-      <main>
+      <main className="relative z-10">
         {/* Hero Section */}
         <section className="relative py-24 overflow-hidden">
-          <div className="absolute inset-0 z-0">
-            {heroSlides.map((slide, idx) => (
-              <img
-                key={idx}
-                src={slide}
-                alt=""
-                data-nosnippet="true"
-                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                  idx === currentSlide ? 'opacity-100' : 'opacity-0'
-                }`}
-              />
-            ))}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/55 to-black/70" />
-          </div>
+          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
           {/* Slide indicators */}
           <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
             {heroSlides.map((_, idx) => (
@@ -475,7 +478,6 @@ export default function EmployeeServices() {
               />
             ))}
           </div>
-          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none z-10"></div>
 
           <div className="container-custom relative z-20">
             <motion.div
@@ -496,7 +498,7 @@ export default function EmployeeServices() {
 
         {/* Loading State */}
         {isLoading && (
-          <section className="relative py-20" style={{ backgroundColor: '#0c1c28' }}>
+          <section className="relative py-20">
             <div className="flex flex-col items-center justify-center">
               <Loader2 className="w-12 h-12 text-[#2BAAE2] animate-spin mb-4" />
               <p className={`text-white/70 ${fontClass}`}>{t("employeeServices.loading")}</p>
@@ -506,7 +508,7 @@ export default function EmployeeServices() {
 
         {/* Error State */}
         {error && (
-          <section className="relative py-20" style={{ backgroundColor: '#0c1c28' }}>
+          <section className="relative py-20">
             <div className="flex justify-center">
               <div className="bg-white p-8 rounded-3xl flex items-center gap-4 border border-gray-100 shadow-sm max-w-lg">
                 <AlertCircle className="w-10 h-10 flex-shrink-0 text-[#2BAAE2]" />
@@ -521,7 +523,7 @@ export default function EmployeeServices() {
 
         {/* Info Services */}
         {!isLoading && !error && infoServices.length > 0 && (
-          <section className="relative py-12 overflow-hidden" style={{ backgroundColor: '#0c1c28' }}>
+          <section className="relative py-12 overflow-hidden">
             <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
             <div className="container-custom relative">
               <motion.div
@@ -556,7 +558,7 @@ export default function EmployeeServices() {
 
         {/* System Services */}
         {!isLoading && !error && systemServices.length > 0 && (
-          <section className="relative py-12 overflow-hidden" style={{ backgroundColor: '#0c1c28' }}>
+          <section className="relative py-12 overflow-hidden">
             <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
             <div className="container-custom relative">
               <motion.div

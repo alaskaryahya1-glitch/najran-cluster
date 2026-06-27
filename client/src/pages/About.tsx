@@ -562,7 +562,7 @@ export default function About() {
         </section>
 
         {/* ===== NEW: About Section ===== */}
-        <section className="relative py-10 md:py-16 overflow-hidden bg-white">
+        <section className="relative py-10 md:py-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
           <video autoPlay loop muted playsInline aria-hidden="true"
             className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
@@ -743,7 +743,7 @@ export default function About() {
         </section>
 
         {/* ===== Cluster Services Section ===== */}
-        <section className="relative py-10 sm:py-12 md:py-16 overflow-hidden" style={{ backgroundColor: '#ffffff' }}>
+        <section className="relative py-10 sm:py-12 md:py-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06]"></div>
 
           <div className="container-custom relative">
@@ -798,7 +798,7 @@ export default function About() {
         </section>
 
         {/* ===== Healthcare Facilities Section ===== */}
-        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#ffffff' }}>
+        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06]"></div>
 
           <div className="container-custom relative">
@@ -1026,7 +1026,7 @@ export default function About() {
         </section>
 
         {/* ===== FAQ Section ===== */}
-        <section className="relative py-16 overflow-hidden" id="faq" style={{ backgroundColor: '#ffffff' }}>
+        <section className="relative py-16 overflow-hidden" id="faq" style={{ backgroundColor: '#f7f8f9' }}>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06]"></div>
 
           <div className="container-custom relative">

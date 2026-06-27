@@ -130,7 +130,7 @@ img, video {
 }
 
 :root {
-  --background: 210 25% 97%;
+  --background: 220 15% 97%;
   --foreground: 216 60% 18%;
 
   /* Health Holding brand blue: #2BAAE2 = hsl(199, 75%, 53%) */

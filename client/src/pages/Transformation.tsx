@@ -106,8 +106,8 @@ export default function Transformation() {
               <h1 className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-white ${fontClass} mb-4`}>
                 {language === 'ar' ? 'رحلة التحول الصحي' : 'Health Transformation Journey'}
               </h1>
-              <p className={`text-[#4a5568] ${fontClass} max-w-3xl mx-auto text-lg`}>
-                {language === 'ar' 
+              <p className={`text-white/80 ${fontClass} max-w-3xl mx-auto text-lg`}>
+                {language === 'ar'
                   ? <>رحلة التحول في القطاع الصحي نحو تحقيق رؤية المملكة <span className="text-[#2BAAE2]">2030</span></>
                   : <>Health Sector Transformation Journey towards Saudi Vision <span className="text-[#2BAAE2]">2030</span></>}
               </p>
@@ -297,7 +297,7 @@ export default function Transformation() {
                   <div className="w-10 h-10 bg-[#004d3a]/10 rounded-full flex items-center justify-center flex-shrink-0">
                     <span className="text-[#2BAAE2] font-bold">{item.num}</span>
                   </div>
-                  <p className={`text-sm ${fontClass} text-white`}>{item.title}</p>
+                  <p className={`text-sm ${fontClass} text-[#4a5568]`}>{item.title}</p>
                   </div>
                 </motion.div>
               ))}
@@ -385,8 +385,8 @@ export default function Transformation() {
               >
                 <button
                   onClick={() => setBeforeAfterActive(beforeAfterActive === 'before' ? null : 'before')}
-                  className={`bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-2xl overflow-hidden border transition-all text-center ${
-                    beforeAfterActive === 'before' ? 'border-[#2BAAE2]/40 shadow-2xl' : 'border-gray-200 hover:shadow-md hover:-translate-y-1'
+                  className={`bg-white rounded-2xl overflow-hidden border transition-all text-center ${
+                    beforeAfterActive === 'before' ? 'border-[#2BAAE2]/40 shadow-md' : 'border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-1'
                   }`}
                   data-testid="button-before-transform"
                 >
@@ -396,7 +396,7 @@ export default function Transformation() {
                   <h3 className={`text-xl font-bold text-[#004d3a] ${fontClass} mb-2`}>
                     {t("home.healthStatus.before.title")}
                   </h3>
-                  <p className={`text-white font-semibold ${fontClass}`}>
+                  <p className={`text-[#4a5568] font-semibold ${fontClass}`}>
                     {t("home.healthStatus.before.subtitle")}
                   </p>
                   <ChevronDown className={`w-6 h-6 text-[#2BAAE2] mx-auto mt-3 transition-transform ${beforeAfterActive === 'before' ? 'rotate-180' : ''}`} />
@@ -432,21 +432,21 @@ export default function Transformation() {
                             className="p-2 rounded-full hover:bg-white/10 transition-colors"
                             data-testid="button-close-before"
                           >
-                            <X className="w-5 h-5 text-white/90" />
+                            <X className="w-5 h-5 text-gray-500" />
                           </button>
                         </div>
-                        
+
                         <p className={`text-[#4a5568] mb-4 ${fontClass}`}>
                           {t("home.healthStatus.before.desc")}
                         </p>
-                        
+
                         <ul className={`space-y-3 ${fontClass}`}>
                           <li className="flex items-start gap-3">
-                            <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                            <div className="w-2 h-2 bg-[#2BAAE2] rounded-full mt-2 flex-shrink-0"></div>
                             <span className="text-[#4a5568]">{t("home.healthStatus.before.item1")}</span>
                           </li>
                           <li className="flex items-start gap-3">
-                            <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                            <div className="w-2 h-2 bg-[#2BAAE2] rounded-full mt-2 flex-shrink-0"></div>
                             <span className="text-[#4a5568]">{t("home.healthStatus.before.item2")}</span>
                           </li>
                         </ul>
@@ -464,8 +464,8 @@ export default function Transformation() {
               >
                 <button
                   onClick={() => setBeforeAfterActive(beforeAfterActive === 'after' ? null : 'after')}
-                  className={`bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-2xl overflow-hidden border transition-all text-center ${
-                    beforeAfterActive === 'after' ? 'border-[#2BAAE2]/40 shadow-2xl' : 'border-gray-200 hover:shadow-md hover:-translate-y-1'
+                  className={`bg-white rounded-2xl overflow-hidden border transition-all text-center ${
+                    beforeAfterActive === 'after' ? 'border-[#2BAAE2]/40 shadow-md' : 'border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-1'
                   }`}
                   data-testid="button-after-transform"
                 >
@@ -475,7 +475,7 @@ export default function Transformation() {
                   <h3 className={`text-xl font-bold text-[#004d3a] ${fontClass} mb-2`}>
                     {t("home.healthStatus.after.title")}
                   </h3>
-                  <p className={`text-white font-semibold ${fontClass}`}>
+                  <p className={`text-[#4a5568] font-semibold ${fontClass}`}>
                     {t("home.healthStatus.after.subtitle")}
                   </p>
                   <ChevronDown className={`w-6 h-6 text-[#2BAAE2] mx-auto mt-3 transition-transform ${beforeAfterActive === 'after' ? 'rotate-180' : ''}`} />
@@ -495,13 +495,13 @@ export default function Transformation() {
                         <div className="flex items-center justify-between mb-4">
                           <div className="flex items-center gap-3">
                             <div className="flex -space-x-2 rtl:space-x-reverse">
-                              <div className="w-10 h-10 bg-[#004d3a]/10 rounded-xl flex items-center justify-center border-2 border-white/30">
+                              <div className="w-10 h-10 bg-[#004d3a]/10 rounded-xl flex items-center justify-center border-2 border-gray-100">
                                 <Building2 className="w-5 h-5 text-[#2BAAE2]" />
                               </div>
-                              <div className="w-10 h-10 bg-[#004d3a]/10 rounded-xl flex items-center justify-center border-2 border-white/30">
+                              <div className="w-10 h-10 bg-[#004d3a]/10 rounded-xl flex items-center justify-center border-2 border-gray-100">
                                 <Shield className="w-5 h-5 text-[#2BAAE2]" />
                               </div>
-                              <div className="w-10 h-10 bg-[#004d3a]/10 rounded-xl flex items-center justify-center border-2 border-white/30">
+                              <div className="w-10 h-10 bg-[#004d3a]/10 rounded-xl flex items-center justify-center border-2 border-gray-100">
                                 <Heart className="w-5 h-5 text-[#2BAAE2]" />
                               </div>
                             </div>
@@ -519,29 +519,29 @@ export default function Transformation() {
                             className="p-2 rounded-full hover:bg-white/10 transition-colors"
                             data-testid="button-close-after"
                           >
-                            <X className="w-5 h-5 text-white/90" />
+                            <X className="w-5 h-5 text-gray-500" />
                           </button>
                         </div>
-                        
+
                         <p className={`text-[#4a5568] mb-4 ${fontClass}`}>
                           {t("home.healthStatus.after.desc")}
                         </p>
-                        
+
                         <ul className={`space-y-3 ${fontClass}`}>
                           <li className="flex items-start gap-3">
-                            <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                            <div className="w-2 h-2 bg-[#2BAAE2] rounded-full mt-2 flex-shrink-0"></div>
                             <span className="text-[#4a5568]">{t("home.healthStatus.after.item1")}</span>
                           </li>
                           <li className="flex items-start gap-3">
-                            <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                            <div className="w-2 h-2 bg-[#2BAAE2] rounded-full mt-2 flex-shrink-0"></div>
                             <span className="text-[#4a5568]">{t("home.healthStatus.after.item2")}</span>
                           </li>
                           <li className="flex items-start gap-3">
-                            <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                            <div className="w-2 h-2 bg-[#2BAAE2] rounded-full mt-2 flex-shrink-0"></div>
                             <span className="text-[#4a5568]">{t("home.healthStatus.after.item3")}</span>
                           </li>
                           <li className="flex items-start gap-3">
-                            <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                            <div className="w-2 h-2 bg-[#2BAAE2] rounded-full mt-2 flex-shrink-0"></div>
                             <span className="text-[#4a5568]">{t("home.healthStatus.after.item4")}</span>
                           </li>
                         </ul>
@@ -883,7 +883,7 @@ export default function Transformation() {
                   
                   
                   transition={{ delay: 0.4 }}
-                  className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-2xl overflow-hidden border border-white/20 w-full md:w-1/2 relative"
+                  className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm w-full md:w-1/2 relative"
                 >
                   <CardStar size="sm" />
                   <div className="h-1.5 bg-[#2BAAE2]"></div>
@@ -1087,7 +1087,7 @@ export default function Transformation() {
                     <CardStar size="sm" />
                     <div className="h-1.5 bg-[#2BAAE2]"></div>
                     <div className="p-5 relative z-10">
-                    <p className={`text-sm text-white/90 ${fontClass}`}>
+                    <p className={`text-sm text-[#4a5568] ${fontClass}`}>
                       <span className="font-bold text-gray-400 block mb-1">{language === 'ar' ? 'قبل التحول' : 'Before Transformation'}</span>
                       {change.before}
                     </p>
@@ -1097,7 +1097,7 @@ export default function Transformation() {
                     <CardStar size="sm" />
                     <div className="h-1.5 bg-[#2BAAE2]"></div>
                     <div className="p-5 relative z-10">
-                    <p className={`text-sm text-white ${fontClass}`}>
+                    <p className={`text-sm text-[#4a5568] ${fontClass}`}>
                       <span className="font-bold text-[#004d3a] block mb-1">{language === 'ar' ? 'بعد التحول' : 'After Transformation'}</span>
                       {change.after}
                     </p>

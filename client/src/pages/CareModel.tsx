@@ -30,7 +30,7 @@ export default function CareModel() {
   }, language);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" style={{ backgroundColor: '#b8ccd8' }}>
       <Header />
 
       <main className="care-model-content">
@@ -69,7 +69,7 @@ export default function CareModel() {
         </section>
 
         {/* أبعاد الصحة */}
-        <section className="relative py-10 sm:py-12 md:py-16 overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
+        <section className="relative py-10 sm:py-12 md:py-16 overflow-hidden" style={{ backgroundColor: '#b8ccd8' }}>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
 
           <div className="container-custom relative">
@@ -99,7 +99,7 @@ export default function CareModel() {
 
 
 
-                  className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all relative"
+                  className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/60 shadow-sm hover:shadow-md transition-all relative"
                   style={{ borderRadius: '40px' }}
                 >
                   <CardStar size="md" />
@@ -179,7 +179,7 @@ export default function CareModel() {
 
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
-                  className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm relative"
+                  className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/60 shadow-sm relative"
                   style={{ borderRadius: '40px' }}
                 >
                   <CardStar size="lg" />
@@ -205,7 +205,7 @@ export default function CareModel() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                       {Array.from({ length: careSystemsData.find(s => s.id === selectedCareSystem)?.initCount || 3 }).map((_, idx) => (
-                        <div key={idx} className="bg-[#f8fafc] rounded-xl p-4 border border-gray-100">
+                        <div key={idx} className="bg-white/70 rounded-xl p-4 border border-gray-100">
                           <p className={`text-[#4a5568] text-sm ${fontClass}`}>
                             {t(`home.careSystems.${selectedCareSystem}.init${idx + 1}`)}
                           </p>

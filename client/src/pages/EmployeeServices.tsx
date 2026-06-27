@@ -312,7 +312,7 @@ function GlassStarService({ service, index, language, fontClass, size = "md", on
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       onClick={handleClick}
-      className={`relative cursor-pointer group ${sizes[size].container} bg-white rounded-2xl overflow-hidden transition-all duration-300 ${isHovered ? 'border-2 border-[#004d3a]/50 shadow-lg' : 'border border-gray-200 shadow-sm'}`}
+      className={`relative cursor-pointer group ${sizes[size].container} bg-white/85 backdrop-blur-sm rounded-2xl overflow-hidden transition-all duration-300 ${isHovered ? 'border-2 border-[#004d3a]/50 shadow-lg' : 'border border-gray-200 shadow-sm'}`}
       data-testid={`service-star-${service.id}`}
     >
       {/* All services use star shape */}
@@ -429,7 +429,7 @@ export default function EmployeeServices() {
   }, {} as Record<string, EmailEntry[]>);
 
   return (
-    <div className="min-h-screen employee-services-page" style={{ backgroundColor: '#f8fafc' }}>
+    <div className="min-h-screen employee-services-page" style={{ backgroundColor: '#b8ccd8' }}>
       <Header />
 
       <main>
@@ -465,7 +465,7 @@ export default function EmployeeServices() {
 
         {/* Loading State */}
         {isLoading && (
-          <section className="relative py-20" style={{ backgroundColor: '#f8fafc' }}>
+          <section className="relative py-20" style={{ backgroundColor: '#b8ccd8' }}>
             <div className="flex flex-col items-center justify-center">
               <Loader2 className="w-12 h-12 text-[#2BAAE2] animate-spin mb-4" />
               <p className={`text-[#4a5568] ${fontClass}`}>{t("employeeServices.loading")}</p>
@@ -475,7 +475,7 @@ export default function EmployeeServices() {
 
         {/* Error State */}
         {error && (
-          <section className="relative py-20" style={{ backgroundColor: '#f8fafc' }}>
+          <section className="relative py-20" style={{ backgroundColor: '#b8ccd8' }}>
             <div className="flex justify-center">
               <div className="bg-white p-8 rounded-3xl flex items-center gap-4 border border-gray-100 shadow-sm max-w-lg">
                 <AlertCircle className="w-10 h-10 flex-shrink-0 text-[#2BAAE2]" />
@@ -490,14 +490,14 @@ export default function EmployeeServices() {
 
         {/* Info Services */}
         {!isLoading && !error && infoServices.length > 0 && (
-          <section className="relative py-12 overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
+          <section className="relative py-12 overflow-hidden" style={{ backgroundColor: '#b8ccd8' }}>
             <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
             <div className="container-custom relative">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                className="bg-white rounded-[40px] border border-[#edf2f7] shadow-sm relative overflow-hidden"
+                className="bg-white/80 backdrop-blur-sm rounded-[40px] border border-white/60 shadow-sm relative overflow-hidden"
                 style={{ boxShadow: '0 10px 30px rgba(0,77,58,0.03)' }}
               >
                 <div className="h-1.5 bg-[#2BAAE2] rounded-t-[40px]"></div>
@@ -525,14 +525,14 @@ export default function EmployeeServices() {
 
         {/* System Services */}
         {!isLoading && !error && systemServices.length > 0 && (
-          <section className="relative py-12 overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
+          <section className="relative py-12 overflow-hidden" style={{ backgroundColor: '#b8ccd8' }}>
             <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
             <div className="container-custom relative">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-                className="bg-white rounded-[40px] border border-[#edf2f7] shadow-sm relative overflow-hidden"
+                className="bg-white/80 backdrop-blur-sm rounded-[40px] border border-white/60 shadow-sm relative overflow-hidden"
                 style={{ boxShadow: '0 10px 30px rgba(0,77,58,0.03)' }}
               >
                 <div className="h-1.5 bg-[#2BAAE2] rounded-t-[40px]"></div>
@@ -571,7 +571,7 @@ export default function EmployeeServices() {
       {/* Email Directory Dialog */}
       <Dialog open={isEmailDialogOpen} onOpenChange={setIsEmailDialogOpen}>
         <DialogContent className="max-w-lg max-h-[85vh] overflow-hidden flex flex-col p-0 gap-0 rounded-3xl bg-white border border-gray-100 shadow-xl">
-          <div className="bg-[#f8fafc] px-5 py-6 rounded-t-3xl relative border-b border-gray-100">
+          <div className="bg-white/70 px-5 py-6 rounded-t-3xl relative border-b border-gray-100">
             <DialogHeader className="pb-0">
               <DialogTitle className={`text-lg ${fontClass} flex items-center justify-center gap-2 text-[#005d47]`}>
                 <Mail className="w-5 h-5 text-[#2BAAE2]" />
@@ -594,7 +594,7 @@ export default function EmployeeServices() {
           <div className="flex-1 overflow-y-auto bg-white">
             {Object.entries(groupedEmails).map(([dept, emails]) => (
               <div key={dept}>
-                <div className="px-4 py-3 flex items-center gap-2 bg-[#f8fafc] border-b border-gray-100">
+                <div className="px-4 py-3 flex items-center gap-2 bg-white/70 border-b border-gray-100">
                   <Building2 className="w-4 h-4 text-[#2BAAE2]" />
                   <span className={`font-semibold text-sm ${fontClass} text-[#005d47]`}>{dept}</span>
                   <div className="w-1.5 h-1.5 rounded-full bg-[#2BAAE2]/40 mr-auto"></div>
@@ -605,7 +605,7 @@ export default function EmployeeServices() {
                     <a
                       key={idx}
                       href={`mailto:${entry.email}`}
-                      className="block bg-[#f8fafc] rounded-xl px-4 py-3 hover:bg-[#e6f7f1] transition-colors border border-gray-100"
+                      className="block bg-white/70 rounded-xl px-4 py-3 hover:bg-[#e6f7f1] transition-colors border border-gray-100"
                       data-testid={`link-email-${dept}-${idx}`}
                     >
                       <p className={`text-sm ${fontClass} text-[#4a5568] leading-relaxed`}>
@@ -635,7 +635,7 @@ export default function EmployeeServices() {
       {/* Phone Contact Dialog */}
       <Dialog open={isPhoneDialogOpen} onOpenChange={setIsPhoneDialogOpen}>
         <DialogContent className="max-w-md overflow-hidden flex flex-col p-0 gap-0 rounded-3xl bg-white border border-gray-100 shadow-xl">
-          <div className="bg-[#f8fafc] px-5 py-6 rounded-t-3xl relative border-b border-gray-100">
+          <div className="bg-white/70 px-5 py-6 rounded-t-3xl relative border-b border-gray-100">
             <DialogHeader className="pb-0">
               <DialogTitle className={`text-lg ${fontClass} flex items-center justify-center gap-2 text-[#005d47]`}>
                 <Phone className="w-5 h-5 text-[#2BAAE2]" />
@@ -645,7 +645,7 @@ export default function EmployeeServices() {
           </div>
 
           <div className="p-6 text-center">
-            <div className="bg-[#f8fafc] rounded-2xl px-6 py-8 border border-gray-100">
+            <div className="bg-white/70 rounded-2xl px-6 py-8 border border-gray-100">
               <Phone className="w-12 h-12 mx-auto mb-4 text-[#2BAAE2]" />
               <p className={`text-[#4a5568] ${fontClass} mb-3`}>
                 {language === 'ar' ? 'للتواصل مع تجمع نجران الصحي' : 'To contact Najran Health Cluster'}

@@ -1026,7 +1026,7 @@ export default function About() {
         </section>
 
         {/* ===== FAQ Section ===== */}
-        <section className="relative py-16 overflow-hidden" id="faq" style={{ backgroundColor: '#f7f8f9' }}>
+        <section className="relative py-16 overflow-hidden" id="faq" style={{ backgroundColor: '#f8fafc' }}>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06]"></div>
 
           <div className="container-custom relative">

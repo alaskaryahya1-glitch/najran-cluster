@@ -53,9 +53,9 @@ export function Footer() {
   ];
 
   return (
-    <footer className="text-white relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #004d3a 0%, #003629 100%)' }}>
+    <footer className="text-white relative overflow-hidden" style={{ backgroundColor: '#0a1916', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
       {/* Geometric Pattern Overlay */}
-      <div className="absolute inset-0 najran-geometric-bg opacity-[0.08] pointer-events-none"></div>
+      <div className="absolute inset-0 najran-geometric-bg opacity-[0.03] pointer-events-none"></div>
 
       {/* Partners Logos Row */}
       <div className="border-b border-white/10 relative z-10">
@@ -98,7 +98,7 @@ export function Footer() {
               </p>
             </div>
 
-            <p className={`text-white/70 text-sm leading-relaxed mb-6 ${fontClass}`}>
+            <p className={`text-white/50 text-sm leading-relaxed mb-6 ${fontClass}`}>
               {language === 'ar'
                 ? 'يقدم تجمع نجران الصحي خدمات الرعاية الصحية لأكثر من 495 ألف مستفيد في منطقة نجران.'
                 : 'Najran Health Cluster provides healthcare services to over 495,000 beneficiaries in the Najran region.'}
@@ -135,7 +135,7 @@ export function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="footer-link text-white/70 hover:text-white transition-all text-sm block mb-3"
+                    className="footer-link text-white/50 hover:text-[#005d47] transition-all text-sm block mb-3"
                     data-testid={`link-footer-${link.href.replace('/', '')}`}
                   >
                     {link.label}
@@ -157,7 +157,7 @@ export function Footer() {
                     href={link.href}
                     target={link.external ? "_blank" : undefined}
                     rel={link.external ? "noopener noreferrer" : undefined}
-                    className="footer-link text-white/70 hover:text-white transition-all text-sm block mb-3"
+                    className="footer-link text-white/50 hover:text-[#005d47] transition-all text-sm block mb-3"
                   >
                     {link.label}
                   </a>
@@ -176,7 +176,7 @@ export function Footer() {
                 href="https://www.google.com/maps/place/Branch+of+the+Ministry+of+Health,+Najran+Region/@17.5484375,44.2350625,1083m/data=!3m2!1e3!4b1!4m6!3m5!1s0x15fec332340cba09:0x3bddf8648aa63f9c!8m2!3d17.5484375!4d44.2350625!16s%2Fg%2F11f61pg7j4"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-3 text-white/70 hover:text-white transition-colors group"
+                className="flex items-start gap-3 text-white/50 hover:text-[#005d47] transition-colors group"
                 data-testid="link-map-location"
               >
                 <div className="w-8 h-8 bg-white/10 border border-white/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-white/20 transition-colors">
@@ -190,7 +190,7 @@ export function Footer() {
 
               <a
                 href="tel:920011140"
-                className="flex items-center gap-3 text-white/70 hover:text-white transition-colors group"
+                className="flex items-center gap-3 text-white/50 hover:text-[#005d47] transition-colors group"
                 data-testid="link-phone-footer"
               >
                 <div className="w-8 h-8 bg-white/10 border border-white/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-white/20 transition-colors">

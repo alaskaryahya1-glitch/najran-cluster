@@ -882,7 +882,7 @@ export default function About() {
                                   <div className="flex items-center justify-center gap-1 mb-1">
                                     <MapPin className="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity text-[#2BAAE2] brand-icon" />
                                   </div>
-                                  <p className={`${fontClass} text-sm`}>{t(hospital.nameKey)}</p>
+                                  <p className={`${fontClass} text-sm font-bold hospital-title`} style={{ color: '#004d3a' }}>{t(hospital.nameKey)}</p>
                                 </motion.a>
                               </TooltipTrigger>
                               <TooltipContent side="top" className={`max-w-xs bg-white dark:bg-card text-foreground p-4 rounded-xl shadow-xl border border-border/50 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
@@ -952,7 +952,7 @@ export default function About() {
                                   <div className="flex items-center justify-center gap-1 mb-1">
                                     <MapPin className="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity text-[#2BAAE2] brand-icon" />
                                   </div>
-                                  <p className={`${fontClass} text-sm`}>{t(center.nameKey)}</p>
+                                  <p className={`${fontClass} text-sm font-bold hospital-title`} style={{ color: '#004d3a' }}>{t(center.nameKey)}</p>
                                 </motion.a>
                               </TooltipTrigger>
                               <TooltipContent side="top" className={`max-w-xs bg-white dark:bg-card text-foreground p-4 rounded-xl shadow-xl border border-border/50 ${language === 'ar' ? 'text-right' : 'text-left'}`}>

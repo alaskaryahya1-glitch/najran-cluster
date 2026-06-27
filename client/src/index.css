@@ -642,3 +642,63 @@ body, p, span, div, a, li, td, th {
 .dark .dark-bg-image-subtle {
   filter: brightness(0.75);
 }
+
+/* ===== Holding Style Layer ===== */
+:root {
+  --brand-green: #004d3a;
+  --soft-gray: #f8fafc;
+}
+
+.hospitals-container, .wp-block-columns {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+  gap: 30px !important;
+  padding: 20px 0 !important;
+}
+
+.hospital-card, .wp-block-column {
+  background: white !important;
+  border-radius: 30px !important;
+  padding: 30px !important;
+  border: 1px solid #edf2f7 !important;
+  box-shadow: 0 10px 25px rgba(0, 77, 58, 0.04) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.hospital-card:hover {
+  transform: translateY(-10px) !important;
+  border-color: var(--brand-green) !important;
+  box-shadow: 0 20px 40px rgba(0, 77, 58, 0.1) !important;
+}
+
+.hospital-title {
+  color: var(--brand-green) !important;
+  font-weight: 700 !important;
+  margin-bottom: 10px !important;
+}
+
+details {
+  background: #f8fafc !important;
+  border-radius: 20px !important;
+  margin-bottom: 15px !important;
+  border: 1px solid transparent !important;
+  transition: all 0.3s ease;
+}
+
+details[open] {
+  background: white !important;
+  border-color: var(--brand-green) !important;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+summary {
+  padding: 20px !important;
+  font-weight: 700 !important;
+  color: #1a202c !important;
+  list-style: none;
+  cursor: pointer;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}

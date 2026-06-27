@@ -876,7 +876,7 @@ export default function About() {
                                   href={hospital.website || `https://www.google.com/maps/search/${encodeURIComponent(hospital.searchQuery)}`}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="bg-white/10 rounded-lg px-3 py-2 text-center hover:bg-white/20 transition-all cursor-pointer group"
+                                  className="hospital-card bg-white/10 rounded-lg px-3 py-2 text-center hover:bg-white/20 transition-all cursor-pointer group"
                                   data-testid={`link-hospital-${idx}`}
                                 >
                                   <div className="flex items-center justify-center gap-1 mb-1">
@@ -946,7 +946,7 @@ export default function About() {
                                   href={`https://www.google.com/maps/search/${encodeURIComponent(center.searchQuery)}`}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="bg-white/10 rounded-lg px-3 py-2 text-center hover:bg-white/20 transition-all cursor-pointer group"
+                                  className="hospital-card bg-white/10 rounded-lg px-3 py-2 text-center hover:bg-white/20 transition-all cursor-pointer group"
                                   data-testid={`link-specialized-center-${idx}`}
                                 >
                                   <div className="flex items-center justify-center gap-1 mb-1">
@@ -1001,7 +1001,7 @@ export default function About() {
                               href={`https://www.google.com/maps/search/${encodeURIComponent(center.searchQuery)}`}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="bg-white/10 rounded-lg px-3 py-2 text-center hover:bg-white/20 transition-all cursor-pointer group"
+                              className="hospital-card bg-white/10 rounded-lg px-3 py-2 text-center hover:bg-white/20 transition-all cursor-pointer group"
                               data-testid={`link-health-center-${idx}`}
                             >
                               <div className="flex items-center justify-center gap-1 mb-1">
@@ -1223,58 +1223,31 @@ export default function About() {
               </p>
             </motion.div>
 
-            <div className="w-full space-y-4">
-              {faqItems.map((item, idx) => {
-                const isExpanded = expandedFaq === idx;
-                return (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.05 }}
-                    className="bg-white/5 backdrop-blur-md rounded-xl border border-white/10 overflow-hidden"
-                    data-testid={`faq-item-${idx}`}
-                  >
-                    <button
-                      onClick={() => setExpandedFaq(isExpanded ? null : idx)}
-                      className={`w-full p-5 flex items-center gap-4 ${textAlign}`}
-                      data-testid={`button-faq-${idx}`}
-                    >
-                      <div className="w-10 h-10 rounded-full bg-[#2BAAE2]/20 flex items-center justify-center flex-shrink-0">
-                        {isExpanded ? (
-                          <Minus className="w-5 h-5 text-[#2BAAE2]" />
-                        ) : (
-                          <Plus className="w-5 h-5 text-[#2BAAE2]" />
-                        )}
-                      </div>
-                      <h3 className={`flex-1 font-semibold text-white ${fontClass} text-base md:text-lg`}>
-                        {t(item.questionKey)}
-                      </h3>
-                    </button>
-
-                    <AnimatePresence>
-                      {isExpanded && (
-                        <motion.div
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: 'auto' }}
-                          exit={{ opacity: 0, height: 0 }}
-                          transition={{ duration: 0.3 }}
-                          className="overflow-hidden"
-                        >
-                          <div className="px-5 pb-5 pt-0">
-                            <div className={`${language === 'ar' ? 'pr-14' : 'pl-14'}`}>
-                              <p className={`text-white/80 ${fontClass} leading-relaxed text-sm md:text-base`}>
-                                {t(item.answerKey)}
-                              </p>
-                            </div>
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </motion.div>
-                );
-              })}
+            <div className="w-full">
+              {faqItems.map((item, idx) => (
+                <motion.details
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.05 }}
+                  data-testid={`faq-item-${idx}`}
+                >
+                  <summary className={`flex items-center gap-4 ${textAlign} ${fontClass}`}>
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold text-sm" style={{ backgroundColor: '#004d3a' }}>
+                      {idx + 1}
+                    </div>
+                    <span className={`flex-1 text-gray-900 font-bold text-base md:text-lg ${fontClass}`}>
+                      {t(item.questionKey)}
+                    </span>
+                  </summary>
+                  <div className={`px-5 pb-5 pt-2 ${language === 'ar' ? 'pr-16' : 'pl-16'}`}>
+                    <p className={`text-gray-600 ${fontClass} leading-relaxed text-sm md:text-base`}>
+                      {t(item.answerKey)}
+                    </p>
+                  </div>
+                </motion.details>
+              ))}
             </div>
           </div>
         </section>

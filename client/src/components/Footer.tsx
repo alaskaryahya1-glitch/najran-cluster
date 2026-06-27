@@ -56,8 +56,6 @@ export function Footer() {
     <footer className="text-white relative overflow-hidden bg-black/25 backdrop-blur-md" style={{ borderTop: '2px solid #2BAAE2' }}>
       {/* Geometric Pattern Overlay */}
       <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
-      {/* Glass tint layer */}
-      <div className="absolute inset-0 bg-[#091520]/60 pointer-events-none"></div>
 
       {/* Partners Logos Row */}
       <div className="border-b border-white/10 relative z-10">

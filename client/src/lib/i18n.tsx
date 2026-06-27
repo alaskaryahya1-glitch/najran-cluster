@@ -358,7 +358,7 @@ const translations: Record<Language, Record<string, string>> = {
     "about.deputy.rashid.title": "نائب الرئيس التنفيذي للخدمات الصحية",
     "about.deputy.ali": "علي آل منصور",
     "about.deputy.ali.title": "نائب الرئيس التنفيذي للموارد البشرية",
-    "about.deputy.mohammed": "محمد آل الحارث",
+    "about.deputy.mohammed": "د. محمد آل الحارث",
     "about.deputy.mohammed.title": "نائب الرئيس التنفيذي للتشغيل",
     "about.deputy.musabi": "د. محمد المصعبي",
     "about.deputy.musabi.title": "نائب الرئيس التنفيذي للجودة والأداء",

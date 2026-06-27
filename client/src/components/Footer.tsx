@@ -53,9 +53,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="text-white relative overflow-hidden" style={{ backgroundColor: '#0c1c28', borderTop: '2px solid #2BAAE2' }}>
-      {/* Glass card tint — same shade as the page cards */}
-      <div className="absolute inset-0 bg-black/25 pointer-events-none"></div>
+    <footer className="text-white relative overflow-hidden bg-black/25 backdrop-blur-md" style={{ borderTop: '2px solid #2BAAE2' }}>
       {/* Geometric pattern */}
       <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
 

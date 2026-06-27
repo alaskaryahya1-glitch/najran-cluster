@@ -581,14 +581,15 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <span
-                  className={`font-bold text-sm tracking-[0.2em] uppercase pr-3 ${fontClass} ${language === 'ar' ? 'border-r-4' : 'border-l-4 pl-3 pr-0'}`}
-                  style={{ color: '#004d3a', borderColor: '#004d3a' }}
-                >
-                  {language === 'ar' ? 'قصة التحول' : 'Our Story'}
-                </span>
+                <div className="flex flex-col items-start gap-4">
+                  <span
+                    className={`font-bold text-sm tracking-[0.2em] uppercase pr-3 ${fontClass} ${language === 'ar' ? 'border-r-4' : 'border-l-4 pl-3 pr-0'}`}
+                    style={{ color: '#004d3a', borderColor: '#004d3a' }}
+                  >
+                    {language === 'ar' ? 'قصة التحول' : 'Our Story'}
+                  </span>
 
-                <div className="inline-flex flex-col items-center">
+                  <div className="inline-flex flex-col items-center">
                   <img
                     src={clusterLogo}
                     alt={t("header.clusterName")}
@@ -597,6 +598,7 @@ export default function About() {
                   <p className={`text-[#2BAAE2] text-[10px] ${fontClass} translate-x-1 sm:-translate-x-2`} style={{ marginTop: '-16px' }}>
                     {language === 'ar' ? 'شركة الصحة القابضة' : 'Health Holding Co.'}
                   </p>
+                  </div>
                 </div>
 
                 <p className={`text-lg text-gray-600 leading-relaxed ${fontClass}`}>

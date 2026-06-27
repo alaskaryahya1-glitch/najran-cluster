@@ -301,7 +301,6 @@ export default function Home() {
       </h1>
       {/* Fixed Background */}
       <div className="fixed inset-0 z-0">
-        {/* Fallback: Image Slideshow (shown if video fails) */}
         {heroImages.slice(0, 3).map((img, idx) => (
           <motion.img
             key={idx}
@@ -314,7 +313,6 @@ export default function Home() {
             transition={{ duration: 1.5, ease: "easeInOut" }}
           />
         ))}
-        {/* Video: all devices - JS play() forces autoplay on mobile */}
         {!videoFailed && (
           <video
             ref={videoRef}
@@ -329,7 +327,6 @@ export default function Home() {
             <source src="https://cmsapi.health.sa/HHC1-7tba9j.mp4" type="video/mp4" />
           </video>
         )}
-        {/* Permanent Dark Overlay for readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/35 to-black/45" />
       </div>
 
@@ -377,6 +374,8 @@ export default function Home() {
             className="container-custom relative h-full flex flex-col justify-center items-center text-center px-4 pt-64 sm:pt-72 md:pt-72 lg:pt-80 pb-8 md:pb-32 z-10"
             style={{ y: heroContentY, opacity: heroOpacity }}
           >
+            {/* Golden accent line */}
+            <div className="h-1.5 w-20 bg-[#c5a059] rounded-full mb-4" />
 
             {/* Dynamic Headline based on slide */}
             <AnimatePresence mode="wait">

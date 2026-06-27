@@ -364,9 +364,13 @@ function GlassStarService({ service, index, language, fontClass, size = "md", on
                     alt={language === 'ar' ? service.titleAr : service.titleEn}
                     className={`${sizes[size].logo} object-contain drop-shadow-lg transition-all duration-300`}
                     style={{
-                      filter: isHovered
-                        ? "brightness(1.15) drop-shadow(0 2px 8px rgba(41,181,232,0.25))"
-                        : "brightness(1)"
+                      filter: shouldInvertLogo
+                        ? isHovered
+                          ? "brightness(0) invert(1) brightness(1.2) drop-shadow(0 2px 8px rgba(255,255,255,0.3))"
+                          : "brightness(0) invert(1)"
+                        : isHovered
+                          ? "brightness(1.15) drop-shadow(0 2px 8px rgba(41,181,232,0.25))"
+                          : "brightness(1)"
                     }}
                   />
                 ) : (

@@ -100,14 +100,14 @@ export default function CareModel() {
 
 
 
-                  className="bg-black/25 backdrop-blur-md rounded-2xl overflow-hidden border border-white/15 shadow-sm hover:shadow-md transition-all relative"
+                  className="group bg-black/25 backdrop-blur-md rounded-2xl overflow-hidden border border-white/15 shadow-sm hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(43,170,226,0.2)] hover:border-[#2BAAE2] transition-all duration-[400ms] relative"
                   style={{ borderRadius: '40px' }}
                 >
                   <CardStar size="md" />
                   <div className="h-1.5 bg-[#2BAAE2]" style={{ borderRadius: '40px 40px 0 0' }}></div>
                   <div className="p-6 relative z-10">
-                    <div className="w-16 h-16 bg-white/15 rounded-xl flex items-center justify-center mx-auto mb-4">
-                      <pillar.icon className="w-8 h-8 text-[#2BAAE2]" />
+                    <div className="w-16 h-16 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl flex items-center justify-center mx-auto mb-4 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
+                      <pillar.icon className="w-8 h-8 text-[#2BAAE2] group-hover:text-white transition-colors" />
                     </div>
                     <h3 className={`text-xl font-bold text-center text-white mb-4 ${fontClass}`}>
                       {t(`home.healthModel.${pillar.id}.title`)}
@@ -152,8 +152,8 @@ export default function CareModel() {
                   onClick={() => setSelectedCareSystem(selectedCareSystem === system.id ? null : system.id)}
                   className={`flex flex-col items-center rounded-2xl overflow-hidden transition-all border ${
                     selectedCareSystem === system.id
-                      ? 'bg-[#005d47] text-white shadow-lg scale-105 border-[#005d47]'
-                      : 'bg-white/10 text-white hover:shadow-md border-white/15 shadow-sm'
+                      ? 'bg-[#2BAAE2] text-white shadow-lg scale-105 border-[#2BAAE2]'
+                      : 'bg-white/10 text-white hover:-translate-y-1 hover:border-[#2BAAE2] border-white/15 shadow-sm'
                   }`}
                   data-testid={`button-care-system-${system.id}`}
                 >

@@ -146,14 +146,14 @@ export default function Transformation() {
                   
                   
                   
-                  className="bg-black/25 backdrop-blur-md rounded-2xl overflow-hidden border border-white/15 shadow-sm text-center hover:shadow-md transition-all relative"
+                  className="bg-black/25 backdrop-blur-md rounded-2xl overflow-hidden border border-white/15 shadow-sm text-center hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(43,170,226,0.2)] hover:border-[#2BAAE2] transition-all duration-[400ms] relative group"
                   data-testid={`card-vision-axis-${idx}`}
                 >
                   <CardStar size="md" />
                   <div className="h-1.5 bg-[#2BAAE2]"></div>
                   <div className="p-6 relative z-10">
-                  <div className="w-14 h-14 bg-white/15 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <pillar.icon className="w-7 h-7 text-[#2BAAE2]" />
+                  <div className="w-14 h-14 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl flex items-center justify-center mx-auto mb-4 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
+                    <pillar.icon className="w-7 h-7 text-[#2BAAE2] group-hover:text-white transition-colors" />
                   </div>
                   <h3 className={`text-xl font-bold text-white ${fontClass} mb-3`}>{pillar.title}</h3>
                   <p className={`text-white/70 text-sm ${fontClass} leading-relaxed`}>{pillar.desc}</p>
@@ -196,14 +196,14 @@ export default function Transformation() {
                   
                   
                   
-                  className="bg-black/25 backdrop-blur-md rounded-2xl overflow-hidden border border-white/15 shadow-sm text-center hover:shadow-md transition-all relative"
+                  className="bg-black/25 backdrop-blur-md rounded-2xl overflow-hidden border border-white/15 shadow-sm text-center hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(43,170,226,0.2)] hover:border-[#2BAAE2] transition-all duration-[400ms] relative group"
                   data-testid={`card-goal-${idx}`}
                 >
                   <CardStar size="sm" />
                   <div className="h-1.5 bg-[#2BAAE2]"></div>
                   <div className="p-5 relative z-10">
-                  <div className="w-12 h-12 bg-white/15 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <goal.icon className="w-6 h-6 text-[#2BAAE2]" />
+                  <div className="w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl flex items-center justify-center mx-auto mb-3 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
+                    <goal.icon className="w-6 h-6 text-[#2BAAE2] group-hover:text-white transition-colors" />
                   </div>
                   <p className={`text-sm ${fontClass} text-white/70 font-medium`}>{goal.title}</p>
                   </div>
@@ -240,14 +240,14 @@ export default function Transformation() {
                   
                   
                   
-                  className="bg-black/25 backdrop-blur-md rounded-2xl overflow-hidden border border-white/15 shadow-sm text-center hover:shadow-md transition-all relative"
+                  className="bg-black/25 backdrop-blur-md rounded-2xl overflow-hidden border border-white/15 shadow-sm text-center hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(43,170,226,0.2)] hover:border-[#2BAAE2] transition-all duration-[400ms] relative group"
                   data-testid={`card-pillar-${idx}`}
                 >
                   <CardStar size="sm" />
                   <div className="h-1.5 bg-[#2BAAE2]"></div>
                   <div className="p-5 relative z-10">
-                  <div className="w-12 h-12 bg-white/15 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <pillar.icon className="w-6 h-6 text-[#2BAAE2]" />
+                  <div className="w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl flex items-center justify-center mx-auto mb-3 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
+                    <pillar.icon className="w-6 h-6 text-[#2BAAE2] group-hover:text-white transition-colors" />
                   </div>
                   <p className={`text-sm ${fontClass} text-white/70 font-medium`}>{pillar.title}</p>
                   </div>
@@ -284,7 +284,7 @@ export default function Transformation() {
                   
                   
                   
-                  className="bg-black/25 backdrop-blur-md rounded-2xl overflow-hidden border border-white/15 shadow-sm hover:shadow-md transition-all relative"
+                  className="bg-black/25 backdrop-blur-md rounded-2xl overflow-hidden border border-white/15 shadow-sm hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(43,170,226,0.2)] hover:border-[#2BAAE2] transition-all duration-[400ms] relative group"
                   data-testid={`card-how-${idx}`}
                 >
                   <CardStar size="sm" />
@@ -333,14 +333,14 @@ export default function Transformation() {
                   
                   
                   
-                  className="bg-black/25 backdrop-blur-md rounded-2xl overflow-hidden border border-white/15 shadow-sm text-center hover:shadow-md transition-all relative"
+                  className="bg-black/25 backdrop-blur-md rounded-2xl overflow-hidden border border-white/15 shadow-sm text-center hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(43,170,226,0.2)] hover:border-[#2BAAE2] transition-all duration-[400ms] relative group"
                   data-testid={`card-dimension-${idx}`}
                 >
                   <CardStar size="md" />
                   <div className="h-1.5 bg-[#2BAAE2]"></div>
                   <div className="p-6 relative z-10">
-                  <div className="w-14 h-14 bg-white/15 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <dimension.icon className="w-7 h-7 text-[#2BAAE2]" />
+                  <div className="w-14 h-14 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl flex items-center justify-center mx-auto mb-4 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
+                    <dimension.icon className="w-7 h-7 text-[#2BAAE2] group-hover:text-white transition-colors" />
                   </div>
                   <h3 className={`text-xl font-bold text-white ${fontClass} mb-2`}>{dimension.title}</h3>
                   <p className={`text-white/70 text-sm ${fontClass}`}>{dimension.desc}</p>
@@ -410,7 +410,7 @@ export default function Transformation() {
                         <div className="flex items-center justify-between mb-4">
                           <div className="flex items-center gap-3">
                             <div className="w-12 h-12 bg-white/15 rounded-xl flex items-center justify-center">
-                              <Building2 className="w-6 h-6 text-[#2BAAE2]" />
+                              <Building2 className="w-6 h-6 text-[#2BAAE2] group-hover:text-white transition-colors" />
                             </div>
                             <div>
                               <h4 className={`text-lg font-bold text-white ${fontClass}`}>
@@ -563,8 +563,8 @@ export default function Transformation() {
               <CardStar size="lg" />
               <div className="h-1.5 bg-[#2BAAE2]"></div>
               <div className="p-8 relative z-10">
-              <div className="w-20 h-20 bg-white/15 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Building2 className="w-10 h-10 text-[#2BAAE2]" />
+              <div className="w-20 h-20 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl flex items-center justify-center mx-auto mb-6 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
+                <Building2 className="w-10 h-10 text-[#2BAAE2] group-hover:text-white transition-colors" />
               </div>
               <h2 className={`text-2xl md:text-3xl font-bold text-white ${fontClass} text-center mb-4`}>
                 {language === 'ar' ? 'ماهي شركة الصحة القابضة؟' : 'What is the Health Holding Company?'}
@@ -594,8 +594,8 @@ export default function Transformation() {
               <CardStar size="lg" />
               <div className="h-1.5 bg-[#2BAAE2]"></div>
               <div className="p-8 relative z-10">
-              <div className="w-20 h-20 bg-white/15 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Network className="w-10 h-10 text-[#2BAAE2]" />
+              <div className="w-20 h-20 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl flex items-center justify-center mx-auto mb-6 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
+                <Network className="w-10 h-10 text-[#2BAAE2] group-hover:text-white transition-colors" />
               </div>
               <h2 className={`text-2xl md:text-3xl font-bold text-white ${fontClass} text-center mb-4`}>
                 {language === 'ar' ? 'ماهو التجمع الصحي؟' : 'What is a Health Cluster?'}
@@ -656,8 +656,8 @@ export default function Transformation() {
                 <CardStar size="md" />
                 <div className="h-1.5 bg-[#2BAAE2]"></div>
                 <div className="p-6 relative z-10">
-                <div className="w-14 h-14 bg-white/15 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Star className="w-7 h-7 text-[#2BAAE2]" />
+                <div className="w-14 h-14 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl flex items-center justify-center mx-auto mb-4 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
+                  <Star className="w-7 h-7 text-[#2BAAE2] group-hover:text-white transition-colors" />
                 </div>
                 <h3 className={`text-lg font-bold text-white ${fontClass} mb-2`}>
                   {language === 'ar' ? 'تطوير تجربة المستفيد' : 'Enhance Patient Experience'}
@@ -679,8 +679,8 @@ export default function Transformation() {
                 <CardStar size="md" />
                 <div className="h-1.5 bg-[#2BAAE2]"></div>
                 <div className="p-6 relative z-10">
-                <div className="w-14 h-14 bg-white/15 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <HeartPulse className="w-7 h-7 text-[#2BAAE2]" />
+                <div className="w-14 h-14 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl flex items-center justify-center mx-auto mb-4 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
+                  <HeartPulse className="w-7 h-7 text-[#2BAAE2] group-hover:text-white transition-colors" />
                 </div>
                 <h3 className={`text-lg font-bold text-white ${fontClass} mb-2`}>
                   {language === 'ar' ? 'تحسين صحة السكان' : 'Improve Population Health'}
@@ -702,8 +702,8 @@ export default function Transformation() {
                 <CardStar size="md" />
                 <div className="h-1.5 bg-[#2BAAE2]"></div>
                 <div className="p-6 relative z-10">
-                <div className="w-14 h-14 bg-white/15 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-7 h-7 text-[#2BAAE2]" />
+                <div className="w-14 h-14 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl flex items-center justify-center mx-auto mb-4 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
+                  <Users className="w-7 h-7 text-[#2BAAE2] group-hover:text-white transition-colors" />
                 </div>
                 <h3 className={`text-lg font-bold text-white ${fontClass} mb-2`}>
                   {language === 'ar' ? 'رفع الرضا الوظيفي' : 'Increase Job Satisfaction'}
@@ -725,8 +725,8 @@ export default function Transformation() {
                 <CardStar size="md" />
                 <div className="h-1.5 bg-[#2BAAE2]"></div>
                 <div className="p-6 relative z-10">
-                <div className="w-14 h-14 bg-white/15 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <TrendingUp className="w-7 h-7 text-[#2BAAE2]" />
+                <div className="w-14 h-14 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl flex items-center justify-center mx-auto mb-4 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
+                  <TrendingUp className="w-7 h-7 text-[#2BAAE2] group-hover:text-white transition-colors" />
                 </div>
                 <h3 className={`text-lg font-bold text-white ${fontClass} mb-2`}>
                   {language === 'ar' ? 'تقليل التكاليف' : 'Reduce Costs'}
@@ -939,7 +939,7 @@ export default function Transformation() {
                 <CardStar size="sm" />
                 <div className="h-1.5 bg-[#2BAAE2]"></div>
                 <div className="p-5 relative z-10">
-                <div className="w-10 h-10 bg-white/15 rounded-full flex items-center justify-center mx-auto mb-3">
+                <div className="w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl flex items-center justify-center mx-auto mb-3 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
                   <span className="text-[#2BAAE2] font-bold">1</span>
                 </div>
                 <h4 className={`text-sm font-bold text-white ${fontClass} mb-2`}>
@@ -961,7 +961,7 @@ export default function Transformation() {
                 <CardStar size="sm" />
                 <div className="h-1.5 bg-[#2BAAE2]"></div>
                 <div className="p-5 relative z-10">
-                <div className="w-10 h-10 bg-white/15 rounded-full flex items-center justify-center mx-auto mb-3">
+                <div className="w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl flex items-center justify-center mx-auto mb-3 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
                   <span className="text-[#2BAAE2] font-bold">2</span>
                 </div>
                 <h4 className={`text-sm font-bold text-white ${fontClass} mb-2`}>
@@ -983,7 +983,7 @@ export default function Transformation() {
                 <CardStar size="sm" />
                 <div className="h-1.5 bg-[#2BAAE2]"></div>
                 <div className="p-5 relative z-10">
-                <div className="w-10 h-10 bg-white/15 rounded-full flex items-center justify-center mx-auto mb-3">
+                <div className="w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl flex items-center justify-center mx-auto mb-3 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
                   <span className="text-[#2BAAE2] font-bold">3</span>
                 </div>
                 <h4 className={`text-sm font-bold text-white ${fontClass} mb-2`}>
@@ -1005,7 +1005,7 @@ export default function Transformation() {
                 <CardStar size="sm" />
                 <div className="h-1.5 bg-[#2BAAE2]"></div>
                 <div className="p-5 relative z-10">
-                <div className="w-10 h-10 bg-white/15 rounded-full flex items-center justify-center mx-auto mb-3">
+                <div className="w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl flex items-center justify-center mx-auto mb-3 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
                   <span className="text-[#2BAAE2] font-bold">4</span>
                 </div>
                 <h4 className={`text-sm font-bold text-white ${fontClass} mb-2`}>
@@ -1027,7 +1027,7 @@ export default function Transformation() {
                 <CardStar size="sm" />
                 <div className="h-1.5 bg-[#2BAAE2]"></div>
                 <div className="p-5 relative z-10">
-                <div className="w-10 h-10 bg-white/15 rounded-full flex items-center justify-center mx-auto mb-3">
+                <div className="w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl flex items-center justify-center mx-auto mb-3 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
                   <span className="text-[#2BAAE2] font-bold">5</span>
                 </div>
                 <h4 className={`text-sm font-bold text-white ${fontClass} mb-2`}>

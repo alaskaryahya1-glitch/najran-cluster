@@ -53,12 +53,8 @@ export function Footer() {
   ];
 
   return (
-    <footer className="text-white relative overflow-hidden" style={{ borderTop: '2px solid #2BAAE2' }}>
-      {/* Solid blocker — prevents video from bleeding through */}
-      <div className="absolute inset-0" style={{ backgroundColor: '#0c1c28' }}></div>
-      {/* Exact glass card style: bg-black/25 backdrop-blur-md border-white/15 */}
-      <div className="absolute inset-0 bg-black/25 backdrop-blur-md border border-white/15 pointer-events-none"></div>
-      {/* Geometric pattern on top of glass */}
+    <footer className="text-white relative overflow-hidden bg-black/25 backdrop-blur-md" style={{ borderTop: '2px solid #2BAAE2' }}>
+      {/* Geometric pattern on glass */}
       <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
 
       {/* Partners Logos Row */}

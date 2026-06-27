@@ -53,9 +53,9 @@ export function Footer() {
   ];
 
   return (
-    <footer className="text-slate-300 relative overflow-hidden" style={{ backgroundColor: '#000e22' }}>
+    <footer className="text-white relative overflow-hidden" style={{ backgroundColor: '#004d3a' }}>
       {/* Geometric Pattern Overlay */}
-      <div className="absolute inset-0 najran-geometric-bg opacity-[0.07] pointer-events-none"></div>
+      <div className="absolute inset-0 najran-geometric-bg opacity-[0.08] pointer-events-none"></div>
 
       {/* Partners Logos Row */}
       <div className="border-b border-white/10 relative z-10">
@@ -98,7 +98,7 @@ export function Footer() {
               </p>
             </div>
 
-            <p className={`text-slate-400 text-sm leading-relaxed mb-6 ${fontClass}`}>
+            <p className={`text-white/70 text-sm leading-relaxed mb-6 ${fontClass}`}>
               {language === 'ar'
                 ? 'يقدم تجمع نجران الصحي خدمات الرعاية الصحية لأكثر من 495 ألف مستفيد في منطقة نجران.'
                 : 'Najran Health Cluster provides healthcare services to over 495,000 beneficiaries in the Najran region.'}
@@ -114,11 +114,11 @@ export function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-9 h-9 bg-white/5 hover:bg-[#2BAAE2] border border-white/10 hover:border-[#2BAAE2] rounded-lg flex items-center justify-center transition-all duration-200"
+                    className="w-9 h-9 bg-white/10 hover:bg-white/25 border border-white/20 rounded-full flex items-center justify-center transition-all duration-200"
                     title={social.label}
                     data-testid={`link-social-${social.label.toLowerCase()}`}
                   >
-                    <social.icon className="w-4 h-4 text-slate-300" />
+                    <social.icon className="w-4 h-4 text-white/80" />
                   </a>
                 ))}
               </div>
@@ -127,8 +127,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="md:col-span-3">
-            <h4 className={`text-white font-bold text-base mb-5 flex items-center gap-2 ${fontClass}`}>
-              <span className="w-5 h-0.5 bg-[#2BAAE2] inline-block rounded-full"></span>
+            <h4 className={`text-white font-bold text-lg mb-6 border-r-4 border-white/20 pr-4 ${fontClass}`}>
               {t("footer.quickLinks")}
             </h4>
             <ul className={`space-y-2.5 ${fontClass}`}>
@@ -136,10 +135,9 @@ export function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="flex items-center gap-2 text-slate-400 hover:text-[#2BAAE2] transition-colors text-sm group"
+                    className={`text-white/70 hover:text-white transition-all text-sm block mb-3 hover:pr-2`}
                     data-testid={`link-footer-${link.href.replace('/', '')}`}
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#2BAAE2]/40 group-hover:bg-[#2BAAE2] transition-colors flex-shrink-0"></span>
                     {link.label}
                   </a>
                 </li>
@@ -149,8 +147,7 @@ export function Footer() {
 
           {/* Other Links */}
           <div className="md:col-span-2">
-            <h4 className={`text-white font-bold text-base mb-5 flex items-center gap-2 ${fontClass}`}>
-              <span className="w-5 h-0.5 bg-[#2BAAE2] inline-block rounded-full"></span>
+            <h4 className={`text-white font-bold text-lg mb-6 border-r-4 border-white/20 pr-4 ${fontClass}`}>
               {language === 'ar' ? 'روابط أخرى' : 'Other Links'}
             </h4>
             <ul className={`space-y-2.5 ${fontClass}`}>
@@ -160,9 +157,8 @@ export function Footer() {
                     href={link.href}
                     target={link.external ? "_blank" : undefined}
                     rel={link.external ? "noopener noreferrer" : undefined}
-                    className="flex items-center gap-2 text-slate-400 hover:text-[#2BAAE2] transition-colors text-sm group"
+                    className="text-white/70 hover:text-white transition-all text-sm block mb-3 hover:pr-2"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#2BAAE2]/40 group-hover:bg-[#2BAAE2] transition-colors flex-shrink-0"></span>
                     {link.label}
                   </a>
                 </li>
@@ -172,8 +168,7 @@ export function Footer() {
 
           {/* Contact */}
           <div className="md:col-span-3">
-            <h4 className={`text-white font-bold text-base mb-5 flex items-center gap-2 ${fontClass}`}>
-              <span className="w-5 h-0.5 bg-[#2BAAE2] inline-block rounded-full"></span>
+            <h4 className={`text-white font-bold text-lg mb-6 border-r-4 border-white/20 pr-4 ${fontClass}`}>
               {t("footer.contactUs")}
             </h4>
             <div className={`space-y-4 ${fontClass}`}>
@@ -181,10 +176,10 @@ export function Footer() {
                 href="https://www.google.com/maps/place/Branch+of+the+Ministry+of+Health,+Najran+Region/@17.5484375,44.2350625,1083m/data=!3m2!1e3!4b1!4m6!3m5!1s0x15fec332340cba09:0x3bddf8648aa63f9c!8m2!3d17.5484375!4d44.2350625!16s%2Fg%2F11f61pg7j4"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-3 text-slate-400 hover:text-[#2BAAE2] transition-colors group"
+                className="flex items-start gap-3 text-white/70 hover:text-white transition-colors group"
                 data-testid="link-map-location"
               >
-                <div className="w-8 h-8 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:border-[#2BAAE2]/30 transition-colors">
+                <div className="w-8 h-8 bg-white/10 border border-white/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-white/20 transition-colors">
                   <MapPin className="w-4 h-4 text-[#2BAAE2]" />
                 </div>
                 <div>
@@ -195,10 +190,10 @@ export function Footer() {
 
               <a
                 href="tel:920011140"
-                className="flex items-center gap-3 text-slate-400 hover:text-[#2BAAE2] transition-colors group"
+                className="flex items-center gap-3 text-white/70 hover:text-white transition-colors group"
                 data-testid="link-phone-footer"
               >
-                <div className="w-8 h-8 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:border-[#2BAAE2]/30 transition-colors">
+                <div className="w-8 h-8 bg-white/10 border border-white/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-white/20 transition-colors">
                   <Phone className="w-4 h-4 text-[#2BAAE2]" />
                 </div>
                 <span className="font-sans text-sm text-white" dir="ltr">920011140</span>
@@ -212,16 +207,16 @@ export function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-white/10 relative z-10">
         <div className="container-custom py-4 flex flex-col md:flex-row justify-between items-center gap-3 text-center">
-          <p className={`text-xs text-slate-500 ${fontClass}`}>
+          <p className={`text-xs text-white/40 ${fontClass}`}>
             © {new Date().getFullYear()} {t("header.clusterName")}. {t("footer.rights")}.
           </p>
-          <span className="font-sans text-xs text-slate-600" dir="ltr">Made by : Yahya Alhareth</span>
+          <span className="font-sans text-xs text-white/40" dir="ltr">Made by : Yahya Alhareth</span>
           <div className={`flex items-center gap-4 text-xs ${fontClass} text-slate-500`}>
-            <a href="#" className="hover:text-[#2BAAE2] transition-colors" data-testid="link-privacy">{t("footer.privacy")}</a>
+            <a href="#" className="hover:text-white transition-colors" data-testid="link-privacy">{t("footer.privacy")}</a>
             <span className="text-white/20">|</span>
-            <a href="#" className="hover:text-[#2BAAE2] transition-colors" data-testid="link-terms">{t("footer.terms")}</a>
+            <a href="#" className="hover:text-white transition-colors" data-testid="link-terms">{t("footer.terms")}</a>
             <span className="text-white/20">|</span>
-            <a href="#" className="hover:text-[#2BAAE2] transition-colors" data-testid="link-accessibility">{t("footer.accessibility")}</a>
+            <a href="#" className="hover:text-white transition-colors" data-testid="link-accessibility">{t("footer.accessibility")}</a>
           </div>
         </div>
       </div>

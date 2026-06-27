@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, memo, Suspense, lazy } from "react";
+import { useState, useRef, useEffect, memo, Suspense, lazy, useCallback } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { useI18n } from "@/lib/i18n";
@@ -33,7 +33,8 @@ import healthTransformLogo from "@assets/logo_1767222621475.png";
 import beforeTransformImg from "@assets/IMG_8810_1767053697941.png";
 import afterTransformImg from "@assets/IMG_8811_1767053697941.png";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
-import { Eye, Target, Heart, Star, Users, Lightbulb, Building2, Stethoscope, Shield, TrendingUp, Monitor, Settings, CheckCircle2, ChevronDown, Compass, Award, X, Landmark, HeartHandshake, Network, RefreshCw, Route, Layers, ShieldCheck, Globe2, Scan, UserSearch, BadgeCheck, ClipboardList, FileSignature, Pill, ExternalLink, HeartPulse, ArrowLeft, Info, Activity, Calendar, Baby, Ambulance, Brain, UsersRound, Dumbbell, Home as HomeIcon, ShieldCheck as ShieldCheckIcon, HeartHandshake as HeartHandshakeIcon } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
+import { Eye, Target, Heart, Star, Users, Lightbulb, Building2, Stethoscope, Shield, TrendingUp, Monitor, Settings, CheckCircle2, ChevronDown, ChevronLeft, Compass, Award, X, Landmark, HeartHandshake, Network, RefreshCw, Route, Layers, ShieldCheck, Globe2, Scan, UserSearch, BadgeCheck, ClipboardList, FileSignature, Pill, ExternalLink, HeartPulse, ArrowLeft, Info, Activity, Calendar, Baby, Ambulance, Brain, UsersRound, Dumbbell, Home as HomeIcon, ShieldCheck as ShieldCheckIcon, HeartHandshake as HeartHandshakeIcon } from "lucide-react";
 import { SiApple, SiGoogleplay } from "react-icons/si";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Button } from "@/components/ui/button";
@@ -157,6 +158,98 @@ const navigationCards = [
     icon: HeartPulse
   },
 ];
+
+function NewsSection({ language, fontClass, t }: { language: string; fontClass: string; t: any }) {
+  const { data } = useQuery<{ tweets: any[] }>({
+    queryKey: ['/api/tweets'],
+    staleTime: 5 * 60 * 1000,
+  });
+
+  const tweets = data?.tweets?.slice(0, 3) ?? [];
+
+  const cleanText = (text: string) =>
+    text.replace(/^RT @\w+:\s*/, '').replace(/https?:\/\/\S+/g, '').replace(/@\S+/g, '').replace(/#\S+/g, '').replace(/\s+/g, ' ').trim();
+
+  const formatDate = (dateStr: string) =>
+    new Intl.DateTimeFormat(language === 'ar' ? 'ar-SA' : 'en-US', { year: 'numeric', month: 'short', day: 'numeric' }).format(new Date(dateStr));
+
+  const getImage = (tweet: any) => {
+    const url = tweet.image_url || tweet.image_urls?.[0];
+    if (url?.startsWith('https://pbs.twimg.com/')) return `/api/image-proxy?url=${encodeURIComponent(url)}`;
+    return url || null;
+  };
+
+  const placeholderImgs = [
+    'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80',
+    'https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&w=800&q=80',
+    'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80',
+  ];
+
+  const cards = tweets.length > 0
+    ? tweets.map((tw, i) => ({ id: tw.id, img: getImage(tw) || placeholderImgs[i], date: formatDate(tw.created_at), text: cleanText(tw.text) }))
+    : placeholderImgs.map((img, i) => ({ id: String(i), img, date: '', text: '' }));
+
+  return (
+    <section className="bg-[#f9fafb] py-20 dark:bg-[#0a1916]">
+      <div className="container-custom">
+        <div className="flex items-end justify-between mb-12">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <h2 className={`text-3xl font-bold text-[#1B4784] dark:text-white ${fontClass}`}>
+              {language === 'ar' ? 'المركز الإعلامي' : 'Media Center'}
+            </h2>
+            <p className={`mt-2 text-gray-600 dark:text-gray-400 ${fontClass}`}>
+              {language === 'ar' ? 'تابع آخر أخبار ومستجدات تجمع نجران الصحي' : 'Follow the latest news from Najran Health Cluster'}
+            </p>
+          </motion.div>
+          <a href="/news" className={`hidden md:flex items-center gap-2 text-[#2BAAE2] font-bold hover:underline ${fontClass}`}>
+            {language === 'ar' ? 'كل الأخبار' : 'All News'}
+            <ChevronLeft className="w-5 h-5" />
+          </a>
+        </div>
+
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {cards.map((card, i) => (
+            <motion.div
+              key={card.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              /* 1. Hover Elevation: مسطح → مرتفع مع ظل عميق */
+              className="group overflow-hidden rounded-3xl bg-white shadow-md transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 dark:bg-[#122622]"
+            >
+              {/* 2. حاوية صورة بارتفاع ثابت 250px */}
+              <div className="relative overflow-hidden" style={{ height: '250px' }}>
+                <img
+                  src={card.img}
+                  alt=""
+                  /* 2. object-cover لمنع التشوه + 4. lazy loading */
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                />
+                <div className="absolute top-4 right-4 rounded-full bg-[#2BAAE2] px-4 py-1 text-sm text-white">
+                  {language === 'ar' ? 'خبر' : 'News'}
+                </div>
+              </div>
+              <div className="p-6">
+                {card.date && <span className={`text-sm text-gray-500 dark:text-gray-400 ${fontClass}`}>{card.date}</span>}
+                {/* 3. line-clamp-2 لتوحيد ارتفاع العنوان */}
+                <p className={`mt-3 text-base font-bold text-gray-900 group-hover:text-[#2BAAE2] transition-colors duration-300 dark:text-white line-clamp-2 ${fontClass}`}>
+                  {card.text || (language === 'ar' ? 'جارٍ تحميل الأخبار...' : 'Loading news...')}
+                </p>
+                {/* 5. dark mode على الرابط */}
+                <a href="/news" className={`mt-4 flex items-center gap-2 font-bold text-[#2BAAE2] hover:text-[#1691D0] transition-colors duration-300 dark:text-[#2BAAE2] ${fontClass}`}>
+                  {language === 'ar' ? 'اقرأ المزيد' : 'Read More'}
+                  <ChevronLeft className="w-4 h-4" />
+                </a>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState<ActiveSection>(null);
@@ -764,6 +857,9 @@ export default function Home() {
           </div>
         </section>
       </main>
+
+      {/* News & Media Section */}
+      <NewsSection language={language} fontClass={fontClass} t={t} />
 
       <Footer />
     </div>

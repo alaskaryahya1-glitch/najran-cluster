@@ -213,7 +213,7 @@ function TweetsGrid({ tweets, language }: { tweets: Tweet[], language: string })
       <div
         key={tweet.id}
         onClick={tweet.video_url ? undefined : openTweet}
-        className={`group rounded-2xl overflow-hidden bg-black/20 dark:bg-black/50 backdrop-blur-md border border-white/20 hover:border-[#2BAAE2]/50 transition-all duration-300 flex flex-col h-[380px] ${tweet.video_url ? '' : 'cursor-pointer'}`}
+        className={`group rounded-2xl overflow-hidden bg-white border border-gray-100 hover:border-[#2BAAE2] hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(43,170,226,0.15)] transition-all duration-300 flex flex-col h-[380px] ${tweet.video_url ? '' : 'cursor-pointer'}`}
         data-testid={`tweet-card-${tweet.id}-${index}`}
       >
         {tweet.video_url ? (
@@ -256,21 +256,21 @@ function TweetsGrid({ tweets, language }: { tweets: Tweet[], language: string })
         )}
         
         <div className="p-4 flex flex-col h-[120px]">
-          <p className={`text-white text-sm leading-relaxed mb-2 ${fontClass} line-clamp-3`}>
+          <p className={`text-gray-800 text-sm leading-relaxed mb-2 ${fontClass} line-clamp-3`}>
             {cleanText}
           </p>
-          <div className="flex items-center gap-2 pt-2 border-t border-white/10 mt-auto">
+          <div className="flex items-center gap-2 pt-2 border-t border-gray-100 mt-auto">
             <a
               href={`https://twitter.com/NajranCluster/status/${tweet.id}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/40 transition-colors"
+              className="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center hover:bg-[#2BAAE2] transition-colors"
               onClick={(e) => e.stopPropagation()}
               data-testid={`link-tweet-${tweet.id}`}
             >
-              <SiX className="w-3 h-3 text-white" />
+              <SiX className="w-3 h-3 text-gray-600 group-hover:text-white" />
             </a>
-            <span className={`text-white/60 text-xs ${fontClass}`}>
+            <span className={`text-gray-400 text-xs ${fontClass}`}>
               {formatArabicDate(tweet.created_at, language)}
             </span>
           </div>
@@ -310,74 +310,92 @@ export default function News() {
   const tweets = data?.tweets || [];
 
   return (
-    <div className="min-h-screen relative" dir={language === 'ar' ? 'rtl' : 'ltr'}>
-      <div className="fixed inset-0 z-0">
-        <img
-          src={heroImage}
-          alt=""
-          data-nosnippet="true"
-          className="w-full h-full object-cover dark-bg-image"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/35 to-black/45" />
-      </div>
-
+    <div className="min-h-screen" dir={language === 'ar' ? 'rtl' : 'ltr'}>
       <Header />
-      
-      <main className="relative z-10">
-        <section className="relative py-24 overflow-hidden">
-          <div className="absolute inset-0 bg-black/15 backdrop-blur-[2px]"></div>
-          <div className="absolute inset-0 najran-geometric-bg opacity-20"></div>
-          
-          <div className="container mx-auto px-4 relative z-10">
-            <motion.div
-              
-              
-              className="text-center"
-            >
-              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white/20 mb-6">
+
+      <main>
+        {/* Hero */}
+        <section className="relative py-24 overflow-hidden" style={{ backgroundColor: '#005d47', minHeight: '40vh' }}>
+          <img
+            src={heroImage}
+            alt=""
+            data-nosnippet="true"
+            className="absolute inset-0 w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
+
+          <div className="container-custom relative z-10">
+            <motion.div className="text-center">
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-white/20 mb-6">
                 <Newspaper className="w-10 h-10 text-[#2BAAE2] brand-icon" />
               </div>
-              <h1 className={`text-4xl md:text-5xl font-bold text-white mb-4 ${fontClass}`}>
+              <h1 className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 ${fontClass}`}>
                 {language === 'ar' ? 'أخبار التجمع' : 'Cluster News'}
               </h1>
-              <p className={`text-white text-xl ${fontClass}`}>
+              <p className={`text-white/80 text-lg ${fontClass}`}>
                 {language === 'ar' ? 'تابع آخر أخبار وفعاليات تجمع نجران الصحي' : 'Follow the latest news and events from Najran Health Cluster'}
               </p>
             </motion.div>
           </div>
+
+          {/* White panel at bottom */}
+          <div className="absolute bottom-0 left-0 right-0 z-[100] hidden md:block">
+            <div className="bg-white rounded-t-[40px] shadow-[0_-12px_40px_rgba(0,0,0,0.18)] px-8 pt-8 pb-0">
+              <div className="container-custom">
+                <div className="grid grid-cols-3 gap-6 -translate-y-6">
+                  {[
+                    { titleAr: 'عن التجمع', titleEn: 'About Us', subtitleAr: 'تعرف على تجمع نجران الصحي', subtitleEn: 'Learn about Najran Health Cluster', href: '/about' },
+                    { titleAr: 'خدمات الموظفين', titleEn: 'Employee Services', subtitleAr: 'خدمات إدارية للموظفين', subtitleEn: 'Services for employees', href: '/employee-services' },
+                    { titleAr: 'الخدمات الإلكترونية', titleEn: 'E-Services', subtitleAr: 'منصات رقمية للخدمات الصحية', subtitleEn: 'Digital health platforms', href: '/e-services' },
+                  ].map((card, idx) => (
+                    <a key={idx} href={card.href} className="group block bg-white rounded-2xl border border-gray-100 shadow-sm p-5 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(43,170,226,0.15)] hover:border-[#2BAAE2] transition-all duration-300 overflow-hidden relative">
+                      <div className="h-1 bg-[#2BAAE2] absolute top-0 left-0 right-0 rounded-t-2xl"></div>
+                      <div className="flex items-center justify-between gap-4 pt-2">
+                        <div className={`flex-1 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+                          <h3 className={`text-base font-bold text-gray-900 ${fontClass} group-hover:text-[#2BAAE2] transition-colors`}>{language === 'ar' ? card.titleAr : card.titleEn}</h3>
+                          <p className={`text-gray-500 text-sm ${fontClass} mt-0.5`}>{language === 'ar' ? card.subtitleAr : card.subtitleEn}</p>
+                        </div>
+                        <div className="w-9 h-9 rounded-full bg-[#2BAAE2]/10 flex items-center justify-center group-hover:bg-[#2BAAE2] transition-colors flex-shrink-0">
+                          <svg className="w-4 h-4 text-[#2BAAE2] group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ transform: language === 'ar' ? 'none' : 'rotate(180deg)' }}><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+                        </div>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
-        <section className="relative py-16 overflow-hidden">
-          <div className="absolute inset-0 bg-black/35 dark:bg-black/65 backdrop-blur-[2px]"></div>
-          <div className="absolute inset-0 najran-geometric-bg opacity-20"></div>
-          
-          <div className="relative">
-            <motion.div
-              
-              
-              
-            >
-              {isLoading ? (
-                <div className="flex justify-center py-12">
-                  <div className="w-12 h-12 border-4 border-white/30 border-t-[#2BAAE2] rounded-full animate-spin"></div>
-                </div>
-              ) : tweets.length > 0 ? (
-                <TweetsGrid tweets={tweets} language={language} />
-              ) : (
-                <div className="text-center py-12">
-                  <p className={`text-white/90 ${fontClass}`}>
-                    {language === 'ar' ? 'لا توجد أخبار حالياً' : 'No news available'}
-                  </p>
-                </div>
-              )}
-            </motion.div>
-            
-            <div className="container mx-auto px-4 mt-8 text-center">
+        {/* Tweets section */}
+        <section className="relative pt-28 md:pt-36 pb-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
+          <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+          <video autoPlay loop muted playsInline aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
+            <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
+          </video>
+
+          <div className="relative z-10">
+            {isLoading ? (
+              <div className="flex justify-center py-12">
+                <div className="w-12 h-12 border-4 border-gray-200 border-t-[#2BAAE2] rounded-full animate-spin"></div>
+              </div>
+            ) : tweets.length > 0 ? (
+              <TweetsGrid tweets={tweets} language={language} />
+            ) : (
+              <div className="text-center py-12">
+                <p className={`text-gray-500 ${fontClass}`}>
+                  {language === 'ar' ? 'لا توجد أخبار حالياً' : 'No news available'}
+                </p>
+              </div>
+            )}
+
+            <div className="container-custom mt-8 text-center">
               <a
                 href="https://twitter.com/NajranCluster"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`inline-flex items-center gap-2 px-6 py-3 bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-full border border-white/20 text-white hover:bg-white/20 transition-colors ${fontClass}`}
+                className={`inline-flex items-center gap-2 px-6 py-3 bg-white rounded-full border border-gray-200 text-gray-700 hover:bg-[#2BAAE2] hover:text-white hover:border-[#2BAAE2] transition-all duration-300 shadow-sm ${fontClass}`}
                 data-testid="link-twitter-profile"
               >
                 <SiX className="w-5 h-5" />
@@ -386,11 +404,10 @@ export default function News() {
             </div>
           </div>
         </section>
-
       </main>
 
       <Footer />
-      
+
       <style>{`
         @keyframes scrollNews {
           0% {

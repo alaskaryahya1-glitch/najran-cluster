@@ -740,22 +740,22 @@ export default function About() {
         </section>
 
         {/* ===== Cluster Services Section ===== */}
-        <section className="relative py-10 sm:py-12 md:py-16 overflow-hidden" style={{ backgroundColor: '#000e22' }}>
-          <div className="absolute inset-0 najran-geometric-bg opacity-20"></div>
+        <section className="relative py-10 sm:py-12 md:py-16 overflow-hidden" style={{ backgroundColor: '#ffffff' }}>
+          <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06]"></div>
 
           <div className="container-custom relative">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 p-6 md:p-8 text-center mb-6 sm:mb-8 md:mb-10 relative overflow-hidden"
+              className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 md:p-8 text-center mb-6 sm:mb-8 md:mb-10 relative overflow-hidden"
             >
               <CardStar size="lg" />
-              <div className="h-1.5 bg-[#2BAAE2] absolute top-0 left-0 right-0"></div>
-              <h2 className={`text-xl sm:text-2xl md:text-3xl font-bold ${fontClass} text-white mb-3 relative z-10`}>
+              <div className="h-1.5 bg-[#004d3a] absolute top-0 left-0 right-0"></div>
+              <h2 className={`text-xl sm:text-2xl md:text-3xl font-bold ${fontClass} text-gray-900 mb-3 relative z-10`}>
                 {t("home.clusterServices.title")}
               </h2>
-              <p className={`text-white text-lg ${fontClass} relative z-10`}>
+              <p className={`text-gray-500 text-lg ${fontClass} relative z-10`}>
                 {t("home.clusterServices.subtitle")}
               </p>
             </motion.div>
@@ -773,18 +773,18 @@ export default function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.05 }}
-                  className="bg-white/5 backdrop-blur-md rounded-2xl overflow-hidden border border-white/10 text-center relative"
+                  className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center relative"
                 >
                   <CardStar size="md" />
-                  <div className="h-1.5 bg-[#2BAAE2]"></div>
+                  <div className="h-1.5 bg-[#004d3a]"></div>
                   <div className="p-6 relative z-10">
-                    <div className="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                      <service.icon className="w-8 h-8 text-[#2BAAE2]" />
+                    <div className="w-16 h-16 bg-[#004d3a]/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                      <service.icon className="w-8 h-8 text-[#004d3a]" />
                     </div>
-                    <h3 className={`text-lg font-bold text-white ${fontClass} mb-3`}>
+                    <h3 className={`text-lg font-bold text-gray-900 ${fontClass} mb-3`}>
                       {t(`home.clusterServices.${service.id}.title`)}
                     </h3>
-                    <p className={`text-white/80 text-sm ${fontClass}`}>
+                    <p className={`text-gray-500 text-sm ${fontClass}`}>
                       {t(`home.clusterServices.${service.id}.desc`)}
                     </p>
                   </div>

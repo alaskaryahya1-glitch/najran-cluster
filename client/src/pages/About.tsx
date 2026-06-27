@@ -751,7 +751,7 @@ export default function About() {
               className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 md:p-8 text-center mb-6 sm:mb-8 md:mb-10 relative overflow-hidden"
             >
               <CardStar size="lg" />
-              <div className="h-1.5 bg-[#004d3a] absolute top-0 left-0 right-0"></div>
+              <div className="h-1.5 bg-[#2BAAE2] absolute top-0 left-0 right-0"></div>
               <h2 className={`text-xl sm:text-2xl md:text-3xl font-bold ${fontClass} text-gray-900 mb-3 relative z-10`}>
                 {t("home.clusterServices.title")}
               </h2>
@@ -776,10 +776,10 @@ export default function About() {
                   className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center relative"
                 >
                   <CardStar size="md" />
-                  <div className="h-1.5 bg-[#004d3a]"></div>
+                  <div className="h-1.5 bg-[#2BAAE2]"></div>
                   <div className="p-6 relative z-10">
-                    <div className="w-16 h-16 bg-[#004d3a]/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                      <service.icon className="w-8 h-8 text-[#004d3a]" />
+                    <div className="w-16 h-16 bg-[#2BAAE2]/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                      <service.icon className="w-8 h-8 text-[#2BAAE2]" />
                     </div>
                     <h3 className={`text-lg font-bold text-gray-900 ${fontClass} mb-3`}>
                       {t(`home.clusterServices.${service.id}.title`)}

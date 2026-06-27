@@ -123,7 +123,6 @@ export default function EServices() {
                     {t(platform.descKey)}
                   </p>
                   <div className="flex flex-col gap-2 mt-auto w-full">
-                    {/* Website button zone — always reserves space */}
                     <div className="w-full h-[42px]">
                       {platform.websiteUrl && (
                         <a
@@ -138,7 +137,6 @@ export default function EServices() {
                         </a>
                       )}
                     </div>
-                    {/* App pills zone — always reserves space */}
                     <div className="w-full h-[34px]">
                       {platform.hasApp && (
                         <div className="flex items-center gap-2 w-full h-full">

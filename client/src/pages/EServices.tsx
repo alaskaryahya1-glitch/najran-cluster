@@ -11,8 +11,6 @@ import sehhatyLogo from "@assets/IMG_8801_1767052201461.png";
 import anatLogo from "@assets/IMG_8802_1767052201461.png";
 import heroImage from "@assets/E1CAF13F-A529-4321-90B2-EDEA91B5D2D9_1767273959627.png";
 
-import { CardStar } from "@/components/BrandIcon";
-
 
 export default function EServices() {
   const { t, language } = useI18n();
@@ -101,67 +99,66 @@ export default function EServices() {
               </p>
             </motion.div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {platforms.map((platform, idx) => (
                 <motion.div
                   key={platform.titleKey}
-                  
-                  
-                  
-                  className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-xl overflow-hidden border border-white/20 text-center hover:bg-white/15 transition-all relative"
+                  className="bg-white rounded-[40px] overflow-hidden border border-gray-100 shadow-sm hover:-translate-y-2 hover:border-[#004d3a] hover:shadow-xl transition-all relative text-center"
                   data-testid={`eservice-card-${idx}`}
                 >
-                  <CardStar size="md" />
-                  <div className="h-1.5 bg-[#2BAAE2]"></div>
-                  <div className="p-6 relative z-10">
-                  <div className="w-24 h-24 mx-auto mb-4 flex items-center justify-center bg-white/20 rounded-xl p-3">
-                    <img 
-                      src={platform.src} 
-                      alt={t(platform.titleKey)}
-                      className="max-w-full max-h-full object-contain brightness-0 invert"
-                    />
-                  </div>
-                  <h4 className={`text-xl font-bold text-white ${fontClass} mb-2`}>
-                    {t(platform.titleKey)}
-                  </h4>
-                  <p className={`text-white/90 ${fontClass} text-sm mb-4`}>
-                    {t(platform.descKey)}
-                  </p>
-                  <div className="flex justify-center items-center gap-4 mt-4">
-                    {platform.websiteUrl && (
-                      <a 
-                        href={platform.websiteUrl} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center hover:bg-white/30 transition-all"
-                        data-testid={`link-website-${idx}`}
-                      >
-                        <ExternalLink className="w-5 h-5 text-[#2BAAE2]" />
-                      </a>
-                    )}
-                    {platform.hasApp && (
-                      <>
-                        <a 
-                          href={platform.appStoreUrl} 
-                          target="_blank" 
+                  <div className="h-1.5 bg-[#004d3a]" style={{ borderRadius: '40px 40px 0 0' }}></div>
+                  <div className="p-8">
+                    <div className="w-24 h-24 mx-auto mb-5 flex items-center justify-center bg-[#004d3a]/10 rounded-2xl p-3">
+                      <img
+                        src={platform.src}
+                        alt={t(platform.titleKey)}
+                        className="max-w-full max-h-full object-contain"
+                      />
+                    </div>
+                    <h4 className={`text-xl font-extrabold text-[#004d3a] ${fontClass} mb-3`}>
+                      {t(platform.titleKey)}
+                    </h4>
+                    <p className={`text-gray-500 ${fontClass} text-sm leading-relaxed mb-6`}>
+                      {t(platform.descKey)}
+                    </p>
+                    <div className="flex flex-col items-center gap-3">
+                      {platform.websiteUrl && (
+                        <a
+                          href={platform.websiteUrl}
+                          target="_blank"
                           rel="noopener noreferrer"
-                          className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center hover:bg-white/30 transition-all"
-                          data-testid={`link-appstore-${idx}`}
+                          className="bg-[#004d3a] text-white rounded-full px-8 py-3 font-bold flex items-center gap-2 hover:bg-[#003d2e] transition-colors"
+                          data-testid={`link-website-${idx}`}
                         >
-                          <SiApple className="w-5 h-5 text-[#2BAAE2]" />
+                          <ExternalLink className="w-4 h-4" />
+                          <span>{language === 'ar' ? 'زيارة الموقع' : 'Visit Website'}</span>
                         </a>
-                        <a 
-                          href={platform.playStoreUrl} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center hover:bg-white/30 transition-all"
-                          data-testid={`link-playstore-${idx}`}
-                        >
-                          <SiGoogleplay className="w-5 h-5 text-[#2BAAE2]" />
-                        </a>
-                      </>
-                    )}
-                  </div>
+                      )}
+                      {platform.hasApp && (
+                        <div className="flex items-center gap-3">
+                          <a
+                            href={platform.appStoreUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 bg-gray-100 text-gray-700 rounded-full px-4 py-2 text-sm font-medium hover:bg-[#004d3a] hover:text-white transition-colors"
+                            data-testid={`link-appstore-${idx}`}
+                          >
+                            <SiApple className="w-4 h-4" />
+                            <span>App Store</span>
+                          </a>
+                          <a
+                            href={platform.playStoreUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 bg-gray-100 text-gray-700 rounded-full px-4 py-2 text-sm font-medium hover:bg-[#004d3a] hover:text-white transition-colors"
+                            data-testid={`link-playstore-${idx}`}
+                          >
+                            <SiGoogleplay className="w-4 h-4" />
+                            <span>Google Play</span>
+                          </a>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </motion.div>
               ))}

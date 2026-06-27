@@ -31,29 +31,18 @@ export default function CareModel() {
 
   return (
     <div className="min-h-screen">
-      {/* Full-page fixed video background */}
-      <div className="fixed inset-0 z-0">
-        <video
-          src="https://cmsapi.health.sa/background.mp4-n92g3n.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60" />
-      </div>
       <Header />
 
-      <main className="care-model-content relative z-10">
+      <main className="care-model-content">
         {/* Hero */}
-        <section className="relative py-24 overflow-hidden">
+        <section className="relative py-24 overflow-hidden" style={{ backgroundColor: '#005d47', minHeight: '40vh' }}>
+          <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover opacity-20">
+            <source src="https://cmsapi.health.sa/background.mp4-n92g3n.mp4" type="video/mp4" />
+          </video>
           <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
 
           <div className="container-custom relative z-20">
             <motion.div
-
-
               className="text-center mb-8"
             >
               <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
@@ -70,20 +59,21 @@ export default function CareModel() {
         </section>
 
         {/* أبعاد الصحة */}
-        <section className="relative py-10 sm:py-12 md:py-16 overflow-hidden">
-          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
+        <section className="relative py-10 sm:py-12 md:py-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
+          <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+          <video autoPlay loop muted playsInline aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
+            <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
+          </video>
 
-          <div className="container-custom relative">
+          <div className="container-custom relative z-10">
             <motion.div
-
-
-
               className="text-center mb-8 sm:mb-10 md:mb-12"
             >
-              <h2 className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold ${fontClass} text-white mb-4`}>
+              <h2 className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold ${fontClass} text-gray-900 mb-4`}>
                 {t("home.healthModel.title")}
               </h2>
-              <p className={`text-white/70 mx-auto ${fontClass} whitespace-nowrap`}>
+              <p className={`text-gray-600 mx-auto ${fontClass} whitespace-nowrap`}>
                 {t("home.healthModel.subtitle")}
               </p>
             </motion.div>
@@ -96,27 +86,23 @@ export default function CareModel() {
               ].map((pillar, idx) => (
                 <motion.div
                   key={pillar.id}
-
-
-
-
-                  className="group bg-black/25 backdrop-blur-md rounded-2xl overflow-hidden border border-white/15 shadow-sm hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(43,170,226,0.2)] hover:border-[#2BAAE2] transition-all duration-[400ms] relative"
+                  className="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(43,170,226,0.2)] hover:border-[#2BAAE2] transition-all duration-[400ms] relative"
                   style={{ borderRadius: '40px' }}
                 >
                   <CardStar size="md" />
                   <div className="h-1.5 bg-[#2BAAE2]" style={{ borderRadius: '40px 40px 0 0' }}></div>
                   <div className="p-6 relative z-10">
-                    <div className="w-16 h-16 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl flex items-center justify-center mx-auto mb-4 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
+                    <div className="w-16 h-16 bg-[#2BAAE2]/10 border border-[#2BAAE2]/20 rounded-3xl flex items-center justify-center mx-auto mb-4 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
                       <pillar.icon className="w-8 h-8 text-[#2BAAE2] group-hover:text-white transition-colors" />
                     </div>
-                    <h3 className={`text-xl font-bold text-center text-white mb-4 ${fontClass}`}>
+                    <h3 className={`text-xl font-bold text-center text-gray-900 mb-4 ${fontClass}`}>
                       {t(`home.healthModel.${pillar.id}.title`)}
                     </h3>
                     <ul className={`space-y-2 ${fontClass}`}>
                       {[1, 2, 3].map((num) => (
                         <li key={num} className="flex items-start gap-2">
                           <div className="w-2 h-2 bg-[#2BAAE2] rounded-full mt-2 flex-shrink-0"></div>
-                          <span className="text-white/70 text-sm">
+                          <span className="text-gray-600 text-sm">
                             {t(`home.healthModel.${pillar.id}.item${num}`)}
                           </span>
                         </li>
@@ -128,15 +114,12 @@ export default function CareModel() {
             </div>
 
             <motion.div
-
-
-
               className="text-center mb-12"
             >
-              <h2 className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold ${fontClass} text-white mb-4`}>
+              <h2 className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold ${fontClass} text-gray-900 mb-4`}>
                 {t("home.careSystems.title")}
               </h2>
-              <p className={`text-white/70 max-w-2xl mx-auto ${fontClass}`}>
+              <p className={`text-gray-600 max-w-2xl mx-auto ${fontClass}`}>
                 {t("home.careSystems.subtitle")}
               </p>
             </motion.div>
@@ -145,22 +128,18 @@ export default function CareModel() {
               {careSystemsData.map((system, idx) => (
                 <motion.button
                   key={system.id}
-
-
-
-
                   onClick={() => setSelectedCareSystem(selectedCareSystem === system.id ? null : system.id)}
                   className={`flex flex-col items-center rounded-2xl overflow-hidden transition-all border ${
                     selectedCareSystem === system.id
                       ? 'bg-[#2BAAE2] text-white shadow-lg scale-105 border-[#2BAAE2]'
-                      : 'bg-white/10 text-white hover:-translate-y-1 hover:border-[#2BAAE2] border-white/15 shadow-sm'
+                      : 'bg-white text-gray-900 hover:-translate-y-1 hover:border-[#2BAAE2] border-gray-100 shadow-sm'
                   }`}
                   data-testid={`button-care-system-${system.id}`}
                 >
                   <div className="h-1.5 w-full bg-[#2BAAE2]"></div>
                   <div className="flex flex-col items-center gap-2 px-6 py-4">
                     <system.icon className={`w-8 h-8 ${selectedCareSystem === system.id ? 'text-white' : 'text-[#2BAAE2]'}`} />
-                    <span className={`text-sm font-medium text-center ${fontClass} ${selectedCareSystem === system.id ? 'text-white' : 'text-white/70'}`}>
+                    <span className={`text-sm font-medium text-center ${fontClass} ${selectedCareSystem === system.id ? 'text-white' : 'text-gray-600'}`}>
                       {t(`home.careSystems.${system.id}.title`)}
                     </span>
                     <ChevronDown
@@ -177,10 +156,9 @@ export default function CareModel() {
               {selectedCareSystem && (
                 <motion.div
                   key={selectedCareSystem}
-
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
-                  className="bg-black/25 backdrop-blur-md rounded-2xl overflow-hidden border border-white/15 shadow-sm relative"
+                  className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm relative"
                   style={{ borderRadius: '40px' }}
                 >
                   <CardStar size="lg" />
@@ -188,26 +166,26 @@ export default function CareModel() {
                   <div className="p-8 relative z-10">
                     <div className="flex justify-between items-start mb-6">
                       <div>
-                        <h3 className={`text-2xl font-bold text-white ${fontClass} mb-2`}>
+                        <h3 className={`text-2xl font-bold text-gray-900 ${fontClass} mb-2`}>
                           {t(`home.careSystems.${selectedCareSystem}.title`)}
                         </h3>
-                        <p className={`text-white/70 ${fontClass}`}>
+                        <p className={`text-gray-600 ${fontClass}`}>
                           {t(`home.careSystems.${selectedCareSystem}.desc`)}
                         </p>
                       </div>
                       <button
                         onClick={() => setSelectedCareSystem(null)}
-                        className="p-2 rounded-full hover:bg-white/10 transition-colors"
+                        className="p-2 rounded-full hover:bg-gray-100 transition-colors"
                         data-testid="button-close-care-system"
                       >
-                        <X className="w-5 h-5 text-white/60" />
+                        <X className="w-5 h-5 text-gray-500" />
                       </button>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                       {Array.from({ length: careSystemsData.find(s => s.id === selectedCareSystem)?.initCount || 3 }).map((_, idx) => (
-                        <div key={idx} className="bg-white/8 rounded-xl p-4 border border-white/15">
-                          <p className={`text-white/70 text-sm ${fontClass}`}>
+                        <div key={idx} className="bg-gray-50 rounded-xl p-4 border border-gray-100">
+                          <p className={`text-gray-600 text-sm ${fontClass}`}>
                             {t(`home.careSystems.${selectedCareSystem}.init${idx + 1}`)}
                           </p>
                         </div>

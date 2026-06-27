@@ -303,96 +303,84 @@ function GlassStarService({ service, index, language, fontClass, size = "md", on
 
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0, rotate: -45 }}
-      animate={{ opacity: 1, scale: 1, rotate: 0 }}
-      transition={{ 
-        delay: index * 0.1,
+      initial={{ opacity: 0, scale: 0.8, y: 20 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      transition={{
+        delay: index * 0.07,
         type: "spring",
         stiffness: 150,
         damping: 15
       }}
-      whileHover={{ scale: 1.08, y: -8 }}
+      whileHover={{ scale: 1.06, y: -8 }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       onClick={handleClick}
-      className={`relative cursor-pointer group ${sizes[size].container} bg-black/25 backdrop-blur-md rounded-2xl overflow-hidden transition-all duration-300 ${isHovered ? 'border-2 border-[#2BAAE2]/60 shadow-lg' : 'border border-white/15 shadow-sm'}`}
+      className={`relative cursor-pointer group ${sizes[size].container} rounded-2xl overflow-hidden transition-all duration-300 ${
+        isHovered
+          ? 'bg-[#2BAAE2] border-2 border-[#2BAAE2] shadow-[0_12px_32px_rgba(43,170,226,0.35)]'
+          : 'bg-white border border-gray-100 shadow-sm'
+      }`}
       data-testid={`service-star-${service.id}`}
     >
-      {/* All services use star shape */}
-      <>
-          {/* Star-based service card (original design) */}
-          {/* Glow Effect - hidden on light bg */}
-          <motion.div
-            className="absolute inset-0 z-0"
-            animate={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <img src={starLogo} alt="" className="w-full h-full object-contain" />
-          </motion.div>
+      {/* Blue top accent bar */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-[#2BAAE2] z-30" />
 
-          {/* Star - dark watermark on light bg */}
-          <div className="absolute inset-[5%] z-10">
-            <img
-              src={starLogo}
-              alt=""
-              className="w-full h-full object-contain transition-all duration-300"
-              style={{
-                filter: "brightness(0) invert(1)",
-                opacity: isHovered ? 0.15 : 0.07,
-              }}
-            />
-          </div>
-          
-                    
-          {/* Glass Overlay Content */}
-          <div 
-            className="absolute inset-0 z-20 flex items-center justify-center"
+      {/* Star watermark */}
+      <div className="absolute inset-[5%] z-10">
+        <img
+          src={starLogo}
+          alt=""
+          className="w-full h-full object-contain transition-all duration-300"
+          style={{
+            filter: isHovered ? "brightness(0) invert(1)" : "brightness(0)",
+            opacity: isHovered ? 0.12 : 0.04,
+          }}
+        />
+      </div>
+
+      {/* Content */}
+      <div className="absolute inset-0 z-20 flex items-center justify-center">
+        <motion.div
+          animate={{ y: isHovered ? -3 : 0 }}
+          transition={{ duration: 0.3 }}
+          className="flex flex-col items-center text-center px-3"
+        >
+          <motion.div
+            animate={{
+              scale: isHovered ? 1.1 : 1,
+              rotate: isHovered ? -5 : 0,
+            }}
+            transition={{ duration: 0.3 }}
+            className="mb-2"
           >
-            <motion.div 
-              animate={{ y: isHovered ? -3 : 0 }}
-              transition={{ duration: 0.3 }}
-              className="flex flex-col items-center text-center px-4"
-            >
-              <motion.div
-                animate={{ 
-                  scale: isHovered ? 1.1 : 1,
-                  rotate: isHovered ? 5 : 0
+            {hasLogo && logoSrc ? (
+              <img
+                src={logoSrc}
+                alt={language === 'ar' ? service.titleAr : service.titleEn}
+                className={`${sizes[size].logo} object-contain drop-shadow transition-all duration-300`}
+                style={{
+                  filter: isHovered
+                    ? "brightness(0) invert(1) drop-shadow(0 2px 8px rgba(255,255,255,0.3))"
+                    : "none",
                 }}
-                transition={{ duration: 0.3 }}
-                className="mb-2"
-              >
-                {hasLogo && logoSrc ? (
-                  <img
-                    src={logoSrc}
-                    alt={language === 'ar' ? service.titleAr : service.titleEn}
-                    className={`${sizes[size].logo} object-contain drop-shadow-lg transition-all duration-300`}
-                    style={{
-                      filter: isOutlookLogo
-                        ? isHovered
-                          ? "brightness(1.15) drop-shadow(0 2px 8px rgba(41,181,232,0.3))"
-                          : "brightness(1)"
-                        : isHovered
-                          ? "brightness(0) invert(1) brightness(1.2) drop-shadow(0 2px 8px rgba(255,255,255,0.3))"
-                          : "brightness(0) invert(1)"
-                    }}
-                  />
-                ) : (
-                  <IconComponent className={`${sizes[size].icon} text-[#2BAAE2] drop-shadow-lg transition-all duration-300 group-hover:text-white`} />
-                )}
-              </motion.div>
-              <span className={`text-white font-semibold ${sizes[size].text} ${fontClass} leading-tight max-w-[90%] line-clamp-2 break-words`}>
-                {language === 'ar' ? service.titleAr : service.titleEn}
-              </span>
-            </motion.div>
-          </div>
-        </>
-      
-      {/* Floating Animation */}
-      <motion.div
-        className="absolute inset-0 z-0 pointer-events-none"
-        animate={{ y: [0, -5, 0] }}
-        transition={{ duration: 4, repeat: Infinity, delay: index * 0.3 }}
-      />
+              />
+            ) : (
+              <IconComponent
+                className={`${sizes[size].icon} transition-all duration-300 ${
+                  isHovered ? 'text-white' : 'text-[#2BAAE2]'
+                }`}
+              />
+            )}
+          </motion.div>
+          <span
+            className={`font-semibold ${sizes[size].text} ${fontClass} leading-tight max-w-[90%] line-clamp-2 break-words transition-colors duration-300 ${
+              isHovered ? 'text-white' : 'text-gray-700'
+            }`}
+          >
+            {language === 'ar' ? service.titleAr : service.titleEn}
+          </span>
+        </motion.div>
+      </div>
     </motion.div>
   );
 }
@@ -523,7 +511,7 @@ export default function EmployeeServices() {
 
         {/* Loading State */}
         {isLoading && (
-          <section className="relative pt-32 pb-20" style={{ backgroundColor: '#f7f8f9' }}>
+          <section className="relative pt-28 md:pt-36 pb-20" style={{ backgroundColor: '#f7f8f9' }}>
             <div className="flex flex-col items-center justify-center">
               <Loader2 className="w-12 h-12 text-[#2BAAE2] animate-spin mb-4" />
               <p className={`text-gray-600 ${fontClass}`}>{t("employeeServices.loading")}</p>
@@ -548,7 +536,7 @@ export default function EmployeeServices() {
 
         {/* Info Services */}
         {!isLoading && !error && infoServices.length > 0 && (
-          <section className="relative py-12 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
+          <section className="relative pt-28 md:pt-36 pb-12 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
             <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
             <video autoPlay loop muted playsInline aria-hidden="true"
               className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">

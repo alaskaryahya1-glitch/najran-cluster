@@ -189,7 +189,7 @@ export function Header() {
   const fontClass = language === 'ar' ? 'font-arabic' : 'font-sans';
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-300 border-b ${scrolled ? 'bg-white shadow-md border-gray-100' : 'backdrop-blur-md bg-white/10 border-white/10'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-300 border-b ${scrolled ? 'bg-white shadow-md border-gray-100' : 'bg-transparent border-transparent'}`}>
 
       <div className="container-custom">
         <div className={`flex items-center justify-between h-[32px] lg:h-[38px] gap-4 ${scrolled ? 'text-gray-800' : 'text-white'}`}>

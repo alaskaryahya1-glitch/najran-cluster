@@ -3,7 +3,6 @@ import { useI18n } from "@/lib/i18n";
 import { useSEO } from "@/hooks/useSEO";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import heroImage from "@assets/Najran_fort,_Saudi_Arabia___Traditional_Mud_Najran…_1768895239595.jpg";
 import healthTransformLogo from "@assets/logo_1767222621475.png";
 import beforeTransformImg from "@assets/IMG_8810_1767053697941.png";
 import afterTransformImg from "@assets/IMG_8811_1767053697941.png";
@@ -72,28 +71,28 @@ export default function Transformation() {
   }, language);
 
   return (
-    <div className="min-h-screen relative">
-      <div className="fixed inset-0 z-0">
-        <img
-          src={heroImage}
-          alt=""
-          data-nosnippet="true"
-          className="w-full h-full object-cover dark-bg-image"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/35 to-black/45" />
-      </div>
-
+    <div className="min-h-screen">
       <Header />
 
-      <main className="relative z-10 transformation-page-content">
+      <main className="transformation-page-content">
         <section className="relative py-24 overflow-hidden">
-          <div className="absolute inset-0 bg-black/15 backdrop-blur-[2px]"></div>
-          <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+          <div className="absolute inset-0 z-0">
+            <video
+              src="https://cmsapi.health.sa/HHC1-7tba9j.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60" />
+          </div>
+          <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none z-10"></div>
           
-          <div className="container-custom relative">
+          <div className="container-custom relative z-20">
             <motion.div
-              
-              
+
+
               className="text-center mb-8"
             >
               <div className="flex justify-center mb-4">

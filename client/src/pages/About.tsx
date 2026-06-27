@@ -591,7 +591,7 @@ export default function About() {
                 <img
                   src={clusterLogo}
                   alt={t("header.clusterName")}
-                  className="h-16 sm:h-20 w-auto object-contain"
+                  className="w-full max-w-sm h-auto object-contain"
                 />
 
                 <p className={`text-lg text-gray-600 leading-relaxed ${fontClass}`}>

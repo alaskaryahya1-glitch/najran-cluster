@@ -189,10 +189,10 @@ export function Header() {
   const fontClass = language === 'ar' ? 'font-arabic' : 'font-sans';
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-300 border-b ${scrolled ? 'bg-white/70 backdrop-blur-md shadow-lg border-white/30' : 'bg-transparent border-transparent'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-300 border-b ${scrolled ? 'bg-white/70 backdrop-blur-md shadow-lg border-white/30' : 'backdrop-blur-md bg-white/10 border-white/10'}`}>
 
       <div className="container-custom">
-        <div className={`flex items-center justify-between h-[32px] lg:h-[38px] gap-4 ${scrolled ? 'text-gray-800' : 'text-white mt-3'}`}>
+        <div className={`flex items-center justify-between h-[32px] lg:h-[38px] gap-4 ${scrolled ? 'text-gray-800' : 'text-white'}`}>
 
           {/* Hamburger - RIGHT (RTL start) - all devices */}
           <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>

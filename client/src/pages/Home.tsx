@@ -295,53 +295,51 @@ export default function Home() {
   const textAlign = language === 'ar' ? 'text-right' : 'text-left';
 
   return (
-    <div className="min-h-screen flex flex-col overflow-x-hidden">
+    <div className="min-h-screen flex flex-col overflow-x-hidden relative">
       <h1 className="sr-only">
         {language === 'ar' ? 'تجمع نجران الصحي' : 'Najran Health Cluster'}
       </h1>
+      {/* Fixed Background */}
+      <div className="fixed inset-0 z-0">
+        {/* Fallback: Image Slideshow (shown if video fails) */}
+        {heroImages.slice(0, 3).map((img, idx) => (
+          <motion.img
+            key={idx}
+            src={img}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover"
+            initial={{ opacity: idx === 0 ? 1 : 0 }}
+            animate={{ opacity: currentSlide % 3 === idx ? 1 : 0 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+          />
+        ))}
+        {/* Video: all devices - JS play() forces autoplay on mobile */}
+        {!videoFailed && (
+          <video
+            ref={videoRef}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+            poster={heroImages[0]}
+            onError={() => setVideoFailed(true)}
+          >
+            <source src="https://cmsapi.health.sa/HHC1-7tba9j.mp4" type="video/mp4" />
+          </video>
+        )}
+        {/* Permanent Dark Overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/35 to-black/45" />
+      </div>
 
       <Header />
 
-      <main className="flex-1">
-        {/* Full-Screen Hero Section - Split Screen */}
-        <section ref={heroRef} className="relative h-[100svh] min-h-[500px] sm:min-h-[600px] overflow-hidden bg-[#005d47]">
-
-          {/* Left video panel: full-width mobile, 65% desktop */}
-          <div className="absolute inset-y-0 left-0 w-full lg:w-[65%] z-0">
-            {heroImages.slice(0, 3).map((img, idx) => (
-              <motion.img
-                key={idx}
-                src={img}
-                alt=""
-                aria-hidden="true"
-                className="absolute inset-0 w-full h-full object-cover"
-                initial={{ opacity: idx === 0 ? 1 : 0 }}
-                animate={{ opacity: currentSlide % 3 === idx ? 1 : 0 }}
-                transition={{ duration: 1.5, ease: "easeInOut" }}
-              />
-            ))}
-            {!videoFailed && (
-              <video
-                ref={videoRef}
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="absolute inset-0 w-full h-full object-cover"
-                poster={heroImages[0]}
-                onError={() => setVideoFailed(true)}
-              >
-                <source src="https://cmsapi.health.sa/HHC1-7tba9j.mp4" type="video/mp4" />
-              </video>
-            )}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/35 to-black/45" />
-          </div>
-
-          {/* Angled dark right panel — desktop only */}
-          <div className="absolute inset-y-0 right-0 hidden lg:block w-[45%] bg-[#005d47] transform skew-x-[-10deg] translate-x-24 z-10 shadow-[-30px_0_50px_rgba(0,0,0,0.3)] border-l-4 border-white/10"></div>
-
-          {/* Gradient overlay for mobile readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/25 z-[1] pointer-events-none" />
+      <main className="flex-1 relative z-10">
+        {/* Full-Screen Hero Section - Health Holding Style */}
+        <section ref={heroRef} className="relative h-[100svh] min-h-[500px] sm:min-h-[600px]">
+          {/* Additional Hero Overlay for better contrast */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/25" />
           
           {/* Vertical Navigation Dots - Left Side */}
           <div className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 flex flex-col items-center gap-3">
@@ -376,11 +374,9 @@ export default function Home() {
 
           {/* Hero Content */}
           <motion.div
-            className="container-custom relative h-full flex flex-col justify-center items-center text-center px-4 pt-64 sm:pt-72 md:pt-72 lg:pt-80 pb-8 md:pb-32 z-20"
+            className="container-custom relative h-full flex flex-col justify-center items-center text-center px-4 pt-64 sm:pt-72 md:pt-72 lg:pt-80 pb-8 md:pb-32 z-10"
             style={{ y: heroContentY, opacity: heroOpacity }}
           >
-            {/* Golden accent line */}
-            <div className="h-1.5 w-20 bg-[#c5a059] rounded-full mb-4" />
 
             {/* Dynamic Headline based on slide */}
             <AnimatePresence mode="wait">

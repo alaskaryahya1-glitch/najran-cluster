@@ -530,6 +530,18 @@ img, video {
   background-size: 60px 60px;
 }
 
+@keyframes geometric-drift {
+  0%   { background-position: 0 0; }
+  100% { background-position: 60px 60px; }
+}
+
+.najran-geometric-bg-animated {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cpolygon points='40,0 80,40 40,80 0,40' fill='none' stroke='%23ffffff' stroke-width='1' opacity='0.3'/%3E%3Cpolygon points='40,10 70,40 40,70 10,40' fill='none' stroke='%23ffffff' stroke-width='0.5' opacity='0.2'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 60px 60px;
+  animation: geometric-drift 18s linear infinite;
+}
+
 /* نسخة فاتحة للخلفية البيضاء */
 .najran-geometric-bg-light {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cpolygon points='40,0 80,40 40,80 0,40' fill='none' stroke='%23004d3a' stroke-width='1'/%3E%3Cpolygon points='40,10 70,40 40,70 10,40' fill='none' stroke='%23004d3a' stroke-width='0.5'/%3E%3C/svg%3E");

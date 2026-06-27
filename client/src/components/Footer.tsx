@@ -53,10 +53,10 @@ export function Footer() {
   ];
 
   return (
-    <div style={{ backgroundColor: '#0c1c28' }}>
+    <div style={{ backgroundColor: '#000e22' }}>
     <footer className="text-white relative overflow-hidden bg-black/25 backdrop-blur-md border-t border-white/10">
-      {/* Geometric pattern */}
-      <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
+      {/* Animated geometric pattern */}
+      <div className="absolute inset-0 najran-geometric-bg-animated opacity-20 pointer-events-none"></div>
 
       {/* Partners Logos Row */}
       <div className="border-b border-white/10 relative z-10">

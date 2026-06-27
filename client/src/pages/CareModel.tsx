@@ -30,24 +30,25 @@ export default function CareModel() {
   }, language);
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#0c1c28' }}>
+    <div className="min-h-screen">
+      {/* Full-page fixed video background */}
+      <div className="fixed inset-0 z-0">
+        <video
+          src="https://cmsapi.health.sa/background.mp4-n92g3n.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60" />
+      </div>
       <Header />
 
-      <main className="care-model-content">
+      <main className="care-model-content relative z-10">
         {/* Hero */}
         <section className="relative py-24 overflow-hidden">
-          <div className="absolute inset-0 z-0">
-            <video
-              src="https://cmsapi.health.sa/background.mp4-n92g3n.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60" />
-          </div>
-          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none z-10"></div>
+          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
 
           <div className="container-custom relative z-20">
             <motion.div
@@ -69,7 +70,7 @@ export default function CareModel() {
         </section>
 
         {/* أبعاد الصحة */}
-        <section className="relative py-10 sm:py-12 md:py-16 overflow-hidden" style={{ backgroundColor: '#0c1c28' }}>
+        <section className="relative py-10 sm:py-12 md:py-16 overflow-hidden">
           <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
 
           <div className="container-custom relative">
@@ -196,16 +197,16 @@ export default function CareModel() {
                       </div>
                       <button
                         onClick={() => setSelectedCareSystem(null)}
-                        className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+                        className="p-2 rounded-full hover:bg-white/10 transition-colors"
                         data-testid="button-close-care-system"
                       >
-                        <X className="w-5 h-5 text-gray-500" />
+                        <X className="w-5 h-5 text-white/60" />
                       </button>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                       {Array.from({ length: careSystemsData.find(s => s.id === selectedCareSystem)?.initCount || 3 }).map((_, idx) => (
-                        <div key={idx} className="bg-white/8 rounded-xl p-4 border border-gray-100">
+                        <div key={idx} className="bg-white/8 rounded-xl p-4 border border-white/15">
                           <p className={`text-white/70 text-sm ${fontClass}`}>
                             {t(`home.careSystems.${selectedCareSystem}.init${idx + 1}`)}
                           </p>

@@ -533,41 +533,39 @@ export default function Home() {
             </motion.div>
           </motion.div>
 
-          {/* Navigation Cards at Bottom */}
-          <div className="absolute bottom-0 left-0 right-0 z-[100] hidden md:block translate-y-8">
-            <div className="container-custom pb-4">
-              <div className="grid grid-cols-3 gap-4">
-                {navigationCards.map((card, idx) => (
-                  <motion.div
-                    key={card.titleKey}
-                    
-                    
-                    transition={{ delay: 0.8 + idx * 0.1 }}
-                  >
-                    <Link 
-                      href={card.href}
-                      className="block bg-black/20 dark:bg-black/50 backdrop-blur-md border border-white/20 rounded-xl overflow-hidden hover:bg-white/20 transition-all hover:-translate-y-1 group"
-                      data-testid={`nav-card-${idx}`}
+          {/* Navigation Cards at Bottom — white panel over video */}
+          <div className="absolute bottom-0 left-0 right-0 z-[100] hidden md:block">
+            <div className="bg-white rounded-t-[40px] shadow-[0_-12px_40px_rgba(0,0,0,0.18)] px-8 pt-8 pb-0">
+              <div className="container-custom">
+                <div className="grid grid-cols-3 gap-6">
+                  {navigationCards.map((card, idx) => (
+                    <motion.div
+                      key={card.titleKey}
+                      transition={{ delay: 0.8 + idx * 0.1 }}
                     >
-                      <div className="h-1.5 bg-[#2BAAE2]"></div>
-                      <div className="p-5">
-                      <div className="flex items-center justify-between gap-4">
-                        <div className={`flex-1 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                          <h3 className={`text-lg font-bold text-white ${fontClass}`}>
-                            {t(card.titleKey)}
-                          </h3>
-                          <p className={`text-white/90 text-sm ${fontClass}`}>
-                            {t(card.subtitleKey)}
-                          </p>
+                      <Link
+                        href={card.href}
+                        className="group block bg-white rounded-2xl border border-gray-100 shadow-sm p-5 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(43,170,226,0.15)] hover:border-[#2BAAE2] transition-all duration-300 overflow-hidden relative"
+                        data-testid={`nav-card-${idx}`}
+                      >
+                        <div className="h-1 bg-[#2BAAE2] absolute top-0 left-0 right-0 rounded-t-2xl"></div>
+                        <div className="flex items-center justify-between gap-4 pt-2">
+                          <div className={`flex-1 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+                            <h3 className={`text-base font-bold text-gray-900 ${fontClass} group-hover:text-[#2BAAE2] transition-colors`}>
+                              {t(card.titleKey)}
+                            </h3>
+                            <p className={`text-gray-500 text-sm ${fontClass} mt-0.5`}>
+                              {t(card.subtitleKey)}
+                            </p>
+                          </div>
+                          <div className="w-9 h-9 rounded-full bg-[#2BAAE2]/10 flex items-center justify-center group-hover:bg-[#2BAAE2] transition-colors flex-shrink-0">
+                            <ArrowLeft className={`w-4 h-4 text-[#2BAAE2] group-hover:text-white transition-colors brand-icon ${language === 'ar' ? '' : 'rotate-180'}`} />
+                          </div>
                         </div>
-                        <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
-                          <ArrowLeft className={`w-5 h-5 text-[#2BAAE2] transition-colors brand-icon ${language === 'ar' ? '' : 'rotate-180'}`} />
-                        </div>
-                      </div>
-                      </div>
-                    </Link>
-                  </motion.div>
-                ))}
+                      </Link>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -581,7 +579,7 @@ export default function Home() {
             <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
           </video>
 
-          <div className="container-custom relative z-10 py-16 md:py-20">
+          <div className="container-custom relative z-10 pt-28 md:pt-36 pb-16 md:pb-20">
             {/* Vision & Mission Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Vision */}

@@ -91,14 +91,15 @@ export function Footer() {
               <img
                 src={whiteLogo}
                 alt={t("header.clusterName")}
-                className="h-16 sm:h-20 w-auto object-contain mb-1 brightness-0"
+                className="h-16 sm:h-20 w-auto object-contain mb-1"
+                style={{ filter: 'brightness(0) saturate(100%) invert(62%) sepia(46%) saturate(533%) hue-rotate(163deg) brightness(98%) contrast(91%)' }}
               />
               <p className={`text-[#2BAAE2] text-[10px] ${fontClass} translate-x-1 sm:-translate-x-2`} style={{ marginTop: '-16px' }}>
                 {language === 'ar' ? 'شركة الصحة القابضة' : 'Health Holding Co.'}
               </p>
             </div>
 
-            <p className={`text-gray-500 text-sm leading-relaxed mb-6 ${fontClass}`}>
+            <p className={`text-[#2BAAE2] text-sm leading-relaxed mb-6 ${fontClass}`}>
               {language === 'ar'
                 ? 'يقدم تجمع نجران الصحي خدمات الرعاية الصحية لأكثر من 495 ألف مستفيد في منطقة نجران.'
                 : 'Najran Health Cluster provides healthcare services to over 495,000 beneficiaries in the Najran region.'}
@@ -127,7 +128,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="col-span-1">
-            <h4 className={`text-gray-900 font-bold text-lg mb-6 border-r-4 border-[#005d47]/40 pr-4 ${fontClass}`}>
+            <h4 className={`text-[#2BAAE2] font-bold text-lg mb-6 border-r-4 border-[#2BAAE2]/30 pr-4 ${fontClass}`}>
               {t("footer.quickLinks")}
             </h4>
             <ul className={`space-y-2.5 ${fontClass}`}>
@@ -147,7 +148,7 @@ export function Footer() {
 
           {/* Other Links */}
           <div className="col-span-1">
-            <h4 className={`text-gray-900 font-bold text-lg mb-6 border-r-4 border-[#005d47]/40 pr-4 ${fontClass}`}>
+            <h4 className={`text-[#2BAAE2] font-bold text-lg mb-6 border-r-4 border-[#2BAAE2]/30 pr-4 ${fontClass}`}>
               {language === 'ar' ? 'روابط أخرى' : 'Other Links'}
             </h4>
             <ul className={`space-y-2.5 ${fontClass}`}>
@@ -168,7 +169,7 @@ export function Footer() {
 
           {/* Contact */}
           <div className="col-span-2 lg:col-span-1">
-            <h4 className={`text-gray-900 font-bold text-lg mb-6 border-r-4 border-[#005d47]/40 pr-4 ${fontClass}`}>
+            <h4 className={`text-[#2BAAE2] font-bold text-lg mb-6 border-r-4 border-[#2BAAE2]/30 pr-4 ${fontClass}`}>
               {t("footer.contactUs")}
             </h4>
             <div className={`space-y-4 ${fontClass}`}>

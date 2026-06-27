@@ -87,7 +87,7 @@ export default function Transformation() {
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60" />
           </div>
-          <div className="absolute inset-0 najran-geometric-bg opacity-[0.06] pointer-events-none z-10"></div>
+          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none z-10"></div>
           
           <div className="container-custom relative z-20">
             <motion.div
@@ -117,7 +117,7 @@ export default function Transformation() {
         {/* 1. محاور رؤية 2030 */}
         <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#0c1c28' }}>
           <div className="absolute inset-0 pointer-events-none"></div>
-          <div className="absolute inset-0 najran-geometric-bg opacity-[0.06] pointer-events-none"></div>
+          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
           
           <div className="container-custom relative">
             <motion.div
@@ -167,7 +167,7 @@ export default function Transformation() {
         {/* 2. برنامج تحول القطاع الصحي */}
         <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#0c1c28' }}>
           <div className="absolute inset-0 pointer-events-none"></div>
-          <div className="absolute inset-0 najran-geometric-bg opacity-[0.06] pointer-events-none"></div>
+          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
           
           <div className="container-custom relative">
             <motion.div
@@ -217,7 +217,7 @@ export default function Transformation() {
         {/* 3. ركائز برنامج التحول الصحي */}
         <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#0c1c28' }}>
           <div className="absolute inset-0 pointer-events-none"></div>
-          <div className="absolute inset-0 najran-geometric-bg opacity-[0.06] pointer-events-none"></div>
+          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
           
           <div className="container-custom relative">
             <motion.div
@@ -262,7 +262,7 @@ export default function Transformation() {
         {/* 4. كيف نحقق التحول الصحي */}
         <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#0c1c28' }}>
           <div className="absolute inset-0 pointer-events-none"></div>
-          <div className="absolute inset-0 najran-geometric-bg opacity-[0.06] pointer-events-none"></div>
+          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
           
           <div className="container-custom relative">
             <motion.div
@@ -307,7 +307,7 @@ export default function Transformation() {
         {/* 5. الأبعاد الاستراتيجية للتحول الصحي */}
         <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#0c1c28' }}>
           <div className="absolute inset-0 pointer-events-none"></div>
-          <div className="absolute inset-0 najran-geometric-bg opacity-[0.06] pointer-events-none"></div>
+          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
           
           <div className="container-custom relative">
             <motion.div
@@ -358,7 +358,7 @@ export default function Transformation() {
         {/* 6. وضع القطاع الصحي */}
         <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#0c1c28' }}>
           <div className="absolute inset-0 pointer-events-none"></div>
-          <div className="absolute inset-0 najran-geometric-bg opacity-[0.06] pointer-events-none"></div>
+          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
           
           <div className="container-custom relative">
             <motion.div
@@ -556,7 +556,7 @@ export default function Transformation() {
         {/* 7. شركة الصحة القابضة */}
         <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#0c1c28' }}>
           <div className="absolute inset-0 pointer-events-none"></div>
-          <div className="absolute inset-0 najran-geometric-bg opacity-[0.06] pointer-events-none"></div>
+          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
           
           <div className="container-custom relative">
             <motion.div
@@ -588,7 +588,7 @@ export default function Transformation() {
         {/* 8. التجمع الصحي */}
         <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#0c1c28' }}>
           <div className="absolute inset-0 pointer-events-none"></div>
-          <div className="absolute inset-0 najran-geometric-bg opacity-[0.06] pointer-events-none"></div>
+          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
           
           <div className="container-custom relative">
             <motion.div
@@ -620,7 +620,7 @@ export default function Transformation() {
         {/* 9. منظومة الرعاية المسؤولة */}
         <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#0c1c28' }}>
           <div className="absolute inset-0 pointer-events-none"></div>
-          <div className="absolute inset-0 najran-geometric-bg opacity-[0.06] pointer-events-none"></div>
+          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
           
           <div className="container-custom relative">
             <motion.div
@@ -751,7 +751,7 @@ export default function Transformation() {
         {/* 10. إدارة التغيير والتواصل المؤسسي */}
         <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#0c1c28' }}>
           <div className="absolute inset-0 pointer-events-none"></div>
-          <div className="absolute inset-0 najran-geometric-bg opacity-[0.06] pointer-events-none"></div>
+          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
           
           <div className="container-custom relative">
             <motion.div
@@ -906,7 +906,7 @@ export default function Transformation() {
         {/* 10. إدارة الصحة السكانية */}
         <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#0c1c28' }}>
           <div className="absolute inset-0 pointer-events-none"></div>
-          <div className="absolute inset-0 najran-geometric-bg opacity-[0.06] pointer-events-none"></div>
+          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
           
           <div className="container-custom relative">
             <motion.div
@@ -1055,7 +1055,7 @@ export default function Transformation() {
         {/* 12. ما الذي تغير في رحلة المريض */}
         <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#0c1c28' }}>
           <div className="absolute inset-0 pointer-events-none"></div>
-          <div className="absolute inset-0 najran-geometric-bg opacity-[0.06] pointer-events-none"></div>
+          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
           
           <div className="container-custom relative">
             <motion.div

@@ -3,7 +3,6 @@ import { useI18n } from "@/lib/i18n";
 import { useSEO } from "@/hooks/useSEO";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import heroImage from "@assets/BDB09527-ABFD-4A6A-8628-483C5204F311_1767273959627.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { Heart, X, Activity, Calendar, Baby, Ambulance, Brain, UsersRound, Dumbbell, HeartHandshake, ShieldCheck, ChevronDown } from "lucide-react";
 import { CardStar } from "@/components/BrandIcon";
@@ -38,10 +37,12 @@ export default function CareModel() {
         {/* Hero */}
         <section className="relative py-24 overflow-hidden">
           <div className="absolute inset-0 z-0">
-            <img
-              src={heroImage}
-              alt=""
-              data-nosnippet="true"
+            <video
+              src="https://cmsapi.health.sa/background.mp4-n92g3n.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60" />

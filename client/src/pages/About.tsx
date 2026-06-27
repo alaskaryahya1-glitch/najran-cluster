@@ -1007,7 +1007,7 @@ export default function About() {
                               <div className="flex items-center justify-center gap-1 mb-1">
                                 <MapPin className="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity text-[#2BAAE2] brand-icon" />
                               </div>
-                              <p className={`${fontClass} text-xs`}>
+                              <p className={`${fontClass} text-xs text-gray-900`}>
                                 {language === 'ar' ? center.ar : center.en}
                               </p>
                             </motion.a>

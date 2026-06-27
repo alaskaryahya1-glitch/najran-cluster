@@ -53,12 +53,12 @@ export function Footer() {
   ];
 
   return (
-    <footer className="text-white relative overflow-hidden" style={{ backgroundColor: '#0a1916', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+    <footer className="text-gray-900 relative overflow-hidden" style={{ backgroundColor: '#f8fafc', borderTop: '1px solid #e2e8f0' }}>
       {/* Geometric Pattern Overlay */}
-      <div className="absolute inset-0 najran-geometric-bg opacity-[0.03] pointer-events-none"></div>
+      <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.05] pointer-events-none"></div>
 
       {/* Partners Logos Row */}
-      <div className="border-b border-white/10 relative z-10">
+      <div className="border-b border-gray-200 relative z-10">
         <div className="container-custom py-5">
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 sm:flex-nowrap sm:justify-between">
             {partnerLogos.map((logo) => (
@@ -67,13 +67,13 @@ export function Footer() {
                 href={logo.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="h-8 sm:h-10 flex items-center justify-center flex-shrink-0 opacity-50 hover:opacity-90 transition-opacity"
+                className="h-8 sm:h-10 flex items-center justify-center flex-shrink-0 opacity-60 hover:opacity-100 transition-opacity"
                 data-testid={`link-partner-${logo.alt.toLowerCase().replace(/\s+/g, '-')}`}
               >
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="h-6 sm:h-9 w-auto object-contain brightness-0 invert"
+                  className="h-6 sm:h-9 w-auto object-contain"
                 />
               </a>
             ))}
@@ -91,14 +91,14 @@ export function Footer() {
               <img
                 src={whiteLogo}
                 alt={t("header.clusterName")}
-                className="h-16 sm:h-20 w-auto object-contain mb-1"
+                className="h-16 sm:h-20 w-auto object-contain mb-1 brightness-0"
               />
               <p className={`text-[#2BAAE2] text-[10px] ${fontClass} translate-x-1 sm:-translate-x-2`} style={{ marginTop: '-16px' }}>
                 {language === 'ar' ? 'شركة الصحة القابضة' : 'Health Holding Co.'}
               </p>
             </div>
 
-            <p className={`text-white/50 text-sm leading-relaxed mb-6 ${fontClass}`}>
+            <p className={`text-gray-500 text-sm leading-relaxed mb-6 ${fontClass}`}>
               {language === 'ar'
                 ? 'يقدم تجمع نجران الصحي خدمات الرعاية الصحية لأكثر من 495 ألف مستفيد في منطقة نجران.'
                 : 'Najran Health Cluster provides healthcare services to over 495,000 beneficiaries in the Najran region.'}
@@ -106,7 +106,7 @@ export function Footer() {
 
             {/* Social Icons */}
             <div>
-              <p className={`text-white text-sm font-semibold mb-3 ${fontClass}`}>{t("footer.followUs")}</p>
+              <p className={`text-gray-700 text-sm font-semibold mb-3 ${fontClass}`}>{t("footer.followUs")}</p>
               <div className="flex items-center gap-2 flex-wrap">
                 {socialLinks.map((social) => (
                   <a
@@ -114,11 +114,11 @@ export function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-9 h-9 bg-white/10 hover:bg-white/25 border border-white/20 rounded-full flex items-center justify-center transition-all duration-200"
+                    className="w-9 h-9 bg-gray-100 hover:bg-[#005d47] border border-gray-200 rounded-full flex items-center justify-center transition-all duration-200 group"
                     title={social.label}
                     data-testid={`link-social-${social.label.toLowerCase()}`}
                   >
-                    <social.icon className="w-4 h-4 text-white/80" />
+                    <social.icon className="w-4 h-4 text-gray-500 group-hover:text-white transition-colors" />
                   </a>
                 ))}
               </div>
@@ -127,7 +127,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="col-span-1">
-            <h4 className={`text-white font-bold text-lg mb-6 border-r-4 border-white/20 pr-4 ${fontClass}`}>
+            <h4 className={`text-gray-900 font-bold text-lg mb-6 border-r-4 border-[#005d47]/40 pr-4 ${fontClass}`}>
               {t("footer.quickLinks")}
             </h4>
             <ul className={`space-y-2.5 ${fontClass}`}>
@@ -135,7 +135,7 @@ export function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="footer-link text-white/50 hover:text-[#005d47] transition-all text-sm block mb-3"
+                    className="footer-link text-gray-500 hover:text-[#005d47] transition-all text-sm block mb-3"
                     data-testid={`link-footer-${link.href.replace('/', '')}`}
                   >
                     {link.label}
@@ -147,7 +147,7 @@ export function Footer() {
 
           {/* Other Links */}
           <div className="col-span-1">
-            <h4 className={`text-white font-bold text-lg mb-6 border-r-4 border-white/20 pr-4 ${fontClass}`}>
+            <h4 className={`text-gray-900 font-bold text-lg mb-6 border-r-4 border-[#005d47]/40 pr-4 ${fontClass}`}>
               {language === 'ar' ? 'روابط أخرى' : 'Other Links'}
             </h4>
             <ul className={`space-y-2.5 ${fontClass}`}>
@@ -157,7 +157,7 @@ export function Footer() {
                     href={link.href}
                     target={link.external ? "_blank" : undefined}
                     rel={link.external ? "noopener noreferrer" : undefined}
-                    className="footer-link text-white/50 hover:text-[#005d47] transition-all text-sm block mb-3"
+                    className="footer-link text-gray-500 hover:text-[#005d47] transition-all text-sm block mb-3"
                   >
                     {link.label}
                   </a>
@@ -168,7 +168,7 @@ export function Footer() {
 
           {/* Contact */}
           <div className="col-span-2 lg:col-span-1">
-            <h4 className={`text-white font-bold text-lg mb-6 border-r-4 border-white/20 pr-4 ${fontClass}`}>
+            <h4 className={`text-gray-900 font-bold text-lg mb-6 border-r-4 border-[#005d47]/40 pr-4 ${fontClass}`}>
               {t("footer.contactUs")}
             </h4>
             <div className={`space-y-4 ${fontClass}`}>
@@ -176,10 +176,10 @@ export function Footer() {
                 href="https://www.google.com/maps/place/Branch+of+the+Ministry+of+Health,+Najran+Region/@17.5484375,44.2350625,1083m/data=!3m2!1e3!4b1!4m6!3m5!1s0x15fec332340cba09:0x3bddf8648aa63f9c!8m2!3d17.5484375!4d44.2350625!16s%2Fg%2F11f61pg7j4"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-3 text-white/50 hover:text-[#005d47] transition-colors group"
+                className="flex items-start gap-3 text-gray-500 hover:text-[#005d47] transition-colors group"
                 data-testid="link-map-location"
               >
-                <div className="w-8 h-8 bg-white/10 border border-white/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-white/20 transition-colors">
+                <div className="w-8 h-8 bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-[#005d47]/10 transition-colors">
                   <MapPin className="w-4 h-4 text-[#2BAAE2]" />
                 </div>
                 <div>
@@ -190,10 +190,10 @@ export function Footer() {
 
               <a
                 href="tel:920011140"
-                className="flex items-center gap-3 text-white/50 hover:text-[#005d47] transition-colors group"
+                className="flex items-center gap-3 text-gray-500 hover:text-[#005d47] transition-colors group"
                 data-testid="link-phone-footer"
               >
-                <div className="w-8 h-8 bg-white/10 border border-white/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-white/20 transition-colors">
+                <div className="w-8 h-8 bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-[#005d47]/10 transition-colors">
                   <Phone className="w-4 h-4 text-[#2BAAE2]" />
                 </div>
                 <span className="font-sans text-sm text-white" dir="ltr">920011140</span>
@@ -205,18 +205,18 @@ export function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/10 relative z-10">
+      <div className="border-t border-gray-200 relative z-10">
         <div className="container-custom py-4 flex flex-col md:flex-row justify-between items-center gap-3 text-center">
-          <p className={`text-xs text-white/40 ${fontClass}`}>
+          <p className={`text-xs text-gray-400 ${fontClass}`}>
             © {new Date().getFullYear()} {t("header.clusterName")}. {t("footer.rights")}.
           </p>
-          <span className="font-sans text-xs text-white/40" dir="ltr">Made by : Yahya Alhareth</span>
+          <span className="font-sans text-xs text-gray-400" dir="ltr">Made by : Yahya Alhareth</span>
           <div className={`flex items-center gap-4 text-xs ${fontClass} text-slate-500`}>
-            <a href="#" className="hover:text-white transition-colors" data-testid="link-privacy">{t("footer.privacy")}</a>
+            <a href="#" className="hover:text-[#005d47] transition-colors" data-testid="link-privacy">{t("footer.privacy")}</a>
             <span className="text-white/20">|</span>
-            <a href="#" className="hover:text-white transition-colors" data-testid="link-terms">{t("footer.terms")}</a>
+            <a href="#" className="hover:text-[#005d47] transition-colors" data-testid="link-terms">{t("footer.terms")}</a>
             <span className="text-white/20">|</span>
-            <a href="#" className="hover:text-white transition-colors" data-testid="link-accessibility">{t("footer.accessibility")}</a>
+            <a href="#" className="hover:text-[#005d47] transition-colors" data-testid="link-accessibility">{t("footer.accessibility")}</a>
           </div>
         </div>
       </div>

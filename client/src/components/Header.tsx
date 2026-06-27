@@ -189,10 +189,10 @@ export function Header() {
   const fontClass = language === 'ar' ? 'font-arabic' : 'font-sans';
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-300 border-b ${scrolled ? 'backdrop-blur-md bg-white/20 shadow-md border-white/20' : 'bg-transparent border-transparent'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-500 border-b ${scrolled ? 'backdrop-blur-2xl bg-white/70 shadow-[0_4px_30px_rgba(0,0,0,0.08)] border-gray-200/40' : 'bg-transparent border-transparent'}`}>
 
       <div className="container-custom">
-        <div className={`flex items-center justify-between h-[32px] lg:h-[38px] gap-4 ${scrolled ? 'text-gray-800' : 'text-white'}`}>
+        <div className={`flex items-center justify-between h-[32px] lg:h-[38px] gap-4 ${scrolled ? 'text-gray-900' : 'text-white'}`}>
 
           {/* Hamburger - RIGHT (RTL start) - all devices */}
           <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
@@ -278,9 +278,9 @@ export function Header() {
 
           {/* Icons - LEFT (RTL end) */}
           <div className="flex items-center gap-1.5">
-            <button onClick={() => setIsSearchOpen(true)} className={`p-2 rounded-lg transition-colors ${scrolled ? 'text-gray-600 hover:text-gray-900 hover:bg-gray-100' : 'text-white/80 hover:text-white hover:bg-white/10'}`} data-testid="button-search" aria-label="Search"><Search className="w-5 h-5" /></button>
-            <button onClick={toggleTheme} className={`p-2 rounded-lg transition-colors ${scrolled ? 'text-gray-600 hover:text-gray-900 hover:bg-gray-100' : 'text-white/80 hover:text-white hover:bg-white/10'}`} data-testid="button-theme-toggle" aria-label="Toggle theme">{theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}</button>
-            <button onClick={toggleLanguage} className={`px-3 py-1.5 text-sm font-semibold rounded-lg transition-colors border ${scrolled ? 'text-gray-700 border-gray-300 hover:bg-gray-100' : 'text-white/80 border-white/30 hover:text-white hover:bg-white/10'}`} data-testid="button-language-toggle">{language === "ar" ? "EN" : "ع"}</button>
+            <button onClick={() => setIsSearchOpen(true)} className={`p-2 rounded-lg transition-colors ${scrolled ? 'text-gray-600 hover:text-gray-900 hover:bg-black/5' : 'text-white/80 hover:text-white hover:bg-white/10'}`} data-testid="button-search" aria-label="Search"><Search className="w-5 h-5" /></button>
+            <button onClick={toggleTheme} className={`p-2 rounded-lg transition-colors ${scrolled ? 'text-gray-600 hover:text-gray-900 hover:bg-black/5' : 'text-white/80 hover:text-white hover:bg-white/10'}`} data-testid="button-theme-toggle" aria-label="Toggle theme">{theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}</button>
+            <button onClick={toggleLanguage} className={`px-3 py-1.5 text-sm font-semibold rounded-lg transition-colors border ${scrolled ? 'text-gray-700 border-gray-300 hover:bg-black/5' : 'text-white/80 border-white/30 hover:text-white hover:bg-white/10'}`} data-testid="button-language-toggle">{language === "ar" ? "EN" : "ع"}</button>
           </div>
 
         </div>

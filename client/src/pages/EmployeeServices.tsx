@@ -334,8 +334,8 @@ function GlassStarService({ service, index, language, fontClass, size = "md", on
               alt=""
               className="w-full h-full object-contain transition-all duration-300"
               style={{
-                filter: "brightness(0)",
-                opacity: isHovered ? 0.1 : 0.05,
+                filter: "brightness(0) invert(1)",
+                opacity: isHovered ? 0.15 : 0.07,
               }}
             />
           </div>
@@ -364,11 +364,9 @@ function GlassStarService({ service, index, language, fontClass, size = "md", on
                     alt={language === 'ar' ? service.titleAr : service.titleEn}
                     className={`${sizes[size].logo} object-contain drop-shadow-lg transition-all duration-300`}
                     style={{
-                      filter: isOutlookLogo
-                        ? isHovered ? "brightness(1.1) drop-shadow(0 2px 8px rgba(41,181,232,0.3))" : "brightness(1) drop-shadow(0 1px 4px rgba(41,181,232,0.2))"
-                        : isHovered
-                          ? "brightness(0) saturate(100%) invert(15%) sepia(83%) saturate(690%) hue-rotate(143deg) brightness(92%) contrast(97%)"
-                          : "brightness(0) saturate(100%) invert(65%) sepia(50%) saturate(550%) hue-rotate(168deg) brightness(105%) contrast(90%)"
+                      filter: isHovered
+                        ? "brightness(1.15) drop-shadow(0 2px 8px rgba(41,181,232,0.25))"
+                        : "brightness(1)"
                     }}
                   />
                 ) : (

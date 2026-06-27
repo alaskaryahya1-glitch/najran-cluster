@@ -363,7 +363,7 @@ function GlassStarService({ service, index, language, fontClass, size = "md", on
                     style={{
                       filter: isHovered
                         ? "brightness(0) saturate(100%) invert(15%) sepia(83%) saturate(690%) hue-rotate(143deg) brightness(92%) contrast(97%)"
-                        : "brightness(0) saturate(100%) invert(59%) sepia(55%) saturate(450%) hue-rotate(163deg) brightness(100%) contrast(88%)"
+                        : "brightness(0) saturate(100%) invert(63%) sepia(38%) saturate(380%) hue-rotate(170deg) brightness(112%) contrast(80%)"
                     }}
                   />
                 ) : (

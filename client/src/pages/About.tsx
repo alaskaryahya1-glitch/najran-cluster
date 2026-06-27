@@ -706,7 +706,8 @@ export default function About() {
                         <img
                           src={leader.image}
                           alt={t(leader.nameKey)}
-                          className="leadership-card-img absolute bottom-0 left-0 w-full scale-[1.4] group-hover:scale-[1.5] origin-bottom transition-all duration-700 ease-in-out grayscale group-hover:grayscale-0 will-change-transform"
+                          className="leadership-card-img absolute left-0 w-full transition-all duration-700 ease-in-out grayscale group-hover:grayscale-0 group-hover:scale-[1.05] origin-bottom will-change-transform"
+                          style={{ bottom: '-5%', height: '240%', objectFit: 'cover', objectPosition: 'center bottom' }}
                         />
                       )}
                     </div>

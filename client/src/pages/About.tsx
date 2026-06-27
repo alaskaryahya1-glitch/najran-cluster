@@ -1073,6 +1073,26 @@ export default function About() {
                 </motion.details>
               ))}
             </div>
+
+            {/* Contact CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mt-10 text-center"
+            >
+              <p className={`text-white/60 text-sm mb-4 ${fontClass}`}>
+                {language === 'ar' ? 'لم تجد إجابة لسؤالك؟ تواصل معنا' : "Didn't find your answer? Contact us"}
+              </p>
+              <a
+                href="tel:920011140"
+                dir="ltr"
+                className="inline-flex items-center gap-3 bg-[#2BAAE2]/10 hover:bg-[#2BAAE2]/20 border border-[#2BAAE2]/30 text-[#2BAAE2] font-sans text-lg font-semibold px-8 py-3 rounded-full transition-all"
+              >
+                <Phone className="w-5 h-5" />
+                920011140
+              </a>
+            </motion.div>
           </div>
         </section>
 

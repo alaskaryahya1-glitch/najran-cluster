@@ -258,7 +258,7 @@ export default function Home() {
   
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+      setCurrentSlide((prev) => (prev + 1) % heroSlideContent.length);
     }, 6000);
     return () => clearInterval(interval);
   }, []);
@@ -300,19 +300,7 @@ export default function Home() {
         {language === 'ar' ? 'تجمع نجران الصحي' : 'Najran Health Cluster'}
       </h1>
       {/* Fixed Background */}
-      <div className="fixed inset-0 z-0">
-        {heroImages.slice(0, 3).map((img, idx) => (
-          <motion.img
-            key={idx}
-            src={img}
-            alt=""
-            aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover"
-            initial={{ opacity: idx === 0 ? 1 : 0 }}
-            animate={{ opacity: currentSlide % 3 === idx ? 1 : 0 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
-          />
-        ))}
+      <div className="fixed inset-0 z-0 bg-[#005d47]">
         {!videoFailed && (
           <video
             ref={videoRef}
@@ -320,8 +308,7 @@ export default function Home() {
             loop
             muted
             playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-            poster={heroImages[0]}
+            className="absolute inset-0 w-full h-full object-cover opacity-40"
             onError={() => setVideoFailed(true)}
           >
             <source src="https://cmsapi.health.sa/HHC1-7tba9j.mp4" type="video/mp4" />
@@ -340,7 +327,7 @@ export default function Home() {
           
           {/* Vertical Navigation Dots - Left Side */}
           <div className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 flex flex-col items-center gap-3">
-            {heroImages.map((_, idx) => (
+            {heroSlideContent.map((_, idx) => (
               <button
                 key={idx}
                 className={`w-2 h-2 rounded-full transition-all duration-300 ${currentSlide === idx ? 'bg-white scale-125' : 'bg-white/40 hover:bg-white/70'}`}

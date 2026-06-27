@@ -309,7 +309,7 @@ function GlassStarService({ service, index, language, fontClass, size = "md", on
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       onClick={handleClick}
-      className={`relative cursor-pointer group ${sizes[size].container} bg-white rounded-2xl border border-[#edf2f7] overflow-hidden transition-all duration-300 ${isHovered ? 'border-[#004d3a]/30 shadow-md' : 'shadow-sm'}`}
+      className={`relative cursor-pointer group ${sizes[size].container} bg-white rounded-2xl overflow-hidden transition-all duration-300 ${isHovered ? 'border-2 border-[#004d3a]/50 shadow-lg' : 'border border-gray-200 shadow-sm'}`}
       data-testid={`service-star-${service.id}`}
     >
       {/* All services use star shape */}
@@ -362,8 +362,8 @@ function GlassStarService({ service, index, language, fontClass, size = "md", on
                     className={`${sizes[size].logo} object-contain drop-shadow-lg transition-all duration-300`}
                     style={{
                       filter: isHovered
-                        ? "brightness(0) saturate(100%) invert(15%) sepia(83%) saturate(690%) hue-rotate(143deg) brightness(92%) contrast(97%) drop-shadow(0 2px 8px rgba(0,77,58,0.35))"
-                        : "brightness(0) saturate(100%) invert(62%) sepia(46%) saturate(533%) hue-rotate(163deg) brightness(98%) contrast(91%) drop-shadow(0 1px 5px rgba(43,170,226,0.4))"
+                        ? "brightness(0) saturate(100%) invert(15%) sepia(83%) saturate(690%) hue-rotate(143deg) brightness(95%) contrast(120%) drop-shadow(0 2px 10px rgba(0,77,58,0.45)) drop-shadow(0 0 2px rgba(0,77,58,0.6))"
+                        : "brightness(0) saturate(100%) invert(62%) sepia(46%) saturate(533%) hue-rotate(163deg) brightness(110%) contrast(120%) drop-shadow(0 1px 6px rgba(43,170,226,0.5)) drop-shadow(0 0 2px rgba(43,170,226,0.5))"
                     }}
                   />
                 ) : (

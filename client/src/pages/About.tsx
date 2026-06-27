@@ -1031,6 +1031,63 @@ export default function About() {
           </div>
         </section>
 
+        {/* ===== Hospital Directors Section ===== */}
+        <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
+          <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+          <div className="container-custom relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className={`text-center mb-10 ${fontClass}`}
+            >
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#2BAAE2]/10 mb-4">
+                <UserCog className="w-8 h-8 text-[#2BAAE2]" />
+              </div>
+              <h2 className={`text-2xl md:text-3xl font-bold text-gray-900 ${fontClass}`}>
+                {t("about.hospitalDirectors")}
+              </h2>
+            </motion.div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+              {[
+                { hospitalKey: "about.hospital.westNajran", directorKey: "about.hospital.westNajran.director" },
+                { hospitalKey: "about.hospital.kingKhaled", directorKey: "about.hospital.kingKhaled.director" },
+                { hospitalKey: "about.hospital.maternity", directorKey: "about.hospital.maternity.director" },
+                { hospitalKey: "about.hospital.najranGeneral", directorKey: "about.hospital.najranGeneral.director" },
+                { hospitalKey: "about.hospital.badrSouth", directorKey: "about.hospital.badrSouth.director" },
+                { hospitalKey: "about.hospital.habuna", directorKey: "about.hospital.habuna.director" },
+                { hospitalKey: "about.hospital.thar", directorKey: "about.hospital.thar.director" },
+                { hospitalKey: "about.hospital.sharurah", directorKey: "about.hospital.sharurah.director" },
+                { hospitalKey: "about.hospital.khubash", directorKey: "about.hospital.khubash.director" },
+                { hospitalKey: "about.hospital.yadamah", directorKey: "about.hospital.yadamah.director" },
+                { hospitalKey: "about.hospital.eradah", directorKey: "about.hospital.eradah.director" },
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.04 }}
+                  className="bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all p-4"
+                  data-testid={`card-director-${idx}`}
+                >
+                  <div className="h-1.5 bg-[#2BAAE2] rounded-full mb-4 -mx-4 -mt-4 rounded-t-xl"></div>
+                  <div className={`flex items-center gap-3 ${language === 'ar' ? '' : 'flex-row-reverse text-right'}`}>
+                    <div className="w-12 h-12 rounded-xl bg-[#2BAAE2]/10 flex items-center justify-center flex-shrink-0">
+                      <Hospital className="w-6 h-6 text-[#2BAAE2]" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className={`font-bold text-gray-900 ${fontClass} text-sm leading-tight`}>{t(item.hospitalKey)}</h4>
+                      <p className={`text-gray-500 ${fontClass} text-xs mt-1`}>{t(item.directorKey)}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ===== FAQ Section ===== */}
         <section className="relative py-16 overflow-hidden" id="faq" style={{ backgroundColor: '#f8fafc' }}>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06]"></div>

@@ -277,7 +277,8 @@ function GlassStarService({ service, index, language, fontClass, size = "md", on
   const shouldInvertLogo = service.logoPath === 'png-clipart-gmail-logo-illustration-email-computer-icons-messa_1767519110048.png' ||
     service.logoPath === 'pngtree-black-call-icon-png-image_2413693_1767519362030.png' ||
     service.logoPath === 'logo-rgb_1768467991326.png';
-  const isOutlookLogo = service.logoPath === 'original-31293c6476ae8628875b4f422264e2c4_1767518560706.png';
+  const isOutlookLogo = service.logoPath === 'original-31293c6476ae8628875b4f422264e2c4_1767518560706.png'
+    || service.logoPath === 'PPM_1767513734753.png';
   
   const sizes = {
     sm: { container: "w-24 h-24 xs:w-28 xs:h-28 sm:w-32 sm:h-32", icon: "w-5 h-5 xs:w-6 xs:h-6 sm:w-7 sm:h-7", text: "text-[8px] xs:text-[9px] sm:text-[10px]", logo: "w-12 h-12 xs:w-16 xs:h-16 sm:w-18 sm:h-18" },

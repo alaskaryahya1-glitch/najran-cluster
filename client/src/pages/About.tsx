@@ -553,62 +553,72 @@ export default function About() {
         </section>
 
         {/* ===== NEW: About Section ===== */}
-        <section className="relative py-20 md:py-28 overflow-hidden bg-white">
-          <div className="container-custom">
-            <div className={`flex flex-col lg:flex-row gap-16 xl:gap-24 items-center ${language === 'ar' ? '' : 'lg:flex-row-reverse'}`}>
-              {/* Text + Stats */}
+        <section className="relative py-10 md:py-16 overflow-hidden bg-white">
+          {/* زخرفة خلفية خفية */}
+          <video autoPlay loop muted playsInline aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
+            <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
+          </video>
+
+          <div className="container-custom relative z-10">
+            <div className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-24 ${language === 'ar' ? '' : 'lg:flex-row-reverse'}`}>
+
+              {/* النص والإحصائيات */}
               <motion.div
-                className="lg:w-1/2"
+                className="lg:w-1/2 space-y-6"
                 initial={{ opacity: 0, x: language === 'ar' ? 40 : -40 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
                 <span
-                  className={`font-bold text-sm uppercase tracking-widest ${fontClass}`}
-                  style={{ color: '#005d47' }}
+                  className={`font-bold text-sm tracking-[0.2em] uppercase pr-3 ${fontClass} ${language === 'ar' ? 'border-r-4' : 'border-l-4 pl-3 pr-0'}`}
+                  style={{ color: '#004d3a', borderColor: '#004d3a' }}
                 >
-                  {language === 'ar' ? 'من نحن' : 'About Us'}
+                  {language === 'ar' ? 'قصة التحول' : 'Our Story'}
                 </span>
-                <h2
-                  className={`text-3xl lg:text-4xl xl:text-5xl font-bold mt-4 leading-tight ${fontClass}`}
-                  style={{ color: '#0a1916' }}
-                >
+
+                <h2 className={`text-4xl lg:text-5xl font-bold text-gray-900 leading-[1.2] ${fontClass}`}>
                   {language === 'ar' ? (
-                    <>رعاية صحية شاملة <br /> تضع <span style={{ color: '#005d47' }}>الإنسان أولاً</span></>
+                    <>تجمع نجران الصحي.. <br /> <span style={{ color: '#004d3a' }}>التزام بالتميز الطبي</span></>
                   ) : (
-                    <>Comprehensive Health Care <br /> Putting <span style={{ color: '#005d47' }}>People First</span></>
+                    <>Najran Health Cluster.. <br /> <span style={{ color: '#004d3a' }}>Commitment to Medical Excellence</span></>
                   )}
                 </h2>
-                <p className={`mt-6 text-lg text-gray-600 leading-relaxed ${fontClass}`}>
+
+                <p className={`text-lg text-gray-600 leading-relaxed italic ${fontClass}`}>
                   {language === 'ar'
-                    ? 'يعتبر تجمع نجران الصحي حجر الزاوية في تقديم الرعاية الصحية بمنطقة نجران، حيث نعمل كمنظومة مترابطة تهدف إلى تسهيل رحلة المستفيد ورفع جودة الحياة من خلال تطبيق أفضل المعايير العالمية في نموذج الرعاية الحديث.'
-                    : 'Najran Health Cluster is the cornerstone of healthcare in the Najran region, operating as an integrated system aimed at facilitating the beneficiary journey and improving quality of life through the application of the best global standards in modern care models.'}
+                    ? 'نحن لسنا مجرد شبكة مستشفيات، بل منظومة صحية متكاملة تهدف إلى إعادة صياغة مفهوم الرعاية الصحية في منطقة نجران، واضعين سلامة المستفيد وجودة الخدمة في قمة أولوياتنا.'
+                    : 'We are not just a network of hospitals, but a comprehensive healthcare system aimed at redefining healthcare in the Najran region, placing beneficiary safety and service quality at the top of our priorities.'}
                 </p>
 
-                <div className="mt-10 grid grid-cols-2 gap-8 border-t border-gray-100 pt-10">
-                  <div>
-                    <span className="text-4xl font-bold block" style={{ color: '#005d47' }}>12</span>
-                    <span className={`text-gray-500 font-medium text-sm ${fontClass}`}>
-                      {language === 'ar' ? 'مستشفى عام ومتخصص' : 'General & Specialized Hospitals'}
-                    </span>
+                {/* الإحصائيات */}
+                <div className="grid grid-cols-2 gap-4 pt-6 border-t border-gray-100">
+                  <div className="p-4 bg-gray-50 rounded-2xl">
+                    <h4 className="text-3xl font-bold" style={{ color: '#004d3a' }}>12</h4>
+                    <p className={`text-sm text-gray-500 font-medium ${fontClass}`}>
+                      {language === 'ar' ? 'مستشفى متخصص' : 'Specialized Hospitals'}
+                    </p>
                   </div>
-                  <div>
-                    <span className="text-4xl font-bold block" style={{ color: '#005d47' }}>69</span>
-                    <span className={`text-gray-500 font-medium text-sm ${fontClass}`}>
+                  <div className="p-4 bg-gray-50 rounded-2xl">
+                    <h4 className="text-3xl font-bold" style={{ color: '#004d3a' }}>69</h4>
+                    <p className={`text-sm text-gray-500 font-medium ${fontClass}`}>
                       {language === 'ar' ? 'مركز رعاية أولية' : 'Primary Care Centers'}
-                    </span>
+                    </p>
                   </div>
-                  <div className="col-span-2">
-                    <span className="text-4xl font-bold block" style={{ color: '#005d47' }}>+495,000</span>
-                    <span className={`text-gray-500 font-medium text-sm ${fontClass}`}>
-                      {language === 'ar' ? 'مستفيد من خدماتنا في المنطقة' : 'Beneficiaries in the Region'}
+                  <div
+                    className={`col-span-2 p-4 rounded-2xl flex justify-between items-center ${language === 'ar' ? '' : 'flex-row-reverse'}`}
+                    style={{ backgroundColor: '#004d3a' }}
+                  >
+                    <span className={`text-white text-lg font-medium ${fontClass}`}>
+                      {language === 'ar' ? 'إجمالي المستفيدين في المنطقة' : 'Total Beneficiaries in the Region'}
                     </span>
+                    <span className="text-white text-2xl font-bold font-sans">+495,000</span>
                   </div>
                 </div>
               </motion.div>
 
-              {/* Layered Image */}
+              {/* الصورة */}
               <motion.div
                 className="lg:w-1/2 w-full"
                 initial={{ opacity: 0, scale: 0.92 }}
@@ -616,34 +626,22 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <div className="relative">
-                  <div
-                    className="relative z-20 overflow-hidden border-[10px] border-white"
-                    style={{
-                      borderRadius: '3rem',
-                      boxShadow: '30px 30px 0px 0px rgba(0, 93, 71, 0.12)',
-                    }}
-                  >
-                    <img
-                      src={heroImage}
-                      alt={t("about.title")}
-                      className="w-full object-cover"
-                      style={{ height: '480px' }}
-                    />
-                  </div>
-                  <div
-                    className="absolute w-full h-full opacity-10"
-                    style={{
-                      backgroundColor: '#005d47',
-                      borderRadius: '3rem',
-                      bottom: '-2.5rem',
-                      right: language === 'ar' ? '-2.5rem' : 'auto',
-                      left: language === 'ar' ? 'auto' : '-2.5rem',
-                      zIndex: 0,
-                    }}
+                <div
+                  className="overflow-hidden border-[6px] border-white"
+                  style={{
+                    borderRadius: '50px 15px 50px 15px',
+                    boxShadow: '20px 20px 0px 0px rgba(0, 77, 58, 0.05)',
+                  }}
+                >
+                  <img
+                    src={heroImage}
+                    alt={t("about.title")}
+                    className="w-full object-cover"
+                    style={{ height: '450px' }}
                   />
                 </div>
               </motion.div>
+
             </div>
           </div>
         </section>

@@ -356,19 +356,20 @@ function GlassStarService({ service, index, language, fontClass, size = "md", on
                 transition={{ duration: 0.3 }}
                 className="mb-2"
               >
-                {hasLogo && logoSrc ? (
-                  <img 
+                {isEmailLogo ? (
+                  <div className={`${sizes[size].logo} rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300`}
+                    style={{ backgroundColor: isHovered ? '#1a9dd1' : '#2BAAE2' }}>
+                    <Mail className="w-1/2 h-1/2 text-white" />
+                  </div>
+                ) : hasLogo && logoSrc ? (
+                  <img
                     src={logoSrc}
                     alt={language === 'ar' ? service.titleAr : service.titleEn}
                     className={`${sizes[size].logo} object-contain drop-shadow-lg transition-all duration-300`}
                     style={{
-                      filter: isEmailLogo
-                        ? isHovered
-                          ? "brightness(0.9) drop-shadow(0 0 4px rgba(43,170,226,1)) drop-shadow(0 0 2px rgba(43,170,226,0.9))"
-                          : "brightness(0.85) drop-shadow(0 0 3px rgba(43,170,226,0.85)) drop-shadow(0 0 1px rgba(43,170,226,0.7))"
-                        : isHovered
-                          ? "brightness(0) saturate(100%) invert(15%) sepia(83%) saturate(690%) hue-rotate(143deg) brightness(92%) contrast(97%)"
-                          : "brightness(0) saturate(100%) invert(63%) sepia(38%) saturate(380%) hue-rotate(170deg) brightness(112%) contrast(80%)"
+                      filter: isHovered
+                        ? "brightness(0) saturate(100%) invert(15%) sepia(83%) saturate(690%) hue-rotate(143deg) brightness(92%) contrast(97%)"
+                        : "brightness(0) saturate(100%) invert(63%) sepia(38%) saturate(380%) hue-rotate(170deg) brightness(112%) contrast(80%)"
                     }}
                   />
                 ) : (

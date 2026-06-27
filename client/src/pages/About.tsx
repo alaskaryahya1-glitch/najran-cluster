@@ -531,7 +531,8 @@ export default function About() {
           className="relative flex items-center justify-center overflow-hidden"
           style={{ backgroundColor: '#005d47', minHeight: '50vh' }}
         >
-          <div className="absolute inset-0 najran-geometric-bg opacity-[0.08] pointer-events-none"></div>
+          <div className="absolute inset-0 bg-black/30 pointer-events-none"></div>
+          <div className="absolute inset-0 najran-geometric-bg opacity-[0.05] pointer-events-none"></div>
           <video
             autoPlay
             loop

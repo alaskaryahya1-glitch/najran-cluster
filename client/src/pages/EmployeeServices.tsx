@@ -530,7 +530,7 @@ export default function EmployeeServices() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                className="bg-black/25 backdrop-blur-md rounded-[40px] border border-white/15 shadow-sm relative overflow-hidden"
+                className="bg-black/25 backdrop-blur-md rounded-[40px] border border-white/15 shadow-sm relative overflow-hidden hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(43,170,226,0.15)] hover:border-[#2BAAE2] transition-all duration-[400ms]"
                 style={{ boxShadow: '0 10px 30px rgba(0,77,58,0.03)' }}
               >
                 <div className="h-1.5 bg-[#2BAAE2] rounded-t-[40px]"></div>
@@ -565,7 +565,7 @@ export default function EmployeeServices() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-                className="bg-black/25 backdrop-blur-md rounded-[40px] border border-white/15 shadow-sm relative overflow-hidden"
+                className="bg-black/25 backdrop-blur-md rounded-[40px] border border-white/15 shadow-sm relative overflow-hidden hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(43,170,226,0.15)] hover:border-[#2BAAE2] transition-all duration-[400ms]"
                 style={{ boxShadow: '0 10px 30px rgba(0,77,58,0.03)' }}
               >
                 <div className="h-1.5 bg-[#2BAAE2] rounded-t-[40px]"></div>

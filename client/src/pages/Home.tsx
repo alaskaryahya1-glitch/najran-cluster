@@ -589,14 +589,14 @@ export default function Home() {
                 
                 
                 
-                className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-2xl overflow-hidden border border-white/20 flex flex-col relative"
+                className="group bg-black/25 backdrop-blur-md rounded-2xl overflow-hidden border border-white/15 flex flex-col relative hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(43,170,226,0.2)] hover:border-[#2BAAE2] transition-all duration-[400ms]"
               >
                 <CardStar size="md" />
                 <div className="h-1.5 bg-[#2BAAE2]"></div>
                 <div className="p-6 md:p-8 flex flex-col flex-1">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center">
-                    <Eye className="w-7 h-7 text-[#2BAAE2] brand-icon" />
+                  <div className="w-14 h-14 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl flex items-center justify-center transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
+                    <Eye className="w-7 h-7 text-[#2BAAE2] brand-icon group-hover:text-white transition-colors" />
                   </div>
                   <h3 className={`text-2xl font-bold text-white ${fontClass}`}>{t("home.vision")}</h3>
                 </div>
@@ -612,14 +612,14 @@ export default function Home() {
                 
                 
                 transition={{ delay: 0.1 }}
-                className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-2xl overflow-hidden border border-white/20 flex flex-col relative"
+                className="group bg-black/25 backdrop-blur-md rounded-2xl overflow-hidden border border-white/15 flex flex-col relative hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(43,170,226,0.2)] hover:border-[#2BAAE2] transition-all duration-[400ms]"
               >
                 <CardStar size="md" />
                 <div className="h-1.5 bg-[#2BAAE2]"></div>
                 <div className="p-6 md:p-8 flex flex-col flex-1">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center">
-                    <Target className="w-7 h-7 text-[#2BAAE2] brand-icon" />
+                  <div className="w-14 h-14 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl flex items-center justify-center transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
+                    <Target className="w-7 h-7 text-[#2BAAE2] brand-icon group-hover:text-white transition-colors" />
                   </div>
                   <h3 className={`text-2xl font-bold text-white ${fontClass}`}>{t("home.mission")}</h3>
                 </div>
@@ -658,14 +658,14 @@ export default function Home() {
                   
                   
                   
-                  className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-xl overflow-hidden border border-white/20 relative"
+                  className="group bg-black/25 backdrop-blur-md rounded-xl overflow-hidden border border-white/15 relative hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(43,170,226,0.2)] hover:border-[#2BAAE2] transition-all duration-[400ms]"
                   data-testid={`goal-card-${idx}`}
                 >
                   <CardStar size="sm" />
                   <div className="h-1.5 bg-[#2BAAE2]"></div>
                   <div className="p-6">
-                  <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-4">
-                    <goal.icon className="w-7 h-7 text-[#2BAAE2] brand-icon" />
+                  <div className="w-14 h-14 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl flex items-center justify-center mb-4 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
+                    <goal.icon className="w-7 h-7 text-[#2BAAE2] brand-icon group-hover:text-white transition-colors" />
                   </div>
                   <h3 className={`text-lg font-bold text-white ${fontClass} mb-2`}>{t(goal.titleKey)}</h3>
                   <p className={`text-white/90 ${fontClass} text-sm`}>{t(goal.descKey)}</p>
@@ -702,14 +702,14 @@ export default function Home() {
                   
                   
                   
-                  className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-xl overflow-hidden border border-white/20 text-center relative"
+                  className="group bg-black/25 backdrop-blur-md rounded-xl overflow-hidden border border-white/15 text-center relative hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(43,170,226,0.2)] hover:border-[#2BAAE2] transition-all duration-[400ms]"
                   data-testid={`value-card-${idx}`}
                 >
                   <CardStar size="sm" />
                   <div className="h-1.5 bg-[#2BAAE2]"></div>
                   <div className="p-6">
-                  <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <value.icon className="w-8 h-8 text-[#2BAAE2] brand-icon" />
+                  <div className="w-16 h-16 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl flex items-center justify-center mx-auto mb-4 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
+                    <value.icon className="w-8 h-8 text-[#2BAAE2] brand-icon group-hover:text-white transition-colors" />
                   </div>
                   <p className={`text-white/60 ${fontClass} text-xs mb-1`}>{t(value.subtitleKey)}</p>
                   <p className={`${fontClass} font-bold text-white`}>{t(value.labelKey)}</p>
@@ -746,14 +746,14 @@ export default function Home() {
                   
                   
                   
-                  className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-xl overflow-hidden border border-white/20 text-center relative"
+                  className="group bg-black/25 backdrop-blur-md rounded-xl overflow-hidden border border-white/15 text-center relative hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(43,170,226,0.2)] hover:border-[#2BAAE2] transition-all duration-[400ms]"
                   data-testid={`promise-card-${idx}`}
                 >
                   <CardStar size="sm" />
                   <div className="h-1.5 bg-[#2BAAE2]"></div>
                   <div className="p-6">
-                  <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <promise.icon className="w-8 h-8 text-[#2BAAE2] brand-icon" />
+                  <div className="w-16 h-16 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl flex items-center justify-center mx-auto mb-4 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
+                    <promise.icon className="w-8 h-8 text-[#2BAAE2] brand-icon group-hover:text-white transition-colors" />
                   </div>
                   <h3 className={`text-lg font-bold text-white ${fontClass} mb-2`}>{t(promise.titleKey)}</h3>
                   <p className={`text-white/60 ${fontClass} text-xs mb-2`}>{t(promise.subtitleKey)}</p>

@@ -202,24 +202,26 @@ function TweetsGrid({ tweets, language }: { tweets: Tweet[], language: string })
 
   const renderTweetCard = (tweet: Tweet, index: number, isSmall: boolean) => {
     const cleanText = cleanTweetText(tweet.text);
-    
+    const title = cleanText.slice(0, 100);
+    const excerpt = cleanText.length > 100 ? cleanText.slice(100, 230) : '';
+
     const openTweet = (e: React.MouseEvent) => {
       e.preventDefault();
-      const webUrl = `https://twitter.com/NajranCluster/status/${tweet.id}`;
-      window.open(webUrl, '_blank');
+      window.open(`https://twitter.com/NajranCluster/status/${tweet.id}`, '_blank');
     };
 
     return (
       <div
         key={tweet.id}
         onClick={tweet.video_url ? undefined : openTweet}
-        className={`group rounded-2xl overflow-hidden bg-white border border-gray-100 hover:border-[#2BAAE2] hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(43,170,226,0.15)] transition-all duration-300 flex flex-col h-[380px] ${tweet.video_url ? '' : 'cursor-pointer'}`}
+        className={`group rounded-xl overflow-hidden bg-white border border-gray-200 hover:shadow-[0_8px_24px_rgba(0,93,71,0.12)] hover:-translate-y-1 hover:border-[#005d47]/30 transition-all duration-300 flex flex-col ${tweet.video_url ? '' : 'cursor-pointer'}`}
         data-testid={`tweet-card-${tweet.id}-${index}`}
       >
-        {tweet.video_url ? (
-          <div className="relative overflow-hidden bg-gray-900 flex-1 min-h-0">
-            <video 
-              src={getProxiedVideoUrl(tweet.video_url) || ''} 
+        {/* Image / Video */}
+        <div className="relative overflow-hidden bg-gray-100 h-48 flex-shrink-0">
+          {tweet.video_url ? (
+            <video
+              src={getProxiedVideoUrl(tweet.video_url) || ''}
               controls
               controlsList="nodownload"
               preload="auto"
@@ -232,58 +234,61 @@ function TweetsGrid({ tweets, language }: { tweets: Tweet[], language: string })
             >
               <source src={getProxiedVideoUrl(tweet.video_url) || ''} type="video/mp4" />
             </video>
-          </div>
-        ) : tweet.image_urls && tweet.image_urls.length > 1 ? (
-          <div className="flex-1 min-h-0">
+          ) : tweet.image_urls && tweet.image_urls.length > 1 ? (
             <ImageCarousel images={tweet.image_urls} tweetId={tweet.id} isSmall={isSmall} />
-          </div>
-        ) : tweet.image_url ? (
-          <div className="relative overflow-hidden bg-gray-800 flex-1 min-h-0">
-            <img 
-              src={getProxiedImageUrl(tweet.image_url) || ''} 
+          ) : tweet.image_url ? (
+            <img
+              src={getProxiedImageUrl(tweet.image_url) || ''}
               alt=""
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               loading="lazy"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.style.display = 'none';
-              }}
+              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
             />
-            <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/60 to-transparent" />
-          </div>
-        ) : (
-          <div className="flex-1 min-h-0" />
-        )}
-        
-        <div className="p-4 flex flex-col h-[120px]">
-          <p className={`text-gray-800 text-sm leading-relaxed mb-2 ${fontClass} line-clamp-3`}>
-            {cleanText}
-          </p>
-          <div className="flex items-center gap-2 pt-2 border-t border-gray-100 mt-auto">
-            <a
-              href={`https://twitter.com/NajranCluster/status/${tweet.id}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center hover:bg-[#2BAAE2] transition-colors"
-              onClick={(e) => e.stopPropagation()}
-              data-testid={`link-tweet-${tweet.id}`}
-            >
-              <SiX className="w-3 h-3 text-gray-600 group-hover:text-white" />
-            </a>
+          ) : (
+            <div className="w-full h-full bg-gradient-to-br from-[#005d47]/10 to-[#2BAAE2]/10 flex items-center justify-center">
+              <Newspaper className="w-12 h-12 text-[#005d47]/30" />
+            </div>
+          )}
+          <span className={`absolute bottom-2 right-2 bg-[#005d47] text-white text-xs px-3 py-1 rounded ${fontClass}`}>
+            {language === 'ar' ? 'أخبار التجمع' : 'Cluster News'}
+          </span>
+        </div>
+
+        {/* Content */}
+        <div className="p-5 flex flex-col flex-1">
+          <div className="mb-2">
             <span className={`text-gray-400 text-xs ${fontClass}`}>
-              {formatArabicDate(tweet.created_at, language)}
+              📅 {formatArabicDate(tweet.created_at, language)}
             </span>
           </div>
+          <h3 className={`text-gray-800 font-bold text-base mb-2 line-clamp-2 ${fontClass}`}>
+            {title}
+          </h3>
+          {excerpt && (
+            <p className={`text-gray-500 text-sm leading-relaxed line-clamp-2 flex-1 ${fontClass}`}>
+              {excerpt}
+            </p>
+          )}
+          <a
+            href={`https://twitter.com/NajranCluster/status/${tweet.id}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`inline-flex items-center gap-1 mt-3 text-[#2BAAE2] font-bold text-sm hover:underline ${fontClass}`}
+            onClick={(e) => e.stopPropagation()}
+            data-testid={`link-tweet-${tweet.id}`}
+          >
+            {language === 'ar' ? 'قراءة المزيد ←' : 'Read More →'}
+          </a>
         </div>
       </div>
     );
   };
-  
+
   const allTweets = [...uniqueTweets];
 
   return (
-    <div className="py-4 w-full px-4 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 auto-rows-[1fr]">
+    <div className="container-custom py-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {allTweets.map((tweet, index) => renderTweetCard(tweet, index, false))}
       </div>
     </div>

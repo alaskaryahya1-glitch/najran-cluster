@@ -31,28 +31,27 @@ export default function CareModel() {
   }, language);
 
   return (
-    <div className="min-h-screen relative">
-      <div className="fixed inset-0 z-0">
-        <img
-          src={heroImage}
-          alt=""
-          data-nosnippet="true"
-          className="w-full h-full object-cover dark-bg-image"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/35 to-black/45" />
-      </div>
-
+    <div className="min-h-screen">
       <Header />
 
-      <main className="relative z-10">
+      <main className="care-model-content">
+        {/* Hero */}
         <section className="relative py-24 overflow-hidden">
-          <div className="absolute inset-0 bg-black/15 backdrop-blur-[2px]"></div>
-          <div className="absolute inset-0 najran-geometric-bg opacity-20"></div>
-          
-          <div className="container-custom relative">
+          <div className="absolute inset-0 z-0">
+            <img
+              src={heroImage}
+              alt=""
+              data-nosnippet="true"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60" />
+          </div>
+          <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none z-10"></div>
+
+          <div className="container-custom relative z-20">
             <motion.div
-              
-              
+
+
               className="text-center mb-8"
             >
               <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
@@ -61,80 +60,81 @@ export default function CareModel() {
               <h1 className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-white ${fontClass} mb-4`}>
                 {language === 'ar' ? 'نموذج الرعاية الصحية السعودي' : 'Saudi Healthcare Model'}
               </h1>
-              <p className={`text-white ${fontClass} max-w-3xl mx-auto text-lg`}>
+              <p className={`text-white/80 ${fontClass} max-w-3xl mx-auto text-lg`}>
                 {t("home.healthModel.desc")}
               </p>
             </motion.div>
           </div>
         </section>
 
-        <section className="relative py-10 sm:py-12 md:py-16 overflow-hidden">
-          <div className="absolute inset-0 bg-black/20 dark:bg-black/50 backdrop-blur-[2px]"></div>
-          <div className="absolute inset-0 najran-geometric-bg opacity-20"></div>
-          
+        {/* أبعاد الصحة */}
+        <section className="relative py-10 sm:py-12 md:py-16 overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
+          <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+
           <div className="container-custom relative">
             <motion.div
-              
-              
-              
+
+
+
               className="text-center mb-8 sm:mb-10 md:mb-12"
             >
-              <h2 className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold ${fontClass} text-white mb-4`}>
+              <h2 className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold ${fontClass} text-[#005d47] mb-4`}>
                 {t("home.healthModel.title")}
               </h2>
-              <p className={`text-white mx-auto ${fontClass} whitespace-nowrap`}>
+              <p className={`text-[#4a5568] mx-auto ${fontClass} whitespace-nowrap`}>
                 {t("home.healthModel.subtitle")}
               </p>
             </motion.div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-10 sm:mb-12 md:mb-16">
               {[
-                { id: 'mental', icon: Brain, color: 'from-purple-500 to-purple-700' },
-                { id: 'social', icon: UsersRound, color: 'from-[#2BAAE2] to-[#1691D0]' },
-                { id: 'physical', icon: Dumbbell, color: 'from-[#1691D0] to-[#15508A]' },
+                { id: 'mental', icon: Brain },
+                { id: 'social', icon: UsersRound },
+                { id: 'physical', icon: Dumbbell },
               ].map((pillar, idx) => (
                 <motion.div
                   key={pillar.id}
-                  
-                  
-                  
-                  
-                  className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-2xl overflow-hidden border border-white/20 relative"
+
+
+
+
+                  className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all relative"
+                  style={{ borderRadius: '40px' }}
                 >
                   <CardStar size="md" />
-                  <div className="h-1.5 bg-[#2BAAE2]"></div>
+                  <div className="h-1.5 bg-[#2BAAE2]" style={{ borderRadius: '40px 40px 0 0' }}></div>
                   <div className="p-6 relative z-10">
-                  <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <pillar.icon className="w-8 h-8 text-[#2BAAE2]" />
-                  </div>
-                  <h3 className={`text-xl font-bold text-center text-white mb-4 ${fontClass}`}>
-                    {t(`home.healthModel.${pillar.id}.title`)}
-                  </h3>
-                  <ul className={`space-y-2 ${fontClass}`}>
-                    {[1, 2, 3].map((num) => (
-                      <li key={num} className="flex items-start gap-2">
-                        <div className="w-2 h-2 bg-[#2BAAE2] rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-white text-sm">
-                          {t(`home.healthModel.${pillar.id}.item${num}`)}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
+                    <div className="w-16 h-16 bg-[#004d3a]/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                      <pillar.icon className="w-8 h-8 text-[#2BAAE2]" />
+                    </div>
+                    <h3 className={`text-xl font-bold text-center text-[#005d47] mb-4 ${fontClass}`}>
+                      {t(`home.healthModel.${pillar.id}.title`)}
+                    </h3>
+                    <ul className={`space-y-2 ${fontClass}`}>
+                      {[1, 2, 3].map((num) => (
+                        <li key={num} className="flex items-start gap-2">
+                          <div className="w-2 h-2 bg-[#2BAAE2] rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-[#4a5568] text-sm">
+                            {t(`home.healthModel.${pillar.id}.item${num}`)}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </motion.div>
               ))}
             </div>
 
             <motion.div
-              
-              
-              
+
+
+
               className="text-center mb-12"
             >
-              <h2 className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold ${fontClass} text-white mb-4`}>
+              <h2 className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold ${fontClass} text-[#005d47] mb-4`}>
                 {t("home.careSystems.title")}
               </h2>
-              <p className={`text-white max-w-2xl mx-auto ${fontClass}`}>
+              <p className={`text-[#4a5568] max-w-2xl mx-auto ${fontClass}`}>
                 {t("home.careSystems.subtitle")}
               </p>
             </motion.div>
@@ -143,29 +143,29 @@ export default function CareModel() {
               {careSystemsData.map((system, idx) => (
                 <motion.button
                   key={system.id}
-                  
-                  
-                  
-                  
+
+
+
+
                   onClick={() => setSelectedCareSystem(selectedCareSystem === system.id ? null : system.id)}
-                  className={`flex flex-col items-center rounded-xl overflow-hidden transition-all ${
+                  className={`flex flex-col items-center rounded-2xl overflow-hidden transition-all border ${
                     selectedCareSystem === system.id
-                      ? 'bg-black/30 dark:bg-black/55 backdrop-blur-md text-white shadow-lg scale-105 border border-white/40'
-                      : 'bg-black/20 dark:bg-black/50 backdrop-blur-md text-white/90 hover:bg-white/15 border border-white/20'
+                      ? 'bg-[#005d47] text-white shadow-lg scale-105 border-[#005d47]'
+                      : 'bg-white text-gray-700 hover:shadow-md border-gray-100 shadow-sm'
                   }`}
                   data-testid={`button-care-system-${system.id}`}
                 >
                   <div className="h-1.5 w-full bg-[#2BAAE2]"></div>
                   <div className="flex flex-col items-center gap-2 px-6 py-4">
-                  <system.icon className="w-8 h-8 text-[#2BAAE2]" />
-                  <span className={`text-sm font-medium text-center ${fontClass}`}>
-                    {t(`home.careSystems.${system.id}.title`)}
-                  </span>
-                  <ChevronDown 
-                    className={`w-4 h-4 text-[#2BAAE2] transition-transform duration-300 ${
-                      selectedCareSystem === system.id ? 'rotate-180' : ''
-                    }`} 
-                  />
+                    <system.icon className={`w-8 h-8 ${selectedCareSystem === system.id ? 'text-white' : 'text-[#2BAAE2]'}`} />
+                    <span className={`text-sm font-medium text-center ${fontClass} ${selectedCareSystem === system.id ? 'text-white' : 'text-[#4a5568]'}`}>
+                      {t(`home.careSystems.${system.id}.title`)}
+                    </span>
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform duration-300 ${
+                        selectedCareSystem === system.id ? 'rotate-180 text-white' : 'text-[#2BAAE2]'
+                      }`}
+                    />
                   </div>
                 </motion.button>
               ))}
@@ -175,42 +175,42 @@ export default function CareModel() {
               {selectedCareSystem && (
                 <motion.div
                   key={selectedCareSystem}
-                  
-                  
+
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
-                  className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-2xl overflow-hidden border border-white/20 relative"
+                  className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm relative"
+                  style={{ borderRadius: '40px' }}
                 >
                   <CardStar size="lg" />
-                  <div className="h-1.5 bg-[#2BAAE2]"></div>
+                  <div className="h-1.5 bg-[#2BAAE2]" style={{ borderRadius: '40px 40px 0 0' }}></div>
                   <div className="p-8 relative z-10">
-                  <div className="flex justify-between items-start mb-6">
-                    <div>
-                      <h3 className={`text-2xl font-bold text-white ${fontClass} mb-2`}>
-                        {t(`home.careSystems.${selectedCareSystem}.title`)}
-                      </h3>
-                      <p className={`text-white ${fontClass}`}>
-                        {t(`home.careSystems.${selectedCareSystem}.desc`)}
-                      </p>
-                    </div>
-                    <button
-                      onClick={() => setSelectedCareSystem(null)}
-                      className="p-2 rounded-full hover:bg-white/10 transition-colors"
-                      data-testid="button-close-care-system"
-                    >
-                      <X className="w-5 h-5 text-white/90" />
-                    </button>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {Array.from({ length: careSystemsData.find(s => s.id === selectedCareSystem)?.initCount || 3 }).map((_, idx) => (
-                      <div key={idx} className="bg-white/10 rounded-xl p-4 border border-white/10">
-                        <p className={`text-white/90 text-sm ${fontClass}`}>
-                          {t(`home.careSystems.${selectedCareSystem}.init${idx + 1}`)}
+                    <div className="flex justify-between items-start mb-6">
+                      <div>
+                        <h3 className={`text-2xl font-bold text-[#005d47] ${fontClass} mb-2`}>
+                          {t(`home.careSystems.${selectedCareSystem}.title`)}
+                        </h3>
+                        <p className={`text-[#4a5568] ${fontClass}`}>
+                          {t(`home.careSystems.${selectedCareSystem}.desc`)}
                         </p>
                       </div>
-                    ))}
-                  </div>
+                      <button
+                        onClick={() => setSelectedCareSystem(null)}
+                        className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+                        data-testid="button-close-care-system"
+                      >
+                        <X className="w-5 h-5 text-gray-500" />
+                      </button>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {Array.from({ length: careSystemsData.find(s => s.id === selectedCareSystem)?.initCount || 3 }).map((_, idx) => (
+                        <div key={idx} className="bg-[#f8fafc] rounded-xl p-4 border border-gray-100">
+                          <p className={`text-[#4a5568] text-sm ${fontClass}`}>
+                            {t(`home.careSystems.${selectedCareSystem}.init${idx + 1}`)}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </motion.div>
               )}

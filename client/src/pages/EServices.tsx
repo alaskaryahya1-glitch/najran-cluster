@@ -103,23 +103,22 @@ export default function EServices() {
               {platforms.map((platform, idx) => (
                 <motion.div
                   key={platform.titleKey}
-                  className="group bg-white rounded-[40px] border border-[rgba(0,93,71,0.05)] p-10 transition-all duration-[400ms] hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(0,77,58,0.08)] hover:border-[#005d47] flex flex-col items-center text-center"
+                  className="group bg-black/25 backdrop-blur-md rounded-[40px] border border-white/15 p-10 transition-all duration-[400ms] hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(43,170,226,0.2)] hover:border-[#2BAAE2] flex flex-col items-center text-center"
                   data-testid={`eservice-card-${idx}`}
                 >
                   <div
-                    className="w-20 h-20 bg-[#f0fdf4] rounded-3xl flex items-center justify-center mb-6 flex-shrink-0 transition-all duration-[400ms] group-hover:bg-[#005d47] group-hover:-rotate-[5deg] group-hover:scale-110"
-                    style={{ boxShadow: 'inset 0 2px 4px rgba(0, 93, 71, 0.05)' }}
+                    className="w-20 h-20 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl flex items-center justify-center mb-6 flex-shrink-0 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110"
                   >
                     <img
                       src={platform.src}
                       alt={t(platform.titleKey)}
-                      className="w-12 h-12 object-contain transition-all duration-[400ms] group-hover:brightness-0 group-hover:invert"
+                      className="w-12 h-12 object-contain brightness-0 invert transition-all duration-[400ms]"
                     />
                   </div>
-                  <h4 className={`text-xl font-extrabold text-[#004d3a] ${fontClass} mb-3`}>
+                  <h4 className={`text-xl font-extrabold text-white ${fontClass} mb-3`}>
                     {t(platform.titleKey)}
                   </h4>
-                  <p className={`text-gray-500 ${fontClass} text-sm leading-relaxed mb-6 flex-1`}>
+                  <p className={`text-white/70 ${fontClass} text-sm leading-relaxed mb-6 flex-1`}>
                     {t(platform.descKey)}
                   </p>
                   <div className="flex flex-col gap-2 mt-auto w-full">
@@ -129,7 +128,7 @@ export default function EServices() {
                           href={platform.websiteUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-full h-full bg-[#004d3a] text-white rounded-full px-6 font-bold flex items-center justify-center gap-2 hover:bg-[#005d47] transition-colors"
+                          className="w-full h-full bg-[#2BAAE2] text-white rounded-full px-6 font-bold flex items-center justify-center gap-2 hover:bg-[#1A9FD8] transition-colors"
                           data-testid={`link-website-${idx}`}
                         >
                           <ExternalLink className="w-4 h-4" />
@@ -144,7 +143,7 @@ export default function EServices() {
                             href={platform.appStoreUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex-1 h-full flex items-center justify-center gap-1.5 bg-gray-100 text-gray-700 rounded-full px-3 text-xs font-medium hover:bg-[#004d3a] hover:text-white transition-colors"
+                            className="flex-1 h-full flex items-center justify-center gap-1.5 bg-white/10 border border-white/20 text-white/80 rounded-full px-3 text-xs font-medium hover:bg-[#2BAAE2] hover:text-white hover:border-[#2BAAE2] transition-colors"
                             data-testid={`link-appstore-${idx}`}
                           >
                             <SiApple className="w-3.5 h-3.5" />
@@ -154,7 +153,7 @@ export default function EServices() {
                             href={platform.playStoreUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex-1 h-full flex items-center justify-center gap-1.5 bg-gray-100 text-gray-700 rounded-full px-3 text-xs font-medium hover:bg-[#004d3a] hover:text-white transition-colors"
+                            className="flex-1 h-full flex items-center justify-center gap-1.5 bg-white/10 border border-white/20 text-white/80 rounded-full px-3 text-xs font-medium hover:bg-[#2BAAE2] hover:text-white hover:border-[#2BAAE2] transition-colors"
                             data-testid={`link-playstore-${idx}`}
                           >
                             <SiGoogleplay className="w-3.5 h-3.5" />

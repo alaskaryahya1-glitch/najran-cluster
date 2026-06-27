@@ -122,43 +122,49 @@ export default function EServices() {
                   <p className={`text-gray-500 ${fontClass} text-sm leading-relaxed mb-6 flex-1`}>
                     {t(platform.descKey)}
                   </p>
-                  <div className="flex flex-col items-center gap-3 mt-auto w-full">
-                    {platform.websiteUrl && (
-                      <a
-                        href={platform.websiteUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full bg-[#004d3a] text-white rounded-full px-6 py-2.5 font-bold flex items-center justify-center gap-2 hover:bg-[#005d47] transition-colors"
-                        data-testid={`link-website-${idx}`}
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        <span>{language === 'ar' ? 'زيارة الموقع' : 'Visit Website'}</span>
-                      </a>
-                    )}
-                    {platform.hasApp && (
-                      <div className="flex items-center gap-2 w-full">
+                  <div className="flex flex-col gap-2 mt-auto w-full">
+                    {/* Website button zone — always reserves space */}
+                    <div className="w-full h-[42px]">
+                      {platform.websiteUrl && (
                         <a
-                          href={platform.appStoreUrl}
+                          href={platform.websiteUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex-1 flex items-center justify-center gap-1.5 bg-gray-100 text-gray-700 rounded-full px-3 py-2 text-xs font-medium hover:bg-[#004d3a] hover:text-white transition-colors"
-                          data-testid={`link-appstore-${idx}`}
+                          className="w-full h-full bg-[#004d3a] text-white rounded-full px-6 font-bold flex items-center justify-center gap-2 hover:bg-[#005d47] transition-colors"
+                          data-testid={`link-website-${idx}`}
                         >
-                          <SiApple className="w-3.5 h-3.5" />
-                          <span>App Store</span>
+                          <ExternalLink className="w-4 h-4" />
+                          <span>{language === 'ar' ? 'زيارة الموقع' : 'Visit Website'}</span>
                         </a>
-                        <a
-                          href={platform.playStoreUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex-1 flex items-center justify-center gap-1.5 bg-gray-100 text-gray-700 rounded-full px-3 py-2 text-xs font-medium hover:bg-[#004d3a] hover:text-white transition-colors"
-                          data-testid={`link-playstore-${idx}`}
-                        >
-                          <SiGoogleplay className="w-3.5 h-3.5" />
-                          <span>Google Play</span>
-                        </a>
-                      </div>
-                    )}
+                      )}
+                    </div>
+                    {/* App pills zone — always reserves space */}
+                    <div className="w-full h-[34px]">
+                      {platform.hasApp && (
+                        <div className="flex items-center gap-2 w-full h-full">
+                          <a
+                            href={platform.appStoreUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex-1 h-full flex items-center justify-center gap-1.5 bg-gray-100 text-gray-700 rounded-full px-3 text-xs font-medium hover:bg-[#004d3a] hover:text-white transition-colors"
+                            data-testid={`link-appstore-${idx}`}
+                          >
+                            <SiApple className="w-3.5 h-3.5" />
+                            <span>App Store</span>
+                          </a>
+                          <a
+                            href={platform.playStoreUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex-1 h-full flex items-center justify-center gap-1.5 bg-gray-100 text-gray-700 rounded-full px-3 text-xs font-medium hover:bg-[#004d3a] hover:text-white transition-colors"
+                            data-testid={`link-playstore-${idx}`}
+                          >
+                            <SiGoogleplay className="w-3.5 h-3.5" />
+                            <span>Google Play</span>
+                          </a>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </motion.div>
               ))}

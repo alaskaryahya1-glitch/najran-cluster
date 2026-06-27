@@ -531,6 +531,7 @@ export default function About() {
           className="relative flex items-center justify-center overflow-hidden"
           style={{ backgroundColor: '#005d47', minHeight: '50vh' }}
         >
+          <div className="absolute inset-0 najran-geometric-bg opacity-[0.08] pointer-events-none"></div>
           <video
             autoPlay
             loop
@@ -561,7 +562,7 @@ export default function About() {
 
         {/* ===== NEW: About Section ===== */}
         <section className="relative py-10 md:py-16 overflow-hidden bg-white">
-          {/* زخرفة خلفية خفية */}
+          <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
           <video autoPlay loop muted playsInline aria-hidden="true"
             className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
             <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
@@ -654,8 +655,9 @@ export default function About() {
         </section>
 
         {/* ===== Leadership Section ===== */}
-        <section className="py-20 md:py-24" style={{ backgroundColor: '#f8fafc' }}>
-          <div className="container-custom text-center">
+        <section className="relative py-20 md:py-24 overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
+          <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+          <div className="container-custom text-center relative z-10">
 
             {/* العنوان */}
             <motion.div

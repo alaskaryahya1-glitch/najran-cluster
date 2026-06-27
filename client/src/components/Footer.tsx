@@ -92,7 +92,6 @@ export function Footer() {
                 src={whiteLogo}
                 alt={t("header.clusterName")}
                 className="h-16 sm:h-20 w-auto object-contain mb-1"
-                style={{ filter: 'brightness(0) saturate(100%) invert(62%) sepia(46%) saturate(533%) hue-rotate(163deg) brightness(98%) contrast(91%)' }}
               />
               <p className={`text-[#2BAAE2] text-[10px] ${fontClass} translate-x-1 sm:-translate-x-2`} style={{ marginTop: '-16px' }}>
                 {language === 'ar' ? 'شركة الصحة القابضة' : 'Health Holding Co.'}

@@ -53,13 +53,18 @@ export function Footer() {
   ];
 
   return (
-    <div style={{ backgroundColor: '#0c1c28' }}>
-    <footer className="text-white relative overflow-hidden bg-black/25 backdrop-blur-md border-t border-white/10">
+    <div style={{ backgroundColor: '#f7f8f9' }}>
+    <footer className="relative overflow-hidden border-t border-gray-200">
       {/* Geometric pattern */}
-      <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
+      <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+      {/* Moving pattern video */}
+      <video autoPlay loop muted playsInline aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
+        <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
+      </video>
 
       {/* Partners Logos Row */}
-      <div className="border-b border-white/10 relative z-10">
+      <div className="border-b border-gray-200 relative z-10">
         <div className="container-custom py-5">
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 sm:flex-nowrap sm:justify-between">
             {partnerLogos.map((logo) => (
@@ -68,14 +73,14 @@ export function Footer() {
                 href={logo.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="h-8 sm:h-10 flex items-center justify-center flex-shrink-0 opacity-50 hover:opacity-100 transition-opacity"
+                className="h-8 sm:h-10 flex items-center justify-center flex-shrink-0 opacity-40 hover:opacity-80 transition-opacity"
                 data-testid={`link-partner-${logo.alt.toLowerCase().replace(/\s+/g, '-')}`}
               >
                 <img
                   src={logo.src}
                   alt={logo.alt}
                   className="h-6 sm:h-9 w-auto object-contain"
-                  style={{ filter: 'brightness(0) invert(1)' }}
+                  style={{ filter: 'brightness(0)' }}
                 />
               </a>
             ))}
@@ -94,14 +99,13 @@ export function Footer() {
                 src={clusterLogo}
                 alt={t("header.clusterName")}
                 className="h-16 sm:h-20 w-auto object-contain mb-1"
-                style={{ filter: 'brightness(0) invert(1)' }}
               />
-              <p className={`text-white text-[10px] ${fontClass} translate-x-1 sm:-translate-x-2`} style={{ marginTop: '-16px' }}>
+              <p className={`text-[#2BAAE2] text-[10px] ${fontClass} translate-x-1 sm:-translate-x-2`} style={{ marginTop: '-16px' }}>
                 {language === 'ar' ? 'شركة الصحة القابضة' : 'Health Holding Co.'}
               </p>
             </div>
 
-            <p className={`text-white/70 text-sm leading-relaxed mb-6 ${fontClass}`}>
+            <p className={`text-gray-600 text-sm leading-relaxed mb-6 ${fontClass}`}>
               {language === 'ar'
                 ? 'يقدم تجمع نجران الصحي خدمات الرعاية الصحية لأكثر من 495 ألف مستفيد في منطقة نجران.'
                 : 'Najran Health Cluster provides healthcare services to over 495,000 beneficiaries in the Najran region.'}
@@ -109,7 +113,7 @@ export function Footer() {
 
             {/* Social Icons */}
             <div>
-              <p className={`text-white/80 text-sm font-semibold mb-3 ${fontClass}`}>{t("footer.followUs")}</p>
+              <p className={`text-gray-700 text-sm font-semibold mb-3 ${fontClass}`}>{t("footer.followUs")}</p>
               <div className="flex items-center gap-2 flex-wrap">
                 {socialLinks.map((social) => (
                   <a
@@ -117,11 +121,11 @@ export function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-9 h-9 bg-white/10 hover:bg-[#2BAAE2] border border-white/15 rounded-full flex items-center justify-center transition-all duration-200 group"
+                    className="w-9 h-9 bg-[#2BAAE2]/10 hover:bg-[#2BAAE2] border border-[#2BAAE2]/20 rounded-full flex items-center justify-center transition-all duration-200 group"
                     title={social.label}
                     data-testid={`link-social-${social.label.toLowerCase()}`}
                   >
-                    <social.icon className="w-4 h-4 text-white/70 group-hover:text-white transition-colors" />
+                    <social.icon className="w-4 h-4 text-[#2BAAE2] group-hover:text-white transition-colors" />
                   </a>
                 ))}
               </div>
@@ -138,7 +142,7 @@ export function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="footer-link text-white/60 hover:text-white transition-all text-sm block mb-3"
+                    className="footer-link text-gray-500 hover:text-gray-900 transition-all text-sm block mb-3"
                     data-testid={`link-footer-${link.href.replace('/', '')}`}
                   >
                     {link.label}
@@ -160,7 +164,7 @@ export function Footer() {
                     href={link.href}
                     target={link.external ? "_blank" : undefined}
                     rel={link.external ? "noopener noreferrer" : undefined}
-                    className="footer-link text-white/60 hover:text-white transition-all text-sm block mb-3"
+                    className="footer-link text-gray-500 hover:text-gray-900 transition-all text-sm block mb-3"
                   >
                     {link.label}
                   </a>
@@ -179,27 +183,27 @@ export function Footer() {
                 href="https://www.google.com/maps/place/Branch+of+the+Ministry+of+Health,+Najran+Region/@17.5484375,44.2350625,1083m/data=!3m2!1e3!4b1!4m6!3m5!1s0x15fec332340cba09:0x3bddf8648aa63f9c!8m2!3d17.5484375!4d44.2350625!16s%2Fg%2F11f61pg7j4"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-3 text-white/60 hover:text-white transition-colors group"
+                className="flex items-start gap-3 text-gray-500 hover:text-gray-900 transition-colors group"
                 data-testid="link-map-location"
               >
-                <div className="w-8 h-8 bg-white/10 border border-white/15 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-[#2BAAE2]/20 transition-colors">
+                <div className="w-8 h-8 bg-[#2BAAE2]/10 border border-[#2BAAE2]/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-[#2BAAE2]/20 transition-colors">
                   <MapPin className="w-4 h-4 text-[#2BAAE2]" />
                 </div>
                 <div>
-                  <p className="text-white/70 text-sm font-medium">{t("footer.region")}</p>
-                  <p className="text-white/40 text-xs mt-0.5">{t("footer.country")}</p>
+                  <p className="text-gray-700 text-sm font-medium">{t("footer.region")}</p>
+                  <p className="text-gray-400 text-xs mt-0.5">{t("footer.country")}</p>
                 </div>
               </a>
 
               <a
                 href="tel:920011140"
-                className="flex items-center gap-3 text-white/60 hover:text-white transition-colors group"
+                className="flex items-center gap-3 text-gray-500 hover:text-gray-900 transition-colors group"
                 data-testid="link-phone-footer"
               >
-                <div className="w-8 h-8 bg-white/10 border border-white/15 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-[#2BAAE2]/20 transition-colors">
+                <div className="w-8 h-8 bg-[#2BAAE2]/10 border border-[#2BAAE2]/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-[#2BAAE2]/20 transition-colors">
                   <Phone className="w-4 h-4 text-[#2BAAE2]" />
                 </div>
-                <span className="font-sans text-sm text-white/70" dir="ltr">920011140</span>
+                <span className="font-sans text-sm text-gray-700" dir="ltr">920011140</span>
               </a>
             </div>
           </div>
@@ -208,18 +212,18 @@ export function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/10 relative z-10">
+      <div className="border-t border-gray-200 relative z-10">
         <div className="container-custom py-4 flex flex-col md:flex-row justify-between items-center gap-3 text-center">
-          <p className={`text-xs text-white/40 ${fontClass}`}>
+          <p className={`text-xs text-gray-400 ${fontClass}`}>
             © {new Date().getFullYear()} {t("header.clusterName")}. {t("footer.rights")}.
           </p>
-          <span className="font-sans text-xs text-white/40" dir="ltr">Made by : Yahya Alhareth</span>
-          <div className={`flex items-center gap-4 text-xs ${fontClass} text-white/40`}>
-            <a href="#" className="hover:text-white transition-colors" data-testid="link-privacy">{t("footer.privacy")}</a>
-            <span className="text-white/20">|</span>
-            <a href="#" className="hover:text-white transition-colors" data-testid="link-terms">{t("footer.terms")}</a>
-            <span className="text-white/20">|</span>
-            <a href="#" className="hover:text-white transition-colors" data-testid="link-accessibility">{t("footer.accessibility")}</a>
+          <span className="font-sans text-xs text-gray-400" dir="ltr">Made by : Yahya Alhareth</span>
+          <div className={`flex items-center gap-4 text-xs ${fontClass} text-gray-400`}>
+            <a href="#" className="hover:text-gray-800 transition-colors" data-testid="link-privacy">{t("footer.privacy")}</a>
+            <span className="text-gray-300">|</span>
+            <a href="#" className="hover:text-gray-800 transition-colors" data-testid="link-terms">{t("footer.terms")}</a>
+            <span className="text-gray-300">|</span>
+            <a href="#" className="hover:text-gray-800 transition-colors" data-testid="link-accessibility">{t("footer.accessibility")}</a>
           </div>
         </div>
       </div>

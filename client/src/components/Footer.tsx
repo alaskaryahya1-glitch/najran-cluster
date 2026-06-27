@@ -53,23 +53,11 @@ export function Footer() {
   ];
 
   return (
-    <footer className="text-white relative overflow-hidden" style={{ borderTop: '2px solid #2BAAE2' }}>
-      {/* Video background */}
-      <div className="absolute inset-0" style={{ zIndex: 0 }}>
-        <video
-          src="https://cmsapi.health.sa/background.mp4-n92g3n.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60" />
-      </div>
+    <footer className="text-white relative overflow-hidden" style={{ backgroundColor: '#0c1c28', borderTop: '2px solid #2BAAE2' }}>
+      {/* Glass card tint — same shade as the page cards */}
+      <div className="absolute inset-0 bg-black/25 pointer-events-none"></div>
       {/* Geometric pattern */}
-      <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none" style={{ zIndex: 1 }}></div>
-      {/* Glass card overlay — frosts the video */}
-      <div className="absolute inset-0 bg-black/25 backdrop-blur-md pointer-events-none" style={{ zIndex: 2 }}></div>
+      <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
 
       {/* Partners Logos Row */}
       <div className="border-b border-white/10 relative z-10">

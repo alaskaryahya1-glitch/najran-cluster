@@ -14,7 +14,7 @@ import rashidImage from "@assets/IMG_8841_1767132823617.jpeg";
 import mohammedImage from "@assets/IMG_8844_1767132958441.jpeg";
 import yahyaImage from "@assets/IMG_8843_1767132982183.jpeg";
 import musabiImage from "@assets/IMG_8846_1767133007099.jpeg";
-import ismailImage from "@assets/IMG_8849_1767133039124.png";
+import ismailImage from "@assets/IMG_7535.jpg";
 import mohammadMutlaqImage from "@assets/WhatsApp_Image_2026-02-23_at_2.29.03_PM_1771955205714.jpeg";
 import heroImage from "@assets/0B4A4B84-6228-4A64-9958-EB4C285CB04D_1767273959627.png";
 import { CardStar } from "@/components/BrandIcon";

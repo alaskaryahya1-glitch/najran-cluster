@@ -59,7 +59,7 @@ export function Footer() {
       <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
 
       {/* Partners Logos Row */}
-      <div className="border-b-2 border-[#2BAAE2] relative z-10">
+      <div className="border-b border-white/10 relative z-10">
         <div className="container-custom py-5">
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 sm:flex-nowrap sm:justify-between">
             {partnerLogos.map((logo) => (

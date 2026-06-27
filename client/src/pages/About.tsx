@@ -586,7 +586,7 @@ export default function About() {
                   )}
                 </h2>
 
-                <p className={`text-lg text-gray-600 leading-relaxed italic ${fontClass}`}>
+                <p className={`text-lg text-gray-600 leading-relaxed ${fontClass}`}>
                   {language === 'ar'
                     ? 'نحن لسنا مجرد شبكة مستشفيات، بل منظومة صحية متكاملة تهدف إلى إعادة صياغة مفهوم الرعاية الصحية في منطقة نجران، واضعين سلامة المستفيد وجودة الخدمة في قمة أولوياتنا.'
                     : 'We are not just a network of hospitals, but a comprehensive healthcare system aimed at redefining healthcare in the Najran region, placing beneficiary safety and service quality at the top of our priorities.'}

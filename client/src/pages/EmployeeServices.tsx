@@ -47,7 +47,7 @@ import logoSeha from "@assets/SehaLogo_1767515239149.png";
 import logoMyDrive from "@assets/mydrive_1767516273165.png";
 import logoVolunteer from "@assets/التطووووع_1767516650602.png";
 import logoDhaman from "@assets/IMG_8797_1767048634247.png";
-import logoOutlook from "@assets/original-31293c6476ae8628875b4f422264e2c4_1767518560706.png";
+import logoOutlook from "@assets/pngtree-e-mail-icon-with-blue-background-image-information-computer-vector-picture-image_9947966.png";
 import logoEmailAddresses from "@assets/png-clipart-gmail-logo-illustration-email-computer-icons-messa_1767519110048.png";
 import logoPhone from "@assets/pngtree-black-call-icon-png-image_2413693_1767519362030.png";
 import logoWasfatyNew from "@assets/logo-rgb_1768467991326.png";
@@ -274,9 +274,10 @@ function GlassStarService({ service, index, language, fontClass, size = "md", on
   
   const hasLogo = service.logoPath && logoMap[service.logoPath];
   const logoSrc = service.logoPath ? logoMap[service.logoPath] : null;
-  const shouldInvertLogo = service.logoPath === 'png-clipart-gmail-logo-illustration-email-computer-icons-messa_1767519110048.png' || 
+  const shouldInvertLogo = service.logoPath === 'png-clipart-gmail-logo-illustration-email-computer-icons-messa_1767519110048.png' ||
     service.logoPath === 'pngtree-black-call-icon-png-image_2413693_1767519362030.png' ||
     service.logoPath === 'logo-rgb_1768467991326.png';
+  const isOutlookLogo = service.logoPath === 'original-31293c6476ae8628875b4f422264e2c4_1767518560706.png';
   
   const sizes = {
     sm: { container: "w-24 h-24 xs:w-28 xs:h-28 sm:w-32 sm:h-32", icon: "w-5 h-5 xs:w-6 xs:h-6 sm:w-7 sm:h-7", text: "text-[8px] xs:text-[9px] sm:text-[10px]", logo: "w-12 h-12 xs:w-16 xs:h-16 sm:w-18 sm:h-18" },
@@ -373,9 +374,11 @@ function GlassStarService({ service, index, language, fontClass, size = "md", on
                     alt={language === 'ar' ? service.titleAr : service.titleEn}
                     className={`${sizes[size].logo} object-contain drop-shadow-lg transition-all duration-300`}
                     style={{
-                      filter: shouldInvertLogo 
-                        ? (isHovered ? "brightness(0) invert(1) brightness(1.3)" : "brightness(0) invert(1) brightness(1)") 
-                        : (isHovered ? "brightness(1.2)" : "brightness(1)")
+                      filter: isOutlookLogo
+                        ? isHovered ? "brightness(1.1) drop-shadow(0 2px 8px rgba(41,181,232,0.3))" : "brightness(1) drop-shadow(0 1px 4px rgba(41,181,232,0.2))"
+                        : isHovered
+                          ? "brightness(0) saturate(100%) invert(15%) sepia(83%) saturate(690%) hue-rotate(143deg) brightness(92%) contrast(97%)"
+                          : "brightness(0) saturate(100%) invert(65%) sepia(50%) saturate(550%) hue-rotate(168deg) brightness(105%) contrast(90%)"
                     }}
                   />
                 ) : (

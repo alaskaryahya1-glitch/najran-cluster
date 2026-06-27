@@ -674,34 +674,10 @@ export default function About() {
               <div className="w-24 h-1.5 mx-auto mt-6 rounded-full" style={{ backgroundColor: '#004d3a' }}></div>
             </motion.div>
 
-            {/* CEO - بطاقة مميزة */}
-            <motion.div
-              className="mb-12 flex justify-center"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="group max-w-xs w-full">
-                <div className="rounded-[3rem] overflow-hidden shadow-sm border border-gray-100 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-3">
-                  <div className="h-72 overflow-hidden bg-gray-50">
-                    <img
-                      src={ceoImage}
-                      alt={t("about.ceo.name")}
-                      className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="p-6 text-center bg-white">
-                    <h4 className={`text-xl font-bold text-gray-900 mb-1 ${fontClass}`}>{t("about.ceo.name")}</h4>
-                    <p className={`font-semibold text-sm ${fontClass}`} style={{ color: '#004d3a' }}>{t("about.ceo")}</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* النواب - شبكة الصور */}
+            {/* شبكة القيادة - الرئيس + النواب */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               {[
+                { image: ceoImage, nameKey: "about.ceo.name", titleKey: "about.ceo", useObjectTop: true },
                 { image: cardRashid, nameKey: "about.deputy.rashid", titleKey: "about.deputy.rashid.title" },
                 { image: cardHarith, nameKey: "about.deputy.mohammed", titleKey: "about.deputy.mohammed.title" },
                 { image: cardMutlaq, nameKey: "about.deputy.mohammadMutlaq", titleKey: "about.deputy.mohammadMutlaq.title" },
@@ -719,12 +695,20 @@ export default function About() {
                   transition={{ duration: 0.5, delay: idx * 0.07 }}
                 >
                   <div className="bg-white rounded-[3.5rem] p-8 shadow-sm border border-gray-100 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-4">
-                    <div className="aspect-square overflow-hidden rounded-[2.5rem] mb-8 bg-gray-50">
-                      <img
-                        src={leader.image}
-                        alt={t(leader.nameKey)}
-                        className="w-full h-full object-cover object-bottom transition-all duration-700 ease-in-out grayscale group-hover:grayscale-0 scale-100 group-hover:scale-110"
-                      />
+                    <div className="relative aspect-square overflow-hidden rounded-[2.5rem] mb-8 bg-gray-50">
+                      {leader.useObjectTop ? (
+                        <img
+                          src={leader.image}
+                          alt={t(leader.nameKey)}
+                          className="w-full h-full object-cover object-top transition-all duration-700 ease-in-out grayscale group-hover:grayscale-0 scale-100 group-hover:scale-110"
+                        />
+                      ) : (
+                        <img
+                          src={leader.image}
+                          alt={t(leader.nameKey)}
+                          className="absolute bottom-0 left-0 w-full transition-all duration-700 ease-in-out grayscale group-hover:grayscale-0 group-hover:scale-110 origin-bottom"
+                        />
+                      )}
                     </div>
                     <h4 className={`text-xl font-bold text-gray-900 mb-2 ${fontClass}`}>{t(leader.nameKey)}</h4>
                     <p className={`font-semibold tracking-wide text-sm ${fontClass}`} style={{ color: '#004d3a' }}>

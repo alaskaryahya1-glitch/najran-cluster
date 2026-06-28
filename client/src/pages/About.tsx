@@ -392,7 +392,6 @@ export default function About() {
           style={{ backgroundColor: '#004070', minHeight: '65vh' }}
         >
           <div className="absolute inset-0 bg-black/30 pointer-events-none"></div>
-          <div className="absolute inset-0 najran-geometric-bg opacity-[0.05] pointer-events-none dark:hidden"></div>
           <video
             autoPlay
             loop

@@ -450,7 +450,6 @@ export default function EmployeeServices() {
           ))}
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/55 to-black/70" />
           <div className="absolute inset-0 dark:bg-black/50 pointer-events-none z-[2] transition-colors duration-300"></div>
-          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none z-[3] dark:hidden"></div>
           <div className="absolute bottom-24 left-1/2 -translate-x-1/2 flex gap-2 z-20">
             {heroSlides.map((_, idx) => (
               <button

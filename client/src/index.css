@@ -71,8 +71,14 @@ html {
    * gutter reservation. Horizontal overflow is handled on body/#root instead.
    */
   overflow-y: scroll;
-  scrollbar-gutter: stable;
-  scrollbar-width: thin;
+  scrollbar-gutter: stable; /* reserves gutter space so layout never shifts */
+  scrollbar-width: none;    /* Firefox: hide scrollbar, gutter space still reserved */
+  -ms-overflow-style: none; /* IE / old Edge */
+}
+
+/* Chrome, Safari, Edge — hide scrollbar track, keep scrolling + gutter */
+html::-webkit-scrollbar {
+  display: none;
 }
 
 body {
@@ -85,37 +91,6 @@ body {
   overflow-x: hidden;
   width: 100%;
   min-height: 100vh;
-}
-
-/* Custom scrollbar styling for smoother appearance */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: hsl(var(--muted-foreground) / 0.3);
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--muted-foreground) / 0.5);
-}
-
-/* Hide scrollbar on mobile but keep functionality */
-@media (max-width: 768px) {
-  ::-webkit-scrollbar {
-    width: 3px;
-    height: 3px;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: hsl(var(--muted-foreground) / 0.2);
-  }
 }
 
 /* Performance optimizations */

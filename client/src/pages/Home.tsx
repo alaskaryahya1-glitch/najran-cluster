@@ -480,7 +480,7 @@ export default function Home() {
 
 
               transition={{ delay: 0.7 }}
-              className="mt-10 md:mt-16 mb-4 md:mb-12"
+              className="mt-10 md:mt-16 mb-24 md:mb-12"
             >
               <div className="flex flex-wrap justify-center items-center gap-4">
                 {[

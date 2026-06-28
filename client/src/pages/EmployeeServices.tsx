@@ -435,7 +435,7 @@ export default function EmployeeServices() {
 
       <main>
         {/* Hero Section */}
-        <section className="relative py-24 overflow-hidden" style={{ backgroundColor: '#1a3a5c', minHeight: '40vh' }}>
+        <section className="relative py-24 overflow-hidden" style={{ backgroundColor: '#1a3a5c', minHeight: '60vh' }}>
           {heroSlides.map((slide, idx) => (
             <img
               key={idx}
@@ -503,7 +503,7 @@ export default function EmployeeServices() {
 
         {/* Loading State */}
         {isLoading && (
-          <section className="relative pt-28 md:pt-36 pb-20" style={{ backgroundColor: '#f7f8f9' }}>
+          <section className="relative pt-16 md:pt-20 pb-20" style={{ backgroundColor: '#f7f8f9' }}>
             <div className="flex flex-col items-center justify-center">
               <Loader2 className="w-12 h-12 text-[#2BAAE2] animate-spin mb-4" />
               <p className={`text-gray-600 ${fontClass}`}>{t("employeeServices.loading")}</p>
@@ -528,7 +528,7 @@ export default function EmployeeServices() {
 
         {/* Info Services */}
         {!isLoading && !error && infoServices.length > 0 && (
-          <section className="relative pt-28 md:pt-36 pb-12 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
+          <section className="relative pt-16 md:pt-20 pb-12 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
             <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
             <video autoPlay loop muted playsInline aria-hidden="true"
               className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">

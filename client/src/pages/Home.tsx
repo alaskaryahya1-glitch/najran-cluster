@@ -476,7 +476,7 @@ export default function Home() {
             </motion.div>
 
             {/* E-Services Platform Icons */}
-            <div className="flex items-center gap-4 mt-8 mb-36 md:mb-16">
+            <div className="flex md:hidden items-center gap-4 mt-8 mb-36">
               {[
                 { src: sehaLogo, name: language === 'ar' ? 'سها' : 'Seha', url: 'https://www.seha.sa/' },
                 { src: sehhatyLogo, name: language === 'ar' ? 'صحتي' : 'Sehhaty', url: 'https://apps.apple.com/sa/app/%D8%B5%D8%AD%D8%AA%D9%8A-sehhaty/id1459266578' },

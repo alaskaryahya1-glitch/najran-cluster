@@ -52,31 +52,12 @@
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
-  height: 100%;
-  /*
-   * Cross-browser fix for right-side gap when scrollbar appears/disappears:
-   *
-   * 1. overflow-y: scroll  — always reserve vertical scrollbar space.
-   *    Works in ALL browsers (Chrome, Firefox, Safari, Edge, IE11).
-   *    Prevents layout shift because the scrollbar gutter is always there.
-   *
-   * 2. scrollbar-gutter: stable  — modern supplement (Chrome 94+, FF 97+,
-   *    Safari 15.8+). Keeps gutter reserved even when scrollbar is not needed.
-   *
-   * 3. scrollbar-width: thin  — Firefox: use a thin ~8px scrollbar instead
-   *    of the default ~17px OS scrollbar.
-   *
-   * NOTE: Do NOT set overflow-x on html — it conflicts with scrollbar-gutter
-   * in several browsers and moves the scroll container to body, breaking the
-   * gutter reservation. Horizontal overflow is handled on body/#root instead.
-   */
-  overflow-y: scroll;
-  scrollbar-gutter: stable; /* reserves gutter space so layout never shifts */
-  scrollbar-width: none;    /* Firefox: hide scrollbar, gutter space still reserved */
+  scrollbar-gutter: stable;
+  scrollbar-width: none;    /* Firefox: hide scrollbar */
   -ms-overflow-style: none; /* IE / old Edge */
 }
 
-/* Chrome, Safari, Edge — hide scrollbar track, keep scrolling + gutter */
+/* Chrome, Safari, Edge — hide scrollbar track, scrolling still works */
 html::-webkit-scrollbar {
   display: none;
 }

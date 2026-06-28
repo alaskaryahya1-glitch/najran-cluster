@@ -372,7 +372,7 @@ export default function Home() {
                 
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5 }}
-                className="max-w-4xl mt-auto md:mt-0"
+                className="max-w-4xl mt-0"
               >
                 <h2 className={`text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 md:mb-3 leading-tight ${fontClass}`}>
                   {language === 'ar' 

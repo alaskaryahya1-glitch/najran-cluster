@@ -599,13 +599,13 @@ export default function About() {
             {/* النواب */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               {[
-                { image: cardHarith, nameKey: "about.deputy.mohammed", titleKey: "about.deputy.mohammed.title", objPos: 'center bottom', bottomOffset: '-22%' },
-                { image: cardRashid, nameKey: "about.deputy.rashid", titleKey: "about.deputy.rashid.title", objPos: 'center bottom' },
-                { image: cardMutlaq, nameKey: "about.deputy.mohammadMutlaq", titleKey: "about.deputy.mohammadMutlaq.title", objPos: 'center bottom' },
-                { image: cardMusabi, nameKey: "about.deputy.musabi", titleKey: "about.deputy.musabi.title", objPos: 'center bottom' },
-                { image: cardIsmail, nameKey: "about.deputy.ismail", titleKey: "about.deputy.ismail.title", objPos: 'center bottom' },
-                { image: cardYahya, nameKey: "about.deputy.yahya", titleKey: "about.deputy.yahya.title", objPos: 'center bottom' },
-                { image: cardAli, nameKey: "about.deputy.ali", titleKey: "about.deputy.ali.title", objPos: 'center bottom', bottomOffset: '-22%' },
+                { image: cardHarith, nameKey: "about.deputy.mohammed", titleKey: "about.deputy.mohammed.title", objPos: 'center bottom', bottomOffset: '-22%', departments: ["about.dept.facilities","about.dept.procurement","about.dept.engineering","about.dept.supportServices","about.dept.security"] },
+                { image: cardRashid, nameKey: "about.deputy.rashid", titleKey: "about.deputy.rashid.title", objPos: 'center bottom', departments: ["about.dept.alliedHealth","about.dept.nursing","about.dept.populationHealth","about.dept.modelOfCare","about.dept.clinicalServices","about.dept.publicHealth","about.dept.clinicalPerformance"] },
+                { image: cardMutlaq, nameKey: "about.deputy.mohammadMutlaq", titleKey: "about.deputy.mohammadMutlaq.title", objPos: 'center bottom', departments: ["about.dept.specializedCenters","about.dept.generalHospitals","about.dept.phcs","about.dept.referralHospitals","about.dept.ruralHospitals","about.dept.careCenters"] },
+                { image: cardMusabi, nameKey: "about.deputy.musabi", titleKey: "about.deputy.musabi.title", objPos: 'center bottom', departments: ["about.dept.patientSafety","about.dept.qualityAccreditation","about.dept.performanceOutcomes","about.dept.patientExperience"] },
+                { image: cardIsmail, nameKey: "about.deputy.ismail", titleKey: "about.deputy.ismail.title", objPos: 'center bottom', departments: ["about.dept.digitalStrategy","about.dept.dataOffice","about.dept.clinicalSystems","about.dept.businessSolutions","about.dept.infrastructure"] },
+                { image: cardYahya, nameKey: "about.deputy.yahya", titleKey: "about.deputy.yahya.title", objPos: 'center bottom', departments: ["about.dept.budgeting","about.dept.financeOperations","about.dept.spendingEfficiency","about.dept.revenueManagement","about.dept.records","about.dept.financeTransformation"] },
+                { image: cardAli, nameKey: "about.deputy.ali", titleKey: "about.deputy.ali.title", objPos: 'center bottom', bottomOffset: '-22%', departments: ["about.dept.payroll","about.dept.hrPlanning","about.dept.hrOperations","about.dept.recruitment"] },
               ].map((leader, idx) => (
                 <motion.div
                   key={idx}
@@ -628,6 +628,18 @@ export default function About() {
                     <p className={`font-semibold tracking-wide text-sm ${fontClass}`} style={{ color: '#2BAAE2' }}>
                       {t(leader.titleKey)}
                     </p>
+                    <div className="max-h-0 overflow-hidden transition-all duration-500 ease-in-out group-hover:max-h-[320px]">
+                      <div className="pt-4 mt-4 border-t border-gray-100">
+                        <ul className="space-y-2">
+                          {leader.departments.map((dept, dIdx) => (
+                            <li key={dIdx} className={`flex items-center gap-2 text-sm text-gray-600 ${fontClass}`}>
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#2BAAE2] flex-shrink-0" />
+                              {t(dept)}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </motion.div>
               ))}

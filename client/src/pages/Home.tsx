@@ -477,7 +477,7 @@ export default function Home() {
           </motion.div>
 
           {/* E-Services Platform Icons — anchored above white panel */}
-          <div className="absolute bottom-36 md:bottom-52 left-0 right-0 z-20 flex justify-center px-4">
+          <div className="absolute bottom-44 md:bottom-64 left-0 right-0 z-20 flex justify-center px-4">
             <div className="flex items-center gap-4">
               {[
                 { src: sehaLogo, name: language === 'ar' ? 'سها' : 'Seha', url: 'https://www.seha.sa/' },

@@ -597,13 +597,6 @@ export default function About() {
 
             {/* الإدارات التنفيذية */}
             <div className="mb-14">
-              <div className="flex items-center gap-4 mb-8">
-                <div className={`h-0.5 flex-1 bg-gradient-to-${language === 'ar' ? 'l' : 'r'} from-[#2BAAE2]/30 to-transparent`}></div>
-                <span className={`text-sm font-bold tracking-widest uppercase text-[#2BAAE2] ${fontClass}`}>
-                  {t("about.execUnits.title")}
-                </span>
-                <div className={`h-0.5 flex-1 bg-gradient-to-${language === 'ar' ? 'r' : 'l'} from-[#2BAAE2]/30 to-transparent`}></div>
-              </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
                 {[
                   "about.execUnit.ceoOffice",

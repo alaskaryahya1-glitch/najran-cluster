@@ -297,7 +297,7 @@ export default function Home() {
             loop
             muted
             playsInline
-           
+            preload="none"
             className="absolute inset-0 w-full h-full object-cover opacity-40"
             onError={() => setVideoFailed(true)}
           >

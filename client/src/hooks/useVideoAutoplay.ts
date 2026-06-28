@@ -1,11 +1,8 @@
 import { useRef, useEffect } from 'react';
 
-function getNetworkTier(): '2g' | '3g' | 'fast' {
+function isSlowNetwork(): boolean {
   const conn = (navigator as any).connection;
-  if (!conn) return 'fast';
-  if (['slow-2g', '2g'].includes(conn.effectiveType)) return '2g';
-  if (conn.effectiveType === '3g') return '3g';
-  return 'fast';
+  return conn && ['slow-2g', '2g'].includes(conn.effectiveType);
 }
 
 export function useVideoAutoplay(onError?: () => void) {
@@ -15,25 +12,13 @@ export function useVideoAutoplay(onError?: () => void) {
     const video = ref.current;
     if (!video) return;
 
-    const tier = getNetworkTier();
-
-    if (tier === '2g') {
+    // Skip video entirely on very slow connections (2G)
+    if (isSlowNetwork()) {
       video.style.display = 'none';
       return;
     }
 
     video.muted = true;
-
-    // On fast/WiFi networks: preload the full video immediately so playback
-    // starts the instant play() is called — no CDN round-trip delay.
-    // On 3G: preload just metadata to establish the CDN connection early
-    // without pulling the full file.
-    if (tier === 'fast') {
-      video.preload = 'auto';
-    } else {
-      video.preload = 'metadata';
-    }
-    video.load();
 
     const tryPlay = () => {
       if (document.hidden || !video.paused) return;

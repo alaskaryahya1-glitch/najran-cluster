@@ -1,4 +1,5 @@
 import { useEffect, useState, useCallback } from "react";
+import { useVideoAutoplay } from "@/hooks/useVideoAutoplay";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { useI18n } from "@/lib/i18n";
@@ -299,6 +300,7 @@ function TweetsGrid({ tweets, language }: { tweets: Tweet[], language: string })
 export default function News() {
   const { language } = useI18n();
   const fontClass = language === 'ar' ? 'font-arabic' : 'font-sans';
+  const videoRef = useVideoAutoplay();
   const { data, isLoading } = useQuery<NewsResponse>({
     queryKey: ['/api/news'],
     refetchInterval: 12 * 60 * 60 * 1000,
@@ -322,7 +324,7 @@ export default function News() {
       <main>
         {/* Hero */}
         <section className="hero-section relative py-32 overflow-hidden w-full" style={{ backgroundColor: '#004070', minHeight: '65vh' }}>
-          <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover opacity-30">
+          <video ref={videoRef} autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover opacity-30">
             <source src={newsHeroVideo} type="video/mp4" />
           </video>
           <div className="absolute inset-0 dark:bg-black/50 pointer-events-none z-[2] transition-colors duration-300"></div>

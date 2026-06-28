@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useI18n } from "@/lib/i18n";
+import { useVideoAutoplay } from "@/hooks/useVideoAutoplay";
 import { useSEO } from "@/hooks/useSEO";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -19,7 +20,8 @@ const careSystemsData = [
 export default function CareModel() {
   const [selectedCareSystem, setSelectedCareSystem] = useState<string | null>(null);
   const { t, language } = useI18n();
-    const fontClass = language === 'ar' ? 'font-arabic' : 'font-sans';
+  const fontClass = language === 'ar' ? 'font-arabic' : 'font-sans';
+  const videoRef = useVideoAutoplay();
 
   useSEO({
     path: '/care-model',
@@ -36,7 +38,7 @@ export default function CareModel() {
       <main className="care-model-content">
         {/* Hero */}
         <section className="hero-section relative py-32 overflow-hidden" style={{ backgroundColor: '#004070', minHeight: '65vh' }}>
-          <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover opacity-20">
+          <video ref={videoRef} autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover opacity-20">
             <source src="https://cmsapi.health.sa/background.mp4-n92g3n.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 dark:bg-black/50 pointer-events-none z-[2] transition-colors duration-300"></div>

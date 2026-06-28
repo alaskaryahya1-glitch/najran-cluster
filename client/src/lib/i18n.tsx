@@ -441,6 +441,16 @@ const translations: Record<Language, Record<string, string>> = {
     "about.dept.hrOperations": "عمليات الموارد البشرية",
     "about.dept.recruitment": "التوظيف",
 
+    // Executive Units (الإدارات التنفيذية)
+    "about.execUnits.title": "الإدارات التنفيذية",
+    "about.execUnit.governance": "الحوكمة والالتزام والمخاطر",
+    "about.execUnit.legal": "الشؤون القانونية",
+    "about.execUnit.communication": "التواصل وإدارة التغيير",
+    "about.execUnit.audit": "المراجعة الداخلية",
+    "about.execUnit.ceoOffice": "مكتب الرئيس التنفيذي",
+    "about.execUnit.strategy": "الاستراتيجية والتحول ومكتب إدارة المشاريع",
+    "about.execUnit.academic": "الشؤون الأكاديمية والتدريب",
+
     // Hospital Directors
     "about.hospitalDirectors": "مدراء المستشفيات",
     "about.hospital.kingKhaled": "مستشفى الملك خالد بنجران",
@@ -1006,6 +1016,16 @@ const translations: Record<Language, Record<string, string>> = {
     "about.dept.hrPlanning": "HR Planning & Development",
     "about.dept.hrOperations": "HR Operations",
     "about.dept.recruitment": "Recruitment",
+
+    // Executive Units
+    "about.execUnits.title": "Executive Departments",
+    "about.execUnit.governance": "Governance, Compliance & Risk",
+    "about.execUnit.legal": "Legal Affairs",
+    "about.execUnit.communication": "Communication & Change Management",
+    "about.execUnit.audit": "Internal Audit",
+    "about.execUnit.ceoOffice": "CEO Office",
+    "about.execUnit.strategy": "Strategy, Transformation & PMO",
+    "about.execUnit.academic": "Academic Affairs & Training",
 
     // Hospital Directors
     "about.hospitalDirectors": "Hospital Directors",

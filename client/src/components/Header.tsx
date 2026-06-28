@@ -205,7 +205,7 @@ export function Header() {
                 <Menu className="w-5 h-5" />
               </button>
             </SheetTrigger>
-              <SheetContent side="right" className="bg-[#000e22]/95 backdrop-blur-xl border-l border-white/10 w-80 z-[12000]">
+              <SheetContent side={language === 'ar' ? 'right' : 'left'} className={`bg-[#000e22]/95 backdrop-blur-xl w-80 z-[12000] ${language === 'ar' ? 'border-l' : 'border-r'} border-white/10`}>
                 <SheetHeader className="mb-6 flex justify-center">
                   <SheetTitle className="text-white text-xl font-bold flex justify-center">
                     <img

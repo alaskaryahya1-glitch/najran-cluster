@@ -268,25 +268,38 @@ img, video {
 
 @layer components {
   .container-custom {
-    @apply w-full px-3;
+    @apply w-full px-3 mx-auto;
     max-width: 100%;
   }
-  
+
   @screen xs {
     .container-custom {
       @apply px-4;
     }
   }
-  
+
   @screen sm {
     .container-custom {
       @apply px-6;
     }
   }
-  
+
+  @screen md {
+    .container-custom {
+      @apply px-8;
+    }
+  }
+
   @screen lg {
     .container-custom {
       @apply px-12;
+      max-width: 1280px;
+    }
+  }
+
+  @screen xl {
+    .container-custom {
+      max-width: 1440px;
     }
   }
   

@@ -459,7 +459,7 @@ export default function About() {
           </video>
 
           <div className="container-custom relative z-10">
-            <div className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-24 ${language === 'ar' ? '' : 'lg:flex-row-reverse'}`}>
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
 
               {/* النص والإحصائيات */}
               <motion.div
@@ -510,7 +510,7 @@ export default function About() {
                     </p>
                   </div>
                   <div
-                    className={`col-span-2 p-4 rounded-2xl flex justify-between items-center border border-transparent hover:-translate-y-2 hover:shadow-[0_12px_30px_rgba(43,170,226,0.25)] hover:border-[#2BAAE2] transition-all duration-[400ms] cursor-default ${language === 'ar' ? '' : 'flex-row-reverse'}`}
+                    className="col-span-2 p-4 rounded-2xl flex justify-between items-center border border-transparent hover:-translate-y-2 hover:shadow-[0_12px_30px_rgba(43,170,226,0.25)] hover:border-[#2BAAE2] transition-all duration-[400ms] cursor-default"
                     style={{ backgroundColor: '#2BAAE2' }}
                   >
                     <span className={`text-white text-lg font-medium ${fontClass}`}>
@@ -630,6 +630,9 @@ export default function About() {
                     </p>
                     <div className="max-h-0 overflow-hidden transition-all duration-500 ease-in-out group-hover:max-h-[320px]">
                       <div className="pt-4 mt-4 border-t border-gray-100">
+                        <p className={`text-xs font-bold text-[#2BAAE2] uppercase tracking-wider mb-2 ${fontClass}`}>
+                          {language === 'ar' ? 'الإدارات التابعة' : 'Subordinate Departments'}
+                        </p>
                         <ul className="space-y-2">
                           {leader.departments.map((dept, dIdx) => (
                             <li key={dIdx} className={`flex items-center gap-2 text-sm text-gray-600 ${fontClass}`}>

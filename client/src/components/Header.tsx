@@ -325,7 +325,7 @@ export function Header() {
                         <button
                           key={index}
                           onClick={() => handleSearchResultClick(item.href)}
-                          className={`w-full text-right px-4 py-3 rounded-lg hover:bg-muted transition-colors ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}
+                          className={`w-full ${language === 'ar' ? 'text-right font-arabic' : 'text-left font-sans'} px-4 py-3 rounded-lg hover:bg-muted transition-colors`}
                           data-testid={`search-result-${index}`}
                         >
                           <div className="flex items-center gap-3">

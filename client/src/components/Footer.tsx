@@ -133,7 +133,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="col-span-1">
-            <h4 className={`text-[#2BAAE2] dark:text-white font-bold text-lg mb-6 border-r-4 border-[#2BAAE2]/30 pr-4 ${fontClass}`}>
+            <h4 className={`text-[#2BAAE2] dark:text-white font-bold text-lg mb-6 ${language === 'ar' ? 'border-r-4 pr-4' : 'border-l-4 pl-4'} border-[#2BAAE2]/30 ${fontClass}`}>
               {t("footer.quickLinks")}
             </h4>
             <ul className={`space-y-2.5 ${fontClass}`}>
@@ -153,7 +153,7 @@ export function Footer() {
 
           {/* Other Links */}
           <div className="col-span-1">
-            <h4 className={`text-[#2BAAE2] dark:text-white font-bold text-lg mb-6 border-r-4 border-[#2BAAE2]/30 pr-4 ${fontClass}`}>
+            <h4 className={`text-[#2BAAE2] dark:text-white font-bold text-lg mb-6 ${language === 'ar' ? 'border-r-4 pr-4' : 'border-l-4 pl-4'} border-[#2BAAE2]/30 ${fontClass}`}>
               {language === 'ar' ? 'روابط أخرى' : 'Other Links'}
             </h4>
             <ul className={`space-y-2.5 ${fontClass}`}>
@@ -174,7 +174,7 @@ export function Footer() {
 
           {/* Contact */}
           <div className="col-span-2 lg:col-span-1">
-            <h4 className={`text-[#2BAAE2] dark:text-white font-bold text-lg mb-6 border-r-4 border-[#2BAAE2]/30 pr-4 ${fontClass}`}>
+            <h4 className={`text-[#2BAAE2] dark:text-white font-bold text-lg mb-6 ${language === 'ar' ? 'border-r-4 pr-4' : 'border-l-4 pl-4'} border-[#2BAAE2]/30 ${fontClass}`}>
               {t("footer.contactUs")}
             </h4>
             <div className={`space-y-4 ${fontClass}`}>

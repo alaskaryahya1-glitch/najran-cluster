@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, memo, Suspense, lazy, useCallback } from "react";
+import { useVideoAutoplay } from "@/hooks/useVideoAutoplay";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { useI18n } from "@/lib/i18n";
@@ -165,7 +166,7 @@ export default function Home() {
   const [selectedCareSystem, setSelectedCareSystem] = useState<string | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [videoFailed, setVideoFailed] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoRef = useVideoAutoplay(() => setVideoFailed(true));
   const { t, language } = useI18n();
   
   const careSystemsData = [
@@ -263,15 +264,6 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    video.muted = true;
-    const promise = video.play();
-    if (promise !== undefined) {
-      promise.catch(() => setVideoFailed(true));
-    }
-  }, []);
 
   useSEO({
     path: '/',

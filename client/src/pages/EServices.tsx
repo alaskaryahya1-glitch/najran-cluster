@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useI18n } from "@/lib/i18n";
+import { useVideoAutoplay } from "@/hooks/useVideoAutoplay";
 import { useSEO } from "@/hooks/useSEO";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -14,6 +15,7 @@ import anatLogo from "@assets/IMG_8802_1767052201461.png";
 export default function EServices() {
   const { t, language } = useI18n();
   const fontClass = language === 'ar' ? 'font-arabic' : 'font-sans';
+  const videoRef = useVideoAutoplay();
 
   useSEO({
     path: '/e-services',
@@ -71,6 +73,7 @@ export default function EServices() {
         {/* Hero Section */}
         <section className="hero-section relative py-32 overflow-hidden" style={{ backgroundColor: '#004070', minHeight: '65vh' }}>
           <video
+            ref={videoRef}
             src="https://cmsapi.health.sa/HHC1-7tba9j.mp4"
             autoPlay
             muted

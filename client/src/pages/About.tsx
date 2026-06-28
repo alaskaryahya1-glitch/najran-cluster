@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useVideoAutoplay } from "@/hooks/useVideoAutoplay";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
@@ -220,6 +221,7 @@ export default function About() {
   const [showHealthCenters, setShowHealthCenters] = useState(false);
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const { t, language } = useI18n();
+  const videoRef = useVideoAutoplay();
 
   useSEO({
     path: '/about',
@@ -393,6 +395,7 @@ export default function About() {
         >
           <div className="absolute inset-0 bg-black/30 pointer-events-none"></div>
           <video
+            ref={videoRef}
             autoPlay
             loop
             muted

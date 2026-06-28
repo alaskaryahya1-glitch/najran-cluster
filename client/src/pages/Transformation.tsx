@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useI18n } from "@/lib/i18n";
+import { useVideoAutoplay } from "@/hooks/useVideoAutoplay";
 import { useSEO } from "@/hooks/useSEO";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -90,7 +91,8 @@ export default function Transformation() {
   const [beforeAfterActive, setBeforeAfterActive] = useState<'before' | 'after' | null>(null);
   const [selectedCareSystem, setSelectedCareSystem] = useState<string | null>(null);
   const { t, language } = useI18n();
-    const fontClass = language === 'ar' ? 'font-arabic' : 'font-sans';
+  const fontClass = language === 'ar' ? 'font-arabic' : 'font-sans';
+  const videoRef = useVideoAutoplay();
 
   useSEO({
     path: '/transformation',
@@ -106,7 +108,7 @@ export default function Transformation() {
 
       <main className="transformation-page-content">
         <section className="hero-section relative py-32 overflow-hidden" style={{ backgroundColor: '#004070', minHeight: '65vh' }}>
-          <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover opacity-20">
+          <video ref={videoRef} autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover opacity-20">
             <source src="https://cmsapi.health.sa/video.mp4-jyzcdp.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 pointer-events-none z-[1]" style={{ backgroundColor: '#000000', opacity: 0.30 }}></div>

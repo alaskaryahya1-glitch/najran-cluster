@@ -35,7 +35,7 @@ export default function CareModel() {
 
       <main className="care-model-content">
         {/* Hero */}
-        <section className="relative py-24 overflow-hidden" style={{ backgroundColor: '#004070', minHeight: '40vh' }}>
+        <section className="relative py-32 overflow-hidden" style={{ backgroundColor: '#004070', minHeight: '65vh' }}>
           <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover opacity-20">
             <source src="https://cmsapi.health.sa/background.mp4-n92g3n.mp4" type="video/mp4" />
           </video>
@@ -87,7 +87,7 @@ export default function CareModel() {
         </section>
 
         {/* أبعاد الصحة */}
-        <section className="relative pt-28 md:pt-36 pb-10 sm:pb-12 md:pb-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
+        <section className="relative pt-36 md:pt-44 pb-10 sm:pb-12 md:pb-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
           <video autoPlay loop muted playsInline aria-hidden="true"
             className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">

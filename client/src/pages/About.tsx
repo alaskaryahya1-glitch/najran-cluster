@@ -530,7 +530,7 @@ export default function About() {
         {/* ===== NEW: Hero Section ===== */}
         <section
           className="relative flex items-center justify-center overflow-hidden"
-          style={{ backgroundColor: '#004070', minHeight: '50vh' }}
+          style={{ backgroundColor: '#004070', minHeight: '65vh' }}
         >
           <div className="absolute inset-0 bg-black/30 pointer-events-none"></div>
           <div className="absolute inset-0 najran-geometric-bg opacity-[0.05] pointer-events-none"></div>
@@ -544,7 +544,7 @@ export default function About() {
           >
             <source src="https://cmsapi.health.sa/about-video.mp4-ri13td.mp4" type="video/mp4" />
           </video>
-          <div className="relative z-10 text-center text-white px-4 py-24">
+          <div className="relative z-10 text-center text-white px-4 py-32">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -591,7 +591,7 @@ export default function About() {
         </section>
 
         {/* ===== NEW: About Section ===== */}
-        <section className="relative pt-28 md:pt-36 pb-10 md:pb-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
+        <section className="relative pt-36 md:pt-44 pb-10 md:pb-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
           <video autoPlay loop muted playsInline aria-hidden="true"
             className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">

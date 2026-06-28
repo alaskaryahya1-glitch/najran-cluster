@@ -69,7 +69,7 @@ export default function EServices() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative pt-24 pb-16 overflow-hidden" style={{ backgroundColor: '#004070', minHeight: '40vh' }}>
+        <section className="relative py-32 overflow-hidden" style={{ backgroundColor: '#004070', minHeight: '65vh' }}>
           <video
             src="https://cmsapi.health.sa/HHC1-7tba9j.mp4"
             autoPlay
@@ -126,7 +126,7 @@ export default function EServices() {
         </section>
 
         {/* Cards Section */}
-        <section className="relative pt-28 md:pt-36 pb-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
+        <section className="relative pt-36 md:pt-44 pb-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
           <video autoPlay loop muted playsInline aria-hidden="true"
             className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">

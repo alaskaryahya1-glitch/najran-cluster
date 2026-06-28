@@ -320,7 +320,7 @@ export default function News() {
 
       <main>
         {/* Hero */}
-        <section className="relative py-24 overflow-hidden" style={{ backgroundColor: '#004070', minHeight: '40vh' }}>
+        <section className="relative py-32 overflow-hidden" style={{ backgroundColor: '#004070', minHeight: '65vh' }}>
           <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
 
           <div className="container-custom relative z-10">
@@ -367,7 +367,7 @@ export default function News() {
         </section>
 
         {/* Tweets section */}
-        <section className="relative pt-28 md:pt-36 pb-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
+        <section className="relative pt-36 md:pt-44 pb-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
           <video autoPlay loop muted playsInline aria-hidden="true"
             className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">

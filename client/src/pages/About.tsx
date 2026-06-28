@@ -1,21 +1,12 @@
-import { useState, useEffect, memo } from "react";
+import { useState, useEffect } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
-import { OptimizedImage } from "@/components/OptimizedImage";
-import { Users, Heart, Stethoscope, Settings, CheckCircle2, TrendingUp, Monitor, Building2, Hospital, MapPin, Phone, Bed, Calendar, BedDouble, ChevronDown, Briefcase, Shield, FileText, Target, MessageSquare, Scale, UserCog, DollarSign, Laptop, Activity, Cog, Star, Home as HomeIcon, HeartPulse, HelpCircle, Plus, Minus } from "lucide-react";
+import { Users, Stethoscope, Settings, CheckCircle2, TrendingUp, Monitor, Building2, Hospital, MapPin, Phone, Bed, Calendar, BedDouble, ChevronDown, Briefcase, FileText, Target, MessageSquare, Scale, UserCog, Activity, Star, Home as HomeIcon, HeartPulse, HelpCircle, Plus, Minus } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { useI18n } from "@/lib/i18n";
 import { useSEO } from "@/hooks/useSEO";
 import ceoImage from "@assets/IMG_8850_1767133406852.jpeg";
-import clusterStar from "@assets/logo1_2_1767081775884.png";
-import aliImage from "@assets/IMG_8842_1767132761463.jpeg";
-import rashidImage from "@assets/IMG_8841_1767132823617.jpeg";
-import mohammedImage from "@assets/IMG_8844_1767132958441.jpeg";
-import yahyaImage from "@assets/IMG_8843_1767132982183.jpeg";
-import musabiImage from "@assets/IMG_8846_1767133007099.jpeg";
-import ismailImage from "@assets/IMG_7535.jpg";
-import mohammadMutlaqImage from "@assets/WhatsApp_Image_2026-02-23_at_2.29.03_PM_1771955205714.jpeg";
 import cardHarith from "@assets/IMG_7532.jpg";
 import cardAli from "@assets/IMG_7533.jpg";
 import cardMusabi from "@assets/IMG_7534.jpg";
@@ -27,137 +18,6 @@ import heroImage from "@assets/غرب نجران (1).jpeg";
 import clusterLogo from "@assets/cluster-logo-colored.png";
 import { CardStar } from "@/components/BrandIcon";
 
-const DeputyCard = memo(({ deputy, t, fontClass }: any) => (
-  <motion.div
-    layout
-    initial={{ opacity: 0, scale: 0.9 }}
-    animate={{ opacity: 1, scale: 1 }}
-    exit={{ opacity: 0, scale: 0.9 }}
-    className="group relative p-6 rounded-2xl bg-card border hover:border-primary/50 transition-all duration-300"
-  >
-    <div className="flex items-center gap-4 mb-4">
-      <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-primary/20">
-        <OptimizedImage src={deputy.image} alt={t(deputy.nameKey)} className="w-full h-full object-cover" />
-      </div>
-      <div>
-        <h3 className={`text-xl font-bold ${fontClass}`}>{t(deputy.nameKey)}</h3>
-        <p className={`text-muted-foreground text-sm ${fontClass}`}>{t(deputy.titleKey)}</p>
-      </div>
-    </div>
-  </motion.div>
-));
-
-DeputyCard.displayName = "DeputyCard";
-
-const orgStructureData = [
-  {
-    id: "mohammed",
-    nameKey: "about.deputy.mohammed",
-    titleKey: "about.deputy.mohammed.title",
-    icon: Cog,
-    image: mohammedImage,
-    color: "from-[#2BAAE2] to-[#1691D0]",
-    departments: [
-      "about.dept.facilities",
-      "about.dept.procurement",
-      "about.dept.engineering",
-      "about.dept.supportServices",
-      "about.dept.security",
-    ]
-  },
-  {
-    id: "rashid",
-    nameKey: "about.deputy.rashid",
-    titleKey: "about.deputy.rashid.title",
-    icon: Heart,
-    image: rashidImage,
-    color: "from-[#1691D0] to-[#1691D0]",
-    departments: [
-      "about.dept.alliedHealth",
-      "about.dept.nursing",
-      "about.dept.populationHealth",
-      "about.dept.modelOfCare",
-      "about.dept.clinicalServices",
-      "about.dept.publicHealth",
-      "about.dept.clinicalPerformance",
-    ]
-  },
-  {
-    id: "mohammadMutlaq",
-    nameKey: "about.deputy.mohammadMutlaq",
-    titleKey: "about.deputy.mohammadMutlaq.title",
-    icon: Stethoscope,
-    image: mohammadMutlaqImage,
-    color: "from-[#15508A] to-[#2BAAE2]",
-    departments: [
-      "about.dept.specializedCenters",
-      "about.dept.generalHospitals",
-      "about.dept.phcs",
-      "about.dept.referralHospitals",
-      "about.dept.ruralHospitals",
-      "about.dept.careCenters",
-    ]
-  },
-  {
-    id: "musabi",
-    nameKey: "about.deputy.musabi",
-    titleKey: "about.deputy.musabi.title",
-    icon: Shield,
-    image: musabiImage,
-    color: "from-[#1691D0] to-[#15508A]",
-    departments: [
-      "about.dept.patientSafety",
-      "about.dept.qualityAccreditation",
-      "about.dept.performanceOutcomes",
-      "about.dept.patientExperience",
-    ]
-  },
-  {
-    id: "ismail",
-    nameKey: "about.deputy.ismail",
-    titleKey: "about.deputy.ismail.title",
-    icon: Laptop,
-    image: ismailImage,
-    color: "from-[#1691D0] to-[#2BAAE2]",
-    departments: [
-      "about.dept.digitalStrategy",
-      "about.dept.dataOffice",
-      "about.dept.clinicalSystems",
-      "about.dept.businessSolutions",
-      "about.dept.infrastructure",
-    ]
-  },
-  {
-    id: "yahya",
-    nameKey: "about.deputy.yahya",
-    titleKey: "about.deputy.yahya.title",
-    icon: DollarSign,
-    image: yahyaImage,
-    color: "from-[#15508A] to-[#1691D0]",
-    departments: [
-      "about.dept.budgeting",
-      "about.dept.financeOperations",
-      "about.dept.spendingEfficiency",
-      "about.dept.revenueManagement",
-      "about.dept.records",
-      "about.dept.financeTransformation",
-    ]
-  },
-  {
-    id: "ali",
-    nameKey: "about.deputy.ali",
-    titleKey: "about.deputy.ali.title",
-    icon: Users,
-    image: aliImage,
-    color: "from-[#1691D0] to-[#2BAAE2]",
-    departments: [
-      "about.dept.payroll",
-      "about.dept.hrPlanning",
-      "about.dept.hrOperations",
-      "about.dept.recruitment",
-    ]
-  },
-];
 
 const hospitalsData = [
   {
@@ -358,7 +218,6 @@ export default function About() {
   const [showHospitals, setShowHospitals] = useState(false);
   const [showSpecializedCenters, setShowSpecializedCenters] = useState(false);
   const [showHealthCenters, setShowHealthCenters] = useState(false);
-  const [expandedDeputy, setExpandedDeputy] = useState<string | null>(null);
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const { t, language } = useI18n();
 

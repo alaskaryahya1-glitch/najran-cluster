@@ -924,7 +924,7 @@ const translations: Record<Language, Record<string, string>> = {
     "about.deputy.rashid.title": "VP of Health Services",
     "about.deputy.ali": "Ali Al Mansour",
     "about.deputy.ali.title": "VP of Human Resources",
-    "about.deputy.mohammed": "Mohammed Al Harith",
+    "about.deputy.mohammed": "Dr. Mohammed Al Harith",
     "about.deputy.mohammed.title": "VP of Operations",
     "about.deputy.musabi": "Dr. Mohammed Al Musabi",
     "about.deputy.musabi.title": "VP of Quality and Performance",

@@ -76,6 +76,7 @@ export default function EServices() {
             ref={videoRef}
             src="https://cmsapi.health.sa/HHC1-7tba9j.mp4"
             autoPlay
+            preload="none"
             muted
             loop
             playsInline

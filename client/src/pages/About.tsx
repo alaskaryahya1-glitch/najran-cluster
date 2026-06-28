@@ -400,6 +400,7 @@ export default function About() {
             loop
             muted
             playsInline
+            preload="none"
             aria-hidden="true"
             className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none"
           >

@@ -30,7 +30,7 @@ export default function CareModel() {
   }, language);
 
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden" dir={language === 'ar' ? 'rtl' : 'ltr'}>
       <Header />
 
       <main className="care-model-content">

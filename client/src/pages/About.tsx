@@ -382,7 +382,7 @@ export default function About() {
   const textAlign = language === 'ar' ? 'text-right' : 'text-left';
 
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden" dir={language === 'ar' ? 'rtl' : 'ltr'}>
       <Header />
 
       <main>

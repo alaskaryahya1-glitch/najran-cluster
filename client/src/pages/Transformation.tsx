@@ -71,7 +71,7 @@ export default function Transformation() {
   }, language);
 
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden" dir={language === 'ar' ? 'rtl' : 'ltr'}>
       <Header />
 
       <main className="transformation-page-content">

@@ -64,7 +64,7 @@ export default function EServices() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col overflow-x-hidden">
+    <div className="min-h-screen flex flex-col overflow-x-hidden" dir={language === 'ar' ? 'rtl' : 'ltr'}>
       <Header />
 
       <main className="flex-1">

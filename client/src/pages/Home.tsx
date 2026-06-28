@@ -314,7 +314,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/35 to-black/45" />
       </div>
 
-      <div className="min-h-screen flex flex-col overflow-x-hidden relative">
+      <div className="min-h-screen flex flex-col overflow-x-hidden relative" dir={language === 'ar' ? 'rtl' : 'ltr'}>
       <h1 className="sr-only">
         {language === 'ar' ? 'تجمع نجران الصحي' : 'Najran Health Cluster'}
       </h1>

@@ -75,7 +75,7 @@ export default function Transformation() {
       <Header />
 
       <main className="transformation-page-content">
-        <section className="relative py-24 overflow-hidden" style={{ backgroundColor: '#005b8c', minHeight: '40vh' }}>
+        <section className="relative py-24 overflow-hidden" style={{ backgroundColor: '#0077b6', minHeight: '40vh' }}>
           <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover opacity-20">
             <source src="https://cmsapi.health.sa/video.mp4-jyzcdp.mp4" type="video/mp4" />
           </video>

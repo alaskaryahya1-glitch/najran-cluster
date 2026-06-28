@@ -300,7 +300,7 @@ export default function Home() {
         {language === 'ar' ? 'تجمع نجران الصحي' : 'Najran Health Cluster'}
       </h1>
       {/* Fixed Background */}
-      <div className="fixed inset-0 z-0 bg-[#005b8c]">
+      <div className="fixed inset-0 z-0 bg-[#0077b6]">
         {!videoFailed && (
           <video
             ref={videoRef}

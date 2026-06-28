@@ -530,7 +530,7 @@ export default function About() {
         {/* ===== NEW: Hero Section ===== */}
         <section
           className="relative flex items-center justify-center overflow-hidden"
-          style={{ backgroundColor: '#005b8c', minHeight: '50vh' }}
+          style={{ backgroundColor: '#0077b6', minHeight: '50vh' }}
         >
           <div className="absolute inset-0 bg-black/30 pointer-events-none"></div>
           <div className="absolute inset-0 najran-geometric-bg opacity-[0.05] pointer-events-none"></div>

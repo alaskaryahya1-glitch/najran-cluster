@@ -69,7 +69,7 @@ export default function EServices() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative py-32 overflow-hidden" style={{ backgroundColor: '#004070', minHeight: '65vh' }}>
+        <section className="hero-section relative py-32 overflow-hidden" style={{ backgroundColor: '#004070', minHeight: '65vh' }}>
           <video
             src="https://cmsapi.health.sa/HHC1-7tba9j.mp4"
             autoPlay

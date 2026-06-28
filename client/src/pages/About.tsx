@@ -529,7 +529,7 @@ export default function About() {
       <main>
         {/* ===== NEW: Hero Section ===== */}
         <section
-          className="relative flex items-center justify-center overflow-hidden"
+          className="hero-section relative flex items-center justify-center overflow-hidden"
           style={{ backgroundColor: '#004070', minHeight: '65vh' }}
         >
           <div className="absolute inset-0 bg-black/30 pointer-events-none"></div>

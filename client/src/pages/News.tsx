@@ -321,7 +321,7 @@ export default function News() {
 
       <main>
         {/* Hero */}
-        <section className="relative py-32 overflow-hidden w-full" style={{ backgroundColor: '#004070', minHeight: '65vh' }}>
+        <section className="hero-section relative py-32 overflow-hidden w-full" style={{ backgroundColor: '#004070', minHeight: '65vh' }}>
           <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover opacity-30">
             <source src={newsHeroVideo} type="video/mp4" />
           </video>

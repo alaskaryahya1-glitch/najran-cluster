@@ -474,11 +474,9 @@ export default function Home() {
                 <ExternalLink className="w-5 h-5 mr-2 rtl:mr-0 rtl:ml-2 text-[#2BAAE2] brand-icon" />
               </Button>
             </motion.div>
-          </motion.div>
 
-          {/* E-Services Platform Icons — anchored above white panel */}
-          <div className="absolute bottom-44 md:bottom-64 left-0 right-0 z-20 flex justify-center px-4">
-            <div className="flex items-center gap-4">
+            {/* E-Services Platform Icons */}
+            <div className="flex items-center gap-4 mt-8 mb-36 md:mb-16">
               {[
                 { src: sehaLogo, name: language === 'ar' ? 'سها' : 'Seha', url: 'https://www.seha.sa/' },
                 { src: sehhatyLogo, name: language === 'ar' ? 'صحتي' : 'Sehhaty', url: 'https://apps.apple.com/sa/app/%D8%B5%D8%AD%D8%AA%D9%8A-sehhaty/id1459266578' },
@@ -510,7 +508,7 @@ export default function Home() {
                 </Tooltip>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Navigation Cards at Bottom — white panel over video */}
           <div className="absolute bottom-0 left-0 right-0 z-[100]">

@@ -778,6 +778,17 @@ summary::-webkit-details-marker {
   box-shadow: 0 -12px 40px rgba(0,0,0,0.5) !important;
 }
 
+/* Footer dark mode — override global gray-text rules so all footer text is white */
+.dark footer .text-gray-300,
+.dark footer .text-gray-400,
+.dark footer .text-gray-500,
+.dark footer .text-gray-600,
+.dark footer .text-gray-700,
+.dark footer .text-gray-800,
+.dark footer .text-gray-900 {
+  color: white !important;
+}
+
 /* Ensure no colored gaps visible on page sides in dark mode */
 .dark html,
 .dark body {

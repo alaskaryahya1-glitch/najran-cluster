@@ -97,7 +97,7 @@ export function Footer() {
               <img
                 src={clusterLogo}
                 alt={t("header.clusterName")}
-                className="h-16 sm:h-20 w-auto object-contain mb-1"
+                className="h-16 sm:h-20 w-auto object-contain mb-1 dark:brightness-0 dark:invert"
               />
               <p className={`text-[#2BAAE2] dark:text-white text-[10px] ${fontClass} translate-x-1 sm:-translate-x-2`} style={{ marginTop: '-16px' }}>
                 {language === 'ar' ? 'شركة الصحة القابضة' : 'Health Holding Co.'}
@@ -124,7 +124,7 @@ export function Footer() {
                     title={social.label}
                     data-testid={`link-social-${social.label.toLowerCase()}`}
                   >
-                    <social.icon className="w-4 h-4 text-[#2BAAE2] group-hover:text-white transition-colors" />
+                    <social.icon className="w-4 h-4 text-[#2BAAE2] dark:text-white group-hover:text-white transition-colors" />
                   </a>
                 ))}
               </div>
@@ -133,7 +133,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="col-span-1">
-            <h4 className={`text-[#2BAAE2] font-bold text-lg mb-6 border-r-4 border-[#2BAAE2]/30 pr-4 ${fontClass}`}>
+            <h4 className={`text-[#2BAAE2] dark:text-white font-bold text-lg mb-6 border-r-4 border-[#2BAAE2]/30 pr-4 ${fontClass}`}>
               {t("footer.quickLinks")}
             </h4>
             <ul className={`space-y-2.5 ${fontClass}`}>
@@ -153,7 +153,7 @@ export function Footer() {
 
           {/* Other Links */}
           <div className="col-span-1">
-            <h4 className={`text-[#2BAAE2] font-bold text-lg mb-6 border-r-4 border-[#2BAAE2]/30 pr-4 ${fontClass}`}>
+            <h4 className={`text-[#2BAAE2] dark:text-white font-bold text-lg mb-6 border-r-4 border-[#2BAAE2]/30 pr-4 ${fontClass}`}>
               {language === 'ar' ? 'روابط أخرى' : 'Other Links'}
             </h4>
             <ul className={`space-y-2.5 ${fontClass}`}>
@@ -174,7 +174,7 @@ export function Footer() {
 
           {/* Contact */}
           <div className="col-span-2 lg:col-span-1">
-            <h4 className={`text-[#2BAAE2] font-bold text-lg mb-6 border-r-4 border-[#2BAAE2]/30 pr-4 ${fontClass}`}>
+            <h4 className={`text-[#2BAAE2] dark:text-white font-bold text-lg mb-6 border-r-4 border-[#2BAAE2]/30 pr-4 ${fontClass}`}>
               {t("footer.contactUs")}
             </h4>
             <div className={`space-y-4 ${fontClass}`}>

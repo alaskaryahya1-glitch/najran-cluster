@@ -443,13 +443,13 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Executive Units (الإدارات التنفيذية)
     "about.execUnits.title": "الإدارات التنفيذية",
-    "about.execUnit.governance": "الحوكمة والالتزام والمخاطر",
-    "about.execUnit.legal": "الشؤون القانونية",
-    "about.execUnit.communication": "التواصل وإدارة التغيير",
-    "about.execUnit.audit": "المراجعة الداخلية",
+    "about.execUnit.governance": "الإدارة التنفيذية للحوكمة والالتزام والمخاطر",
+    "about.execUnit.legal": "الإدارة التنفيذية للشؤون القانونية",
+    "about.execUnit.communication": "الإدارة التنفيذية للتواصل وإدارة التغيير",
+    "about.execUnit.audit": "الإدارة التنفيذية للمراجعة الداخلية",
     "about.execUnit.ceoOffice": "مكتب الرئيس التنفيذي",
-    "about.execUnit.strategy": "الاستراتيجية والتحول ومكتب إدارة المشاريع",
-    "about.execUnit.academic": "الشؤون الأكاديمية والتدريب",
+    "about.execUnit.strategy": "الإدارة التنفيذية للاستراتيجية والتحول ومكتب إدارة المشاريع",
+    "about.execUnit.academic": "الإدارة التنفيذية للشؤون الأكاديمية والتدريب",
 
     // Hospital Directors
     "about.hospitalDirectors": "مدراء المستشفيات",

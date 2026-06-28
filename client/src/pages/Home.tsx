@@ -474,48 +474,43 @@ export default function Home() {
                 <ExternalLink className="w-5 h-5 mr-2 rtl:mr-0 rtl:ml-2 text-[#2BAAE2] brand-icon" />
               </Button>
             </motion.div>
-
-            {/* E-Services Platform Icons */}
-            <motion.div
-
-
-              transition={{ delay: 0.7 }}
-              className="mt-10 md:mt-16 mb-24 md:mb-12"
-            >
-              <div className="flex flex-wrap justify-center items-center gap-4">
-                {[
-                  { src: sehaLogo, name: language === 'ar' ? 'سها' : 'Seha', url: 'https://www.seha.sa/' },
-                  { src: sehhatyLogo, name: language === 'ar' ? 'صحتي' : 'Sehhaty', url: 'https://apps.apple.com/sa/app/%D8%B5%D8%AD%D8%AA%D9%8A-sehhaty/id1459266578' },
-                  { src: anatLogo, name: language === 'ar' ? 'أناة' : 'Anat', url: 'https://anat.sa/' },
-                  { src: sehhatyLogo, name: language === 'ar' ? 'السجل الصحي' : 'Health Record', url: 'https://www.moh.gov.sa/eServices/cards/Pages/health-record-know-your-numbers.aspx' },
-                ].map((platform, idx) => (
-                  <Tooltip key={platform.name}>
-                    <TooltipTrigger asChild>
-                      <a
-                        href={platform.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-black/20 dark:bg-black/50 backdrop-blur-md rounded-xl overflow-hidden flex flex-col items-center border border-white/30 hover:bg-white/30 transition-all hover:scale-110"
-                        data-testid={`hero-platform-${idx}`}
-                      >
-                        <div className="h-1 w-full bg-[#2BAAE2]"></div>
-                        <div className="w-12 h-11 flex items-center justify-center">
-                        <img 
-                          src={platform.src} 
-                          alt={platform.name}
-                          className="w-8 h-8 object-contain brightness-0 invert"
-                        />
-                        </div>
-                      </a>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <span className={fontClass}>{platform.name}</span>
-                    </TooltipContent>
-                  </Tooltip>
-                ))}
-              </div>
-            </motion.div>
           </motion.div>
+
+          {/* E-Services Platform Icons — anchored above white panel */}
+          <div className="absolute bottom-36 md:bottom-52 left-0 right-0 z-20 flex justify-center px-4">
+            <div className="flex items-center gap-4">
+              {[
+                { src: sehaLogo, name: language === 'ar' ? 'سها' : 'Seha', url: 'https://www.seha.sa/' },
+                { src: sehhatyLogo, name: language === 'ar' ? 'صحتي' : 'Sehhaty', url: 'https://apps.apple.com/sa/app/%D8%B5%D8%AD%D8%AA%D9%8A-sehhaty/id1459266578' },
+                { src: anatLogo, name: language === 'ar' ? 'أناة' : 'Anat', url: 'https://anat.sa/' },
+                { src: sehhatyLogo, name: language === 'ar' ? 'السجل الصحي' : 'Health Record', url: 'https://www.moh.gov.sa/eServices/cards/Pages/health-record-know-your-numbers.aspx' },
+              ].map((platform, idx) => (
+                <Tooltip key={platform.name}>
+                  <TooltipTrigger asChild>
+                    <a
+                      href={platform.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-black/20 backdrop-blur-md rounded-xl overflow-hidden flex flex-col items-center border border-white/30 hover:bg-white/30 transition-all hover:scale-110"
+                      data-testid={`hero-platform-${idx}`}
+                    >
+                      <div className="h-1 w-full bg-[#2BAAE2]"></div>
+                      <div className="w-14 h-12 flex items-center justify-center">
+                        <img
+                          src={platform.src}
+                          alt={platform.name}
+                          className="w-9 h-9 object-contain brightness-0 invert"
+                        />
+                      </div>
+                    </a>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <span className={fontClass}>{platform.name}</span>
+                  </TooltipContent>
+                </Tooltip>
+              ))}
+            </div>
+          </div>
 
           {/* Navigation Cards at Bottom — white panel over video */}
           <div className="absolute bottom-0 left-0 right-0 z-[100]">

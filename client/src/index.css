@@ -64,14 +64,17 @@ html::-webkit-scrollbar {
 
 body {
   min-height: 100vh;
+  min-height: 100dvh;
   overscroll-behavior: none;
   overflow-x: hidden;
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 #root {
   overflow-x: hidden;
   width: 100%;
   min-height: 100vh;
+  min-height: 100dvh;
 }
 
 /* Performance optimizations */

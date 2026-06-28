@@ -53,7 +53,7 @@ export function Footer() {
   ];
 
   return (
-    <div style={{ backgroundColor: '#f7f8f9' }}>
+    <div style={{ backgroundColor: '#f7f8f9', position: 'relative', zIndex: 10 }}>
     <footer className="relative overflow-hidden border-t border-gray-200">
       {/* Geometric pattern */}
       <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>

@@ -361,13 +361,13 @@ function GlassStarService({ service, index, language, fontClass, size = "md", on
                 style={{
                   filter: isHovered
                     ? "brightness(0) invert(1) drop-shadow(0 2px 8px rgba(255,255,255,0.3))"
-                    : "none",
+                    : "brightness(0)",
                 }}
               />
             ) : (
               <IconComponent
                 className={`${sizes[size].icon} transition-all duration-300 ${
-                  isHovered ? 'text-white' : 'text-[#2BAAE2]'
+                  isHovered ? 'text-white' : 'text-gray-900'
                 }`}
               />
             )}

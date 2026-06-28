@@ -277,8 +277,8 @@ function GlassStarService({ service, index, language, fontClass, size = "md", on
 
   const hasLogo = service.logoPath && logoMap[service.logoPath];
   const logoSrc = service.logoPath ? logoMap[service.logoPath] : null;
-  const shouldInvertLogo = service.logoPath === 'png-clipart-gmail-logo-illustration-email-computer-icons-messa_1767519110048.png' ||
-    service.logoPath === 'pngtree-black-call-icon-png-image_2413693_1767519362030.png' ||
+  const keepOriginalColors = service.logoPath === 'png-clipart-gmail-logo-illustration-email-computer-icons-messa_1767519110048.png';
+  const shouldInvertLogo = service.logoPath === 'pngtree-black-call-icon-png-image_2413693_1767519362030.png' ||
     service.logoPath === 'logo-rgb_1768467991326.png';
   const isOutlookLogo = service.logoPath === 'original-31293c6476ae8628875b4f422264e2c4_1767518560706.png';
   
@@ -361,7 +361,7 @@ function GlassStarService({ service, index, language, fontClass, size = "md", on
                 style={{
                   filter: isHovered
                     ? "brightness(0) invert(1) drop-shadow(0 2px 8px rgba(255,255,255,0.3))"
-                    : "brightness(0)",
+                    : keepOriginalColors ? "none" : "brightness(0)",
                 }}
               />
             ) : (

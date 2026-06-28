@@ -8,6 +8,7 @@ import { Newspaper, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react
 import { SiX } from "react-icons/si";
 import { useQuery } from "@tanstack/react-query";
 import heroImage from "@assets/Emarah_palace_stairs_in_Aba_Alsaud_historical…_1768895221719.jpg";
+import newsHeroVideo from "@assets/news-hero.mp4";
 
 interface Tweet {
   id: string;
@@ -321,6 +322,9 @@ export default function News() {
       <main>
         {/* Hero */}
         <section className="relative py-32 overflow-hidden" style={{ backgroundColor: '#004070', minHeight: '65vh' }}>
+          <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover opacity-30">
+            <source src={newsHeroVideo} type="video/mp4" />
+          </video>
           <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
 
           <div className="container-custom relative z-10">

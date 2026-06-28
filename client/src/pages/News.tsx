@@ -1,5 +1,4 @@
 import { useEffect, useState, useCallback } from "react";
-import { useVideoAutoplay } from "@/hooks/useVideoAutoplay";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { useI18n } from "@/lib/i18n";
@@ -300,7 +299,6 @@ function TweetsGrid({ tweets, language }: { tweets: Tweet[], language: string })
 export default function News() {
   const { language } = useI18n();
   const fontClass = language === 'ar' ? 'font-arabic' : 'font-sans';
-  const videoRef = useVideoAutoplay();
   const { data, isLoading } = useQuery<NewsResponse>({
     queryKey: ['/api/news'],
     refetchInterval: 12 * 60 * 60 * 1000,
@@ -324,7 +322,7 @@ export default function News() {
       <main>
         {/* Hero */}
         <section className="hero-section relative py-32 overflow-hidden w-full" style={{ backgroundColor: '#004070', minHeight: '65vh' }}>
-          <video ref={videoRef} autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover opacity-30">
+          <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover opacity-30">
             <source src={newsHeroVideo} type="video/mp4" />
           </video>
           <div className="absolute inset-0 dark:bg-black/50 pointer-events-none z-[2] transition-colors duration-300"></div>
@@ -375,6 +373,10 @@ export default function News() {
         {/* Tweets section */}
         <section className="relative pt-24 md:pt-28 pb-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+          <video autoPlay loop muted playsInline aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
+            <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
+          </video>
 
           <div className="relative z-10">
             {isLoading ? (

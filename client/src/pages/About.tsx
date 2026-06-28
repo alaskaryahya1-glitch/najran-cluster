@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { useVideoAutoplay } from "@/hooks/useVideoAutoplay";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
@@ -221,7 +220,6 @@ export default function About() {
   const [showHealthCenters, setShowHealthCenters] = useState(false);
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const { t, language } = useI18n();
-  const videoRef = useVideoAutoplay();
 
   useSEO({
     path: '/about',
@@ -395,7 +393,6 @@ export default function About() {
         >
           <div className="absolute inset-0 bg-black/30 pointer-events-none"></div>
           <video
-            ref={videoRef}
             autoPlay
             loop
             muted
@@ -455,6 +452,10 @@ export default function About() {
         {/* ===== NEW: About Section ===== */}
         <section className="relative pt-24 md:pt-28 pb-10 md:pb-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+          <video autoPlay loop muted playsInline aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
+            <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
+          </video>
 
           <div className="container-custom relative z-10">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">

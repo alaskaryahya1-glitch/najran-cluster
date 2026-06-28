@@ -534,6 +534,10 @@ export default function EmployeeServices() {
         {!isLoading && !error && infoServices.length > 0 && (
           <section className="relative pt-24 md:pt-28 pb-12 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
             <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+            <video autoPlay loop muted playsInline aria-hidden="true"
+              className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
+              <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
+            </video>
             <div className="container-custom relative z-10">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -568,6 +572,10 @@ export default function EmployeeServices() {
         {!isLoading && !error && systemServices.length > 0 && (
           <section className="relative py-12 overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
             <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+            <video autoPlay loop muted playsInline aria-hidden="true"
+              className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
+              <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
+            </video>
             <div className="container-custom relative z-10">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}

@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, memo, Suspense, lazy, useCallback } from "react";
+import { useVideoAutoplay } from "@/hooks/useVideoAutoplay";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { useI18n } from "@/lib/i18n";
@@ -165,7 +166,7 @@ export default function Home() {
   const [selectedCareSystem, setSelectedCareSystem] = useState<string | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [videoFailed, setVideoFailed] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoRef = useVideoAutoplay(() => setVideoFailed(true));
   const { t, language } = useI18n();
   
   const careSystemsData = [
@@ -263,15 +264,6 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    video.muted = true;
-    const promise = video.play();
-    if (promise !== undefined) {
-      promise.catch(() => setVideoFailed(true));
-    }
-  }, []);
 
   useSEO({
     path: '/',
@@ -553,10 +545,6 @@ export default function Home() {
         {/* Vision & Mission Section */}
         <section className="relative overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
-          <video autoPlay loop muted playsInline aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
-            <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
-          </video>
 
           <div className="container-custom relative z-10 pt-28 md:pt-36 pb-16 md:pb-20">
             {/* Vision & Mission Cards */}
@@ -606,10 +594,6 @@ export default function Home() {
         {/* Strategic Goals Section - Full Width Boxes */}
         <section className="relative py-12 overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
-          <video autoPlay loop muted playsInline aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
-            <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
-          </video>
 
           <div className="container-custom relative z-10">
             <motion.div
@@ -644,10 +628,6 @@ export default function Home() {
         {/* Values Section - Full Width Boxes */}
         <section className="relative py-12 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
-          <video autoPlay loop muted playsInline aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
-            <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
-          </video>
 
           <div className="container-custom relative z-10">
             <motion.div
@@ -682,10 +662,6 @@ export default function Home() {
         {/* Promises Section - Full Width Boxes */}
         <section className="relative py-12 overflow-hidden" style={{ backgroundColor: '#f8fafc' }}>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
-          <video autoPlay loop muted playsInline aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
-            <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
-          </video>
 
           <div className="container-custom relative z-10">
             <motion.div

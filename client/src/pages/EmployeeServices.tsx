@@ -436,7 +436,7 @@ export default function EmployeeServices() {
 
       <main>
         {/* Hero Section */}
-        <section className="relative py-24 overflow-hidden" style={{ backgroundColor: '#0077b6', minHeight: '60vh' }}>
+        <section className="relative py-24 overflow-hidden" style={{ backgroundColor: '#004070', minHeight: '60vh' }}>
           {heroSlides.map((slide, idx) => (
             <img
               key={idx}

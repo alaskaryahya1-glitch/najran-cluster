@@ -69,7 +69,7 @@ export default function EServices() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative pt-24 pb-16 overflow-hidden" style={{ backgroundColor: '#0077b6', minHeight: '40vh' }}>
+        <section className="relative pt-24 pb-16 overflow-hidden" style={{ backgroundColor: '#004070', minHeight: '40vh' }}>
           <video
             src="https://cmsapi.health.sa/HHC1-7tba9j.mp4"
             autoPlay

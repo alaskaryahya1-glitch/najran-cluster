@@ -89,17 +89,17 @@ export function Footer() {
 
       {/* Main Footer Content */}
       <div className="container-custom py-12 md:py-16 relative z-10">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 items-start">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
 
           {/* Brand Column */}
           <div className="col-span-2 lg:col-span-1">
-            <div className="flex flex-col items-start mb-6">
+            <div className="inline-flex flex-col items-center mb-6">
               <img
                 src={clusterLogo}
                 alt={t("header.clusterName")}
                 className="h-16 sm:h-20 w-auto object-contain mb-1 dark:brightness-0 dark:invert"
               />
-              <p className={`text-[#2BAAE2] dark:text-white text-[10px] ${fontClass}`} style={{ marginTop: '-16px' }}>
+              <p className={`text-[#2BAAE2] dark:text-white text-[10px] ${fontClass} -translate-x-4 sm:-translate-x-2`} style={{ marginTop: '-16px' }}>
                 {language === 'ar' ? 'شركة الصحة القابضة' : 'Health Holding Co.'}
               </p>
             </div>

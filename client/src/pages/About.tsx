@@ -595,7 +595,50 @@ export default function About() {
               </div>
             </div>
 
+            {/* الإدارات التنفيذية */}
+            <div className="mb-14">
+              <div className="flex items-center gap-4 mb-8">
+                <div className={`h-0.5 flex-1 bg-gradient-to-${language === 'ar' ? 'l' : 'r'} from-[#2BAAE2]/30 to-transparent`}></div>
+                <span className={`text-sm font-bold tracking-widest uppercase text-[#2BAAE2] ${fontClass}`}>
+                  {t("about.execUnits.title")}
+                </span>
+                <div className={`h-0.5 flex-1 bg-gradient-to-${language === 'ar' ? 'r' : 'l'} from-[#2BAAE2]/30 to-transparent`}></div>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+                {[
+                  "about.execUnit.ceoOffice",
+                  "about.execUnit.governance",
+                  "about.execUnit.legal",
+                  "about.execUnit.audit",
+                  "about.execUnit.communication",
+                  "about.execUnit.strategy",
+                  "about.execUnit.academic",
+                ].map((key, idx) => (
+                  <motion.div
+                    key={key}
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.06 }}
+                    className="bg-white rounded-2xl border border-gray-100 shadow-sm px-4 py-4 flex items-center gap-3 hover:border-[#2BAAE2] hover:shadow-[0_8px_24px_rgba(43,170,226,0.15)] transition-all duration-300"
+                  >
+                    <div className="w-2 h-2 rounded-full bg-[#2BAAE2] flex-shrink-0" />
+                    <span className={`text-sm font-semibold text-gray-700 ${fontClass} leading-tight`}>
+                      {t(key)}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
             {/* النواب */}
+            <div className="flex items-center gap-4 mb-8">
+              <div className={`h-0.5 flex-1 bg-gradient-to-${language === 'ar' ? 'l' : 'r'} from-[#2BAAE2]/30 to-transparent`}></div>
+              <span className={`text-sm font-bold tracking-widest uppercase text-[#2BAAE2] ${fontClass}`}>
+                {language === 'ar' ? 'الإدارة التنفيذية للنواب' : 'Deputy Executive Management'}
+              </span>
+              <div className={`h-0.5 flex-1 bg-gradient-to-${language === 'ar' ? 'r' : 'l'} from-[#2BAAE2]/30 to-transparent`}></div>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               {[
                 { image: cardHarith, nameKey: "about.deputy.mohammed", titleKey: "about.deputy.mohammed.title", objPos: 'center bottom', bottomOffset: '-22%', departments: ["about.dept.facilities","about.dept.procurement","about.dept.engineering","about.dept.supportServices","about.dept.security"] },

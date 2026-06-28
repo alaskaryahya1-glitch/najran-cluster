@@ -53,8 +53,8 @@ export function Footer() {
   ];
 
   return (
-    <div style={{ backgroundColor: '#f7f8f9', position: 'relative', zIndex: 10 }}>
-    <footer className="relative overflow-hidden border-t border-gray-200">
+    <div className="bg-[#f7f8f9] dark:bg-[#000e22] relative z-10">
+    <footer className="relative overflow-hidden border-t border-gray-200 dark:border-gray-800">
       {/* Geometric pattern */}
       <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
       {/* Moving pattern video */}
@@ -64,7 +64,7 @@ export function Footer() {
       </video>
 
       {/* Partners Logos Row */}
-      <div className="border-b border-gray-200 relative z-10">
+      <div className="border-b border-gray-200 dark:border-gray-800 relative z-10">
         <div className="container-custom py-5">
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 sm:flex-nowrap sm:justify-between">
             {partnerLogos.map((logo) => (
@@ -79,8 +79,7 @@ export function Footer() {
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="h-6 sm:h-9 w-auto object-contain"
-                  style={{ filter: 'brightness(0)' }}
+                  className="h-6 sm:h-9 w-auto object-contain filter brightness-0 dark:brightness-0 dark:invert"
                 />
               </a>
             ))}
@@ -105,7 +104,7 @@ export function Footer() {
               </p>
             </div>
 
-            <p className={`text-gray-600 text-sm leading-relaxed mb-6 ${fontClass}`}>
+            <p className={`text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6 ${fontClass}`}>
               {language === 'ar'
                 ? 'يقدم تجمع نجران الصحي خدمات الرعاية الصحية لأكثر من 495 ألف مستفيد في منطقة نجران.'
                 : 'Najran Health Cluster provides healthcare services to over 495,000 beneficiaries in the Najran region.'}
@@ -113,7 +112,7 @@ export function Footer() {
 
             {/* Social Icons */}
             <div>
-              <p className={`text-gray-700 text-sm font-semibold mb-3 ${fontClass}`}>{t("footer.followUs")}</p>
+              <p className={`text-gray-700 dark:text-gray-300 text-sm font-semibold mb-3 ${fontClass}`}>{t("footer.followUs")}</p>
               <div className="flex items-center gap-2 flex-wrap">
                 {socialLinks.map((social) => (
                   <a
@@ -121,7 +120,7 @@ export function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-9 h-9 bg-[#2BAAE2]/10 hover:bg-[#2BAAE2] border border-[#2BAAE2]/20 rounded-full flex items-center justify-center transition-all duration-200 group"
+                    className="w-9 h-9 bg-[#2BAAE2]/10 dark:bg-[#2BAAE2]/20 hover:bg-[#2BAAE2] border border-[#2BAAE2]/20 rounded-full flex items-center justify-center transition-all duration-200 group"
                     title={social.label}
                     data-testid={`link-social-${social.label.toLowerCase()}`}
                   >
@@ -142,7 +141,7 @@ export function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="footer-link text-gray-500 hover:text-gray-900 transition-all text-sm block mb-3"
+                    className="footer-link text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all text-sm block mb-3"
                     data-testid={`link-footer-${link.href.replace('/', '')}`}
                   >
                     {link.label}
@@ -164,7 +163,7 @@ export function Footer() {
                     href={link.href}
                     target={link.external ? "_blank" : undefined}
                     rel={link.external ? "noopener noreferrer" : undefined}
-                    className="footer-link text-gray-500 hover:text-gray-900 transition-all text-sm block mb-3"
+                    className="footer-link text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all text-sm block mb-3"
                   >
                     {link.label}
                   </a>
@@ -183,27 +182,27 @@ export function Footer() {
                 href="https://www.google.com/maps/place/Branch+of+the+Ministry+of+Health,+Najran+Region/@17.5484375,44.2350625,1083m/data=!3m2!1e3!4b1!4m6!3m5!1s0x15fec332340cba09:0x3bddf8648aa63f9c!8m2!3d17.5484375!4d44.2350625!16s%2Fg%2F11f61pg7j4"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-3 text-gray-500 hover:text-gray-900 transition-colors group"
+                className="flex items-start gap-3 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors group"
                 data-testid="link-map-location"
               >
-                <div className="w-8 h-8 bg-[#2BAAE2]/10 border border-[#2BAAE2]/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-[#2BAAE2]/20 transition-colors">
+                <div className="w-8 h-8 bg-[#2BAAE2]/10 dark:bg-[#2BAAE2]/20 border border-[#2BAAE2]/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-[#2BAAE2]/20 transition-colors">
                   <MapPin className="w-4 h-4 text-[#2BAAE2]" />
                 </div>
                 <div>
-                  <p className="text-gray-700 text-sm font-medium">{t("footer.region")}</p>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm font-medium">{t("footer.region")}</p>
                   <p className="text-gray-400 text-xs mt-0.5">{t("footer.country")}</p>
                 </div>
               </a>
 
               <a
                 href="tel:920011140"
-                className="flex items-center gap-3 text-gray-500 hover:text-gray-900 transition-colors group"
+                className="flex items-center gap-3 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors group"
                 data-testid="link-phone-footer"
               >
-                <div className="w-8 h-8 bg-[#2BAAE2]/10 border border-[#2BAAE2]/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-[#2BAAE2]/20 transition-colors">
+                <div className="w-8 h-8 bg-[#2BAAE2]/10 dark:bg-[#2BAAE2]/20 border border-[#2BAAE2]/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-[#2BAAE2]/20 transition-colors">
                   <Phone className="w-4 h-4 text-[#2BAAE2]" />
                 </div>
-                <span className="font-sans text-sm text-gray-700" dir="ltr">920011140</span>
+                <span className="font-sans text-sm text-gray-700 dark:text-gray-300" dir="ltr">920011140</span>
               </a>
             </div>
           </div>
@@ -212,7 +211,7 @@ export function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-gray-200 relative z-10">
+      <div className="border-t border-gray-200 dark:border-gray-800 dark:bg-[#000e22] relative z-10">
         <div className="container-custom py-4 flex flex-col md:flex-row justify-between items-center gap-3 text-center">
           <p className={`text-xs text-gray-400 ${fontClass}`}>
             © {new Date().getFullYear()} {t("header.clusterName")}. {t("footer.rights")}.

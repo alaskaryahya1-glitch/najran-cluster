@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useTheme } from "@/lib/theme-provider";
 import { motion } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
 import { Loader2, AlertCircle, Mail, Building2, Search, Link, Phone } from "lucide-react";
@@ -275,6 +276,8 @@ interface GlassStarServiceProps {
 function GlassStarService({ service, index, language, fontClass, size = "md", onOpenEmailDialog, onOpenPhoneDialog }: GlassStarServiceProps) {
   const IconComponent = getIconComponent(service.iconType);
   const [isHovered, setIsHovered] = useState(false);
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
 
   const hasLogo = service.logoPath && logoMap[service.logoPath];
   const logoSrc = service.logoPath ? logoMap[service.logoPath] : null;
@@ -319,7 +322,7 @@ function GlassStarService({ service, index, language, fontClass, size = "md", on
       className={`relative cursor-pointer group ${sizes[size].container} rounded-2xl overflow-hidden transition-all duration-300 ${
         isHovered
           ? 'bg-[#2BAAE2] border-2 border-[#2BAAE2] shadow-[0_12px_32px_rgba(43,170,226,0.35)]'
-          : 'bg-white border border-gray-100 shadow-sm'
+          : 'bg-white border border-gray-100 shadow-sm dark:bg-gray-800 dark:border-gray-700'
       }`}
       data-testid={`service-star-${service.id}`}
     >
@@ -362,20 +365,20 @@ function GlassStarService({ service, index, language, fontClass, size = "md", on
                 style={{
                   filter: isHovered
                     ? "brightness(0) invert(1) drop-shadow(0 2px 8px rgba(255,255,255,0.3))"
-                    : keepOriginalColors ? "none" : "brightness(0)",
+                    : keepOriginalColors ? "none" : isDark ? "brightness(0) invert(1)" : "brightness(0)",
                 }}
               />
             ) : (
               <IconComponent
                 className={`${sizes[size].icon} transition-all duration-300 ${
-                  isHovered ? 'text-white' : 'text-gray-900'
+                  isHovered ? 'text-white' : isDark ? 'text-white' : 'text-gray-900'
                 }`}
               />
             )}
           </motion.div>
           <span
             className={`font-semibold ${sizes[size].text} ${fontClass} leading-tight max-w-[90%] line-clamp-2 break-words transition-colors duration-300 ${
-              isHovered ? 'text-white' : 'text-gray-700'
+              isHovered ? 'text-white' : isDark ? 'text-gray-200' : 'text-gray-700'
             }`}
           >
             {language === 'ar' ? service.titleAr : service.titleEn}
@@ -447,7 +450,7 @@ export default function EmployeeServices() {
           ))}
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/55 to-black/70" />
           <div className="absolute inset-0 dark:bg-black/50 pointer-events-none z-[2] transition-colors duration-300"></div>
-          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none z-[3]"></div>
+          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none z-[3] dark:hidden"></div>
           <div className="absolute bottom-24 left-1/2 -translate-x-1/2 flex gap-2 z-20">
             {heroSlides.map((_, idx) => (
               <button

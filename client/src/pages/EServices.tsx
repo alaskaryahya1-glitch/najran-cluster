@@ -80,7 +80,7 @@ export default function EServices() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/30" />
           <div className="absolute inset-0 dark:bg-black/50 pointer-events-none z-[2] transition-colors duration-300"></div>
-          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none z-[3]"></div>
+          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none z-[3] dark:hidden"></div>
 
           <div className="container-custom relative z-10">
             <motion.div

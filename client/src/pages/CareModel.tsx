@@ -40,7 +40,7 @@ export default function CareModel() {
             <source src="https://cmsapi.health.sa/background.mp4-n92g3n.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 dark:bg-black/50 pointer-events-none z-[2] transition-colors duration-300"></div>
-          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none z-[3]"></div>
+          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none z-[3] dark:hidden"></div>
 
           <div className="container-custom relative z-20">
             <motion.div

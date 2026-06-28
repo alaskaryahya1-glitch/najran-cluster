@@ -544,6 +544,7 @@ export default function About() {
           >
             <source src="https://cmsapi.health.sa/about-video.mp4-ri13td.mp4" type="video/mp4" />
           </video>
+          <div className="absolute inset-0 dark:bg-black/50 pointer-events-none z-[2] transition-colors duration-300"></div>
           <div className="relative z-10 text-center text-white px-4 py-32">
             <motion.div
               initial={{ opacity: 0, y: 30 }}

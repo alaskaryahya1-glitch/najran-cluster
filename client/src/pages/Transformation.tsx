@@ -12,39 +12,69 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { CardStar } from "@/components/BrandIcon";
 
 const transformationPillars = [
-  { title: "حوكمة وتنظيم قطاع الصحة", icon: Building2 },
-  { title: "مشاركة القطاع الخاص", icon: Users },
-  { title: "تقديم الرعاية المتكاملة", icon: Heart },
-  { title: "البيانات والرقمنة", icon: Monitor },
-  { title: "قيمة وتكلفة قطاع الصحة", icon: TrendingUp },
-  { title: "القوى العاملة والتعليم", icon: Users },
-  { title: "المساهمة الاقتصادية", icon: TrendingUp },
-  { title: "الصحة العامة والأمن الصحي", icon: Shield },
+  { titleAr: "حوكمة وتنظيم قطاع الصحة", titleEn: "Health Sector Governance & Regulation", icon: Building2 },
+  { titleAr: "مشاركة القطاع الخاص", titleEn: "Private Sector Participation", icon: Users },
+  { titleAr: "تقديم الرعاية المتكاملة", titleEn: "Integrated Care Delivery", icon: Heart },
+  { titleAr: "البيانات والرقمنة", titleEn: "Data & Digitization", icon: Monitor },
+  { titleAr: "قيمة وتكلفة قطاع الصحة", titleEn: "Healthcare Value & Cost", icon: TrendingUp },
+  { titleAr: "القوى العاملة والتعليم", titleEn: "Workforce & Education", icon: Users },
+  { titleAr: "المساهمة الاقتصادية", titleEn: "Economic Contribution", icon: TrendingUp },
+  { titleAr: "الصحة العامة والأمن الصحي", titleEn: "Public Health & Health Security", icon: Shield },
 ];
 
 const transformationGoals = [
-  { title: "تحسين جودة وكفاءة الخدمات الصحية", icon: Target },
-  { title: "تسهيل الحصول على الخدمات الصحية", icon: Stethoscope },
-  { title: "تعزيز الوقاية ضد المخاطر الصحية", icon: Shield },
-  { title: "تعزيز السلامة المرورية", icon: Heart },
+  { titleAr: "تحسين جودة وكفاءة الخدمات الصحية", titleEn: "Improve Quality & Efficiency of Health Services", icon: Target },
+  { titleAr: "تسهيل الحصول على الخدمات الصحية", titleEn: "Facilitate Access to Health Services", icon: Stethoscope },
+  { titleAr: "تعزيز الوقاية ضد المخاطر الصحية", titleEn: "Enhance Prevention Against Health Risks", icon: Shield },
+  { titleAr: "تعزيز السلامة المرورية", titleEn: "Enhance Road Safety", icon: Heart },
 ];
 
 const howToTransform = [
-  { num: "1", title: "أن تكون صحة الفرد هي جوهر الرعاية الصحية" },
-  { num: "2", title: "أن يحصل الفرد على رعاية صحية شاملة ومجانية وبجودة عالية" },
-  { num: "3", title: "تطوير منسوبي القطاع الصحي يشكل حجر الأساس في نجاح رحلة التحول" },
-  { num: "4", title: "توضيح الأدوار والمسؤوليات لكل فرد ومنظومة بالقطاع الصحي" },
-  { num: "5", title: "الاستفادة ومشاركة المعرفة والخبرات العالمية" },
-  { num: "6", title: "يساهم الفرد بشكل فعال في ارتقاء الصحة العامة للمجتمع" },
+  { num: "1", titleAr: "أن تكون صحة الفرد هي جوهر الرعاية الصحية", titleEn: "Individual health is at the core of healthcare" },
+  { num: "2", titleAr: "أن يحصل الفرد على رعاية صحية شاملة ومجانية وبجودة عالية", titleEn: "Individuals receive comprehensive, free, and high-quality healthcare" },
+  { num: "3", titleAr: "تطوير منسوبي القطاع الصحي يشكل حجر الأساس في نجاح رحلة التحول", titleEn: "Developing healthcare workers is the cornerstone of transformation success" },
+  { num: "4", titleAr: "توضيح الأدوار والمسؤوليات لكل فرد ومنظومة بالقطاع الصحي", titleEn: "Clarifying roles and responsibilities for every individual and system in the health sector" },
+  { num: "5", titleAr: "الاستفادة ومشاركة المعرفة والخبرات العالمية", titleEn: "Leveraging and sharing global knowledge and expertise" },
+  { num: "6", titleAr: "يساهم الفرد بشكل فعال في ارتقاء الصحة العامة للمجتمع", titleEn: "Individuals actively contribute to improving community public health" },
 ];
 
 const patientJourneyChanges = [
-  { before: "لا تتوفر خدمات الرعاية التلطيفية", after: "تتوفر خدمات الرعاية التلطيفية بالتجمع" },
-  { before: "لا يوجد مسار واضح لرحلة المريض", after: "يتم تحويل المريض إلى منشأة محددة حيث يتم توفير الخدمة المطلوبة في وقت محدد وإرسال التغذية الراجعة بعد إتمام الخدمة" },
-  { before: "الحالات الباردة ذات التصنيف CTAS4,5 يتم خدمتهم في طوارئ المستشفيات مما يسبب الضغط العالي وارتفاع قوائم الانتظار", after: "يتم خدمة الحالات الباردة ذات التصنيف CTAS4,5 في مراكز الرعاية الأولية والعاجلة مما يخفف الضغط على أقسام الطوارئ بالمستشفيات" },
-  { before: "يتم التحويل ورقي بين المنشآت", after: "سهولة وصول للخدمة عن طريق نظام إلكتروني معتمد" },
-  { before: "ارتفاع قوائم الانتظار على أقسام التنويم", after: "ربط منشآت التجمع والاستفادة من جميع المصادر المتاحة مما انعكس على تقليل أوقات وأعداد الانتظار للمرضى" },
-  { before: "يتم متابعة مرضى الأمراض المزمنة المستقرة بالمستشفى", after: "يتم تحويل مرضى الأمراض المزمنة المستقرة إلى المراكز الصحية للمتابعة" },
+  {
+    beforeAr: "لا تتوفر خدمات الرعاية التلطيفية",
+    beforeEn: "Palliative care services were not available",
+    afterAr: "تتوفر خدمات الرعاية التلطيفية بالتجمع",
+    afterEn: "Palliative care services are now available in the cluster",
+  },
+  {
+    beforeAr: "لا يوجد مسار واضح لرحلة المريض",
+    beforeEn: "No clear pathway for the patient journey",
+    afterAr: "يتم تحويل المريض إلى منشأة محددة حيث يتم توفير الخدمة المطلوبة في وقت محدد وإرسال التغذية الراجعة بعد إتمام الخدمة",
+    afterEn: "The patient is referred to a specific facility where the required service is provided on time, with feedback sent after service completion",
+  },
+  {
+    beforeAr: "الحالات الباردة ذات التصنيف CTAS4,5 يتم خدمتهم في طوارئ المستشفيات مما يسبب الضغط العالي وارتفاع قوائم الانتظار",
+    beforeEn: "Low-urgency CTAS4,5 cases were served in hospital emergency departments, causing high pressure and long waiting lists",
+    afterAr: "يتم خدمة الحالات الباردة ذات التصنيف CTAS4,5 في مراكز الرعاية الأولية والعاجلة مما يخفف الضغط على أقسام الطوارئ بالمستشفيات",
+    afterEn: "Low-urgency CTAS4,5 cases are now served in primary and urgent care centers, reducing pressure on hospital emergency departments",
+  },
+  {
+    beforeAr: "يتم التحويل ورقي بين المنشآت",
+    beforeEn: "Referrals between facilities were paper-based",
+    afterAr: "سهولة وصول للخدمة عن طريق نظام إلكتروني معتمد",
+    afterEn: "Easy access to services through an approved electronic system",
+  },
+  {
+    beforeAr: "ارتفاع قوائم الانتظار على أقسام التنويم",
+    beforeEn: "Long waiting lists for inpatient departments",
+    afterAr: "ربط منشآت التجمع والاستفادة من جميع المصادر المتاحة مما انعكس على تقليل أوقات وأعداد الانتظار للمرضى",
+    afterEn: "Connecting cluster facilities and utilizing all available resources, reducing patient waiting times and numbers",
+  },
+  {
+    beforeAr: "يتم متابعة مرضى الأمراض المزمنة المستقرة بالمستشفى",
+    beforeEn: "Stable chronic disease patients were followed up at hospitals",
+    afterAr: "يتم تحويل مرضى الأمراض المزمنة المستقرة إلى المراكز الصحية للمتابعة",
+    afterEn: "Stable chronic disease patients are referred to health centers for follow-up",
+  },
 ];
 
 const careSystemsData = [
@@ -234,7 +264,7 @@ export default function Transformation() {
                   <div className="w-12 h-12 bg-[#2BAAE2]/10 border border-[#2BAAE2]/20 rounded-3xl flex items-center justify-center mx-auto mb-3 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
                     <goal.icon className="w-6 h-6 text-[#2BAAE2] group-hover:text-white transition-colors" />
                   </div>
-                  <p className={`text-sm ${fontClass} text-gray-600 font-medium`}>{goal.title}</p>
+                  <p className={`text-sm ${fontClass} text-gray-600 font-medium`}>{language === 'ar' ? goal.titleAr : goal.titleEn}</p>
                   </div>
                 </motion.div>
               ))}
@@ -282,7 +312,7 @@ export default function Transformation() {
                   <div className="w-12 h-12 bg-[#2BAAE2]/10 border border-[#2BAAE2]/20 rounded-3xl flex items-center justify-center mx-auto mb-3 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:-rotate-[5deg] group-hover:scale-110">
                     <pillar.icon className="w-6 h-6 text-[#2BAAE2] group-hover:text-white transition-colors" />
                   </div>
-                  <p className={`text-sm ${fontClass} text-gray-600 font-medium`}>{pillar.title}</p>
+                  <p className={`text-sm ${fontClass} text-gray-600 font-medium`}>{language === 'ar' ? pillar.titleAr : pillar.titleEn}</p>
                   </div>
                 </motion.div>
               ))}
@@ -330,7 +360,7 @@ export default function Transformation() {
                   <div className="w-10 h-10 bg-[#2BAAE2]/10 border border-[#2BAAE2]/20 rounded-full flex items-center justify-center flex-shrink-0">
                     <span className="text-[#2BAAE2] font-bold">{item.num}</span>
                   </div>
-                  <p className={`text-sm ${fontClass} text-gray-600`}>{item.title}</p>
+                  <p className={`text-sm ${fontClass} text-gray-600`}>{language === 'ar' ? item.titleAr : item.titleEn}</p>
                   </div>
                 </motion.div>
               ))}
@@ -1146,7 +1176,7 @@ export default function Transformation() {
                     <div className="p-5 relative z-10">
                     <p className={`text-sm text-gray-600 ${fontClass}`}>
                       <span className="font-bold text-gray-400 block mb-1">{language === 'ar' ? 'قبل التحول' : 'Before Transformation'}</span>
-                      {change.before}
+                      {language === 'ar' ? change.beforeAr : change.beforeEn}
                     </p>
                     </div>
                   </div>
@@ -1156,7 +1186,7 @@ export default function Transformation() {
                     <div className="p-5 relative z-10">
                     <p className={`text-sm text-gray-600 ${fontClass}`}>
                       <span className="font-bold text-gray-900 block mb-1">{language === 'ar' ? 'بعد التحول' : 'After Transformation'}</span>
-                      {change.after}
+                      {language === 'ar' ? change.afterAr : change.afterEn}
                     </p>
                     </div>
                   </div>

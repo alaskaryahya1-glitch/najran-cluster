@@ -2,15 +2,16 @@
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover" />
     <meta name="google-site-verification" content="kqlcGD4peodyjhzDA39mM3GWe32m8GWN5ByKhSji-Qw" />
 
     <!-- PWA -->
     <link rel="manifest" href="/manifest.json" />
-    <meta name="theme-color" content="#2BAAE2" />
+    <meta name="theme-color" content="#004070" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#000e22" media="(prefers-color-scheme: dark)" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
     <!-- Google Analytics — deferred so it never blocks rendering -->
     <script defer src="https://www.googletagmanager.com/gtag/js?id=G-378972239"></script>
@@ -114,8 +115,8 @@
 
     <style>
       /* Prevent layout shift before JS loads */
-      #root { min-height: 100vh; }
-      body { margin: 0; background: #0f172a; }
+      #root { min-height: 100vh; min-height: 100dvh; }
+      body { margin: 0; background: #004070; }
       /* System font stack as fallback while Cairo loads */
       body { font-family: 'Cairo', 'Segoe UI', Tahoma, Arial, sans-serif; }
     </style>

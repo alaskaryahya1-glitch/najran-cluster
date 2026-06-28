@@ -295,11 +295,8 @@ export default function Home() {
   const textAlign = language === 'ar' ? 'text-right' : 'text-left';
 
   return (
-    <div className="min-h-screen flex flex-col overflow-x-clip relative">
-      <h1 className="sr-only">
-        {language === 'ar' ? 'تجمع نجران الصحي' : 'Najran Health Cluster'}
-      </h1>
-      {/* Fixed Background */}
+    <>
+      {/* Fixed Background — lives outside overflow-x-clip so it always covers the full viewport */}
       <div className="fixed inset-0 z-0 bg-[#004070] dark:bg-[#000e22]">
         {!videoFailed && (
           <video
@@ -316,6 +313,11 @@ export default function Home() {
         )}
         <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/35 to-black/45" />
       </div>
+
+      <div className="min-h-screen flex flex-col overflow-x-clip relative">
+      <h1 className="sr-only">
+        {language === 'ar' ? 'تجمع نجران الصحي' : 'Najran Health Cluster'}
+      </h1>
 
       <Header />
 
@@ -719,5 +721,6 @@ export default function Home() {
 
       <Footer />
     </div>
+    </>
   );
 }

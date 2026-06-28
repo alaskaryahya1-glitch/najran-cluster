@@ -54,12 +54,19 @@ html {
   scroll-behavior: smooth;
   height: 100%;
   overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
   height: 100%;
   overscroll-behavior: none;
   overflow-x: hidden;
+  max-width: 100%;
+}
+
+#root {
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 /* Custom scrollbar styling for smoother appearance */
@@ -769,6 +776,16 @@ summary::-webkit-details-marker {
 
 .dark .shadow-\[0_-12px_40px_rgba\(0\,0\,0\,0\.18\)\] {
   box-shadow: 0 -12px 40px rgba(0,0,0,0.5) !important;
+}
+
+/* Ensure no colored gaps visible on page sides in dark mode */
+.dark html,
+.dark body {
+  background-color: hsl(var(--background));
+}
+
+.dark #root {
+  background-color: hsl(var(--background));
 }
 
 .dark details {

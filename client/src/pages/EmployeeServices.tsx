@@ -365,7 +365,7 @@ function GlassStarService({ service, index, language, fontClass, size = "md", on
                 style={{
                   filter: isHovered
                     ? "brightness(0) invert(1) drop-shadow(0 2px 8px rgba(255,255,255,0.3))"
-                    : keepOriginalColors ? "none" : isDark ? "brightness(0) invert(1)" : "brightness(0)",
+                    : isDark ? "brightness(0) invert(1)" : keepOriginalColors ? "none" : "brightness(0)",
                 }}
               />
             ) : (

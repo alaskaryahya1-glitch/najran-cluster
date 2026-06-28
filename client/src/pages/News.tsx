@@ -316,12 +316,12 @@ export default function News() {
   const tweets = data?.tweets || [];
 
   return (
-    <div className="min-h-screen" dir={language === 'ar' ? 'rtl' : 'ltr'}>
+    <div className="min-h-screen overflow-x-hidden" dir={language === 'ar' ? 'rtl' : 'ltr'}>
       <Header />
 
       <main>
         {/* Hero */}
-        <section className="relative py-32 overflow-hidden" style={{ backgroundColor: '#004070', minHeight: '65vh' }}>
+        <section className="relative py-32 overflow-hidden w-full" style={{ backgroundColor: '#004070', minHeight: '65vh' }}>
           <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover opacity-30">
             <source src={newsHeroVideo} type="video/mp4" />
           </video>

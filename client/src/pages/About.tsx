@@ -635,7 +635,7 @@ export default function About() {
             <div className="flex items-center gap-4 mb-8">
               <div className={`h-0.5 flex-1 bg-gradient-to-${language === 'ar' ? 'l' : 'r'} from-[#2BAAE2]/30 to-transparent`}></div>
               <span className={`text-sm font-bold tracking-widest uppercase text-[#2BAAE2] ${fontClass}`}>
-                {language === 'ar' ? 'الإدارة التنفيذية للنواب' : 'Deputy Executive Management'}
+                {language === 'ar' ? 'الإدارات التنفيذية للنواب' : 'Deputy Executive Management'}
               </span>
               <div className={`h-0.5 flex-1 bg-gradient-to-${language === 'ar' ? 'r' : 'l'} from-[#2BAAE2]/30 to-transparent`}></div>
             </div>

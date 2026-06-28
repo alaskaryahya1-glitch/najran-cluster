@@ -79,9 +79,10 @@ export default function Transformation() {
           <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover opacity-20">
             <source src="https://cmsapi.health.sa/video.mp4-jyzcdp.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
+          <div className="absolute inset-0 pointer-events-none z-[1]" style={{ backgroundColor: '#002d50', opacity: 0.65 }}></div>
+          <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none z-[2]"></div>
           
-          <div className="container-custom relative z-20">
+          <div className="container-custom relative z-[10]">
             <motion.div
 
 

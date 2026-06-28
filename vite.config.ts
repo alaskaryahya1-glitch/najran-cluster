@@ -24,6 +24,7 @@ export default defineConfig({
         manualChunks: {
           'vendor': ['react', 'react-dom', 'wouter', '@tanstack/react-query'],
           'ui': ['@radix-ui/react-accordion', '@radix-ui/react-dialog', '@radix-ui/react-slot', 'lucide-react'],
+          'motion': ['framer-motion'],
           'utils': ['clsx', 'tailwind-merge', 'date-fns'],
         },
       },

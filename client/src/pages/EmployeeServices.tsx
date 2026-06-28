@@ -391,6 +391,15 @@ export default function EmployeeServices() {
   const [isEmailDialogOpen, setIsEmailDialogOpen] = useState(false);
   const [isPhoneDialogOpen, setIsPhoneDialogOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const heroSlides = [heroPhoto1, heroPhoto2, heroPhoto3];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide(prev => (prev + 1) % heroSlides.length);
+    }, 4500);
+    return () => clearInterval(interval);
+  }, []);
   useSEO({
     path: '/employee-services',
     titleAr: 'خدمات الموظفين | تجمع نجران الصحي',
@@ -427,7 +436,25 @@ export default function EmployeeServices() {
       <main>
         {/* Hero Section */}
         <section className="relative py-24 overflow-hidden" style={{ backgroundColor: '#1a3a5c', minHeight: '40vh' }}>
+          {heroSlides.map((slide, idx) => (
+            <img
+              key={idx}
+              src={slide}
+              alt=""
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${idx === currentSlide ? 'opacity-100' : 'opacity-0'}`}
+            />
+          ))}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/55 to-black/70" />
           <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
+          <div className="absolute bottom-24 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+            {heroSlides.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentSlide(idx)}
+                className={`h-1.5 rounded-full transition-all duration-300 ${idx === currentSlide ? 'w-8 bg-[#2BAAE2]' : 'w-2 bg-white/40'}`}
+              />
+            ))}
+          </div>
 
           <div className="container-custom relative z-20">
             <motion.div

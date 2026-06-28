@@ -295,7 +295,7 @@ export default function Home() {
   const textAlign = language === 'ar' ? 'text-right' : 'text-left';
 
   return (
-    <div className="min-h-screen flex flex-col overflow-x-hidden relative">
+    <div className="min-h-screen flex flex-col overflow-x-clip relative">
       <h1 className="sr-only">
         {language === 'ar' ? 'تجمع نجران الصحي' : 'Najran Health Cluster'}
       </h1>

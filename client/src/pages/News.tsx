@@ -316,7 +316,7 @@ export default function News() {
   const tweets = data?.tweets || [];
 
   return (
-    <div className="min-h-screen overflow-x-hidden" dir={language === 'ar' ? 'rtl' : 'ltr'}>
+    <div className="min-h-screen overflow-x-clip" dir={language === 'ar' ? 'rtl' : 'ltr'}>
       <Header />
 
       <main>

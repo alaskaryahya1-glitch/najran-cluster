@@ -71,7 +71,7 @@ export default function Transformation() {
   }, language);
 
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="min-h-screen overflow-x-clip">
       <Header />
 
       <main className="transformation-page-content">

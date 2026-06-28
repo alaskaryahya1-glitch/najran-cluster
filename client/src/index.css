@@ -53,20 +53,21 @@
 html {
   scroll-behavior: smooth;
   height: 100%;
-  overflow-x: hidden;
-  max-width: 100%;
+  overflow-x: clip;
+  max-width: 100vw;
 }
 
 body {
   height: 100%;
   overscroll-behavior: none;
-  overflow-x: hidden;
-  max-width: 100%;
+  overflow-x: clip;
+  max-width: 100vw;
 }
 
 #root {
-  overflow-x: hidden;
-  max-width: 100%;
+  overflow-x: clip;
+  max-width: 100vw;
+  width: 100%;
 }
 
 /* Custom scrollbar styling for smoother appearance */

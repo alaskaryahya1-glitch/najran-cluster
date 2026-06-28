@@ -87,7 +87,7 @@ export default function CareModel() {
         </section>
 
         {/* أبعاد الصحة */}
-        <section className="relative pt-36 md:pt-44 pb-10 sm:pb-12 md:pb-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
+        <section className="relative pt-24 md:pt-28 pb-10 sm:pb-12 md:pb-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
           <video autoPlay loop muted playsInline aria-hidden="true"
             className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">

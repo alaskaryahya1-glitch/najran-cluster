@@ -58,6 +58,10 @@ export function Footer() {
       {/* Geometric pattern */}
       <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
       {/* Moving pattern video */}
+      <video autoPlay loop muted playsInline aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
+        <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
+      </video>
 
       {/* Partners Logos Row */}
       <div className="border-b border-gray-200 dark:border-gray-800 relative z-10">

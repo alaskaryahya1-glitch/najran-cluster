@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useI18n } from "@/lib/i18n";
-import { useVideoAutoplay } from "@/hooks/useVideoAutoplay";
 import { useSEO } from "@/hooks/useSEO";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -91,7 +90,6 @@ export default function Transformation() {
   const [beforeAfterActive, setBeforeAfterActive] = useState<'before' | 'after' | null>(null);
   const [selectedCareSystem, setSelectedCareSystem] = useState<string | null>(null);
   const { t, language } = useI18n();
-  const videoRef = useVideoAutoplay();
     const fontClass = language === 'ar' ? 'font-arabic' : 'font-sans';
 
   useSEO({
@@ -108,7 +106,7 @@ export default function Transformation() {
 
       <main className="transformation-page-content">
         <section className="hero-section relative py-32 overflow-hidden" style={{ backgroundColor: '#004070', minHeight: '65vh' }}>
-          <video ref={videoRef} autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover opacity-20">
+          <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover opacity-20">
             <source src="https://cmsapi.health.sa/video.mp4-jyzcdp.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 pointer-events-none z-[1]" style={{ backgroundColor: '#000000', opacity: 0.30 }}></div>
@@ -170,6 +168,10 @@ export default function Transformation() {
         {/* 1. محاور رؤية 2030 */}
         <section className="relative pt-24 md:pt-28 pb-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+          <video autoPlay loop muted playsInline aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
+            <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
+          </video>
           
           <div className="container-custom relative z-10">
             <motion.div
@@ -219,6 +221,10 @@ export default function Transformation() {
         {/* 2. برنامج تحول القطاع الصحي */}
         <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+          <video autoPlay loop muted playsInline aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
+            <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
+          </video>
           
           <div className="container-custom relative z-10">
             <motion.div
@@ -268,6 +274,10 @@ export default function Transformation() {
         {/* 3. ركائز برنامج التحول الصحي */}
         <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+          <video autoPlay loop muted playsInline aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
+            <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
+          </video>
           
           <div className="container-custom relative z-10">
             <motion.div
@@ -312,6 +322,10 @@ export default function Transformation() {
         {/* 4. كيف نحقق التحول الصحي */}
         <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+          <video autoPlay loop muted playsInline aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
+            <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
+          </video>
           
           <div className="container-custom relative z-10">
             <motion.div
@@ -356,6 +370,10 @@ export default function Transformation() {
         {/* 5. الأبعاد الاستراتيجية للتحول الصحي */}
         <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+          <video autoPlay loop muted playsInline aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
+            <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
+          </video>
           
           <div className="container-custom relative z-10">
             <motion.div
@@ -406,6 +424,10 @@ export default function Transformation() {
         {/* 6. وضع القطاع الصحي */}
         <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+          <video autoPlay loop muted playsInline aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
+            <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
+          </video>
           
           <div className="container-custom relative z-10">
             <motion.div
@@ -603,6 +625,10 @@ export default function Transformation() {
         {/* 7. شركة الصحة القابضة */}
         <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+          <video autoPlay loop muted playsInline aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
+            <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
+          </video>
           
           <div className="container-custom relative z-10">
             <motion.div
@@ -634,6 +660,10 @@ export default function Transformation() {
         {/* 8. التجمع الصحي */}
         <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+          <video autoPlay loop muted playsInline aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
+            <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
+          </video>
           
           <div className="container-custom relative z-10">
             <motion.div
@@ -665,6 +695,10 @@ export default function Transformation() {
         {/* 9. منظومة الرعاية المسؤولة */}
         <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+          <video autoPlay loop muted playsInline aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
+            <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
+          </video>
           
           <div className="container-custom relative z-10">
             <motion.div
@@ -795,6 +829,10 @@ export default function Transformation() {
         {/* 10. إدارة التغيير والتواصل المؤسسي */}
         <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+          <video autoPlay loop muted playsInline aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
+            <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
+          </video>
           
           <div className="container-custom relative z-10">
             <motion.div
@@ -949,6 +987,10 @@ export default function Transformation() {
         {/* 10. إدارة الصحة السكانية */}
         <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+          <video autoPlay loop muted playsInline aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
+            <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
+          </video>
           
           <div className="container-custom relative z-10">
             <motion.div
@@ -1097,6 +1139,10 @@ export default function Transformation() {
         {/* 12. ما الذي تغير في رحلة المريض */}
         <section className="relative py-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+          <video autoPlay loop muted playsInline aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
+            <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
+          </video>
           
           <div className="container-custom relative z-10">
             <motion.div

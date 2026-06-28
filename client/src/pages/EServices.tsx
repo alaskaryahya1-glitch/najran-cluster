@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useI18n } from "@/lib/i18n";
-import { useVideoAutoplay } from "@/hooks/useVideoAutoplay";
 import { useSEO } from "@/hooks/useSEO";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -15,7 +14,6 @@ import anatLogo from "@assets/IMG_8802_1767052201461.png";
 export default function EServices() {
   const { t, language } = useI18n();
   const fontClass = language === 'ar' ? 'font-arabic' : 'font-sans';
-  const videoRef = useVideoAutoplay();
 
   useSEO({
     path: '/e-services',
@@ -73,7 +71,6 @@ export default function EServices() {
         {/* Hero Section */}
         <section className="hero-section relative py-32 overflow-hidden" style={{ backgroundColor: '#004070', minHeight: '65vh' }}>
           <video
-            ref={videoRef}
             src="https://cmsapi.health.sa/HHC1-7tba9j.mp4"
             autoPlay
             muted
@@ -131,6 +128,10 @@ export default function EServices() {
         {/* Cards Section */}
         <section className="relative pt-24 md:pt-28 pb-16 overflow-hidden" style={{ backgroundColor: '#f7f8f9' }}>
           <div className="absolute inset-0 najran-geometric-bg-light opacity-[0.06] pointer-events-none"></div>
+          <video autoPlay loop muted playsInline aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none">
+            <source src="https://www.health.sa/common/pattern-1.mp4" type="video/mp4" />
+          </video>
 
           <div className="container-custom relative z-10">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">

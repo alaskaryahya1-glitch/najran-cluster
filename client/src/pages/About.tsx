@@ -976,7 +976,7 @@ export default function About() {
                   data-testid={`card-director-${idx}`}
                 >
                   <div className="h-1.5 bg-[#2BAAE2] rounded-full mb-4 -mx-4 -mt-4 rounded-t-xl"></div>
-                  <div className={`flex items-center gap-3 ${language === 'ar' ? '' : 'flex-row-reverse'}`}>
+                  <div className="flex items-center gap-3">
                     <div className="w-12 h-12 bg-[#2BAAE2]/10 border border-[#2BAAE2]/20 rounded-3xl flex items-center justify-center flex-shrink-0 transition-all duration-[400ms] group-hover:bg-[#2BAAE2] group-hover:scale-110">
                       <Hospital className="w-6 h-6 text-[#2BAAE2] group-hover:text-white transition-colors" />
                     </div>

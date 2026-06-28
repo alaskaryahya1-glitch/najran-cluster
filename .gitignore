@@ -8,3 +8,5 @@ vite.config.ts.*
 attached_assets/
 .local/
 .config/
+mobile-screenshots.cjs
+mobile-screenshots.js

@@ -361,9 +361,6 @@ export default function Home() {
             className="container-custom relative h-full flex flex-col justify-center items-center text-center px-4 pt-64 sm:pt-72 md:pt-72 lg:pt-80 pb-8 md:pb-44 z-10"
             style={{ y: heroContentY, opacity: heroOpacity }}
           >
-            {/* Golden accent line */}
-            <div className="h-1.5 w-20 bg-[#c5a059] rounded-full mb-4" />
-
             {/* Dynamic Headline based on slide */}
             <AnimatePresence mode="wait">
               {(() => {

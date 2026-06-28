@@ -320,7 +320,7 @@ export default function News() {
 
       <main>
         {/* Hero */}
-        <section className="relative py-24 overflow-hidden" style={{ backgroundColor: '#005d47', minHeight: '40vh' }}>
+        <section className="relative py-24 overflow-hidden" style={{ backgroundColor: '#005b8c', minHeight: '40vh' }}>
           <div className="absolute inset-0 najran-geometric-bg opacity-20 pointer-events-none"></div>
 
           <div className="container-custom relative z-10">

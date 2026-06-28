@@ -35,7 +35,7 @@ export default function CareModel() {
 
       <main className="care-model-content">
         {/* Hero */}
-        <section className="relative py-24 overflow-hidden" style={{ backgroundColor: '#005d47', minHeight: '40vh' }}>
+        <section className="relative py-24 overflow-hidden" style={{ backgroundColor: '#005b8c', minHeight: '40vh' }}>
           <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover opacity-20">
             <source src="https://cmsapi.health.sa/background.mp4-n92g3n.mp4" type="video/mp4" />
           </video>

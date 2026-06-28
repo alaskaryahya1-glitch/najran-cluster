@@ -296,8 +296,8 @@ export default function Home() {
 
   return (
     <>
-      {/* Fixed Background — lives outside overflow-x-clip so it always covers the full viewport */}
-      <div className="fixed inset-0 z-0 bg-[#004070] dark:bg-[#000e22]">
+      {/* Fixed Background — must stay outside any overflow wrapper so it covers the full viewport */}
+      <div className="fixed inset-0 z-0 bg-[#004070] dark:bg-[#000e22]" style={{ width: '100vw' }}>
         {!videoFailed && (
           <video
             ref={videoRef}
@@ -314,7 +314,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/35 to-black/45" />
       </div>
 
-      <div className="min-h-screen flex flex-col overflow-x-clip relative">
+      <div className="min-h-screen flex flex-col overflow-x-hidden relative">
       <h1 className="sr-only">
         {language === 'ar' ? 'تجمع نجران الصحي' : 'Najran Health Cluster'}
       </h1>

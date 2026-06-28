@@ -434,7 +434,7 @@ export default function EmployeeServices() {
   }, {} as Record<string, EmailEntry[]>);
 
   return (
-    <div className="min-h-screen employee-services-page overflow-x-clip">
+    <div className="min-h-screen employee-services-page overflow-x-hidden">
       <Header />
 
       <main>

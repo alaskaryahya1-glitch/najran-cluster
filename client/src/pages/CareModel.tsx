@@ -30,7 +30,7 @@ export default function CareModel() {
   }, language);
 
   return (
-    <div className="min-h-screen overflow-x-clip">
+    <div className="min-h-screen overflow-x-hidden">
       <Header />
 
       <main className="care-model-content">

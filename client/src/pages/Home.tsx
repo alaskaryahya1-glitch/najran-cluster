@@ -321,7 +321,7 @@ export default function Home() {
 
       <main className="flex-1 relative z-10">
         {/* Full-Screen Hero Section - Health Holding Style */}
-        <section ref={heroRef} className="relative h-[100svh] min-h-[500px] sm:min-h-[600px]">
+        <section ref={heroRef} className="hero-section relative h-[100svh] min-h-[500px] sm:min-h-[600px]">
           {/* Additional Hero Overlay for better contrast */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/25" />
           

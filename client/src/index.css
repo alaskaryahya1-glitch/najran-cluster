@@ -770,3 +770,19 @@ summary::-webkit-details-marker {
 .dark .shadow-\[0_-12px_40px_rgba\(0\,0\,0\,0\.18\)\] {
   box-shadow: 0 -12px 40px rgba(0,0,0,0.5) !important;
 }
+
+.dark details {
+  background-color: hsl(var(--card)) !important;
+  border-color: hsl(var(--border)) !important;
+  color: hsl(var(--foreground)) !important;
+}
+
+.dark details[open] {
+  background-color: hsl(var(--card)) !important;
+  border-color: hsl(var(--border)) !important;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3) !important;
+}
+
+.dark summary {
+  color: hsl(var(--foreground)) !important;
+}

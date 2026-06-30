@@ -587,8 +587,8 @@ const translations: Record<Language, Record<string, string>> = {
     "about.faq.a5": "رؤية تجمع نجران الصحي هي 'نرتقي معاً بالرعاية الصحية للجميع'. نسعى لتقديم نموذج مستدام ومبتكر للرعاية الصحية يعزز من جودة الحياة لجميع سكان منطقة نجران، مع الالتزام بأعلى معايير الجودة والسلامة وفقاً لبرنامج التحول الصحي ورؤية المملكة 2030.",
 
     // Media Center / Knowledge Center
-    "nav.mediaCenter": "مركز الوسائط",
-    "mediaCenter.title": "مركز المعرفة والوسائط",
+    "nav.mediaCenter": "مكتبة الوسائط",
+    "mediaCenter.title": "مكتبة الوسائط",
     "mediaCenter.desc": "مكتبة متكاملة من المواد الإعلامية والمطبوعات والتقارير والإرشادات الصحية",
     "mediaCenter.tab.media": "الوسائط",
     "mediaCenter.tab.publications": "المطبوعات",
@@ -1185,8 +1185,8 @@ const translations: Record<Language, Record<string, string>> = {
     "contacts.hrPhone": "Human Resources Department",
 
     // Media Center / Knowledge Center
-    "nav.mediaCenter": "Media Center",
-    "mediaCenter.title": "Knowledge & Media Center",
+    "nav.mediaCenter": "Media Library",
+    "mediaCenter.title": "Media Library",
     "mediaCenter.desc": "An integrated library of media materials, publications, reports, and health guidelines",
     "mediaCenter.tab.media": "Media",
     "mediaCenter.tab.publications": "Publications",

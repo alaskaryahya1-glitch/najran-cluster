@@ -454,8 +454,8 @@ export default function MediaCenter() {
 
   useSEO({
     path: '/media-center',
-    titleAr: 'مركز الوسائط | تجمع نجران الصحي',
-    titleEn: 'Media Center | Najran Health Cluster',
+    titleAr: 'مكتبة الوسائط | تجمع نجران الصحي',
+    titleEn: 'Media Library | Najran Health Cluster',
     descriptionAr: 'مكتبة متكاملة من المواد الإعلامية والمطبوعات والتقارير والإرشادات الصحية لتجمع نجران الصحي.',
     descriptionEn: 'An integrated library of media materials, publications, reports, and health guidelines from Najran Health Cluster.',
   }, language);

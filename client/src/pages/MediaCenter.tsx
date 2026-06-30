@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   Library, FileText, Search, Download, ExternalLink,
   MessageCircleQuestion, ChevronDown, Folder,
-  Building2, HeartPulse, CalendarDays, ShieldCheck, Users
+  Building2, HeartPulse
 } from "lucide-react";
 
 // ── Data ──────────────────────────────────────────────────────────────────────
@@ -134,12 +134,9 @@ const guidelineItems = [
 ];
 
 const faqCategories = [
-  { id: 'all',       labelAr: 'الكل',              labelEn: 'All',              Icon: Library },
-  { id: 'general',   labelAr: 'عام',                labelEn: 'General',          Icon: Building2 },
-  { id: 'services',  labelAr: 'الخدمات الصحية',     labelEn: 'Health Services',  Icon: HeartPulse },
-  { id: 'appts',     labelAr: 'المواعيد',            labelEn: 'Appointments',     Icon: CalendarDays },
-  { id: 'insurance', labelAr: 'التأمين الصحي',      labelEn: 'Health Insurance', Icon: ShieldCheck },
-  { id: 'hr',        labelAr: 'الموارد البشرية',    labelEn: 'Human Resources',  Icon: Users },
+  { id: 'all',      labelAr: 'الكل',           labelEn: 'All',             Icon: Library },
+  { id: 'general',  labelAr: 'عام',             labelEn: 'General',         Icon: Building2 },
+  { id: 'services', labelAr: 'الخدمات الصحية', labelEn: 'Health Services', Icon: HeartPulse },
 ];
 
 const faqItems = [

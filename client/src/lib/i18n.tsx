@@ -606,6 +606,7 @@ const translations: Record<Language, Record<string, string>> = {
     "mediaCenter.badge.video": "فيديو",
     "mediaCenter.badge.image": "صور",
     "mediaCenter.badge.infographic": "انفوجرافيك",
+    "mediaCenter.tab.faqs": "الأسئلة الشائعة",
   },
   en: {
   // Header
@@ -1203,6 +1204,7 @@ const translations: Record<Language, Record<string, string>> = {
     "mediaCenter.badge.video": "Video",
     "mediaCenter.badge.image": "Images",
     "mediaCenter.badge.infographic": "Infographic",
+    "mediaCenter.tab.faqs": "FAQs",
   },
 };
 

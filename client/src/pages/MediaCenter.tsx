@@ -7,7 +7,8 @@ import { Footer } from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Library, Video, Images, FileText, BarChart3, Search,
-  Download, Play, Eye, BookOpen, ClipboardList, ChevronLeft, ChevronRight
+  Download, Play, Eye, BookOpen, ClipboardList, ChevronLeft, ChevronRight,
+  MessageCircleQuestion, ChevronDown, Building2, HeartPulse, CalendarDays, ShieldCheck, Users
 } from "lucide-react";
 import { CardStar } from "@/components/BrandIcon";
 
@@ -53,6 +54,149 @@ const guidelineItems = [
   { id: 4, catKey: 'mental',     titleAr: 'إرشادات خدمات الصحة النفسية',           titleEn: 'Mental Health Services Guidelines',             descAr: 'إرشادات تقديم خدمات الصحة النفسية وعلاج الإدمان في التجمع',  descEn: 'Guidelines for providing mental health and addiction treatment services', date: '2023-09-05' },
   { id: 5, catKey: 'maternal',   titleAr: 'بروتوكول رعاية الأمومة والطفل',         titleEn: 'Maternal & Child Care Protocol',                descAr: 'معايير رعاية الأم والطفل في مستشفى الولادة والمراكز الصحية',  descEn: 'Mother and child care standards at maternity hospitals and health centers', date: '2023-07-20' },
   { id: 6, catKey: 'pharmacy',   titleAr: 'إرشادات الصرف الآمن للأدوية',           titleEn: 'Safe Medication Dispensing Guidelines',         descAr: 'معايير وضوابط الصرف الآمن للأدوية في مرافق تجمع نجران',     descEn: 'Standards and controls for safe medication dispensing in Najran facilities', date: '2023-05-12' },
+];
+
+const faqCategories = [
+  { id: 'all',       labelAr: 'الكل',               labelEn: 'All',               Icon: Library },
+  { id: 'general',   labelAr: 'عام',                 labelEn: 'General',           Icon: Building2 },
+  { id: 'services',  labelAr: 'الخدمات الصحية',      labelEn: 'Health Services',   Icon: HeartPulse },
+  { id: 'appts',     labelAr: 'المواعيد',             labelEn: 'Appointments',      Icon: CalendarDays },
+  { id: 'insurance', labelAr: 'التأمين الصحي',       labelEn: 'Health Insurance',  Icon: ShieldCheck },
+  { id: 'hr',        labelAr: 'الموارد البشرية',     labelEn: 'Human Resources',   Icon: Users },
+];
+
+const faqItems = [
+  // General
+  {
+    id: 1, catId: 'general',
+    questionAr: 'ما هو تجمع نجران الصحي؟',
+    questionEn: 'What is Najran Health Cluster?',
+    answerAr: 'تجمع نجران الصحي أحد التجمعات الصحية التابعة لشركة الصحة القابضة في المملكة العربية السعودية، تأسس ضمن برنامج التحول الصحي لرؤية 2030، ويقدم خدماته لأكثر من 495 ألف مستفيد عبر 12 مستشفى و69 مركزًا صحيًا.',
+    answerEn: 'Najran Health Cluster is one of the health clusters under the Saudi Health Holding Company, established as part of the health transformation program of Vision 2030, serving over 495,000 beneficiaries through 12 hospitals and 69 health centers.',
+  },
+  {
+    id: 2, catId: 'general',
+    questionAr: 'ما هي رؤية ورسالة تجمع نجران الصحي؟',
+    questionEn: 'What is the vision and mission of Najran Health Cluster?',
+    answerAr: 'رؤيتنا: "نرتقي معاً بالرعاية الصحية للجميع". ورسالتنا: تقديم نموذج مستدام ومبتكر للرعاية الصحية يعزز من جودة الحياة للجميع، مع الالتزام بأعلى معايير الجودة والسلامة.',
+    answerEn: 'Our vision: "Together we elevate healthcare for everyone." Our mission: Providing a sustainable and innovative healthcare model that enhances quality of life for all, with commitment to the highest quality and safety standards.',
+  },
+  {
+    id: 3, catId: 'general',
+    questionAr: 'كم عدد المنشآت الصحية التابعة للتجمع؟',
+    questionEn: 'How many health facilities does the cluster have?',
+    answerAr: 'يضم التجمع 12 مستشفى عاماً ومتخصصاً بسعة سريرية 1,300 سرير، و69 مركزاً للرعاية الصحية الأولية موزعة في منطقة نجران.',
+    answerEn: 'The cluster includes 12 general and specialized hospitals with 1,300 bed capacity, and 69 primary healthcare centers distributed across the Najran region.',
+  },
+  {
+    id: 4, catId: 'general',
+    questionAr: 'كيف يمكنني التواصل مع تجمع نجران الصحي؟',
+    questionEn: 'How can I contact Najran Health Cluster?',
+    answerAr: 'يمكن التواصل عبر الرقم 920011140، أو حسابات التواصل الاجتماعي @NajranCluster، أو بزيارة أي من مرافقنا الصحية المنتشرة في المنطقة.',
+    answerEn: 'You can contact us via 920011140, our social media accounts @NajranCluster, or by visiting any of our health facilities across the region.',
+  },
+  // Health Services
+  {
+    id: 5, catId: 'services',
+    questionAr: 'ما هي الخدمات الصحية المتاحة في التجمع؟',
+    questionEn: 'What health services are available at the cluster?',
+    answerAr: 'نقدم: الرعاية الأولية والوقائية، الطوارئ 24/7، الرعاية التخصصية والجراحية، صحة الأم والطفل، الصحة النفسية، العناية المركزة، القسطرة القلبية، غسيل الكلى، طب الأسنان، والرعاية المنزلية.',
+    answerEn: 'We provide: primary and preventive care, 24/7 emergency services, specialized and surgical care, maternal and child health, mental health, intensive care, cardiac catheterization, dialysis, dentistry, and home healthcare.',
+  },
+  {
+    id: 6, catId: 'services',
+    questionAr: 'أين يمكنني الحصول على رعاية الطوارئ؟',
+    questionEn: 'Where can I get emergency care?',
+    answerAr: 'تتوفر أقسام طوارئ تعمل 24 ساعة في جميع مستشفيات التجمع، أبرزها: مستشفى الملك خالد، مستشفى نجران العام، مستشفى شرورة العام. يمكنك كذلك الاتصال بالإسعاف على الرقم 911.',
+    answerEn: 'Emergency departments operate 24 hours in all cluster hospitals, notably King Khalid Hospital, Najran General Hospital, and Sharurah General Hospital. You can also call emergency services at 911.',
+  },
+  {
+    id: 7, catId: 'services',
+    questionAr: 'هل تتوفر خدمات الصحة النفسية؟',
+    questionEn: 'Are mental health services available?',
+    answerAr: 'نعم، يضم التجمع مجمع إرادة والصحة النفسية المتخصص في تقديم خدمات الصحة النفسية وعلاج الإدمان، إضافة إلى عيادات الصحة النفسية في مراكز الرعاية الأولية.',
+    answerEn: 'Yes, the cluster includes the Irada Mental Health Complex specializing in mental health and addiction treatment, in addition to mental health clinics in primary care centers.',
+  },
+  {
+    id: 8, catId: 'services',
+    questionAr: 'هل تتوفر خدمة الرعاية الصحية المنزلية؟',
+    questionEn: 'Is home healthcare available?',
+    answerAr: 'نعم، يقدم التجمع خدمة الرعاية الصحية المنزلية للمرضى المزمنين وذوي الاحتياجات الخاصة الذين يصعب عليهم التنقل. للاستفسار اتصل بمستشفى المنطقة الأقرب لك.',
+    answerEn: 'Yes, the cluster provides home healthcare for chronic patients and people with special needs who have difficulty traveling. For inquiries, contact the nearest hospital.',
+  },
+  // Appointments
+  {
+    id: 9, catId: 'appts',
+    questionAr: 'كيف يمكنني حجز موعد؟',
+    questionEn: 'How can I book an appointment?',
+    answerAr: 'يمكن حجز المواعيد عبر: تطبيق صحتي، منصة صحة الإلكترونية، أو الاتصال المباشر بالمستشفى أو المركز الصحي المختص. وذلك على مدار الساعة.',
+    answerEn: 'Appointments can be booked through: the Sehhaty app, the Seha electronic platform, or by calling the hospital or health center directly, available around the clock.',
+  },
+  {
+    id: 10, catId: 'appts',
+    questionAr: 'ما هو تطبيق صحتي وكيف أستخدمه؟',
+    questionEn: 'What is the Sehhaty app and how do I use it?',
+    answerAr: 'تطبيق صحتي منصة موحدة لحجز المواعيد والاطلاع على الملف الصحي الرقمي. يمكن تحميله من App Store أو Google Play والتسجيل برقم الهوية الوطنية.',
+    answerEn: 'Sehhaty is a unified platform for booking appointments and viewing your digital health record. Download it from the App Store or Google Play and register with your national ID number.',
+  },
+  {
+    id: 11, catId: 'appts',
+    questionAr: 'كيف يمكنني إلغاء أو تغيير موعدي؟',
+    questionEn: 'How can I cancel or change my appointment?',
+    answerAr: 'يمكن إلغاء المواعيد أو تغييرها عبر تطبيق صحتي أو منصة صحة، أو بالاتصال بالجهة الصحية المختصة قبل 24 ساعة على الأقل من الموعد.',
+    answerEn: 'You can cancel or reschedule appointments through the Sehhaty app, the Seha platform, or by calling the health facility at least 24 hours before the appointment.',
+  },
+  {
+    id: 12, catId: 'appts',
+    questionAr: 'ما المدة الزمنية المعتادة لانتظار المواعيد؟',
+    questionEn: 'What is the typical waiting time for appointments?',
+    answerAr: 'تتفاوت مدة الانتظار حسب التخصص والإلحاحية. حالات الطوارئ تُعالج فوراً، أما المواعيد الاعتيادية فتتراوح عادة بين يوم وأسبوع حسب التخصص والطاقة الاستيعابية.',
+    answerEn: 'Waiting times vary by specialty and urgency. Emergency cases are treated immediately, while routine appointments typically range from one day to one week depending on the specialty and capacity.',
+  },
+  // Insurance
+  {
+    id: 13, catId: 'insurance',
+    questionAr: 'ما أنواع التأمين الصحي المقبولة في التجمع؟',
+    questionEn: 'What types of health insurance are accepted at the cluster?',
+    answerAr: 'يقبل التجمع تأمين صحي وزارة الصحة للمواطنين والمقيمين المؤهلين، بالإضافة إلى بعض شركات التأمين الصحي الخاص وفقاً للاتفاقيات المبرمة. للاستفسار راجع المركز الصحي.',
+    answerEn: 'The cluster accepts MOH health insurance for eligible citizens and residents, plus some private health insurance companies per existing agreements. Contact your health center for inquiries.',
+  },
+  {
+    id: 14, catId: 'insurance',
+    questionAr: 'هل تشمل التغطية التأمينية الأدوية؟',
+    questionEn: 'Does insurance coverage include medications?',
+    answerAr: 'نعم، الأدوية المصروفة من صيدليات مرافق التجمع والمدرجة في قائمة الأدوية المعتمدة مشمولة بالتغطية التأمينية. الأدوية خارج القائمة قد تتطلب تحمّل جزئي من المريض.',
+    answerEn: 'Yes, medications dispensed from cluster pharmacies and listed in the approved drug formulary are covered. Medications outside the formulary may require patient co-payment.',
+  },
+  {
+    id: 15, catId: 'insurance',
+    questionAr: 'ما الإجراء المتبع للمطالبة بالتأمين؟',
+    questionEn: 'What is the procedure for insurance claims?',
+    answerAr: 'تُعالج مطالبات التأمين مباشرةً بين التجمع وشركة التأمين في معظم الحالات. للاستفسار عن مطالبة بعينها تواصل مع قسم الشؤون المالية في المنشأة الصحية.',
+    answerEn: 'Insurance claims are handled directly between the cluster and the insurance company in most cases. For inquiries about a specific claim, contact the financial department at the health facility.',
+  },
+  // HR
+  {
+    id: 16, catId: 'hr',
+    questionAr: 'كيف يمكنني التقدم لوظيفة في تجمع نجران الصحي؟',
+    questionEn: 'How can I apply for a job at Najran Health Cluster?',
+    answerAr: 'تُعلن الوظائف الشاغرة عبر منصة أبشر وبوابة وزارة الصحة الرسمية وحسابات التواصل الاجتماعي للتجمع. يمكن التقديم إلكترونياً عبر المنصات المذكورة عند توفر الشواغر.',
+    answerEn: 'Vacancies are announced through the Absher platform, the official MOH portal, and the cluster\'s social media accounts. Applications are submitted electronically through these platforms when positions are available.',
+  },
+  {
+    id: 17, catId: 'hr',
+    questionAr: 'ما إجراءات طلب الإجازات للموظفين؟',
+    questionEn: 'What are the leave request procedures for employees?',
+    answerAr: 'تُقدَّم طلبات الإجازات عبر نظام إدارة الموارد البشرية المعتمد في التجمع. للاستفسار التفصيلي يُرجى التواصل مع إدارة الموارد البشرية أو مراجعة صفحة خدمات الموظفين.',
+    answerEn: 'Leave requests are submitted through the cluster\'s approved HR management system. For detailed inquiries, contact the Human Resources department or visit the Employee Services page.',
+  },
+  {
+    id: 18, catId: 'hr',
+    questionAr: 'كيف أستفسر عن مستحقاتي المالية؟',
+    questionEn: 'How do I inquire about my financial entitlements?',
+    answerAr: 'يمكن الاستفسار عن المستحقات المالية عبر نظام الموارد البشرية الإلكتروني، أو بالتواصل مع إدارة الشؤون المالية في التجمع.',
+    answerEn: 'You can inquire about financial entitlements through the electronic HR system, or by contacting the cluster\'s Finance Department.',
+  },
 ];
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -171,6 +315,114 @@ function DocumentCard({ item, language, fontClass, t, accent }: any) {
   );
 }
 
+function FaqPanel({ language, fontClass, searchQuery }: { language: string; fontClass: string; searchQuery: string }) {
+  const [activeCat, setActiveCat] = useState('all');
+  const [openId, setOpenId] = useState<number | null>(null);
+
+  const filtered = useMemo(() => {
+    const q = searchQuery.toLowerCase();
+    return faqItems.filter(item => {
+      const matchesCat = activeCat === 'all' || item.catId === activeCat;
+      const matchesSearch = !q ||
+        item.questionAr.includes(q) || item.questionEn.toLowerCase().includes(q) ||
+        item.answerAr.includes(q)   || item.answerEn.toLowerCase().includes(q);
+      return matchesCat && matchesSearch;
+    });
+  }, [activeCat, searchQuery]);
+
+  return (
+    <motion.div key="faqs" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }}>
+      {/* Category filter */}
+      <div className="flex gap-2 flex-wrap justify-center mb-8">
+        {faqCategories.map(cat => (
+          <button
+            key={cat.id}
+            onClick={() => { setActiveCat(cat.id); setOpenId(null); }}
+            className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-medium border transition-all duration-200 ${fontClass} ${
+              activeCat === cat.id
+                ? 'bg-[#2BAAE2] text-white border-[#2BAAE2]'
+                : 'bg-white text-gray-600 border-gray-200 hover:border-[#2BAAE2] hover:text-[#2BAAE2]'
+            }`}
+          >
+            <cat.Icon className="w-3.5 h-3.5" />
+            {language === 'ar' ? cat.labelAr : cat.labelEn}
+          </button>
+        ))}
+      </div>
+
+      {/* Accordion */}
+      {filtered.length === 0 ? (
+        <div className={`text-center py-20 text-gray-400 ${fontClass}`}>
+          {language === 'ar' ? 'لا توجد نتائج مطابقة' : 'No results match your search'}
+        </div>
+      ) : (
+        <div className="max-w-3xl mx-auto space-y-3">
+          {filtered.map((item, idx) => {
+            const isOpen = openId === item.id;
+            const catLabel = faqCategories.find(c => c.id === item.catId);
+            return (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.25, delay: idx * 0.04 }}
+                className={`bg-white rounded-2xl border overflow-hidden transition-all duration-200 ${
+                  isOpen ? 'border-[#2BAAE2] shadow-[0_8px_24px_rgba(43,170,226,0.15)]' : 'border-gray-100 shadow-sm hover:border-[#2BAAE2]/40'
+                }`}
+              >
+                <button
+                  onClick={() => setOpenId(isOpen ? null : item.id)}
+                  className={`w-full flex items-center justify-between gap-4 px-5 py-4 text-start ${fontClass}`}
+                >
+                  <div className="flex items-start gap-3">
+                    <div className={`mt-0.5 flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
+                      isOpen ? 'bg-[#2BAAE2] text-white' : 'bg-[#2BAAE2]/10 text-[#2BAAE2]'
+                    }`}>
+                      {idx + 1}
+                    </div>
+                    <div>
+                      <p className={`font-semibold text-gray-800 text-sm leading-snug ${isOpen ? 'text-[#2BAAE2]' : ''}`}>
+                        {language === 'ar' ? item.questionAr : item.questionEn}
+                      </p>
+                      {catLabel && (
+                        <span className="text-xs text-gray-400 mt-0.5 block">
+                          {language === 'ar' ? catLabel.labelAr : catLabel.labelEn}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                  <ChevronDown className={`w-4 h-4 flex-shrink-0 text-[#2BAAE2] transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      key="answer"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.25 }}
+                      className="overflow-hidden"
+                    >
+                      <div className={`px-5 pb-5 pt-0 ${fontClass}`}>
+                        <div className="border-t border-gray-100 pt-4">
+                          <p className="text-gray-600 text-sm leading-relaxed">
+                            {language === 'ar' ? item.answerAr : item.answerEn}
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
+        </div>
+      )}
+    </motion.div>
+  );
+}
+
 // ── Page ──────────────────────────────────────────────────────────────────────
 
 const TABS = [
@@ -178,6 +430,7 @@ const TABS = [
   { id: 'publications', labelKey: 'mediaCenter.tab.publications',  Icon: BookOpen },
   { id: 'reports',      labelKey: 'mediaCenter.tab.reports',       Icon: BarChart3 },
   { id: 'guidelines',   labelKey: 'mediaCenter.tab.guidelines',    Icon: ClipboardList },
+  { id: 'faqs',         labelKey: 'mediaCenter.tab.faqs',          Icon: MessageCircleQuestion },
 ];
 
 const MEDIA_FILTERS = [
@@ -262,7 +515,9 @@ export default function MediaCenter() {
     ? Math.ceil(filteredPublications.length / ITEMS_PER_PAGE_DOCS)
     : activeTab === 'reports'
     ? Math.ceil(filteredReports.length / ITEMS_PER_PAGE_DOCS)
-    : Math.ceil(filteredGuidelines.length / ITEMS_PER_PAGE_DOCS);
+    : activeTab === 'guidelines'
+    ? Math.ceil(filteredGuidelines.length / ITEMS_PER_PAGE_DOCS)
+    : 1; // faqs — no pagination
 
   return (
     <div className="min-h-screen overflow-x-hidden" dir={language === 'ar' ? 'rtl' : 'ltr'}>
@@ -448,6 +703,11 @@ export default function MediaCenter() {
                     </div>
                   )}
                 </motion.div>
+              )}
+
+              {/* FAQs */}
+              {activeTab === 'faqs' && (
+                <FaqPanel language={language} fontClass={fontClass} searchQuery={searchQuery} />
               )}
             </AnimatePresence>
 

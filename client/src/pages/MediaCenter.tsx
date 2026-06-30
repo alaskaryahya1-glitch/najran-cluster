@@ -14,47 +14,13 @@ import { CardStar } from "@/components/BrandIcon";
 
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const mediaItems = [
-  { id: 1, type: 'video',       gradient: 'from-[#004070] to-[#2BAAE2]',   titleAr: 'يوم الصحة العالمي 2024',                    titleEn: 'World Health Day 2024',                      date: '2024-04-07' },
-  { id: 2, type: 'infographic', gradient: 'from-[#2BAAE2] to-teal-500',     titleAr: 'إنجازات تجمع نجران الصحي 2023',             titleEn: 'Najran Health Cluster Achievements 2023',    date: '2024-03-15' },
-  { id: 3, type: 'image',       gradient: 'from-emerald-600 to-teal-500',   titleAr: 'افتتاح مستشفى شرورة العام',                 titleEn: 'Inauguration of Sharurah General Hospital',  date: '2024-02-20' },
-  { id: 4, type: 'video',       gradient: 'from-purple-700 to-purple-500',  titleAr: 'حملة التطعيم الوطنية ضد الإنفلونزا',       titleEn: 'National Influenza Vaccination Campaign',    date: '2024-01-10' },
-  { id: 5, type: 'infographic', gradient: 'from-orange-600 to-amber-500',   titleAr: 'خدمات الرعاية الصحية الأولية في نجران',    titleEn: 'Primary Health Care Services in Najran',     date: '2023-12-05' },
-  { id: 6, type: 'image',       gradient: 'from-green-700 to-green-500',    titleAr: 'فعاليات اليوم الوطني السعودي 93',           titleEn: 'Saudi National Day 93 Events',               date: '2023-09-23' },
-  { id: 7, type: 'video',       gradient: 'from-rose-700 to-pink-500',      titleAr: 'برنامج تجمع نجران للتحول الصحي',            titleEn: 'Najran Cluster Health Transformation Program', date: '2023-08-15' },
-  { id: 8, type: 'infographic', gradient: 'from-sky-700 to-blue-500',       titleAr: 'إحصائيات الخدمات الصحية 2023',             titleEn: 'Health Services Statistics 2023',            date: '2023-07-01' },
-  { id: 9, type: 'image',       gradient: 'from-indigo-700 to-violet-500',  titleAr: 'ورشة عمل الجودة والسلامة الصحية',           titleEn: 'Health Quality and Safety Workshop',         date: '2023-06-12' },
-  { id: 10, type: 'video',      gradient: 'from-cyan-700 to-cyan-500',      titleAr: 'مبادرات الصحة المنزلية للمرضى المزمنين',   titleEn: 'Home Health Initiatives for Chronic Patients', date: '2023-05-20' },
-  { id: 11, type: 'infographic', gradient: 'from-fuchsia-700 to-pink-500',  titleAr: 'أرقام وإحصائيات الطوارئ الطبية',           titleEn: 'Emergency Medical Statistics',               date: '2023-04-18' },
-  { id: 12, type: 'image',      gradient: 'from-teal-700 to-teal-500',      titleAr: 'زيارة وفد وزارة الصحة لمستشفى الملك خالد', titleEn: 'MOH Delegation Visit to King Khalid Hospital', date: '2023-03-10' },
-];
+const mediaItems: { id: number; type: string; gradient: string; titleAr: string; titleEn: string; date: string }[] = [];
 
-const publicationItems = [
-  { id: 1, pages: 84,  titleAr: 'التقرير السنوي لتجمع نجران الصحي 2023',        titleEn: 'Najran Health Cluster Annual Report 2023',        descAr: 'تقرير شامل عن إنجازات وأداء التجمع خلال عام 2023',            descEn: 'Comprehensive report on cluster achievements and performance in 2023', date: '2024-01-15' },
-  { id: 2, pages: 32,  titleAr: 'دليل خدمات الرعاية الصحية الأولية',            titleEn: 'Primary Healthcare Services Guide',                descAr: 'دليل المستفيدين للخدمات المقدمة في مراكز الرعاية الأولية',   descEn: 'Beneficiary guide for services offered at primary care centers',      date: '2023-10-01' },
-  { id: 3, pages: 48,  titleAr: 'نشرة الجودة والسلامة المؤسسية',                titleEn: 'Institutional Quality & Safety Bulletin',          descAr: 'النشرة الدورية لمؤشرات الجودة والسلامة في مرافق التجمع',    descEn: 'Periodic bulletin of quality and safety indicators in cluster facilities', date: '2023-07-20' },
-  { id: 4, pages: 60,  titleAr: 'خطة الطوارئ والكوارث الصحية',                  titleEn: 'Health Emergency & Disaster Plan',                 descAr: 'خطة التجمع الشاملة للتعامل مع حالات الطوارئ والكوارث',    descEn: 'Cluster comprehensive plan for handling emergencies and disasters',    date: '2023-05-10' },
-  { id: 5, pages: 56,  titleAr: 'تقرير مؤشرات الأداء الصحي الرئيسية',          titleEn: 'Key Health Performance Indicators Report',         descAr: 'مؤشرات الأداء الرئيسية لجميع الخدمات الصحية في التجمع',   descEn: 'Key performance indicators for all health services in the cluster',   date: '2023-04-01' },
-  { id: 6, pages: 20,  titleAr: 'كتيب حقوق المرضى وواجباتهم',                   titleEn: 'Patient Rights & Responsibilities Booklet',        descAr: 'دليل شامل يوضح حقوق المرضى وواجباتهم في مرافق التجمع',   descEn: 'Comprehensive guide on patient rights and responsibilities',           date: '2023-03-15' },
-];
+const publicationItems: { id: number; pages?: number; titleAr: string; titleEn: string; descAr: string; descEn: string; date: string }[] = [];
 
-const reportItems = [
-  { id: 1, typeKey: 'quarterly', titleAr: 'تقرير إحصائيات الخدمات الصحية ق١ 2024', titleEn: 'Health Services Statistics Report Q1 2024',    descAr: 'إحصائيات شاملة للخدمات الصحية المقدمة في الربع الأول من 2024', descEn: 'Comprehensive health services statistics for Q1 2024', date: '2024-04-30' },
-  { id: 2, typeKey: 'annual',    titleAr: 'تقرير برنامج التحول الصحي 2023',         titleEn: 'Health Transformation Program Report 2023',    descAr: 'مستجدات ومؤشرات تنفيذ برنامج التحول الصحي في نجران',         descEn: 'Updates and indicators for the health transformation program',  date: '2024-02-01' },
-  { id: 3, typeKey: 'annual',    titleAr: 'تقرير مؤشرات الجودة والسلامة 2023',      titleEn: 'Quality & Safety Indicators Report 2023',      descAr: 'مؤشرات الجودة والسلامة المؤسسية للعام المالي 2023',           descEn: 'Institutional quality and safety indicators for fiscal year 2023', date: '2023-12-31' },
-  { id: 4, typeKey: 'quarterly', titleAr: 'تقرير الرعاية الصحية الأولية ق٤ 2023',  titleEn: 'Primary Healthcare Report Q4 2023',            descAr: 'أداء ومؤشرات مراكز الرعاية الصحية الأولية في منطقة نجران',   descEn: 'Performance of primary healthcare centers in Najran region',    date: '2024-01-31' },
-  { id: 5, typeKey: 'monthly',   titleAr: 'تقرير الطوارئ الشهري — ديسمبر 2023',    titleEn: 'Monthly Emergency Report — December 2023',     descAr: 'إحصائيات أقسام الطوارئ في مستشفيات تجمع نجران الصحي',        descEn: 'Emergency department statistics across Najran cluster hospitals', date: '2024-01-05' },
-  { id: 6, typeKey: 'annual',    titleAr: 'تقرير موارد بشرية التجمع 2023',          titleEn: 'Cluster Human Resources Report 2023',          descAr: 'إحصائيات وتحليلات الكوادر البشرية الصحية في تجمع نجران',     descEn: 'Statistics and analysis of health human resources in Najran cluster', date: '2023-11-15' },
-];
+const reportItems: { id: number; typeKey?: string; titleAr: string; titleEn: string; descAr: string; descEn: string; date: string }[] = [];
 
-const guidelineItems = [
-  { id: 1, catKey: 'clinical',   titleAr: 'دليل بروتوكولات العلاج السريري',         titleEn: 'Clinical Treatment Protocols Guide',            descAr: 'البروتوكولات السريرية المعتمدة لأشيع الحالات في مرافق التجمع', descEn: 'Approved clinical protocols for common cases in cluster facilities', date: '2024-03-01' },
-  { id: 2, catKey: 'safety',     titleAr: 'إرشادات مكافحة العدوى والوقاية منها',    titleEn: 'Infection Control & Prevention Guidelines',     descAr: 'معايير وإجراءات مكافحة العدوى المعتمدة في المرافق الصحية',   descEn: 'Approved infection control standards and procedures in health facilities', date: '2024-01-15' },
-  { id: 3, catKey: 'emergency',  titleAr: 'دليل إجراءات الطوارئ والإسعافات الأولية', titleEn: 'Emergency & First Aid Procedures Guide',      descAr: 'الإجراءات المعتمدة للتعامل مع حالات الطوارئ الطبية المختلفة', descEn: 'Approved procedures for handling various medical emergencies',       date: '2023-11-10' },
-  { id: 4, catKey: 'mental',     titleAr: 'إرشادات خدمات الصحة النفسية',           titleEn: 'Mental Health Services Guidelines',             descAr: 'إرشادات تقديم خدمات الصحة النفسية وعلاج الإدمان في التجمع',  descEn: 'Guidelines for providing mental health and addiction treatment services', date: '2023-09-05' },
-  { id: 5, catKey: 'maternal',   titleAr: 'بروتوكول رعاية الأمومة والطفل',         titleEn: 'Maternal & Child Care Protocol',                descAr: 'معايير رعاية الأم والطفل في مستشفى الولادة والمراكز الصحية',  descEn: 'Mother and child care standards at maternity hospitals and health centers', date: '2023-07-20' },
-  { id: 6, catKey: 'pharmacy',   titleAr: 'إرشادات الصرف الآمن للأدوية',           titleEn: 'Safe Medication Dispensing Guidelines',         descAr: 'معايير وضوابط الصرف الآمن للأدوية في مرافق تجمع نجران',     descEn: 'Standards and controls for safe medication dispensing in Najran facilities', date: '2023-05-12' },
-];
+const guidelineItems: { id: number; catKey?: string; titleAr: string; titleEn: string; descAr: string; descEn: string; date: string }[] = [];
 
 const faqCategories = [
   { id: 'all',       labelAr: 'الكل',               labelEn: 'All',               Icon: Library },
@@ -65,139 +31,7 @@ const faqCategories = [
   { id: 'hr',        labelAr: 'الموارد البشرية',     labelEn: 'Human Resources',   Icon: Users },
 ];
 
-const faqItems = [
-  // General
-  {
-    id: 1, catId: 'general',
-    questionAr: 'ما هو تجمع نجران الصحي؟',
-    questionEn: 'What is Najran Health Cluster?',
-    answerAr: 'تجمع نجران الصحي أحد التجمعات الصحية التابعة لشركة الصحة القابضة في المملكة العربية السعودية، تأسس ضمن برنامج التحول الصحي لرؤية 2030، ويقدم خدماته لأكثر من 495 ألف مستفيد عبر 12 مستشفى و69 مركزًا صحيًا.',
-    answerEn: 'Najran Health Cluster is one of the health clusters under the Saudi Health Holding Company, established as part of the health transformation program of Vision 2030, serving over 495,000 beneficiaries through 12 hospitals and 69 health centers.',
-  },
-  {
-    id: 2, catId: 'general',
-    questionAr: 'ما هي رؤية ورسالة تجمع نجران الصحي؟',
-    questionEn: 'What is the vision and mission of Najran Health Cluster?',
-    answerAr: 'رؤيتنا: "نرتقي معاً بالرعاية الصحية للجميع". ورسالتنا: تقديم نموذج مستدام ومبتكر للرعاية الصحية يعزز من جودة الحياة للجميع، مع الالتزام بأعلى معايير الجودة والسلامة.',
-    answerEn: 'Our vision: "Together we elevate healthcare for everyone." Our mission: Providing a sustainable and innovative healthcare model that enhances quality of life for all, with commitment to the highest quality and safety standards.',
-  },
-  {
-    id: 3, catId: 'general',
-    questionAr: 'كم عدد المنشآت الصحية التابعة للتجمع؟',
-    questionEn: 'How many health facilities does the cluster have?',
-    answerAr: 'يضم التجمع 12 مستشفى عاماً ومتخصصاً بسعة سريرية 1,300 سرير، و69 مركزاً للرعاية الصحية الأولية موزعة في منطقة نجران.',
-    answerEn: 'The cluster includes 12 general and specialized hospitals with 1,300 bed capacity, and 69 primary healthcare centers distributed across the Najran region.',
-  },
-  {
-    id: 4, catId: 'general',
-    questionAr: 'كيف يمكنني التواصل مع تجمع نجران الصحي؟',
-    questionEn: 'How can I contact Najran Health Cluster?',
-    answerAr: 'يمكن التواصل عبر الرقم 920011140، أو حسابات التواصل الاجتماعي @NajranCluster، أو بزيارة أي من مرافقنا الصحية المنتشرة في المنطقة.',
-    answerEn: 'You can contact us via 920011140, our social media accounts @NajranCluster, or by visiting any of our health facilities across the region.',
-  },
-  // Health Services
-  {
-    id: 5, catId: 'services',
-    questionAr: 'ما هي الخدمات الصحية المتاحة في التجمع؟',
-    questionEn: 'What health services are available at the cluster?',
-    answerAr: 'نقدم: الرعاية الأولية والوقائية، الطوارئ 24/7، الرعاية التخصصية والجراحية، صحة الأم والطفل، الصحة النفسية، العناية المركزة، القسطرة القلبية، غسيل الكلى، طب الأسنان، والرعاية المنزلية.',
-    answerEn: 'We provide: primary and preventive care, 24/7 emergency services, specialized and surgical care, maternal and child health, mental health, intensive care, cardiac catheterization, dialysis, dentistry, and home healthcare.',
-  },
-  {
-    id: 6, catId: 'services',
-    questionAr: 'أين يمكنني الحصول على رعاية الطوارئ؟',
-    questionEn: 'Where can I get emergency care?',
-    answerAr: 'تتوفر أقسام طوارئ تعمل 24 ساعة في جميع مستشفيات التجمع، أبرزها: مستشفى الملك خالد، مستشفى نجران العام، مستشفى شرورة العام. يمكنك كذلك الاتصال بالإسعاف على الرقم 911.',
-    answerEn: 'Emergency departments operate 24 hours in all cluster hospitals, notably King Khalid Hospital, Najran General Hospital, and Sharurah General Hospital. You can also call emergency services at 911.',
-  },
-  {
-    id: 7, catId: 'services',
-    questionAr: 'هل تتوفر خدمات الصحة النفسية؟',
-    questionEn: 'Are mental health services available?',
-    answerAr: 'نعم، يضم التجمع مجمع إرادة والصحة النفسية المتخصص في تقديم خدمات الصحة النفسية وعلاج الإدمان، إضافة إلى عيادات الصحة النفسية في مراكز الرعاية الأولية.',
-    answerEn: 'Yes, the cluster includes the Irada Mental Health Complex specializing in mental health and addiction treatment, in addition to mental health clinics in primary care centers.',
-  },
-  {
-    id: 8, catId: 'services',
-    questionAr: 'هل تتوفر خدمة الرعاية الصحية المنزلية؟',
-    questionEn: 'Is home healthcare available?',
-    answerAr: 'نعم، يقدم التجمع خدمة الرعاية الصحية المنزلية للمرضى المزمنين وذوي الاحتياجات الخاصة الذين يصعب عليهم التنقل. للاستفسار اتصل بمستشفى المنطقة الأقرب لك.',
-    answerEn: 'Yes, the cluster provides home healthcare for chronic patients and people with special needs who have difficulty traveling. For inquiries, contact the nearest hospital.',
-  },
-  // Appointments
-  {
-    id: 9, catId: 'appts',
-    questionAr: 'كيف يمكنني حجز موعد؟',
-    questionEn: 'How can I book an appointment?',
-    answerAr: 'يمكن حجز المواعيد عبر: تطبيق صحتي، منصة صحة الإلكترونية، أو الاتصال المباشر بالمستشفى أو المركز الصحي المختص. وذلك على مدار الساعة.',
-    answerEn: 'Appointments can be booked through: the Sehhaty app, the Seha electronic platform, or by calling the hospital or health center directly, available around the clock.',
-  },
-  {
-    id: 10, catId: 'appts',
-    questionAr: 'ما هو تطبيق صحتي وكيف أستخدمه؟',
-    questionEn: 'What is the Sehhaty app and how do I use it?',
-    answerAr: 'تطبيق صحتي منصة موحدة لحجز المواعيد والاطلاع على الملف الصحي الرقمي. يمكن تحميله من App Store أو Google Play والتسجيل برقم الهوية الوطنية.',
-    answerEn: 'Sehhaty is a unified platform for booking appointments and viewing your digital health record. Download it from the App Store or Google Play and register with your national ID number.',
-  },
-  {
-    id: 11, catId: 'appts',
-    questionAr: 'كيف يمكنني إلغاء أو تغيير موعدي؟',
-    questionEn: 'How can I cancel or change my appointment?',
-    answerAr: 'يمكن إلغاء المواعيد أو تغييرها عبر تطبيق صحتي أو منصة صحة، أو بالاتصال بالجهة الصحية المختصة قبل 24 ساعة على الأقل من الموعد.',
-    answerEn: 'You can cancel or reschedule appointments through the Sehhaty app, the Seha platform, or by calling the health facility at least 24 hours before the appointment.',
-  },
-  {
-    id: 12, catId: 'appts',
-    questionAr: 'ما المدة الزمنية المعتادة لانتظار المواعيد؟',
-    questionEn: 'What is the typical waiting time for appointments?',
-    answerAr: 'تتفاوت مدة الانتظار حسب التخصص والإلحاحية. حالات الطوارئ تُعالج فوراً، أما المواعيد الاعتيادية فتتراوح عادة بين يوم وأسبوع حسب التخصص والطاقة الاستيعابية.',
-    answerEn: 'Waiting times vary by specialty and urgency. Emergency cases are treated immediately, while routine appointments typically range from one day to one week depending on the specialty and capacity.',
-  },
-  // Insurance
-  {
-    id: 13, catId: 'insurance',
-    questionAr: 'ما أنواع التأمين الصحي المقبولة في التجمع؟',
-    questionEn: 'What types of health insurance are accepted at the cluster?',
-    answerAr: 'يقبل التجمع تأمين صحي وزارة الصحة للمواطنين والمقيمين المؤهلين، بالإضافة إلى بعض شركات التأمين الصحي الخاص وفقاً للاتفاقيات المبرمة. للاستفسار راجع المركز الصحي.',
-    answerEn: 'The cluster accepts MOH health insurance for eligible citizens and residents, plus some private health insurance companies per existing agreements. Contact your health center for inquiries.',
-  },
-  {
-    id: 14, catId: 'insurance',
-    questionAr: 'هل تشمل التغطية التأمينية الأدوية؟',
-    questionEn: 'Does insurance coverage include medications?',
-    answerAr: 'نعم، الأدوية المصروفة من صيدليات مرافق التجمع والمدرجة في قائمة الأدوية المعتمدة مشمولة بالتغطية التأمينية. الأدوية خارج القائمة قد تتطلب تحمّل جزئي من المريض.',
-    answerEn: 'Yes, medications dispensed from cluster pharmacies and listed in the approved drug formulary are covered. Medications outside the formulary may require patient co-payment.',
-  },
-  {
-    id: 15, catId: 'insurance',
-    questionAr: 'ما الإجراء المتبع للمطالبة بالتأمين؟',
-    questionEn: 'What is the procedure for insurance claims?',
-    answerAr: 'تُعالج مطالبات التأمين مباشرةً بين التجمع وشركة التأمين في معظم الحالات. للاستفسار عن مطالبة بعينها تواصل مع قسم الشؤون المالية في المنشأة الصحية.',
-    answerEn: 'Insurance claims are handled directly between the cluster and the insurance company in most cases. For inquiries about a specific claim, contact the financial department at the health facility.',
-  },
-  // HR
-  {
-    id: 16, catId: 'hr',
-    questionAr: 'كيف يمكنني التقدم لوظيفة في تجمع نجران الصحي؟',
-    questionEn: 'How can I apply for a job at Najran Health Cluster?',
-    answerAr: 'تُعلن الوظائف الشاغرة عبر منصة أبشر وبوابة وزارة الصحة الرسمية وحسابات التواصل الاجتماعي للتجمع. يمكن التقديم إلكترونياً عبر المنصات المذكورة عند توفر الشواغر.',
-    answerEn: 'Vacancies are announced through the Absher platform, the official MOH portal, and the cluster\'s social media accounts. Applications are submitted electronically through these platforms when positions are available.',
-  },
-  {
-    id: 17, catId: 'hr',
-    questionAr: 'ما إجراءات طلب الإجازات للموظفين؟',
-    questionEn: 'What are the leave request procedures for employees?',
-    answerAr: 'تُقدَّم طلبات الإجازات عبر نظام إدارة الموارد البشرية المعتمد في التجمع. للاستفسار التفصيلي يُرجى التواصل مع إدارة الموارد البشرية أو مراجعة صفحة خدمات الموظفين.',
-    answerEn: 'Leave requests are submitted through the cluster\'s approved HR management system. For detailed inquiries, contact the Human Resources department or visit the Employee Services page.',
-  },
-  {
-    id: 18, catId: 'hr',
-    questionAr: 'كيف أستفسر عن مستحقاتي المالية؟',
-    questionEn: 'How do I inquire about my financial entitlements?',
-    answerAr: 'يمكن الاستفسار عن المستحقات المالية عبر نظام الموارد البشرية الإلكتروني، أو بالتواصل مع إدارة الشؤون المالية في التجمع.',
-    answerEn: 'You can inquire about financial entitlements through the electronic HR system, or by contacting the cluster\'s Finance Department.',
-  },
-];
+const faqItems: { id: number; catId: string; questionAr: string; questionEn: string; answerAr: string; answerEn: string }[] = [];
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 

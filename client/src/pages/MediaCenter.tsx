@@ -413,6 +413,29 @@ export default function MediaCenter() {
               {/* ── Media ── */}
               {activeTab === 'media' && (
                 <motion.div key="media" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }}>
+                  {/* ── Featured Video ── */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4 }}
+                    className="mb-6 rounded-2xl overflow-hidden shadow-lg"
+                    style={{ backgroundColor: '#1d3578' }}
+                  >
+                    <video
+                      controls
+                      preload="none"
+                      poster="/logos/hhc-horizontal-color.png"
+                      className="w-full max-h-[420px] object-contain bg-white"
+                    >
+                      <source src="/videos/hhc-promo.mp4" type="video/mp4" />
+                    </video>
+                    <div className="px-4 py-3" style={{ backgroundColor: '#1d3578' }}>
+                      <p className={`text-white text-sm font-bold ${fontClass}`}>
+                        {language === 'ar' ? 'الصحة القابضة' : 'Health Holding'}
+                      </p>
+                    </div>
+                  </motion.div>
+
                   {filteredMedia.length === 0 ? (
                     <div className={`text-center py-20 text-gray-400 ${fontClass}`}>{t('mediaCenter.noResults')}</div>
                   ) : (

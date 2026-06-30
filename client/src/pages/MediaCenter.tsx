@@ -20,10 +20,9 @@ const mediaItems = [
     titleEn: 'Health Holding Logo',
     subAr: 'أفقي - ملون',
     subEn: 'Horizontal - Color',
-    count: 1,
-    emoji: '🏥',
+    darkBg: false,
     href: 'https://www.health.sa/knowledge-center/resources/media/albums/health_holding_company_logo',
-    thumb: 'https://cmsapi.health.sa/HHC01-gv62l.png',
+    thumb: '/logos/hhc-horizontal-color.png',
   },
   {
     id: 2,
@@ -31,10 +30,9 @@ const mediaItems = [
     titleEn: 'Health Holding Logo',
     subAr: 'عمودي - ملون',
     subEn: 'Vertical - Color',
-    count: 1,
-    emoji: '🏥',
+    darkBg: false,
     href: 'https://www.health.sa/knowledge-center/resources/media/albums/health_holding_company_logo',
-    thumb: 'https://cmsapi.health.sa/HHC02-gv62l.png',
+    thumb: '/logos/hhc-vertical-color.png',
   },
   {
     id: 3,
@@ -42,10 +40,9 @@ const mediaItems = [
     titleEn: 'Health Holding Logo',
     subAr: 'أفقي - أبيض',
     subEn: 'Horizontal - White',
-    count: 1,
-    emoji: '🏥',
+    darkBg: true,
     href: 'https://www.health.sa/knowledge-center/resources/media/albums/health_holding_company_logo',
-    thumb: 'https://cmsapi.health.sa/HHC03-gv62l.png',
+    thumb: '/logos/hhc-horizontal-white.png',
   },
   {
     id: 4,
@@ -53,10 +50,9 @@ const mediaItems = [
     titleEn: 'Health Holding Logo',
     subAr: 'عمودي - أبيض',
     subEn: 'Vertical - White',
-    count: 1,
-    emoji: '🏥',
+    darkBg: true,
     href: 'https://www.health.sa/knowledge-center/resources/media/albums/health_holding_company_logo',
-    thumb: 'https://cmsapi.health.sa/HHC04-gv62l.png',
+    thumb: '/logos/hhc-vertical-white.png',
   },
 ];
 
@@ -383,20 +379,16 @@ export default function MediaCenter() {
                           className="group block rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
                           style={{ backgroundColor: '#1d3578' }}
                         >
-                          <div className="relative aspect-square overflow-hidden">
-                            {!thumbErrors[item.id] ? (
-                              <img
-                                src={item.thumb}
-                                alt={language === 'ar' ? item.titleAr : item.titleEn}
-                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                onError={() => setThumbErrors(prev => ({ ...prev, [item.id]: true }))}
-                              />
-                            ) : (
-                              <div className="w-full h-full flex items-center justify-center text-5xl" style={{ backgroundColor: '#1d3578' }}>
-                                {item.emoji}
-                              </div>
-                            )}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                          <div
+                            className="relative aspect-square overflow-hidden flex items-center justify-center p-4"
+                            style={{ backgroundColor: (item as any).darkBg ? '#1d3578' : '#ffffff' }}
+                          >
+                            <img
+                              src={item.thumb}
+                              alt={language === 'ar' ? item.titleAr : item.titleEn}
+                              className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                           </div>
                           <div className="p-3" style={{ backgroundColor: '#1d3578' }}>
                             <p className={`text-white text-xs font-bold leading-snug ${fontClass}`}>

@@ -486,7 +486,7 @@ export default function About() {
                     alt={t("header.clusterName")}
                     className="h-24 sm:h-32 w-auto object-contain mb-1 dark:brightness-0 dark:invert"
                   />
-                  <p className={`text-[#2BAAE2] text-[10px] ${fontClass} -translate-x-2 sm:translate-x-3`} style={{ marginTop: '-22px' }}>
+                  <p className={`text-[#2BAAE2] dark:text-white text-[10px] ${fontClass} -translate-x-2 sm:translate-x-3`} style={{ marginTop: '-22px' }}>
                     {language === 'ar' ? 'شركة الصحة القابضة' : 'Health Holding Co.'}
                   </p>
                   </div>

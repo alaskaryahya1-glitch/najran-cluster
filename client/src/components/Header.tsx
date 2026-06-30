@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronLeft, ChevronRight, Search, Globe, Home, Building2, Users, Newspaper, Phone, RefreshCw, Heart, ExternalLink, Moon, Sun } from "lucide-react";
+import { Menu, X, ChevronLeft, ChevronRight, Search, Globe, Home, Building2, Users, Newspaper, Phone, RefreshCw, Heart, ExternalLink, Moon, Sun, Library } from "lucide-react";
 import { useState, useRef, useEffect, useCallback, memo } from "react";
 import { Link, useLocation } from "wouter";
 import { useI18n } from "@/lib/i18n";
@@ -86,6 +86,7 @@ export function Header() {
     { title: t("nav.employeeServices"), titleAr: "خدمات الموظفين", titleEn: "Employee Services", href: "/employee-services" },
     { title: t("nav.eServices"), titleAr: "الخدمات الإلكترونية", titleEn: "E-Services", href: "/#electronic-health" },
     { title: t("nav.news"), titleAr: "الأخبار", titleEn: "News", href: "/news" },
+    { title: t("nav.mediaCenter"), titleAr: "مركز الوسائط", titleEn: "Media Center", href: "/media-center" },
     { title: t("nav.contact"), titleAr: "تواصل معنا", titleEn: "Contact", href: "#contact" },
     { title: language === "ar" ? "المستشفيات" : "Hospitals", titleAr: "المستشفيات", titleEn: "Hospitals", href: "/#hospitals" },
     { title: language === "ar" ? "مراكز الرعاية الصحية" : "Health Centers", titleAr: "مراكز الرعاية الصحية", titleEn: "Health Centers", href: "/#health-centers" },
@@ -143,6 +144,7 @@ export function Header() {
     { label: t("nav.eServices"), href: "/e-services", icon: Globe },
     { label: t("nav.MaternityHospital"), href: "https://mch.nhc.moh.gov.sa/services", icon: ExternalLink, external: true },
     { label: t("nav.news"), href: "/news", icon: Newspaper },
+    { label: t("nav.mediaCenter"), href: "/media-center", icon: Library },
     { label: t("nav.contact"), href: "#contact", icon: Phone, isContactDialog: true },
   ];
 

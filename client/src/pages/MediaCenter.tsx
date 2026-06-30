@@ -16,39 +16,47 @@ import {
 const mediaItems = [
   {
     id: 1,
-    titleAr: 'ملتقى الصحة العالمي 2024',
-    titleEn: 'Global Health Forum 2024',
+    titleAr: 'شعار الصحة القابضة',
+    titleEn: 'Health Holding Logo',
+    subAr: 'أفقي - ملون',
+    subEn: 'Horizontal - Color',
     count: 1,
-    emoji: '🏛️',
-    href: 'https://www.health.sa/knowledge-center/resources/media/albums/global_health_forum_2024',
-    thumb: 'https://cmsapi.health.sa/global-health-forum-2024-thumb.jpg',
+    emoji: '🏥',
+    href: 'https://www.health.sa/knowledge-center/resources/media/albums/health_holding_company_logo',
+    thumb: 'https://cmsapi.health.sa/HHC01-gv62l.png',
   },
   {
     id: 2,
-    titleAr: 'ملتقى نموذج الرعاية الصحية 2024',
-    titleEn: 'Model of Care Forum 2024',
+    titleAr: 'شعار الصحة القابضة',
+    titleEn: 'Health Holding Logo',
+    subAr: 'عمودي - ملون',
+    subEn: 'Vertical - Color',
     count: 1,
-    emoji: '📦',
-    href: 'https://www.health.sa/knowledge-center/resources/media/albums/model_of_care_forum_2024',
-    thumb: 'https://cmsapi.health.sa/model-of-care-forum-2024-thumb.jpg',
+    emoji: '🏥',
+    href: 'https://www.health.sa/knowledge-center/resources/media/albums/health_holding_company_logo',
+    thumb: 'https://cmsapi.health.sa/HHC02-gv62l.png',
   },
   {
     id: 3,
     titleAr: 'شعار الصحة القابضة',
-    titleEn: 'Health Holding Company Logo',
+    titleEn: 'Health Holding Logo',
+    subAr: 'أفقي - أبيض',
+    subEn: 'Horizontal - White',
     count: 1,
     emoji: '🏥',
-    href: 'https://www.health.sa/knowledge-center/resources/media/albums/hhc_logo',
-    thumb: 'https://cmsapi.health.sa/hhc-logo-thumb.jpg',
+    href: 'https://www.health.sa/knowledge-center/resources/media/albums/health_holding_company_logo',
+    thumb: 'https://cmsapi.health.sa/HHC03-gv62l.png',
   },
   {
     id: 4,
     titleAr: 'شعار الصحة القابضة',
-    titleEn: 'Health Holding Company Logo',
-    count: 4,
-    emoji: '🎨',
+    titleEn: 'Health Holding Logo',
+    subAr: 'عمودي - أبيض',
+    subEn: 'Vertical - White',
+    count: 1,
+    emoji: '🏥',
     href: 'https://www.health.sa/knowledge-center/resources/media/albums/health_holding_company_logo',
-    thumb: 'https://cmsapi.health.sa/health-holding-logo-thumb.jpg',
+    thumb: 'https://cmsapi.health.sa/HHC04-gv62l.png',
   },
 ];
 
@@ -391,12 +399,11 @@ export default function MediaCenter() {
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                           </div>
                           <div className="p-3" style={{ backgroundColor: '#1d3578' }}>
-                            <div className="flex items-center gap-2 mb-1">
-                              <Folder className="w-3.5 h-3.5 text-[#2BAAE2] flex-shrink-0" />
-                              <span className="text-[#2BAAE2] text-xs font-medium">{item.count} {language === 'ar' ? 'ملف' : 'file'}</span>
-                            </div>
-                            <p className={`text-white text-xs font-semibold leading-snug line-clamp-2 ${fontClass}`}>
+                            <p className={`text-white text-xs font-bold leading-snug ${fontClass}`}>
                               {language === 'ar' ? item.titleAr : item.titleEn}
+                            </p>
+                            <p className={`text-[#2BAAE2] text-xs mt-0.5 ${fontClass}`}>
+                              {language === 'ar' ? (item as any).subAr : (item as any).subEn}
                             </p>
                           </div>
                         </motion.a>

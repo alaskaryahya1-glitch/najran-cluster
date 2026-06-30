@@ -257,15 +257,15 @@ function formatDate(dateStr: string, language: string) {
 // ── Tab config ────────────────────────────────────────────────────────────────
 
 const TABS = [
+  { id: 'media',      labelKey: 'mediaCenter.tab.media',       Icon: Library },
   { id: 'faqs',       labelKey: 'mediaCenter.tab.faqs',        Icon: MessageCircleQuestion },
   { id: 'guidelines', labelKey: 'mediaCenter.tab.guidelines',  Icon: FileText },
-  { id: 'media',      labelKey: 'mediaCenter.tab.media',       Icon: Library },
 ];
 
 // ── Page ──────────────────────────────────────────────────────────────────────
 
 export default function MediaCenter() {
-  const [activeTab, setActiveTab]     = useState('faqs');
+  const [activeTab, setActiveTab]     = useState('media');
   const [searchQuery, setSearchQuery] = useState('');
   const [openFaqId, setOpenFaqId]     = useState<number | null>(null);
   const [activeCat, setActiveCat]     = useState('all');

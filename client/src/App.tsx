@@ -18,6 +18,7 @@ const EServices = lazy(() => import("@/pages/EServices"));
 const EmployeeServices = lazy(() => import("@/pages/EmployeeServices"));
 const News = lazy(() => import("@/pages/News"));
 const Transformation = lazy(() => import("@/pages/Transformation"));
+const MediaCenter = lazy(() => import("@/pages/MediaCenter"));
 const NotFound = lazy(() => import("@/pages/not-found"));
 
 function PageLoader() {
@@ -43,6 +44,7 @@ function Router() {
           <Route path="/employee-services" component={EmployeeServices} />
           <Route path="/news" component={News} />
           <Route path="/transformation" component={Transformation} />
+          <Route path="/media-center" component={MediaCenter} />
           <Route component={NotFound} />
         </Switch>
       </Suspense>

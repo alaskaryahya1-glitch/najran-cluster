@@ -420,8 +420,8 @@ export default function MediaCenter() {
                       {filteredMedia.map((item, idx) => (
                         <motion.a
                           key={item.id}
-                          href={item.href}
-                          target="_blank"
+                          href={item.thumb}
+                          download
                           rel="noopener noreferrer"
                           initial={{ opacity: 0, y: 16 }}
                           animate={{ opacity: 1, y: 0 }}

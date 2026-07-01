@@ -302,7 +302,28 @@ img, video {
       max-width: 1440px;
     }
   }
-  
+
+  @screen 2xl {
+    .container-custom {
+      @apply px-16;
+      max-width: 1600px;
+    }
+  }
+
+  @screen 3xl {
+    .container-custom {
+      @apply px-20;
+      max-width: 1800px;
+    }
+  }
+
+  @screen 4xl {
+    .container-custom {
+      @apply px-24;
+      max-width: 2200px;
+    }
+  }
+
   /* Touch-friendly minimum sizes */
   .touch-target {
     min-height: 44px;

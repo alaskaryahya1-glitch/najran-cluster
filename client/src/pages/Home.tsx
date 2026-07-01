@@ -289,7 +289,7 @@ export default function Home() {
   return (
     <>
       {/* Fixed Background — must stay outside any overflow wrapper so it covers the full viewport */}
-      <div className="fixed inset-0 z-0 bg-[#004070] dark:bg-[#000e22]" style={{ width: '100vw' }}>
+      <div className="fixed inset-0 z-0 bg-[#004070] dark:bg-[#000e22]">
         {!videoFailed && (
           <video
             ref={videoRef}

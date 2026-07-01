@@ -306,7 +306,7 @@ export function Header() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="fixed top-20 inset-x-4 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-xl bg-white dark:bg-card rounded-xl shadow-2xl z-[10001] overflow-hidden"
+              className="fixed top-20 inset-x-4 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl bg-white dark:bg-card rounded-xl shadow-2xl z-[10001] overflow-hidden"
             >
               <div className="p-4">
                 <div className="relative">

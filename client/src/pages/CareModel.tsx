@@ -37,7 +37,7 @@ export default function CareModel() {
 
       <main className="care-model-content">
         {/* Hero */}
-        <section className="hero-section relative py-32 overflow-hidden" style={{ backgroundColor: '#004070', minHeight: '65vh' }}>
+        <section className="hero-section relative py-32 xl:py-44 2xl:py-56 overflow-hidden" style={{ backgroundColor: '#004070', minHeight: '65vh' }}>
           <video ref={videoRef} autoPlay muted loop playsInline preload="none" className="absolute inset-0 w-full h-full object-cover opacity-20">
             <source src="https://cmsapi.health.sa/background.mp4-n92g3n.mp4" type="video/mp4" />
           </video>
@@ -47,13 +47,13 @@ export default function CareModel() {
             <motion.div
               className="text-center mb-8"
             >
-              <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Heart className="w-10 h-10 text-[#2BAAE2]" />
+              <div className="w-20 h-20 xl:w-28 xl:h-28 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Heart className="w-10 h-10 xl:w-14 xl:h-14 text-[#2BAAE2]" />
               </div>
-              <h1 className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-white ${fontClass} mb-4`}>
+              <h1 className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white ${fontClass} mb-4`}>
                 {language === 'ar' ? 'نموذج الرعاية الصحية السعودي' : 'Saudi Healthcare Model'}
               </h1>
-              <p className={`text-white/80 ${fontClass} max-w-3xl mx-auto text-lg`}>
+              <p className={`text-white/80 ${fontClass} max-w-3xl mx-auto text-lg xl:text-xl 2xl:text-2xl`}>
                 {t("home.healthModel.desc")}
               </p>
             </motion.div>
@@ -61,23 +61,23 @@ export default function CareModel() {
 
           {/* White panel at bottom */}
           <div className="absolute bottom-0 left-0 right-0 z-[100]">
-            <div className="bg-white rounded-t-[40px] shadow-[0_-12px_40px_rgba(0,0,0,0.18)] px-3 pt-4 md:px-8 md:pt-8 pb-0">
+            <div className="bg-white rounded-t-[40px] shadow-[0_-12px_40px_rgba(0,0,0,0.18)] px-3 pt-4 md:px-8 md:pt-8 xl:px-12 xl:pt-10 pb-0">
               <div className="container-custom">
-                <div className="grid grid-cols-3 gap-2 md:gap-6 -translate-y-6">
+                <div className="grid grid-cols-3 gap-2 md:gap-6 xl:gap-8 -translate-y-6 xl:-translate-y-8">
                   {[
                     { titleAr: 'عن التجمع', titleEn: 'About Us', subtitleAr: 'تعرف على تجمع نجران الصحي', subtitleEn: 'Learn about Najran Health Cluster', href: '/about' },
                     { titleAr: 'خدمات الموظفين', titleEn: 'Employee Services', subtitleAr: 'خدمات إدارية للموظفين', subtitleEn: 'Services for employees', href: '/employee-services' },
                     { titleAr: 'الأخبار والمستجدات', titleEn: 'News', subtitleAr: 'آخر أخبار التجمع', subtitleEn: 'Latest cluster news', href: '/news' },
                   ].map((card, idx) => (
-                    <a key={idx} href={card.href} className="group block bg-white rounded-2xl border border-gray-100 shadow-sm p-2.5 md:p-5 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(43,170,226,0.15)] hover:border-[#2BAAE2] transition-all duration-300 overflow-hidden relative">
+                    <a key={idx} href={card.href} className="group block bg-white rounded-2xl border border-gray-100 shadow-sm p-2.5 md:p-5 xl:p-7 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(43,170,226,0.15)] hover:border-[#2BAAE2] transition-all duration-300 overflow-hidden relative">
                       <div className="h-1 bg-[#2BAAE2] absolute top-0 left-0 right-0 rounded-t-2xl"></div>
-                      <div className="flex items-center justify-between gap-1 md:gap-4 pt-2">
+                      <div className="flex items-center justify-between gap-1 md:gap-4 xl:gap-6 pt-2">
                         <div className={`flex-1 min-w-0 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                          <h3 className={`text-xs md:text-base font-bold text-gray-900 ${fontClass} group-hover:text-[#2BAAE2] transition-colors leading-tight`}>{language === 'ar' ? card.titleAr : card.titleEn}</h3>
-                          <p className={`text-gray-500 text-xs ${fontClass} mt-0.5 hidden sm:block`}>{language === 'ar' ? card.subtitleAr : card.subtitleEn}</p>
+                          <h3 className={`text-xs md:text-base xl:text-lg font-bold text-gray-900 ${fontClass} group-hover:text-[#2BAAE2] transition-colors leading-tight`}>{language === 'ar' ? card.titleAr : card.titleEn}</h3>
+                          <p className={`text-gray-500 text-xs xl:text-sm ${fontClass} mt-0.5 hidden sm:block`}>{language === 'ar' ? card.subtitleAr : card.subtitleEn}</p>
                         </div>
-                        <div className="w-6 h-6 md:w-9 md:h-9 rounded-full bg-[#2BAAE2]/10 flex items-center justify-center group-hover:bg-[#2BAAE2] transition-colors flex-shrink-0">
-                          <svg className="w-3 h-3 md:w-4 md:h-4 text-[#2BAAE2] group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ transform: language === 'ar' ? 'none' : 'rotate(180deg)' }}><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+                        <div className="w-6 h-6 md:w-9 md:h-9 xl:w-12 xl:h-12 rounded-full bg-[#2BAAE2]/10 flex items-center justify-center group-hover:bg-[#2BAAE2] transition-colors flex-shrink-0">
+                          <svg className="w-3 h-3 md:w-4 md:h-4 xl:w-5 xl:h-5 text-[#2BAAE2] group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ transform: language === 'ar' ? 'none' : 'rotate(180deg)' }}><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
                         </div>
                       </div>
                     </a>

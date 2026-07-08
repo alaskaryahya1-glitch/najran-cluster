@@ -334,18 +334,18 @@ export default function Home() {
           
           {/* Cluster Logo - Top Center */}
           <motion.div
-            
-            
+
+
             transition={{ delay: 0.2 }}
-            className="absolute top-[44px] lg:top-[52px] left-0 right-0 z-30 flex justify-center"
+            className="absolute top-[44px] lg:top-[52px] xl:top-[60px] left-0 right-0 z-30 flex justify-center"
           >
             <div className="flex flex-col items-center">
-              <img 
+              <img
                 src={whiteLogo}
                 alt={language === 'ar' ? 'تجمع نجران الصحي' : 'Najran Health Cluster'}
-                className="h-32 xs:h-36 sm:h-44 md:h-44 lg:h-52 w-auto object-contain"
+                className="h-32 xs:h-36 sm:h-44 md:h-44 lg:h-52 xl:h-64 2xl:h-72 w-auto object-contain"
               />
-              <p className={`text-white/90 text-[10px] md:text-xs ${fontClass} translate-x-10 sm:translate-x-16 md:translate-x-20`} style={{ marginTop: '-2px' }}>
+              <p className={`text-white/90 text-[10px] md:text-xs xl:text-sm ${fontClass} translate-x-10 sm:translate-x-16 md:translate-x-20 xl:translate-x-24`} style={{ marginTop: '-2px' }}>
                 {language === 'ar' ? 'شركة الصحة القابضة' : 'Health Holding Co'}
               </p>
             </div>
@@ -353,7 +353,7 @@ export default function Home() {
 
           {/* Hero Content */}
           <motion.div
-            className="container-custom relative h-full flex flex-col justify-start items-center text-center px-4 pt-56 sm:pt-64 md:pt-72 lg:pt-80 pb-8 md:pb-44 z-10"
+            className="container-custom relative h-full flex flex-col justify-start items-center text-center px-4 pt-56 sm:pt-64 md:pt-72 lg:pt-80 xl:pt-[38vh] 2xl:pt-[40vh] pb-8 md:pb-44 xl:pb-52 z-10"
             style={{ y: heroContentY, opacity: heroOpacity }}
           >
             {/* Dynamic Headline based on slide */}
@@ -369,19 +369,19 @@ export default function Home() {
                 transition={{ duration: 0.5 }}
                 className="max-w-4xl mt-0"
               >
-                <h2 className={`text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 md:mb-3 leading-tight ${fontClass}`}>
+                <h2 className={`text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-white mb-2 md:mb-3 xl:mb-5 leading-tight ${fontClass}`}>
                   {language === 'ar' 
                     ? heroSlideContent[contentIndex].titleAr
                     : heroSlideContent[contentIndex].titleEn}
                 </h2>
-                <p className={`text-white text-sm xs:text-base md:text-lg ${fontClass}`}>
+                <p className={`text-white text-sm xs:text-base md:text-lg xl:text-xl 2xl:text-2xl ${fontClass}`}>
                   {language === 'ar'
                     ? heroSlideContent[contentIndex].subtitleAr
                     : heroSlideContent[contentIndex].subtitleEn}
                 </p>
                 
                 {/* Stats Cards */}
-                <div className="flex flex-wrap justify-center gap-2 md:gap-3 mt-4 md:mt-6">
+                <div className="flex flex-wrap justify-center gap-2 md:gap-3 xl:gap-4 mt-4 md:mt-6 xl:mt-8">
                   {heroSlideContent[contentIndex].stats.map((stat, idx) => {
                     const StatIcon = stat.icon;
                     const isExternal = stat.link?.startsWith('http');
@@ -404,14 +404,14 @@ export default function Home() {
                         >
                           <button
                             onClick={handleClick}
-                            className="block bg-black/20 dark:bg-black/50 backdrop-blur-md border border-white/20 rounded-lg md:rounded-xl px-2 md:px-4 py-2 md:py-3 min-w-[70px] md:min-w-[100px] hover:bg-white/20 transition-all cursor-pointer hover:scale-105"
+                            className="block bg-black/20 dark:bg-black/50 backdrop-blur-md border border-white/20 rounded-lg md:rounded-xl xl:rounded-2xl px-2 md:px-4 xl:px-6 py-2 md:py-3 xl:py-4 min-w-[70px] md:min-w-[100px] xl:min-w-[130px] hover:bg-white/20 transition-all cursor-pointer hover:scale-105"
                             data-testid={`stat-card-${idx}`}
                           >
-                            <StatIcon className="w-4 h-4 md:w-5 md:h-5 text-[#2BAAE2] mx-auto mb-1" />
-                            <div className={`text-base md:text-2xl font-bold text-white ${fontClass}`}>
+                            <StatIcon className="w-4 h-4 md:w-5 md:h-5 xl:w-7 xl:h-7 text-[#2BAAE2] mx-auto mb-1" />
+                            <div className={`text-base md:text-2xl xl:text-3xl font-bold text-white ${fontClass}`}>
                               {language === 'ar' ? stat.valueAr : stat.valueEn}
                             </div>
-                            <div className={`text-white/90 text-[9px] md:text-xs ${fontClass}`}>
+                            <div className={`text-white/90 text-[9px] md:text-xs xl:text-sm ${fontClass}`}>
                               {language === 'ar' ? stat.labelAr : stat.labelEn}
                             </div>
                           </button>
@@ -432,14 +432,14 @@ export default function Home() {
                       >
                         <CardWrapper
                           {...cardProps}
-                          className="block bg-black/20 dark:bg-black/50 backdrop-blur-md border border-white/20 rounded-lg md:rounded-xl px-2 md:px-4 py-2 md:py-3 min-w-[70px] md:min-w-[100px] hover:bg-white/20 transition-all cursor-pointer hover:scale-105"
+                          className="block bg-black/20 dark:bg-black/50 backdrop-blur-md border border-white/20 rounded-lg md:rounded-xl xl:rounded-2xl px-2 md:px-4 xl:px-6 py-2 md:py-3 xl:py-4 min-w-[70px] md:min-w-[100px] xl:min-w-[130px] hover:bg-white/20 transition-all cursor-pointer hover:scale-105"
                           data-testid={`stat-card-${idx}`}
                         >
-                          <StatIcon className="w-4 h-4 md:w-5 md:h-5 text-[#2BAAE2] mx-auto mb-1" />
-                          <div className={`text-base md:text-2xl font-bold text-white ${fontClass}`}>
+                          <StatIcon className="w-4 h-4 md:w-5 md:h-5 xl:w-7 xl:h-7 text-[#2BAAE2] mx-auto mb-1" />
+                          <div className={`text-base md:text-2xl xl:text-3xl font-bold text-white ${fontClass}`}>
                             {language === 'ar' ? stat.valueAr : stat.valueEn}
                           </div>
-                          <div className={`text-white/90 text-[9px] md:text-xs ${fontClass}`}>
+                          <div className={`text-white/90 text-[9px] md:text-xs xl:text-sm ${fontClass}`}>
                             {language === 'ar' ? stat.labelAr : stat.labelEn}
                           </div>
                         </CardWrapper>
@@ -459,9 +459,9 @@ export default function Home() {
               transition={{ delay: 0.6 }}
               className="mt-6"
             >
-              <Button 
-                size="lg" 
-                className="bg-black/20 dark:bg-black/50 backdrop-blur-md border border-white/30 text-white hover:bg-white/30 px-8 py-6 text-lg rounded-full"
+              <Button
+                size="lg"
+                className="bg-black/20 dark:bg-black/50 backdrop-blur-md border border-white/30 text-white hover:bg-white/30 px-8 py-6 xl:px-12 xl:py-8 text-lg xl:text-xl rounded-full"
                 data-testid="button-explore"
                 onClick={() => window.location.href = '/e-services'}
               >
@@ -507,9 +507,9 @@ export default function Home() {
 
           {/* Navigation Cards at Bottom — white panel over video */}
           <div className="absolute bottom-0 left-0 right-0 z-[100]">
-            <div className="bg-white rounded-t-[40px] shadow-[0_-12px_40px_rgba(0,0,0,0.18)] px-3 pt-4 md:px-8 md:pt-8 pb-0">
+            <div className="bg-white rounded-t-[40px] shadow-[0_-12px_40px_rgba(0,0,0,0.18)] px-3 pt-4 md:px-8 md:pt-8 xl:px-12 xl:pt-10 pb-0">
               <div className="container-custom">
-                <div className="grid grid-cols-3 gap-2 md:gap-6 -translate-y-6">
+                <div className="grid grid-cols-3 gap-2 md:gap-6 xl:gap-8 -translate-y-6 xl:-translate-y-8">
                   {navigationCards.map((card, idx) => (
                     <motion.div
                       key={card.titleKey}
@@ -517,21 +517,21 @@ export default function Home() {
                     >
                       <Link
                         href={card.href}
-                        className="group block bg-white rounded-2xl border border-gray-100 shadow-sm p-2.5 md:p-5 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(43,170,226,0.15)] hover:border-[#2BAAE2] transition-all duration-300 overflow-hidden relative"
+                        className="group block bg-white rounded-2xl border border-gray-100 shadow-sm p-2.5 md:p-5 xl:p-7 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(43,170,226,0.15)] hover:border-[#2BAAE2] transition-all duration-300 overflow-hidden relative"
                         data-testid={`nav-card-${idx}`}
                       >
                         <div className="h-1 bg-[#2BAAE2] absolute top-0 left-0 right-0 rounded-t-2xl"></div>
-                        <div className="flex items-center justify-between gap-1 md:gap-4 pt-2">
+                        <div className="flex items-center justify-between gap-1 md:gap-4 xl:gap-6 pt-2">
                           <div className={`flex-1 min-w-0 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                            <h3 className={`text-xs md:text-base font-bold text-gray-900 ${fontClass} group-hover:text-[#2BAAE2] transition-colors leading-tight`}>
+                            <h3 className={`text-xs md:text-base xl:text-lg font-bold text-gray-900 ${fontClass} group-hover:text-[#2BAAE2] transition-colors leading-tight`}>
                               {t(card.titleKey)}
                             </h3>
-                            <p className={`text-gray-500 text-xs ${fontClass} mt-0.5 hidden sm:block`}>
+                            <p className={`text-gray-500 text-xs xl:text-sm ${fontClass} mt-0.5 hidden sm:block`}>
                               {t(card.subtitleKey)}
                             </p>
                           </div>
-                          <div className="w-6 h-6 md:w-9 md:h-9 rounded-full bg-[#2BAAE2]/10 flex items-center justify-center group-hover:bg-[#2BAAE2] transition-colors flex-shrink-0">
-                            <ArrowLeft className={`w-3 h-3 md:w-4 md:h-4 text-[#2BAAE2] group-hover:text-white transition-colors brand-icon ${language === 'ar' ? '' : 'rotate-180'}`} />
+                          <div className="w-6 h-6 md:w-9 md:h-9 xl:w-12 xl:h-12 rounded-full bg-[#2BAAE2]/10 flex items-center justify-center group-hover:bg-[#2BAAE2] transition-colors flex-shrink-0">
+                            <ArrowLeft className={`w-3 h-3 md:w-4 md:h-4 xl:w-5 xl:h-5 text-[#2BAAE2] group-hover:text-white transition-colors brand-icon ${language === 'ar' ? '' : 'rotate-180'}`} />
                           </div>
                         </div>
                       </Link>

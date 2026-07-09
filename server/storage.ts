@@ -90,7 +90,7 @@ export class DatabaseStorage implements IStorage {
       {
         titleAr: "موارد - الشركة القابضة",
         titleEn: "Mawared - HHC",
-        url: "https://hhctrs.moh.gov.sa",
+        url: "https://hhctrs.moh.gov.sa/",
         iconType: "monitor",
         category: "info",
         logoPath: "mawared_logo_1767517419920.png",

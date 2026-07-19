@@ -53,7 +53,26 @@ function Router() {
 }
 
 function App() {
-  return <div style={{ background: "#fff", minHeight: "100vh" }} />;
+  useEffect(() => {
+    if (import.meta.env.VITE_GA_MEASUREMENT_ID) {
+      initGA();
+    }
+  }, []);
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider>
+        <I18nProvider>
+          <TooltipProvider>
+            <MotionConfig transition={{ duration: 0.25, ease: "easeOut" }}>
+              <Toaster />
+              <Router />
+            </MotionConfig>
+          </TooltipProvider>
+        </I18nProvider>
+      </ThemeProvider>
+    </QueryClientProvider>
+  );
 }
 
 export default App;

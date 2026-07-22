@@ -138,7 +138,6 @@ export function Header() {
     { label: t("nav.home"), href: "/", icon: Home },
     { label: t("nav.about"), href: "/about", icon: Building2 },
     { label: t("nav.transformation"), href: "/transformation", icon: RefreshCw },
-    { label: t("nav.gatesJourney"), href: "https://nhcgate3.info/", icon: ExternalLink, external: true },
     { label: t("nav.careModel"), href: "/care-model", icon: Heart },
     { label: t("nav.employeeServices"), href: "/employee-services", icon: Users },
     { label: t("nav.eServices"), href: "/e-services", icon: Globe },

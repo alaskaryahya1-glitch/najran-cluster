@@ -49,7 +49,6 @@ export function Footer() {
     { label: t("nav.careModel"), href: "/care-model" },
     { label: language === 'ar' ? 'البوابة الرئيسية' : 'Main Portal', href: "https://njhc.moh.gov.sa", external: true },
     { label: language === 'ar' ? 'مستشفى الولادة' : 'Maternity Hospital', href: "https://mch.nhc.moh.gov.sa/services", external: true },
-    { label: language === 'ar' ? 'رحلة البوابات' : 'Gates Journey', href: "https://nhcgate3.info/", external: true },
   ];
 
   return (
